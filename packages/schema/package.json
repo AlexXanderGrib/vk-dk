@@ -1,17 +1,17 @@
 {
   "name": "@vk-dk/schema",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DTS Files generated from VK Json Schema",
   "main": "index.js",
   "types": "./index.d.ts",
   "typings": "./index.d.ts",
   "files": [
     "index.js",
-    "index.d.ts"
+    "index.d.ts",
+    "README.md"
   ],
   "author": "AlexXanderGrib",
   "license": "MIT",
-  "private": false,
   "scripts": {
     "generate": "ts-node generator/index.ts && tsc --project tsconfig.generator.json"
   },
