@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "downlevelIteration": true,
+    "noImplicitAny": true
+  },
+  "include": ["generator/**/*.ts"]
+}
