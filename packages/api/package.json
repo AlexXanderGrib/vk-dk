@@ -1,6 +1,6 @@
 {
   "name": "@vk-dk/api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "VK API Implementation",
   "main": "index.js",
   "author": "AlexXanderGrib",
