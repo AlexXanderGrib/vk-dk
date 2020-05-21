@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "declaration": true,
+    "incremental": true,
+    "target": "ES2018",
+    "composite": true,
+    "skipLibCheck": true
+  },
+  "files": ["index.ts"]
+}
