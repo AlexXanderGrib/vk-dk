@@ -252,7 +252,7 @@ export default function parse(schema: AnySchema): ts.TypeNode {
  *
  * @see https://github.com/negezor/vk-io/tree/master/scripts/typings-generator
  */
-export function parseMethod(m: Method) {
+export function parseMethod(m: Method, async = true) {
   const jsdocJoiner = "\n* ";
 
   const access = m.access_token_type
@@ -290,14 +290,22 @@ export function parseMethod(m: Method) {
     undefined
   );
 
-  const responseType = ts.createIndexedAccessTypeNode(
-    parse(m.responses.response),
-    Creator.literal("response")
+  const wrapIfAsync = (t: ts.TypeNode) =>
+    async ? ts.createTypeReferenceNode("Promise", [t]) : t;
+
+  const responseType = wrapIfAsync(
+    ts.createIndexedAccessTypeNode(
+      parse(m.responses.response),
+      Creator.literal("response")
+    )
   );
+
   const extendedResponseType = m.responses.extendedResponse
-    ? ts.createIndexedAccessTypeNode(
-        parse(m.responses.extendedResponse),
-        Creator.literal("response")
+    ? wrapIfAsync(
+        ts.createIndexedAccessTypeNode(
+          parse(m.responses.extendedResponse),
+          Creator.literal("response")
+        )
       )
     : responseType;
 
@@ -312,10 +320,10 @@ export function parseMethod(m: Method) {
             ts.createTypeReferenceNode("true", undefined),
             ts.createTypeReferenceNode("1", undefined)
           ]),
-          ts.createTypeReferenceNode("Promise", [extendedResponseType]),
-          ts.createTypeReferenceNode("Promise", [responseType])
+          extendedResponseType,
+          responseType
         )
-      : ts.createTypeReferenceNode("Promise", [responseType]),
+      : responseType,
     m.name.split(".")[1],
     undefined
   );
@@ -325,9 +333,8 @@ export function parseMethod(m: Method) {
     ts.SyntaxKind.MultiLineCommentTrivia,
     [
       "*",
-
       m.description || "Method not described",
-      `@async`,
+      ...(async ? [`@async`] : []),
       access,
       throws,
       `@see https://vk.com/dev/${m.name}`,
@@ -340,5 +347,5 @@ export function parseMethod(m: Method) {
  * Всем кто это читает, сорян за ебалу с звёздочками и JSDoc'ом
  *
  * Это очень сильно отразилось на файле `index.ts`
- * Земля  ему пухом. F
+ * Земля ему пухом. F
  */

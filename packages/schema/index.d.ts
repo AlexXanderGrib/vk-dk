@@ -21750,6 +21750,12214 @@ export declare namespace Methods {
     }
     const _exportedDomains: readonly ["account", "ads", "appWidgets", "apps", "auth", "board", "database", "docs", "fave", "friends", "gifts", "groups", "leads", "likes", "market", "messages", "newsfeed", "notes", "notifications", "orders", "pages", "photos", "polls", "prettyCards", "search", "secure", "stats", "status", "storage", "stories", "streaming", "users", "utils", "video", "wall", "widgets"];
 }
+export declare namespace SyncMethods {
+    interface Account {
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/account.ban
+         */
+        ban<Params extends {
+            owner_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Changes a user password after access is successfully restored with the {@link https://vk.com/dev/auth.restore|auth.restore} method.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.changePassword
+         */
+        changePassword<Params extends {
+            /**
+             * Session id received after the {@link https://vk.com/dev/auth.restore|auth.restore} method is executed. (If the password is changed right after the access was restored)
+             *
+             */
+            restore_sid?: string;
+            /**
+             * Hash received after a successful OAuth authorization with a code got by SMS. (If the password is changed right after the access was restored)
+             *
+             */
+            change_password_hash?: string;
+            /**
+             * Current user password.
+             *
+             */
+            old_password?: string;
+            /**
+             * New password that will be set as a current
+             *
+             */
+            new_password: string;
+        }>(params: Params): Responses.AccountChangePasswordResponse["response"];
+        /**
+         * Returns a list of active ads (offers) which executed by the user will bring him/her respective number of votes to his balance in the application.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.getActiveOffers
+         */
+        getActiveOffers<Params extends {
+            offset?: number;
+            /**
+             * Number of results to return.
+             * @maximum 100
+             * @default 100
+             * @maximum 100
+             * @default 100
+             */
+            count?: number;
+        }>(params: Params): Responses.AccountGetActiveOffersResponse["response"];
+        /**
+         * Gets settings of the user in this application.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.getAppPermissions
+         */
+        getAppPermissions<Params extends {
+            /**
+             * User ID whose settings information shall be got. By default: current user.
+             *
+             */
+            user_id: number;
+        }>(params: Params): Responses.AccountGetAppPermissionsResponse["response"];
+        /**
+         * Returns a user's blacklist.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.getBanned
+         */
+        getBanned<Params extends {
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of results to return.
+             * @maximum 200
+             * @default 20
+             * @maximum 200
+             * @default 20
+             */
+            count?: number;
+        }>(params: Params): Responses.AccountGetBannedResponse["response"];
+        /**
+         * Returns non-null values of user counters.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.getCounters
+         */
+        getCounters<Params extends {
+            /**
+             * Counters to be returned.
+             *
+             */
+            filter?: (/**
+             * @enum {string} friends, messages, photos, videos, notes, gifts, events, groups, sdk, friends_suggestions
+             * @enum {string} friends, messages, photos, videos, notes, gifts, events, groups, sdk, friends_suggestions */ "friends" | "messages" | "photos" | "videos" | "notes" | "gifts" | "events" | "groups" | "sdk" | "friends_suggestions")[];
+        }>(params: Params): Responses.AccountGetCountersResponse["response"];
+        /**
+         * Returns current account info.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.getInfo
+         */
+        getInfo<Params extends {
+            /**
+             * Fields to return. Possible values: *'country' — user country,, *'https_required' — is "HTTPS only" option enabled,, *'own_posts_default' — is "Show my posts only" option is enabled,, *'no_wall_replies' — are wall replies disabled or not,, *'intro' — is intro passed by user or not,, *'lang' — user language. By default: all.
+             *
+             */
+            fields?: (/**
+             * @enum {string} country, https_required, own_posts_default, no_wall_replies, intro, lang
+             * @enum {string} country, https_required, own_posts_default, no_wall_replies, intro, lang */ "country" | "https_required" | "own_posts_default" | "no_wall_replies" | "intro" | "lang")[];
+        }>(params: Params): Responses.AccountGetInfoResponse["response"];
+        /**
+         * Returns the current account info.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.getProfileInfo
+         */
+        getProfileInfo<Params extends never>(params?: Params): Responses.AccountGetProfileInfoResponse["response"];
+        /**
+         * Gets settings of push notifications.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.getPushSettings
+         */
+        getPushSettings<Params extends {
+            /**
+             * Unique device ID.
+             *
+             */
+            device_id?: string;
+        }>(params: Params): Responses.AccountGetPushSettingsResponse["response"];
+        /**
+         * Subscribes an iOS/Android/Windows Phone-based device to receive push notifications
+         * @access user
+         *
+         * @see https://vk.com/dev/account.registerDevice
+         */
+        registerDevice<Params extends {
+            /**
+             * Device token used to send notifications. (for mpns, the token shall be URL for sending of notifications)
+             *
+             */
+            token: string;
+            /**
+             * String name of device model.
+             *
+             */
+            device_model?: string;
+            /**
+             * Device year.
+             *
+             */
+            device_year?: number;
+            /**
+             * Unique device ID.
+             *
+             */
+            device_id: string;
+            /**
+             * String version of device operating system.
+             *
+             */
+            system_version?: string;
+            /**
+             * Push settings in a {@link https://vk.com/dev/push_settings|special format}.
+             *
+             */
+            settings?: string;
+            sandbox?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits current profile info.
+         * @access user
+         * @throws {Errors.ApiErrorInvalidAddress} - Invalid screen name
+         * @see https://vk.com/dev/account.saveProfileInfo
+         */
+        saveProfileInfo<Params extends {
+            /**
+             * User first name.
+             *
+             */
+            first_name?: string;
+            /**
+             * User last name.
+             *
+             */
+            last_name?: string;
+            /**
+             * User maiden name (female only)
+             *
+             */
+            maiden_name?: string;
+            /**
+             * User screen name.
+             *
+             */
+            screen_name?: string;
+            /**
+             * ID of the name change request to be canceled. If this parameter is sent, all the others are ignored.
+             *
+             */
+            cancel_request_id?: number;
+            /**
+             * User sex. Possible values: , * '1' – female,, * '2' – male.
+             *
+             */
+            sex?: number;
+            /**
+             * User relationship status. Possible values: , * '1' – single,, * '2' – in a relationship,, * '3' – engaged,, * '4' – married,, * '5' – it's complicated,, * '6' – actively searching,, * '7' – in love,, * '0' – not specified.
+             *
+             */
+            relation?: number;
+            /**
+             * ID of the relationship partner.
+             *
+             */
+            relation_partner_id?: number;
+            /**
+             * User birth date, format: DD.MM.YYYY.
+             *
+             */
+            bdate?: string;
+            /**
+             * Birth date visibility. Returned values: , * '1' – show birth date,, * '2' – show only month and day,, * '0' – hide birth date.
+             *
+             */
+            bdate_visibility?: number;
+            /**
+             * User home town.
+             *
+             */
+            home_town?: string;
+            /**
+             * User country.
+             *
+             */
+            country_id?: number;
+            /**
+             * User city.
+             *
+             */
+            city_id?: number;
+            /**
+             * Status text.
+             *
+             */
+            status?: string;
+        }>(params: Params): Responses.AccountSaveProfileInfoResponse["response"];
+        /**
+         * Allows to edit the current account info.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.setInfo
+         */
+        setInfo<Params extends {
+            /**
+             * Setting name.
+             *
+             */
+            name?: string;
+            /**
+             * Setting value.
+             *
+             */
+            value?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Sets an application screen name (up to 17 characters), that is shown to the user in the left menu.
+         * @access user
+         * @throws {Errors.ApiErrorAccessMenu} - Access to the menu of the user denied
+         * @see https://vk.com/dev/account.setNameInMenu
+         */
+        setNameInMenu<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id: number;
+            /**
+             * Application screen name.
+             *
+             */
+            name?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Marks a current user as offline.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.setOffline
+         */
+        setOffline<Params extends never>(params?: Params): Responses.OkResponse["response"];
+        /**
+         * Marks the current user as online for 15 minutes.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.setOnline
+         */
+        setOnline<Params extends {
+            /**
+             * '1' if videocalls are available for current device.
+             *
+             */
+            voip?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Change push settings.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.setPushSettings
+         */
+        setPushSettings<Params extends {
+            /**
+             * Unique device ID.
+             *
+             */
+            device_id: string;
+            /**
+             * Push settings in a {@link https://vk.com/dev/push_settings|special format}.
+             *
+             */
+            settings?: string;
+            /**
+             * Notification key.
+             *
+             */
+            key?: string;
+            /**
+             * New value for the key in a {@link https://vk.com/dev/push_settings|special format}.
+             *
+             */
+            value?: string[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Mutes push notifications for the set period of time.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.setSilenceMode
+         */
+        setSilenceMode<Params extends {
+            /**
+             * Unique device ID.
+             *
+             */
+            device_id?: string;
+            /**
+             * Time in seconds for what notifications should be disabled. '-1' to disable forever.
+             *
+             */
+            time?: number;
+            /**
+             * Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'Chat ID', e.g. '2000000001'. For community: '- Community ID', e.g. '-12345'. "
+             *
+             */
+            peer_id?: number;
+            /**
+             * '1' — to enable sound in this dialog, '0' — to disable sound. Only if 'peer_id' contains user or community ID.
+             *
+             */
+            sound?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/account.unban
+         */
+        unban<Params extends {
+            owner_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Unsubscribes a device from push notifications.
+         * @access user
+         *
+         * @see https://vk.com/dev/account.unregisterDevice
+         */
+        unregisterDevice<Params extends {
+            /**
+             * Unique device ID.
+             *
+             */
+            device_id?: string;
+            sandbox?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Ads {
+        /**
+         * Adds managers and/or supervisors to advertising account.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.addOfficeUsers
+         */
+        addOfficeUsers<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Serialized JSON array of objects that describe added managers. Description of 'user_specification' objects see below.
+             *
+             */
+            data: string;
+        }>(params: Params): Responses.AdsAddOfficeUsersResponse["response"];
+        /**
+         * Allows to check the ad link.
+         * @access user
+         *
+         * @see https://vk.com/dev/ads.checkLink
+         */
+        checkLink<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Object type: *'community' — community,, *'post' — community post,, *'application' — VK application,, *'video' — video,, *'site' — external site.
+             * @enum {string} community, post, application, video, site
+             * @enum {string} community, post, application, video, site
+             */
+            link_type: "community" | "post" | "application" | "video" | "site";
+            /**
+             * Object URL.
+             *
+             */
+            link_url: string;
+            /**
+             * Campaign ID
+             *
+             */
+            campaign_id?: number;
+        }>(params: Params): Responses.AdsCheckLinkResponse["response"];
+        /**
+         * Creates ads.
+         * @access user
+         * @throws {Errors.ApiErrorAdsPartialSuccess} - Some part of the request has not been completed
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.createAds
+         */
+        createAds<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Serialized JSON array of objects that describe created ads. Description of 'ad_specification' objects see below.
+             *
+             */
+            data: string;
+        }>(params: Params): Responses.AdsCreateAdsResponse["response"];
+        /**
+         * Creates advertising campaigns.
+         * @access user
+         * @throws {Errors.ApiErrorAdsPartialSuccess} - Some part of the request has not been completed
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.createCampaigns
+         */
+        createCampaigns<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Serialized JSON array of objects that describe created campaigns. Description of 'campaign_specification' objects see below.
+             *
+             */
+            data: string;
+        }>(params: Params): Responses.AdsCreateCampaignsResponse["response"];
+        /**
+         * Creates clients of an advertising agency.
+         * @access user
+         * @throws {Errors.ApiErrorAdsPartialSuccess} - Some part of the request has not been completed
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.createClients
+         */
+        createClients<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Serialized JSON array of objects that describe created campaigns. Description of 'client_specification' objects see below.
+             *
+             */
+            data: string;
+        }>(params: Params): Responses.AdsCreateClientsResponse["response"];
+        /**
+         * Creates a group to re-target ads for users who visited advertiser's site (viewed information about the product, registered, etc.).
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.createTargetGroup
+         */
+        createTargetGroup<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * 'Only for advertising agencies.', ID of the client with the advertising account where the group will be created.
+             *
+             */
+            client_id?: number;
+            /**
+             * Name of the target group — a string up to 64 characters long.
+             *
+             */
+            name: string;
+            /**
+             * 'For groups with auditory created with pixel code only.', , Number of days after that users will be automatically removed from the group.
+             * @maximum 720
+             * @default 720
+             * @maximum 720
+             * @default 720
+             */
+            lifetime?: number;
+            target_pixel_id?: number;
+            target_pixel_rules?: string;
+        }>(params: Params): Responses.AdsCreateTargetGroupResponse["response"];
+        /**
+         * Archives ads.
+         * @access user
+         * @throws {Errors.ApiErrorAdsObjectDeleted} - Object deleted
+         * @throws {Errors.ApiErrorAdsPartialSuccess} - Some part of the request has not been completed
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.deleteAds
+         */
+        deleteAds<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Serialized JSON array with ad IDs.
+             *
+             */
+            ids: string;
+        }>(params: Params): Responses.AdsDeleteAdsResponse["response"];
+        /**
+         * Archives advertising campaigns.
+         * @access user
+         * @throws {Errors.ApiErrorAdsObjectDeleted} - Object deleted
+         * @throws {Errors.ApiErrorAdsPartialSuccess} - Some part of the request has not been completed
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.deleteCampaigns
+         */
+        deleteCampaigns<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Serialized JSON array with IDs of deleted campaigns.
+             *
+             */
+            ids: string;
+        }>(params: Params): Responses.AdsDeleteCampaignsResponse["response"];
+        /**
+         * Archives clients of an advertising agency.
+         * @access user
+         * @throws {Errors.ApiErrorAdsObjectDeleted} - Object deleted
+         * @throws {Errors.ApiErrorAdsPartialSuccess} - Some part of the request has not been completed
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.deleteClients
+         */
+        deleteClients<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Serialized JSON array with IDs of deleted clients.
+             *
+             */
+            ids: string;
+        }>(params: Params): Responses.AdsDeleteClientsResponse["response"];
+        /**
+         * Deletes a retarget group.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.deleteTargetGroup
+         */
+        deleteTargetGroup<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * 'Only for advertising agencies.' , ID of the client with the advertising account where the group will be created.
+             *
+             */
+            client_id?: number;
+            /**
+             * Group ID.
+             *
+             */
+            target_group_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns a list of advertising accounts.
+         * @access user
+         *
+         * @see https://vk.com/dev/ads.getAccounts
+         */
+        getAccounts<Params extends never>(params?: Params): Responses.AdsGetAccountsResponse["response"];
+        /**
+         * Returns number of ads.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getAds
+         */
+        getAds<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Filter by ads. Serialized JSON array with ad IDs. If the parameter is null, all ads will be shown.
+             *
+             */
+            ad_ids?: string;
+            /**
+             * Filter by advertising campaigns. Serialized JSON array with campaign IDs. If the parameter is null, ads of all campaigns will be shown.
+             *
+             */
+            campaign_ids?: string;
+            /**
+             * 'Available and required for advertising agencies.' ID of the client ads are retrieved from.
+             *
+             */
+            client_id?: number;
+            /**
+             * Flag that specifies whether archived ads shall be shown: *0 — show only active ads,, *1 — show all ads.
+             *
+             */
+            include_deleted?: boolean;
+            /**
+             * Limit of number of returned ads. Used only if ad_ids parameter is null, and 'campaign_ids' parameter contains ID of only one campaign.
+             *
+             */
+            limit?: number;
+            /**
+             * Offset. Used in the same cases as 'limit' parameter.
+             *
+             */
+            offset?: number;
+        }>(params: Params): Responses.AdsGetAdsResponse["response"];
+        /**
+         * Returns descriptions of ad layouts.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getAdsLayout
+         */
+        getAdsLayout<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Filter by ads. Serialized JSON array with ad IDs. If the parameter is null, all ads will be shown.
+             *
+             */
+            ad_ids?: string;
+            /**
+             * Filter by advertising campaigns. Serialized JSON array with campaign IDs. If the parameter is null, ads of all campaigns will be shown.
+             *
+             */
+            campaign_ids?: string;
+            /**
+             * 'For advertising agencies.' ID of the client ads are retrieved from.
+             *
+             */
+            client_id?: number;
+            /**
+             * Flag that specifies whether archived ads shall be shown. *0 — show only active ads,, *1 — show all ads.
+             *
+             */
+            include_deleted?: boolean;
+            /**
+             * Limit of number of returned ads. Used only if 'ad_ids' parameter is null, and 'campaign_ids' parameter contains ID of only one campaign.
+             *
+             */
+            limit?: number;
+            /**
+             * Offset. Used in the same cases as 'limit' parameter.
+             *
+             */
+            offset?: number;
+        }>(params: Params): Responses.AdsGetAdsLayoutResponse["response"];
+        /**
+         * Returns ad targeting parameters.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getAdsTargeting
+         */
+        getAdsTargeting<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Filter by ads. Serialized JSON array with ad IDs. If the parameter is null, all ads will be shown.
+             *
+             */
+            ad_ids?: string;
+            /**
+             * Filter by advertising campaigns. Serialized JSON array with campaign IDs. If the parameter is null, ads of all campaigns will be shown.
+             *
+             */
+            campaign_ids?: string;
+            /**
+             * 'For advertising agencies.' ID of the client ads are retrieved from.
+             *
+             */
+            client_id?: number;
+            /**
+             * flag that specifies whether archived ads shall be shown: *0 — show only active ads,, *1 — show all ads.
+             *
+             */
+            include_deleted?: boolean;
+            /**
+             * Limit of number of returned ads. Used only if 'ad_ids' parameter is null, and 'campaign_ids' parameter contains ID of only one campaign.
+             *
+             */
+            limit?: number;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+        }>(params: Params): Responses.AdsGetAdsTargetingResponse["response"];
+        /**
+         * Returns current budget of the advertising account.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getBudget
+         */
+        getBudget<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+        }>(params: Params): Responses.AdsGetBudgetResponse["response"];
+        /**
+         * Returns a list of campaigns in an advertising account.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getCampaigns
+         */
+        getCampaigns<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * 'For advertising agencies'. ID of the client advertising campaigns are retrieved from.
+             *
+             */
+            client_id?: number;
+            /**
+             * Flag that specifies whether archived ads shall be shown. *0 — show only active campaigns,, *1 — show all campaigns.
+             *
+             */
+            include_deleted?: boolean;
+            /**
+             * Filter of advertising campaigns to show. Serialized JSON array with campaign IDs. Only campaigns that exist in 'campaign_ids' and belong to the specified advertising account will be shown. If the parameter is null, all campaigns will be shown.
+             *
+             */
+            campaign_ids?: string;
+            fields?: "ads_count"[];
+        }>(params: Params): Responses.AdsGetCampaignsResponse["response"];
+        /**
+         * Returns a list of possible ad categories.
+         * @access user
+         *
+         * @see https://vk.com/dev/ads.getCategories
+         */
+        getCategories<Params extends {
+            /**
+             * Language. The full list of supported languages is {@link https://vk.com/dev/api_requests|here}.
+             *
+             */
+            lang?: string;
+        }>(params: Params): Responses.AdsGetCategoriesResponse["response"];
+        /**
+         * Returns a list of advertising agency's clients.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getClients
+         */
+        getClients<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+        }>(params: Params): Responses.AdsGetClientsResponse["response"];
+        /**
+         * Returns demographics for ads or campaigns.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getDemographics
+         */
+        getDemographics<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Type of requested objects listed in 'ids' parameter: *ad — ads,, *campaign — campaigns.
+             * @enum {string} ad, campaign
+             * @enum {string} ad, campaign
+             */
+            ids_type: "ad" | "campaign";
+            /**
+             * IDs requested ads or campaigns, separated with a comma, depending on the value set in 'ids_type'. Maximum 2000 objects.
+             *
+             */
+            ids: string;
+            /**
+             * Data grouping by dates: *day — statistics by days,, *month — statistics by months,, *overall — overall statistics. 'date_from' and 'date_to' parameters set temporary limits.
+             * @enum {string} day, month, overall
+             * @enum {string} day, month, overall
+             */
+            period: "day" | "month" | "overall";
+            /**
+             * Date to show statistics from. For different value of 'period' different date format is used: *day: YYYY-MM-DD, example: 2011-09-27 — September 27, 2011, **0 — day it was created on,, *month: YYYY-MM, example: 2011-09 — September 2011, **0 — month it was created in,, *overall: 0.
+             *
+             */
+            date_from: string;
+            /**
+             * Date to show statistics to. For different value of 'period' different date format is used: *day: YYYY-MM-DD, example: 2011-09-27 — September 27, 2011, **0 — current day,, *month: YYYY-MM, example: 2011-09 — September 2011, **0 — current month,, *overall: 0.
+             *
+             */
+            date_to: string;
+        }>(params: Params): Responses.AdsGetDemographicsResponse["response"];
+        /**
+         * Returns information about current state of a counter — number of remaining runs of methods and time to the next counter nulling in seconds.
+         * @access user
+         *
+         * @see https://vk.com/dev/ads.getFloodStats
+         */
+        getFloodStats<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+        }>(params: Params): Responses.AdsGetFloodStatsResponse["response"];
+        /**
+         * Returns a list of managers and supervisors of advertising account.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getOfficeUsers
+         */
+        getOfficeUsers<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+        }>(params: Params): Responses.AdsGetOfficeUsersResponse["response"];
+        /**
+         * Returns detailed statistics of promoted posts reach from campaigns and ads.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getPostsReach
+         */
+        getPostsReach<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Type of requested objects listed in 'ids' parameter: *ad — ads,, *campaign — campaigns.
+             * @enum {string} ad, campaign
+             * @enum {string} ad, campaign
+             */
+            ids_type: "ad" | "campaign";
+            /**
+             * IDs requested ads or campaigns, separated with a comma, depending on the value set in 'ids_type'. Maximum 100 objects.
+             *
+             */
+            ids: string;
+        }>(params: Params): Responses.AdsGetPostsReachResponse["response"];
+        /**
+         * Returns a reason of ad rejection for pre-moderation.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getRejectionReason
+         */
+        getRejectionReason<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Ad ID.
+             *
+             */
+            ad_id: number;
+        }>(params: Params): Responses.AdsGetRejectionReasonResponse["response"];
+        /**
+         * Returns statistics of performance indicators for ads, campaigns, clients or the whole account.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getStatistics
+         */
+        getStatistics<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Type of requested objects listed in 'ids' parameter: *ad — ads,, *campaign — campaigns,, *client — clients,, *office — account.
+             * @enum {string} ad, campaign, client, office
+             * @enum {string} ad, campaign, client, office
+             */
+            ids_type: "ad" | "campaign" | "client" | "office";
+            /**
+             * IDs requested ads, campaigns, clients or account, separated with a comma, depending on the value set in 'ids_type'. Maximum 2000 objects.
+             *
+             */
+            ids: string;
+            /**
+             * Data grouping by dates: *day — statistics by days,, *month — statistics by months,, *overall — overall statistics. 'date_from' and 'date_to' parameters set temporary limits.
+             * @enum {string} day, month, overall
+             * @enum {string} day, month, overall
+             */
+            period: "day" | "month" | "overall";
+            /**
+             * Date to show statistics from. For different value of 'period' different date format is used: *day: YYYY-MM-DD, example: 2011-09-27 — September 27, 2011, **0 — day it was created on,, *month: YYYY-MM, example: 2011-09 — September 2011, **0 — month it was created in,, *overall: 0.
+             *
+             */
+            date_from: string;
+            /**
+             * Date to show statistics to. For different value of 'period' different date format is used: *day: YYYY-MM-DD, example: 2011-09-27 — September 27, 2011, **0 — current day,, *month: YYYY-MM, example: 2011-09 — September 2011, **0 — current month,, *overall: 0.
+             *
+             */
+            date_to: string;
+            /**
+             * Additional fields to add to statistics
+             *
+             */
+            stats_fields?: "views_times"[];
+        }>(params: Params): Responses.AdsGetStatisticsResponse["response"];
+        /**
+         * Returns a set of auto-suggestions for various targeting parameters.
+         * @access user
+         *
+         * @see https://vk.com/dev/ads.getSuggestions
+         */
+        getSuggestions<Params extends {
+            /**
+             * Section, suggestions are retrieved in. Available values: *countries — request of a list of countries. If q is not set or blank, a short list of countries is shown. Otherwise, a full list of countries is shown. *regions — requested list of regions. 'country' parameter is required. *cities — requested list of cities. 'country' parameter is required. *districts — requested list of districts. 'cities' parameter is required. *stations — requested list of subway stations. 'cities' parameter is required. *streets — requested list of streets. 'cities' parameter is required. *schools — requested list of educational organizations. 'cities' parameter is required. *interests — requested list of interests. *positions — requested list of positions (professions). *group_types — requested list of group types. *religions — requested list of religious commitments. *browsers — requested list of browsers and mobile devices.
+             * @enum {string} countries, regions, cities, districts, stations, streets, schools, interests, positions, group_types, religions, browsers
+             * @enum {string} countries, regions, cities, districts, stations, streets, schools, interests, positions, group_types, religions, browsers
+             */
+            section: "countries" | "regions" | "cities" | "districts" | "stations" | "streets" | "schools" | "interests" | "positions" | "group_types" | "religions" | "browsers";
+            /**
+             * Objects IDs separated by commas. If the parameter is passed, 'q, country, cities' should not be passed.
+             *
+             */
+            ids?: string;
+            /**
+             * Filter-line of the request (for countries, regions, cities, streets, schools, interests, positions).
+             *
+             */
+            q?: string;
+            /**
+             * ID of the country objects are searched in.
+             *
+             */
+            country?: number;
+            /**
+             * IDs of cities where objects are searched in, separated with a comma.
+             *
+             */
+            cities?: string;
+            /**
+             * Language of the returned string values. Supported languages: *ru — Russian,, *ua — Ukrainian,, *en — English.
+             * @enum {string} ru, ua, en
+             * @enum {string} ru, ua, en
+             */
+            lang?: "ru" | "ua" | "en";
+        }>(params: Params): Responses.AdsGetSuggestionsResponse["response"];
+        /**
+         * Returns a list of target groups.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getTargetGroups
+         */
+        getTargetGroups<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * 'Only for advertising agencies.', ID of the client with the advertising account where the group will be created.
+             *
+             */
+            client_id?: number;
+            /**
+             * '1' — to return pixel code.
+             *
+             */
+            extended?: boolean;
+        }>(params: Params): Responses.AdsGetTargetGroupsResponse["response"];
+        /**
+         * Returns the size of targeting audience, and also recommended values for CPC and CPM.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.getTargetingStats
+         */
+        getTargetingStats<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            client_id?: number;
+            /**
+             * Serialized JSON object that describes targeting parameters. Description of 'criteria' object see below.
+             *
+             */
+            criteria?: string;
+            /**
+             * ID of an ad which targeting parameters shall be analyzed.
+             *
+             */
+            ad_id?: number;
+            /**
+             * Ad format. Possible values: *'1' — image and text,, *'2' — big image,, *'3' — exclusive format,, *'4' — community, square image,, *'7' — special app format,, *'8' — special community format,, *'9' — post in community,, *'10' — app board.
+             *
+             */
+            ad_format?: number;
+            /**
+             * Platforms to use for ad showing. Possible values: (for 'ad_format' = '1'), *'0' — VK and partner sites,, *'1' — VK only. (for 'ad_format' = '9'), *'all' — all platforms,, *'desktop' — desktop version,, *'mobile' — mobile version and apps.
+             *
+             */
+            ad_platform?: string;
+            ad_platform_no_wall?: string;
+            ad_platform_no_ad_network?: string;
+            /**
+             * URL for the advertised object.
+             *
+             */
+            link_url: string;
+            /**
+             * Domain of the advertised object.
+             *
+             */
+            link_domain?: string;
+        }>(params: Params): Responses.AdsGetTargetingStatsResponse["response"];
+        /**
+         * Returns URL to upload an ad photo to.
+         * @access user
+         *
+         * @see https://vk.com/dev/ads.getUploadURL
+         */
+        getUploadURL<Params extends {
+            /**
+             * Ad format: *1 — image and text,, *2 — big image,, *3 — exclusive format,, *4 — community, square image,, *7 — special app format.
+             *
+             */
+            ad_format: number;
+            icon?: number;
+        }>(params: Params): Responses.AdsGetUploadURLResponse["response"];
+        /**
+         * Returns URL to upload an ad video to.
+         * @access user
+         *
+         * @see https://vk.com/dev/ads.getVideoUploadURL
+         */
+        getVideoUploadURL<Params extends never>(params?: Params): Responses.AdsGetVideoUploadURLResponse["response"];
+        /**
+         * Imports a list of advertiser's contacts to count VK registered users against the target group.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.importTargetContacts
+         */
+        importTargetContacts<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * 'Only for advertising agencies.' , ID of the client with the advertising account where the group will be created.
+             *
+             */
+            client_id?: number;
+            /**
+             * Target group ID.
+             *
+             */
+            target_group_id: number;
+            /**
+             * List of phone numbers, emails or user IDs separated with a comma.
+             *
+             */
+            contacts: string;
+        }>(params: Params): Responses.AdsImportTargetContactsResponse["response"];
+        /**
+         * Removes managers and/or supervisors from advertising account.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.removeOfficeUsers
+         */
+        removeOfficeUsers<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Serialized JSON array with IDs of deleted managers.
+             *
+             */
+            ids: string;
+        }>(params: Params): Responses.AdsRemoveOfficeUsersResponse["response"];
+        /**
+         * Edits ads.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.updateAds
+         */
+        updateAds<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Serialized JSON array of objects that describe changes in ads. Description of 'ad_edit_specification' objects see below.
+             *
+             */
+            data: string;
+        }>(params: Params): Responses.AdsUpdateAdsResponse["response"];
+        /**
+         * Edits advertising campaigns.
+         * @access user
+         * @throws {Errors.ApiErrorAdsPartialSuccess} - Some part of the request has not been completed
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.updateCampaigns
+         */
+        updateCampaigns<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Serialized JSON array of objects that describe changes in campaigns. Description of 'campaign_mod' objects see below.
+             *
+             */
+            data: string;
+        }>(params: Params): Responses.AdsUpdateCampaignsResponse["response"];
+        /**
+         * Edits clients of an advertising agency.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.updateClients
+         */
+        updateClients<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * Serialized JSON array of objects that describe changes in clients. Description of 'client_mod' objects see below.
+             *
+             */
+            data: string;
+        }>(params: Params): Responses.AdsUpdateClientsResponse["response"];
+        /**
+         * Edits a retarget group.
+         * @access user
+         * @throws {Errors.ApiErrorWeightedFlood} - Permission denied. You have requested too many actions this day. Try later.
+         * @see https://vk.com/dev/ads.updateTargetGroup
+         */
+        updateTargetGroup<Params extends {
+            /**
+             * Advertising account ID.
+             *
+             */
+            account_id: number;
+            /**
+             * 'Only for advertising agencies.' , ID of the client with the advertising account where the group will be created.
+             *
+             */
+            client_id?: number;
+            /**
+             * Group ID.
+             *
+             */
+            target_group_id: number;
+            /**
+             * New name of the target group — a string up to 64 characters long.
+             *
+             */
+            name: string;
+            /**
+             * Domain of the site where user accounting code will be placed.
+             *
+             */
+            domain?: string;
+            /**
+             * 'Only for the groups that get audience from sites with user accounting code.', Time in days when users added to a retarget group will be automatically excluded from it. '0' – automatic exclusion is off.
+             * @maximum 720
+             * @default 720
+             * @maximum 720
+             * @default 720
+             */
+            lifetime?: number;
+            target_pixel_id?: number;
+            target_pixel_rules?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface AppWidgets {
+        /**
+         * Allows to update community app widget
+         * @access group
+         * @throws {Errors.ApiErrorCompile} - Unable to compile code
+         * @throws {Errors.ApiErrorRuntime} - Runtime error occurred during code invocation
+         * @throws {Errors.ApiErrorBlocked} - Content blocked
+         * @throws {Errors.ApiErrorWallAccessPost} - Access to wall's post denied
+         * @throws {Errors.ApiErrorWallAccessReplies} - Access to post comments denied
+         * @throws {Errors.ApiErrorParamGroupId} - Invalid group id
+         * @see https://vk.com/dev/appWidgets.update
+         */
+        update<Params extends {
+            code: string;
+            /**
+             *
+             * @enum {string} compact_list, cover_list, donation, list, match, matches, table, text, tiles
+             * @enum {string} compact_list, cover_list, donation, list, match, matches, table, text, tiles
+             */
+            type: "compact_list" | "cover_list" | "donation" | "list" | "match" | "matches" | "table" | "text" | "tiles";
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Apps {
+        /**
+         * Deletes all request notifications from the current app.
+         * @access user
+         *
+         * @see https://vk.com/dev/apps.deleteAppRequests
+         */
+        deleteAppRequests<Params extends never>(params?: Params): Responses.OkResponse["response"];
+        /**
+         * Returns applications data.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/apps.get
+         */
+        get<Params extends {
+            /**
+             * Application ID
+             *
+             */
+            app_id?: number;
+            /**
+             * List of application ID
+             *
+             */
+            app_ids?: string[];
+            /**
+             * platform. Possible values: *'ios' — iOS,, *'android' — Android,, *'winphone' — Windows Phone,, *'web' — приложения на vk.com. By default: 'web'.
+             * @enum {string} android, ios, web, winphone
+             * @default web
+             * @enum {string} android, ios, web, winphone
+             * @default web
+             */
+            platform?: "android" | "ios" | "web" | "winphone";
+            extended?: boolean;
+            return_friends?: boolean;
+            /**
+             * Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'contacts', 'education', 'online', 'counters', 'relation', 'last_seen', 'activity', 'can_write_private_message', 'can_see_all_posts', 'can_post', 'universities', (only if return_friends - 1)
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Case for declension of user name and surname: 'nom' — nominative (default),, 'gen' — genitive,, 'dat' — dative,, 'acc' — accusative,, 'ins' — instrumental,, 'abl' — prepositional. (only if 'return_friends' = '1')
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             */
+            name_case?: "nom" | "gen" | "dat" | "acc" | "ins" | "abl";
+        }>(params: Params): Responses.AppsGetResponse["response"];
+        /**
+         * Returns a list of applications (apps) available to users in the App Catalog.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/apps.getCatalog
+         */
+        getCatalog<Params extends {
+            /**
+             * Sort order: 'popular_today' — popular for one day (default), 'visitors' — by visitors number , 'create_date' — by creation date, 'growth_rate' — by growth rate, 'popular_week' — popular for one week
+             * @enum {string} popular_today, visitors, create_date, growth_rate, popular_week
+             * @enum {string} popular_today, visitors, create_date, growth_rate, popular_week
+             */
+            sort?: "popular_today" | "visitors" | "create_date" | "growth_rate" | "popular_week";
+            /**
+             * Offset required to return a specific subset of apps.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of apps to return.
+             * @default 100
+             * @default 100
+             */
+            count: number;
+            platform?: string;
+            /**
+             * '1' — to return additional fields 'screenshots', 'MAU', 'catalog_position', and 'international'. If set, 'count' must be less than or equal to '100'. '0' — not to return additional fields (default).
+             *
+             */
+            extended?: boolean;
+            return_friends?: boolean;
+            fields?: Objects.UsersFields[];
+            name_case?: string;
+            /**
+             * Search query string.
+             *
+             */
+            q?: string;
+            genre_id?: number;
+            /**
+             * 'installed' — to return list of installed apps (only for mobile platform).
+             * @enum {string} favorite, featured, installed, new
+             * @enum {string} favorite, featured, installed, new
+             */
+            filter?: "favorite" | "featured" | "installed" | "new";
+        }>(params: Params): Responses.AppsGetCatalogResponse["response"];
+        /**
+         * Creates friends list for requests and invites in current app.
+         * @access user
+         *
+         * @see https://vk.com/dev/apps.getFriendsList
+         */
+        getFriendsList<Params extends {
+            extended?: boolean;
+            /**
+             * List size.
+             * @maximum 5000
+             * @default 20
+             * @maximum 5000
+             * @default 20
+             */
+            count?: number;
+            offset?: number;
+            /**
+             * List type. Possible values: * 'invite' — available for invites (don't play the game),, * 'request' — available for request (play the game). By default: 'invite'.
+             * @enum {string} invite, request
+             * @default invite
+             * @enum {string} invite, request
+             * @default invite
+             */
+            type?: "invite" | "request";
+            /**
+             * Additional profile fields, see {@link https://vk.com/dev/fields|description}.
+             *
+             */
+            fields?: Objects.UsersFields[];
+        }>(params: Params): Responses.AppsGetFriendsListResponse["response"];
+        /**
+         * Returns players rating in the game.
+         * @access user
+         *
+         * @see https://vk.com/dev/apps.getLeaderboard
+         */
+        getLeaderboard<Params extends {
+            /**
+             * Leaderboard type. Possible values: *'level' — by level,, *'points' — by mission points,, *'score' — by score ().
+             * @enum {string} level, points, score
+             * @enum {string} level, points, score
+             */
+            type: "level" | "points" | "score";
+            /**
+             * Rating type. Possible values: *'1' — global rating among all players,, *'0' — rating among user friends.
+             * @default 1
+             * @default 1
+             */
+            global?: boolean;
+            /**
+             * 1 — to return additional info about users
+             *
+             */
+            extended?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.AppsGetLeaderboardExtendedResponse["response"] : Responses.AppsGetLeaderboardResponse["response"];
+        /**
+         * Returns scopes for auth
+         * @access user
+         *
+         * @see https://vk.com/dev/apps.getScopes
+         */
+        getScopes<Params extends {
+            /**
+             *
+             * @enum {string} group, user
+             * @default user
+             * @enum {string} group, user
+             * @default user
+             */
+            type?: "group" | "user";
+        }>(params: Params): Responses.AppsGetScopesResponse["response"];
+        /**
+         * Returns user score in app
+         * @access user
+         *
+         * @see https://vk.com/dev/apps.getScore
+         */
+        getScore<Params extends {
+            user_id: number;
+        }>(params: Params): Responses.AppsGetScoreResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorActionFailed} - Unable to process action
+         * @see https://vk.com/dev/apps.promoHasActiveGift
+         */
+        promoHasActiveGift<Params extends {
+            /**
+             * Id of game promo action
+             *
+             */
+            promo_id: number;
+            user_id?: number;
+        }>(params: Params): Responses.BaseBoolResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorActionFailed} - Unable to process action
+         * @see https://vk.com/dev/apps.promoUseGift
+         */
+        promoUseGift<Params extends {
+            /**
+             * Id of game promo action
+             *
+             */
+            promo_id: number;
+            user_id?: number;
+        }>(params: Params): Responses.BaseBoolResponse["response"];
+        /**
+         * Sends a request to another user in an app that uses VK authorization.
+         * @access user
+         * @throws {Errors.ApiErrorFlood} - Flood control
+         * @see https://vk.com/dev/apps.sendRequest
+         */
+        sendRequest<Params extends {
+            /**
+             * id of the user to send a request
+             *
+             */
+            user_id: number;
+            /**
+             * request text
+             *
+             */
+            text?: string;
+            /**
+             * request type. Values: 'invite' – if the request is sent to a user who does not have the app installed,, 'request' – if a user has already installed the app
+             * @enum {string} invite, request
+             * @default request
+             * @enum {string} invite, request
+             * @default request
+             */
+            type?: "invite" | "request";
+            name?: string;
+            /**
+             * special string key to be sent with the request
+             *
+             */
+            key?: string;
+            separate?: boolean;
+        }>(params: Params): Responses.AppsSendRequestResponse["response"];
+    }
+    interface Auth {
+        /**
+         * Checks a user's phone number for correctness.
+         * @access user
+         * @access open
+         * @throws {Errors.ApiErrorPhoneAlreadyUsed} - This phone number is used by another user
+         * @throws {Errors.ApiErrorAuthDelay} - Processing.. Try later
+         * @throws {Errors.ApiErrorParamPhone} - Invalid phone number
+         * @see https://vk.com/dev/auth.checkPhone
+         */
+        checkPhone<Params extends {
+            /**
+             * Phone number.
+             *
+             */
+            phone: string;
+            /**
+             * User ID.
+             *
+             */
+            client_id?: number;
+            client_secret?: string;
+            auth_by_phone?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Allows to restore account access using a code received via SMS. " This method is only available for apps with {@link https://vk.com/dev/auth_direct|Direct authorization} access. "
+         * @access user
+         * @access open
+         * @throws {Errors.ApiErrorAuthFloodError} - Too many auth attempts, try again later
+         * @see https://vk.com/dev/auth.restore
+         */
+        restore<Params extends {
+            /**
+             * User phone number.
+             *
+             */
+            phone: string;
+            /**
+             * User last name.
+             *
+             */
+            last_name: string;
+        }>(params: Params): Responses.AuthRestoreResponse["response"];
+    }
+    interface Board {
+        /**
+         * Creates a new topic on a community's discussion board.
+         * @access user
+         *
+         * @see https://vk.com/dev/board.addTopic
+         */
+        addTopic<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * Topic title.
+             *
+             */
+            title: string;
+            /**
+             * Text of the topic.
+             *
+             */
+            text?: string;
+            /**
+             * For a community: '1' — to post the topic as by the community, '0' — to post the topic as by the user (default)
+             *
+             */
+            from_group?: boolean;
+            /**
+             * List of media objects attached to the topic, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media object: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, '<owner_id>' — ID of the media owner. '<media_id>' — Media ID. Example: "photo100172_166443618,photo66748_265827614", , "NOTE: If you try to attach more than one reference, an error will be thrown.",
+             *
+             */
+            attachments?: string[];
+        }>(params: Params): Responses.BoardAddTopicResponse["response"];
+        /**
+         * Closes a topic on a community's discussion board so that comments cannot be posted.
+         * @access user
+         *
+         * @see https://vk.com/dev/board.closeTopic
+         */
+        closeTopic<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * Topic ID.
+             *
+             */
+            topic_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Adds a comment on a topic on a community's discussion board.
+         * @access user
+         *
+         * @see https://vk.com/dev/board.createComment
+         */
+        createComment<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * ID of the topic to be commented on.
+             *
+             */
+            topic_id: number;
+            /**
+             * (Required if 'attachments' is not set.) Text of the comment.
+             *
+             */
+            message?: string;
+            /**
+             * (Required if 'text' is not set.) List of media objects attached to the comment, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media object: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, '<owner_id>' — ID of the media owner. '<media_id>' — Media ID.
+             *
+             */
+            attachments?: string[];
+            /**
+             * '1' — to post the comment as by the community, '0' — to post the comment as by the user (default)
+             *
+             */
+            from_group?: boolean;
+            /**
+             * Sticker ID.
+             *
+             */
+            sticker_id?: number;
+            /**
+             * Unique identifier to avoid repeated comments.
+             *
+             */
+            guid?: string;
+        }>(params: Params): Responses.BoardCreateCommentResponse["response"];
+        /**
+         * Deletes a comment on a topic on a community's discussion board.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/board.deleteComment
+         */
+        deleteComment<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * Topic ID.
+             *
+             */
+            topic_id: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Deletes a topic from a community's discussion board.
+         * @access user
+         *
+         * @see https://vk.com/dev/board.deleteTopic
+         */
+        deleteTopic<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * Topic ID.
+             *
+             */
+            topic_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits a comment on a topic on a community's discussion board.
+         * @access user
+         *
+         * @see https://vk.com/dev/board.editComment
+         */
+        editComment<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * Topic ID.
+             *
+             */
+            topic_id: number;
+            /**
+             * ID of the comment on the topic.
+             *
+             */
+            comment_id: number;
+            /**
+             * (Required if 'attachments' is not set). New comment text.
+             *
+             */
+            message?: string;
+            /**
+             * (Required if 'message' is not set.) List of media objects attached to the comment, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media object: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, '<owner_id>' — ID of the media owner. '<media_id>' — Media ID. Example: "photo100172_166443618,photo66748_265827614"
+             *
+             */
+            attachments?: string[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits the title of a topic on a community's discussion board.
+         * @access user
+         *
+         * @see https://vk.com/dev/board.editTopic
+         */
+        editTopic<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * Topic ID.
+             *
+             */
+            topic_id: number;
+            /**
+             * New title of the topic.
+             *
+             */
+            title: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Pins a topic (fixes its place) to the top of a community's discussion board.
+         * @access user
+         *
+         * @see https://vk.com/dev/board.fixTopic
+         */
+        fixTopic<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * Topic ID.
+             *
+             */
+            topic_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns a list of comments on a topic on a community's discussion board.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/board.getComments
+         */
+        getComments<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * Topic ID.
+             *
+             */
+            topic_id: number;
+            /**
+             * '1' — to return the 'likes' field, '0' — not to return the 'likes' field (default)
+             *
+             */
+            need_likes?: boolean;
+            start_comment_id?: number;
+            /**
+             * Offset needed to return a specific subset of comments.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of comments to return.
+             * @maximum 100
+             * @default 20
+             * @maximum 100
+             * @default 20
+             */
+            count?: number;
+            /**
+             * '1' — to return information about users who posted comments, '0' — to return no additional fields (default)
+             *
+             */
+            extended?: boolean;
+            /**
+             * Sort order: 'asc' — by creation date in chronological order, 'desc' — by creation date in reverse chronological order,
+             * @enum {string} asc, desc
+             * @enum {string} asc, desc
+             */
+            sort?: "asc" | "desc";
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.BoardGetCommentsExtendedResponse["response"] : Responses.BoardGetCommentsResponse["response"];
+        /**
+         * Returns a list of topics on a community's discussion board.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/board.getTopics
+         */
+        getTopics<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * IDs of topics to be returned (100 maximum). By default, all topics are returned. If this parameter is set, the 'order', 'offset', and 'count' parameters are ignored.
+             *
+             */
+            topic_ids?: number[];
+            /**
+             * Sort order: '1' — by date updated in reverse chronological order. '2' — by date created in reverse chronological order. '-1' — by date updated in chronological order. '-2' — by date created in chronological order. If no sort order is specified, topics are returned in the order specified by the group administrator. Pinned topics are returned first, regardless of the sorting.
+             *
+             */
+            order?: number;
+            /**
+             * Offset needed to return a specific subset of topics.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of topics to return.
+             * @maximum 100
+             * @default 40
+             * @maximum 100
+             * @default 40
+             */
+            count?: number;
+            /**
+             * '1' — to return information about users who created topics or who posted there last, '0' — to return no additional fields (default)
+             *
+             */
+            extended?: boolean;
+            /**
+             * '1' — to return the first comment in each topic,, '2' — to return the last comment in each topic,, '0' — to return no comments. By default: '0'.
+             *
+             */
+            preview?: number;
+            /**
+             * Number of characters after which to truncate the previewed comment. To preview the full comment, specify '0'.
+             * @default 90
+             * @default 90
+             */
+            preview_length?: number;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.BoardGetTopicsExtendedResponse["response"] : Responses.BoardGetTopicsResponse["response"];
+        /**
+         * Re-opens a previously closed topic on a community's discussion board.
+         * @access user
+         *
+         * @see https://vk.com/dev/board.openTopic
+         */
+        openTopic<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * Topic ID.
+             *
+             */
+            topic_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Restores a comment deleted from a topic on a community's discussion board.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/board.restoreComment
+         */
+        restoreComment<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * Topic ID.
+             *
+             */
+            topic_id: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Unpins a pinned topic from the top of a community's discussion board.
+         * @access user
+         *
+         * @see https://vk.com/dev/board.unfixTopic
+         */
+        unfixTopic<Params extends {
+            /**
+             * ID of the community that owns the discussion board.
+             *
+             */
+            group_id: number;
+            /**
+             * Topic ID.
+             *
+             */
+            topic_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Database {
+        /**
+         * Returns list of chairs on a specified faculty.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/database.getChairs
+         */
+        getChairs<Params extends {
+            /**
+             * id of the faculty to get chairs from
+             *
+             */
+            faculty_id: number;
+            /**
+             * offset required to get a certain subset of chairs
+             *
+             */
+            offset?: number;
+            /**
+             * amount of chairs to get
+             * @maximum 10000
+             * @default 100
+             * @maximum 10000
+             * @default 100
+             */
+            count?: number;
+        }>(params: Params): Responses.DatabaseGetChairsResponse["response"];
+        /**
+         * Returns a list of cities.
+         * @access user
+         *
+         * @see https://vk.com/dev/database.getCities
+         */
+        getCities<Params extends {
+            /**
+             * Country ID.
+             *
+             */
+            country_id: number;
+            /**
+             * Region ID.
+             *
+             */
+            region_id?: number;
+            /**
+             * Search query.
+             *
+             */
+            q?: string;
+            /**
+             * '1' — to return all cities in the country, '0' — to return major cities in the country (default),
+             *
+             */
+            need_all?: boolean;
+            /**
+             * Offset needed to return a specific subset of cities.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of cities to return.
+             * @maximum 1000
+             * @default 100
+             * @maximum 1000
+             * @default 100
+             */
+            count?: number;
+        }>(params: Params): Responses.DatabaseGetCitiesResponse["response"];
+        /**
+         * Returns information about cities by their IDs.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/database.getCitiesById
+         */
+        getCitiesById<Params extends {
+            /**
+             * City IDs.
+             *
+             */
+            city_ids?: number[];
+        }>(params: Params): Responses.DatabaseGetCitiesByIdResponse["response"];
+        /**
+         * Returns a list of countries.
+         * @access user
+         *
+         * @see https://vk.com/dev/database.getCountries
+         */
+        getCountries<Params extends {
+            /**
+             * '1' — to return a full list of all countries, '0' — to return a list of countries near the current user's country (default).
+             *
+             */
+            need_all?: boolean;
+            /**
+             * Country codes in {@link https://vk.com/dev/country_codes|ISO 3166-1 alpha-2} standard.
+             *
+             */
+            code?: string;
+            /**
+             * Offset needed to return a specific subset of countries.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of countries to return.
+             * @maximum 1000
+             * @default 100
+             * @maximum 1000
+             * @default 100
+             */
+            count?: number;
+        }>(params: Params): Responses.DatabaseGetCountriesResponse["response"];
+        /**
+         * Returns information about countries by their IDs.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/database.getCountriesById
+         */
+        getCountriesById<Params extends {
+            /**
+             * Country IDs.
+             *
+             */
+            country_ids?: number[];
+        }>(params: Params): Responses.DatabaseGetCountriesByIdResponse["response"];
+        /**
+         * Returns a list of faculties (i.e., university departments).
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/database.getFaculties
+         */
+        getFaculties<Params extends {
+            /**
+             * University ID.
+             *
+             */
+            university_id: number;
+            /**
+             * Offset needed to return a specific subset of faculties.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of faculties to return.
+             * @maximum 10000
+             * @default 100
+             * @maximum 10000
+             * @default 100
+             */
+            count?: number;
+        }>(params: Params): Responses.DatabaseGetFacultiesResponse["response"];
+        /**
+         * Get metro stations by city
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/database.getMetroStations
+         */
+        getMetroStations<Params extends {
+            city_id: number;
+            offset?: number;
+            /**
+             *
+             * @maximum 500
+             * @default 100
+             * @maximum 500
+             * @default 100
+             */
+            count?: number;
+            extended?: boolean;
+        }>(params: Params): Responses.DatabaseGetMetroStationsResponse["response"];
+        /**
+         * Get metro station by his id
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/database.getMetroStationsById
+         */
+        getMetroStationsById<Params extends {
+            station_ids?: number[];
+        }>(params: Params): Responses.DatabaseGetMetroStationsByIdResponse["response"];
+        /**
+         * Returns a list of regions.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/database.getRegions
+         */
+        getRegions<Params extends {
+            /**
+             * Country ID, received in {@link https://vk.com/dev/database.getCountries|database.getCountries} method.
+             *
+             */
+            country_id: number;
+            /**
+             * Search query.
+             *
+             */
+            q?: string;
+            /**
+             * Offset needed to return specific subset of regions.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of regions to return.
+             * @maximum 1000
+             * @default 100
+             * @maximum 1000
+             * @default 100
+             */
+            count?: number;
+        }>(params: Params): Responses.DatabaseGetRegionsResponse["response"];
+        /**
+         * Returns a list of school classes specified for the country.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/database.getSchoolClasses
+         */
+        getSchoolClasses<Params extends {
+            /**
+             * Country ID.
+             *
+             */
+            country_id?: number;
+        }>(params: Params): Responses.DatabaseGetSchoolClassesResponse["response"];
+        /**
+         * Returns a list of schools.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/database.getSchools
+         */
+        getSchools<Params extends {
+            /**
+             * Search query.
+             *
+             */
+            q?: string;
+            /**
+             * City ID.
+             *
+             */
+            city_id: number;
+            /**
+             * Offset needed to return a specific subset of schools.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of schools to return.
+             * @maximum 10000
+             * @default 100
+             * @maximum 10000
+             * @default 100
+             */
+            count?: number;
+        }>(params: Params): Responses.DatabaseGetSchoolsResponse["response"];
+        /**
+         * Returns a list of higher education institutions.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/database.getUniversities
+         */
+        getUniversities<Params extends {
+            /**
+             * Search query.
+             *
+             */
+            q?: string;
+            /**
+             * Country ID.
+             *
+             */
+            country_id?: number;
+            /**
+             * City ID.
+             *
+             */
+            city_id?: number;
+            /**
+             * Offset needed to return a specific subset of universities.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of universities to return.
+             * @maximum 10000
+             * @default 100
+             * @maximum 10000
+             * @default 100
+             */
+            count?: number;
+        }>(params: Params): Responses.DatabaseGetUniversitiesResponse["response"];
+    }
+    interface Docs {
+        /**
+         * Copies a document to a user's or community's document list.
+         * @access user
+         *
+         * @see https://vk.com/dev/docs.add
+         */
+        add<Params extends {
+            /**
+             * ID of the user or community that owns the document. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id: number;
+            /**
+             * Document ID.
+             *
+             */
+            doc_id: number;
+            /**
+             * Access key. This parameter is required if 'access_key' was returned with the document's data.
+             *
+             */
+            access_key?: string;
+        }>(params: Params): Responses.DocsAddResponse["response"];
+        /**
+         * Deletes a user or community document.
+         * @access user
+         * @throws {Errors.ApiErrorParamDocDeleteAccess} - Access to document deleting is denied
+         * @throws {Errors.ApiErrorParamDocId} - Invalid document id
+         * @see https://vk.com/dev/docs.delete
+         */
+        delete<Params extends {
+            /**
+             * ID of the user or community that owns the document. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id: number;
+            /**
+             * Document ID.
+             *
+             */
+            doc_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits a document.
+         * @access user
+         * @throws {Errors.ApiErrorParamDocAccess} - Access to document is denied
+         * @throws {Errors.ApiErrorParamDocId} - Invalid document id
+         * @throws {Errors.ApiErrorParamDocTitle} - Invalid document title
+         * @see https://vk.com/dev/docs.edit
+         */
+        edit<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id: number;
+            /**
+             * Document ID.
+             *
+             */
+            doc_id: number;
+            /**
+             * Document title.
+             *
+             */
+            title?: string;
+            /**
+             * Document tags.
+             *
+             */
+            tags?: string[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns detailed information about user or community documents.
+         * @access user
+         *
+         * @see https://vk.com/dev/docs.get
+         */
+        get<Params extends {
+            /**
+             * Number of documents to return. By default, all documents.
+             *
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of documents.
+             *
+             */
+            offset?: number;
+            type?: number;
+            /**
+             * ID of the user or community that owns the documents. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            return_tags?: boolean;
+        }>(params: Params): Responses.DocsGetResponse["response"];
+        /**
+         * Returns information about documents by their IDs.
+         * @access user
+         *
+         * @see https://vk.com/dev/docs.getById
+         */
+        getById<Params extends {
+            /**
+             * Document IDs. Example: , "66748_91488,66748_91455",
+             *
+             */
+            docs: string[];
+            return_tags?: boolean;
+        }>(params: Params): Responses.DocsGetByIdResponse["response"];
+        /**
+         * Returns the server address for document upload.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesDenySend} - Can't send messages for users without permission
+         * @see https://vk.com/dev/docs.getMessagesUploadServer
+         */
+        getMessagesUploadServer<Params extends {
+            /**
+             * Document type.
+             * @enum {string} audio_message, doc, graffiti
+             * @default doc
+             * @enum {string} audio_message, doc, graffiti
+             * @default doc
+             */
+            type?: "audio_message" | "doc" | "graffiti";
+            /**
+             * Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'Chat ID', e.g. '2000000001'. For community: '- Community ID', e.g. '-12345'. "
+             *
+             */
+            peer_id?: number;
+        }>(params: Params): Responses.BaseGetUploadServerResponse["response"];
+        /**
+         * Returns documents types available for current user.
+         * @access user
+         *
+         * @see https://vk.com/dev/docs.getTypes
+         */
+        getTypes<Params extends {
+            /**
+             * ID of the user or community that owns the documents. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id: number;
+        }>(params: Params): Responses.DocsGetTypesResponse["response"];
+        /**
+         * Returns the server address for document upload.
+         * @access user
+         *
+         * @see https://vk.com/dev/docs.getUploadServer
+         */
+        getUploadServer<Params extends {
+            /**
+             * Community ID (if the document will be uploaded to the community).
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.DocsGetUploadServer["response"];
+        /**
+         * Returns the server address for document upload onto a user's or community's wall.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/docs.getWallUploadServer
+         */
+        getWallUploadServer<Params extends {
+            /**
+             * Community ID (if the document will be uploaded to the community).
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.BaseGetUploadServerResponse["response"];
+        /**
+         * Saves a document after {@link https://vk.com/dev/upload_files_2|uploading it to a server}.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorSaveFile} - Couldn't save file
+         * @see https://vk.com/dev/docs.save
+         */
+        save<Params extends {
+            /**
+             * This parameter is returned when the file is {@link https://vk.com/dev/upload_files_2|uploaded to the server}.
+             *
+             */
+            file: string;
+            /**
+             * Document title.
+             *
+             */
+            title?: string;
+            /**
+             * Document tags.
+             *
+             */
+            tags?: string;
+            return_tags?: boolean;
+        }>(params: Params): Responses.DocsSaveResponse["response"];
+        /**
+         * Returns a list of documents matching the search criteria.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/docs.search
+         */
+        search<Params extends {
+            /**
+             * Search query string.
+             *
+             */
+            q: string;
+            search_own?: boolean;
+            /**
+             * Number of results to return.
+             * @default 20
+             * @default 20
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+            return_tags?: boolean;
+        }>(params: Params): Responses.DocsSearchResponse["response"];
+    }
+    interface Fave {
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @see https://vk.com/dev/fave.addArticle
+         */
+        addArticle<Params extends {
+            url: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Adds a link to user faves.
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.addLink
+         */
+        addLink<Params extends {
+            /**
+             * Link URL.
+             *
+             */
+            link: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.addPage
+         */
+        addPage<Params extends {
+            user_id?: number;
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.addPost
+         */
+        addPost<Params extends {
+            owner_id: number;
+            id: number;
+            access_key?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.addProduct
+         */
+        addProduct<Params extends {
+            owner_id: number;
+            id: number;
+            access_key?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorLimits} - Out of limits
+         * @see https://vk.com/dev/fave.addTag
+         */
+        addTag<Params extends {
+            name?: string;
+            /**
+             *
+             * @enum {string} back, front
+             * @default back
+             * @enum {string} back, front
+             * @default back
+             */
+            position?: "back" | "front";
+        }>(params: Params): Responses.FaveAddTagResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.addVideo
+         */
+        addVideo<Params extends {
+            owner_id: number;
+            id: number;
+            access_key?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.editTag
+         */
+        editTag<Params extends {
+            id: number;
+            name: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.get
+         */
+        get<Params extends {
+            /**
+             * '1' — to return additional 'wall', 'profiles', and 'groups' fields. By default: '0'.
+             *
+             */
+            extended?: boolean;
+            /**
+             *
+             * @enum {string} article, link, narrative, page, podcast, post, product, video
+             * @enum {string} article, link, narrative, page, podcast, post, product, video
+             */
+            item_type?: "article" | "link" | "narrative" | "page" | "podcast" | "post" | "product" | "video";
+            /**
+             * Tag ID.
+             *
+             */
+            tag_id?: number;
+            /**
+             * Offset needed to return a specific subset of users.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of users to return.
+             * @maximum 100
+             * @minimum 1
+             * @default 50
+             * @maximum 100
+             * @minimum 1
+             * @default 50
+             */
+            count?: number;
+            fields?: string;
+            is_from_snackbar?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.FaveGetExtendedResponse["response"] : Responses.FaveGetResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.getPages
+         */
+        getPages<Params extends {
+            /**
+             *
+             * @maximum 10000
+             * @maximum 10000
+             */
+            offset?: number;
+            /**
+             *
+             * @maximum 500
+             * @minimum 1
+             * @default 50
+             * @maximum 500
+             * @minimum 1
+             * @default 50
+             */
+            count?: number;
+            /**
+             *
+             * @enum {string} groups, hints, users
+             * @enum {string} groups, hints, users
+             */
+            type?: "groups" | "hints" | "users";
+            fields?: Objects.BaseUserGroupFields[];
+            tag_id?: number;
+        }>(params: Params): Responses.FaveGetPagesResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.getTags
+         */
+        getTags<Params extends never>(params?: Params): Responses.FaveGetTagsResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.markSeen
+         */
+        markSeen<Params extends never>(params?: Params): Responses.BaseBoolResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.removeArticle
+         */
+        removeArticle<Params extends {
+            owner_id: number;
+            article_id: number;
+        }>(params: Params): Responses.BaseBoolResponse["response"];
+        /**
+         * Removes link from the user's faves.
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.removeLink
+         */
+        removeLink<Params extends {
+            /**
+             * Link ID (can be obtained by {@link https://vk.com/dev/faves.getLinks|faves.getLinks} method).
+             *
+             */
+            link_id?: string;
+            /**
+             * Link URL
+             *
+             */
+            link?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.removePage
+         */
+        removePage<Params extends {
+            user_id?: number;
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.removePost
+         */
+        removePost<Params extends {
+            owner_id: number;
+            id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.removeProduct
+         */
+        removeProduct<Params extends {
+            owner_id: number;
+            id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.removeTag
+         */
+        removeTag<Params extends {
+            id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.reorderTags
+         */
+        reorderTags<Params extends {
+            ids: number[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @see https://vk.com/dev/fave.setPageTags
+         */
+        setPageTags<Params extends {
+            user_id?: number;
+            group_id?: number;
+            tag_ids?: number[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @see https://vk.com/dev/fave.setTags
+         */
+        setTags<Params extends {
+            /**
+             *
+             * @enum {string} article, link, narrative, page, podcast, post, product, video
+             * @enum {string} article, link, narrative, page, podcast, post, product, video
+             */
+            item_type?: "article" | "link" | "narrative" | "page" | "podcast" | "post" | "product" | "video";
+            item_owner_id?: number;
+            item_id?: number;
+            tag_ids?: number[];
+            link_id?: string;
+            link_url?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/fave.trackPageInteraction
+         */
+        trackPageInteraction<Params extends {
+            user_id?: number;
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Friends {
+        /**
+         * Approves or creates a friend request.
+         * @access user
+         * @throws {Errors.ApiErrorFriendsAddInEnemy} - Cannot add this user to friends as they have put you on their blacklist
+         * @throws {Errors.ApiErrorFriendsAddEnemy} - Cannot add this user to friends as you put him on blacklist
+         * @throws {Errors.ApiErrorFriendsAddYourself} - Cannot add user himself as friend
+         * @throws {Errors.ApiErrorFriendsAddNotFound} - Cannot add this user to friends as user not found
+         * @see https://vk.com/dev/friends.add
+         */
+        add<Params extends {
+            /**
+             * ID of the user whose friend request will be approved or to whom a friend request will be sent.
+             *
+             */
+            user_id?: number;
+            /**
+             * Text of the message (up to 500 characters) for the friend request, if any.
+             *
+             */
+            text?: string;
+            /**
+             * '1' to pass an incoming request to followers list.
+             *
+             */
+            follow?: boolean;
+        }>(params: Params): Responses.FriendsAddResponse["response"];
+        /**
+         * Creates a new friend list for the current user.
+         * @access user
+         * @throws {Errors.ApiErrorFriendsListLimit} - Reached the maximum number of lists
+         * @see https://vk.com/dev/friends.addList
+         */
+        addList<Params extends {
+            /**
+             * Name of the friend list.
+             *
+             */
+            name: string;
+            /**
+             * IDs of users to be added to the friend list.
+             *
+             */
+            user_ids?: number[];
+        }>(params: Params): Responses.FriendsAddListResponse["response"];
+        /**
+         * Checks the current user's friendship status with other specified users.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.areFriends
+         */
+        areFriends<Params extends {
+            /**
+             * IDs of the users whose friendship status to check.
+             *
+             */
+            user_ids: number[];
+            /**
+             * '1' — to return 'sign' field. 'sign' is md5("{id}_{user_id}_{friends_status}_{application_secret}"), where id is current user ID. This field allows to check that data has not been modified by the client. By default: '0'.
+             *
+             */
+            need_sign?: boolean;
+        }>(params: Params): Responses.FriendsAreFriendsResponse["response"];
+        /**
+         * Declines a friend request or deletes a user from the current user's friend list.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.delete
+         */
+        delete<Params extends {
+            /**
+             * ID of the user whose friend request is to be declined or who is to be deleted from the current user's friend list.
+             *
+             */
+            user_id?: number;
+        }>(params: Params): Responses.FriendsDeleteResponse["response"];
+        /**
+         * Marks all incoming friend requests as viewed.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.deleteAllRequests
+         */
+        deleteAllRequests<Params extends never>(params?: Params): Responses.OkResponse["response"];
+        /**
+         * Deletes a friend list of the current user.
+         * @access user
+         * @throws {Errors.ApiErrorFriendsListId} - Invalid list id
+         * @see https://vk.com/dev/friends.deleteList
+         */
+        deleteList<Params extends {
+            /**
+             * ID of the friend list to delete.
+             * @maximum 24
+             * @maximum 24
+             */
+            list_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits the friend lists of the selected user.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.edit
+         */
+        edit<Params extends {
+            /**
+             * ID of the user whose friend list is to be edited.
+             *
+             */
+            user_id: number;
+            /**
+             * IDs of the friend lists to which to add the user.
+             *
+             */
+            list_ids?: number[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits a friend list of the current user.
+         * @access user
+         * @throws {Errors.ApiErrorFriendsListId} - Invalid list id
+         * @see https://vk.com/dev/friends.editList
+         */
+        editList<Params extends {
+            /**
+             * Name of the friend list.
+             *
+             */
+            name?: string;
+            /**
+             * Friend list ID.
+             *
+             */
+            list_id: number;
+            /**
+             * IDs of users in the friend list.
+             *
+             */
+            user_ids?: number[];
+            /**
+             * (Applies if 'user_ids' parameter is not set.), User IDs to add to the friend list.
+             *
+             */
+            add_user_ids?: number[];
+            /**
+             * (Applies if 'user_ids' parameter is not set.), User IDs to delete from the friend list.
+             *
+             */
+            delete_user_ids?: number[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns a list of user IDs or detailed information about a user's friends.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/friends.get
+         */
+        get<Params extends {
+            /**
+             * User ID. By default, the current user ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * Sort order: , 'name' — by name (enabled only if the 'fields' parameter is used), 'hints' — by rating, similar to how friends are sorted in My friends section, , This parameter is available only for {@link https://vk.com/dev/standalone|desktop applications}.
+             * @enum {string} name, hints
+             * @enum {string} name, hints
+             */
+            order?: "name" | "hints";
+            /**
+             * ID of the friend list returned by the {@link https://vk.com/dev/friends.getLists|friends.getLists} method to be used as the source. This parameter is taken into account only when the uid parameter is set to the current user ID. This parameter is available only for {@link https://vk.com/dev/standalone|desktop applications}.
+             *
+             */
+            list_id?: number;
+            /**
+             * Number of friends to return.
+             * @default 5000
+             * @default 5000
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of friends.
+             *
+             */
+            offset?: number;
+            /**
+             * Profile fields to return. Sample values: 'uid', 'first_name', 'last_name', 'nickname', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'domain', 'has_mobile', 'rate', 'contacts', 'education'.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Case for declension of user name and surname: , 'nom' — nominative (default) , 'gen' — genitive , 'dat' — dative , 'acc' — accusative , 'ins' — instrumental , 'abl' — prepositional
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             */
+            name_case?: "nom" | "gen" | "dat" | "acc" | "ins" | "abl";
+            ref?: string;
+        }>(params: Params): Responses.FriendsGetResponse["response"];
+        /**
+         * Returns a list of IDs of the current user's friends who installed the application.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.getAppUsers
+         */
+        getAppUsers<Params extends never>(params?: Params): Responses.FriendsGetAppUsersResponse["response"];
+        /**
+         * Returns a list of the current user's friends whose phone numbers, validated or specified in a profile, are in a given list.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.getByPhones
+         */
+        getByPhones<Params extends {
+            /**
+             * List of phone numbers in MSISDN format (maximum 1000). Example: "+79219876543,+79111234567"
+             *
+             */
+            phones?: string[];
+            /**
+             * Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online, counters'.
+             *
+             */
+            fields?: Objects.UsersFields[];
+        }>(params: Params): Responses.FriendsGetByPhonesResponse["response"];
+        /**
+         * Returns a list of the user's friend lists.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.getLists
+         */
+        getLists<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * '1' — to return system friend lists. By default: '0'.
+             *
+             */
+            return_system?: boolean;
+        }>(params: Params): Responses.FriendsGetListsResponse["response"];
+        /**
+         * Returns a list of user IDs of the mutual friends of two users.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.getMutual
+         */
+        getMutual<Params extends {
+            /**
+             * ID of the user whose friends will be checked against the friends of the user specified in 'target_uid'.
+             *
+             */
+            source_uid?: number;
+            /**
+             * ID of the user whose friends will be checked against the friends of the user specified in 'source_uid'.
+             *
+             */
+            target_uid?: number;
+            /**
+             * IDs of the users whose friends will be checked against the friends of the user specified in 'source_uid'.
+             *
+             */
+            target_uids?: number[];
+            /**
+             * Sort order: 'random' — random order
+             *
+             */
+            order?: string;
+            /**
+             * Number of mutual friends to return.
+             *
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of mutual friends.
+             *
+             */
+            offset?: number;
+        }>(params: Params): Responses.FriendsGetMutualResponse["response"];
+        /**
+         * Returns a list of user IDs of a user's friends who are online.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.getOnline
+         */
+        getOnline<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * Friend list ID. If this parameter is not set, information about all online friends is returned.
+             *
+             */
+            list_id?: number;
+            /**
+             * '1' — to return an additional 'online_mobile' field, '0' — (default),
+             *
+             */
+            online_mobile?: boolean;
+            /**
+             * Sort order: 'random' — random order
+             *
+             */
+            order?: string;
+            /**
+             * Number of friends to return.
+             *
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of friends.
+             *
+             */
+            offset?: number;
+        }>(params: Params): Responses.FriendsGetOnlineResponse["response"];
+        /**
+         * Returns a list of user IDs of the current user's recently added friends.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.getRecent
+         */
+        getRecent<Params extends {
+            /**
+             * Number of recently added friends to return.
+             * @maximum 1000
+             * @default 100
+             * @maximum 1000
+             * @default 100
+             */
+            count?: number;
+        }>(params: Params): Responses.FriendsGetRecentResponse["response"];
+        /**
+         * Returns information about the current user's incoming and outgoing friend requests.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.getRequests
+         */
+        getRequests<Params extends {
+            /**
+             * Offset needed to return a specific subset of friend requests.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of friend requests to return (default 100, maximum 1000).
+             * @maximum 1000
+             * @default 100
+             * @maximum 1000
+             * @default 100
+             */
+            count?: number;
+            /**
+             * '1' — to return response messages from users who have sent a friend request or, if 'suggested' is set to '1', to return a list of suggested friends
+             *
+             */
+            extended?: boolean;
+            /**
+             * '1' — to return a list of mutual friends (up to 20), if any
+             *
+             */
+            need_mutual?: boolean;
+            /**
+             * '1' — to return outgoing requests, '0' — to return incoming requests (default)
+             *
+             */
+            out?: boolean;
+            /**
+             * Sort order: '1' — by number of mutual friends, '0' — by date
+             *
+             */
+            sort?: number;
+            need_viewed?: boolean;
+            /**
+             * '1' — to return a list of suggested friends, '0' — to return friend requests (default)
+             *
+             */
+            suggested?: boolean;
+            ref?: string;
+            fields?: Objects.UsersFields[];
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.FriendsGetRequestsExtendedResponse["response"] : Responses.FriendsGetRequestsResponse["response"];
+        /**
+         * Returns a list of profiles of users whom the current user may know.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.getSuggestions
+         */
+        getSuggestions<Params extends {
+            /**
+             * Types of potential friends to return: 'mutual' — users with many mutual friends , 'contacts' — users found with the {@link https://vk.com/dev/account.importContacts|account.importContacts} method , 'mutual_contacts' — users who imported the same contacts as the current user with the {@link https://vk.com/dev/account.importContacts|account.importContacts} method
+             *
+             */
+            filter?: (/**
+             * @enum {string} mutual, contacts, mutual_contacts
+             * @enum {string} mutual, contacts, mutual_contacts */ "mutual" | "contacts" | "mutual_contacts")[];
+            /**
+             * Number of suggestions to return.
+             * @maximum 500
+             * @default 500
+             * @maximum 500
+             * @default 500
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of suggestions.
+             *
+             */
+            offset?: number;
+            /**
+             * Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online', 'counters'.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Case for declension of user name and surname: , 'nom' — nominative (default) , 'gen' — genitive , 'dat' — dative , 'acc' — accusative , 'ins' — instrumental , 'abl' — prepositional
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             */
+            name_case?: "nom" | "gen" | "dat" | "acc" | "ins" | "abl";
+        }>(params: Params): Responses.FriendsGetSuggestionsResponse["response"];
+        /**
+         * Returns a list of friends matching the search criteria.
+         * @access user
+         *
+         * @see https://vk.com/dev/friends.search
+         */
+        search<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id: number;
+            /**
+             * Search query string (e.g., 'Vasya Babich').
+             *
+             */
+            q?: string;
+            /**
+             * Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online',
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Case for declension of user name and surname: 'nom' — nominative (default), 'gen' — genitive , 'dat' — dative, 'acc' — accusative , 'ins' — instrumental , 'abl' — prepositional
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             * @default Nom
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             * @default Nom
+             */
+            name_case?: "nom" | "gen" | "dat" | "acc" | "ins" | "abl";
+            /**
+             * Offset needed to return a specific subset of friends.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of friends to return.
+             * @maximum 1000
+             * @default 20
+             * @maximum 1000
+             * @default 20
+             */
+            count?: number;
+        }>(params: Params): Responses.FriendsSearchResponse["response"];
+    }
+    interface Gifts {
+        /**
+         * Returns a list of user gifts.
+         * @access user
+         *
+         * @see https://vk.com/dev/gifts.get
+         */
+        get<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * Number of gifts to return.
+             *
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+        }>(params: Params): Responses.GiftsGetResponse["response"];
+    }
+    interface Groups {
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorAccessGroups} - Access to the groups list is denied due to the user's privacy settings
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @throws {Errors.ApiErrorGroupTooManyAddresses} - Too many addresses in club
+         * @see https://vk.com/dev/groups.addAddress
+         */
+        addAddress<Params extends {
+            group_id: number;
+            title: string;
+            address: string;
+            additional_address?: string;
+            /**
+             *
+             * @minimum 1
+             * @minimum 1
+             */
+            country_id: number;
+            /**
+             *
+             * @minimum 1
+             * @minimum 1
+             */
+            city_id: number;
+            metro_id?: number;
+            /**
+             *
+             * @maximum 90
+             * @minimum -90
+             */
+            latitude: number;
+            /**
+             *
+             * @maximum 180
+             * @minimum -180
+             */
+            longitude: number;
+            phone?: string;
+            work_info_status?: Objects.GroupsAddressWorkInfoStatus;
+            timetable?: string;
+            is_main_address?: boolean;
+        }>(params: Params): Responses.GroupsAddAddressResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorCallbackApiServersLimit} - Servers number limit is reached
+         * @see https://vk.com/dev/groups.addCallbackServer
+         */
+        addCallbackServer<Params extends {
+            group_id: number;
+            url: string;
+            title: string;
+            secret_key?: string;
+        }>(params: Params): Responses.GroupsAddCallbackServerResponse["response"];
+        /**
+         * Allows to add a link to the community.
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.addLink
+         */
+        addLink<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * Link URL.
+             *
+             */
+            link: string;
+            /**
+             * Description text for the link.
+             *
+             */
+            text?: string;
+        }>(params: Params): Responses.GroupsAddLinkResponse["response"];
+        /**
+         * Allows to approve join request to the community.
+         * @access user
+         * @throws {Errors.ApiErrorLimits} - Out of limits
+         * @see https://vk.com/dev/groups.approveRequest
+         */
+        approveRequest<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * User ID.
+             *
+             */
+            user_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.ban
+         */
+        ban<Params extends {
+            group_id: number;
+            owner_id?: number;
+            end_date?: number;
+            reason?: number;
+            comment?: string;
+            comment_visible?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Creates a new community.
+         * @access user
+         * @throws {Errors.ApiErrorLimits} - Out of limits
+         * @see https://vk.com/dev/groups.create
+         */
+        create<Params extends {
+            /**
+             * Community title.
+             *
+             */
+            title: string;
+            /**
+             * Community description (ignored for 'type' = 'public').
+             *
+             */
+            description?: string;
+            /**
+             * Community type. Possible values: *'group' – group,, *'event' – event,, *'public' – public page
+             * @enum {string} event, group, public
+             * @default group
+             * @enum {string} event, group, public
+             * @default group
+             */
+            type?: "event" | "group" | "public";
+            /**
+             * Category ID (for 'type' = 'public' only).
+             *
+             */
+            public_category?: number;
+            /**
+             * Public page subtype. Possible values: *'1' – place or small business,, *'2' – company, organization or website,, *'3' – famous person or group of people,, *'4' – product or work of art.
+             *
+             */
+            subtype?: number;
+        }>(params: Params): Responses.GroupsCreateResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @see https://vk.com/dev/groups.deleteCallbackServer
+         */
+        deleteCallbackServer<Params extends {
+            group_id: number;
+            server_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Allows to delete a link from the community.
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.deleteLink
+         */
+        deleteLink<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * Link ID.
+             *
+             */
+            link_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/groups.disableOnline
+         */
+        disableOnline<Params extends {
+            group_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits a community.
+         * @access user
+         * @throws {Errors.ApiErrorInvalidAddress} - Invalid screen name
+         * @see https://vk.com/dev/groups.edit
+         */
+        edit<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * Community title.
+             *
+             */
+            title?: string;
+            /**
+             * Community description.
+             *
+             */
+            description?: string;
+            /**
+             * Community screen name.
+             *
+             */
+            screen_name?: string;
+            /**
+             * Community type. Possible values: *'0' – open,, *'1' – closed,, *'2' – private.
+             *
+             */
+            access?: Objects.GroupsGroupAccess;
+            /**
+             * Website that will be displayed in the community information field.
+             *
+             */
+            website?: string;
+            /**
+             * Community subject. Possible values: , *'1' – auto/moto,, *'2' – activity holidays,, *'3' – business,, *'4' – pets,, *'5' – health,, *'6' – dating and communication, , *'7' – games,, *'8' – IT (computers and software),, *'9' – cinema,, *'10' – beauty and fashion,, *'11' – cooking,, *'12' – art and culture,, *'13' – literature,, *'14' – mobile services and internet,, *'15' – music,, *'16' – science and technology,, *'17' – real estate,, *'18' – news and media,, *'19' – security,, *'20' – education,, *'21' – home and renovations,, *'22' – politics,, *'23' – food,, *'24' – industry,, *'25' – travel,, *'26' – work,, *'27' – entertainment,, *'28' – religion,, *'29' – family,, *'30' – sports,, *'31' – insurance,, *'32' – television,, *'33' – goods and services,, *'34' – hobbies,, *'35' – finance,, *'36' – photo,, *'37' – esoterics,, *'38' – electronics and appliances,, *'39' – erotic,, *'40' – humor,, *'41' – society, humanities,, *'42' – design and graphics.
+             *
+             */
+            subject?: Objects.GroupsGroupSubject;
+            /**
+             * Organizer email (for events).
+             *
+             */
+            email?: string;
+            /**
+             * Organizer phone number (for events).
+             *
+             */
+            phone?: string;
+            /**
+             * RSS feed address for import (available only to communities with special permission. Contact vk.com/support to get it.
+             *
+             */
+            rss?: string;
+            /**
+             * Event start date in Unixtime format.
+             *
+             */
+            event_start_date?: number;
+            /**
+             * Event finish date in Unixtime format.
+             *
+             */
+            event_finish_date?: number;
+            /**
+             * Organizer community ID (for events only).
+             *
+             */
+            event_group_id?: number;
+            /**
+             * Public page category ID.
+             *
+             */
+            public_category?: number;
+            /**
+             * Public page subcategory ID.
+             *
+             */
+            public_subcategory?: number;
+            /**
+             * Founding date of a company or organization owning the community in "dd.mm.YYYY" format.
+             *
+             */
+            public_date?: string;
+            /**
+             * Wall settings. Possible values: *'0' – disabled,, *'1' – open,, *'2' – limited (groups and events only),, *'3' – closed (groups and events only).
+             *
+             */
+            wall?: Objects.GroupsGroupWall;
+            /**
+             * Board topics settings. Possbile values: , *'0' – disabled,, *'1' – open,, *'2' – limited (for groups and events only).
+             *
+             */
+            topics?: Objects.GroupsGroupTopics;
+            /**
+             * Photos settings. Possible values: *'0' – disabled,, *'1' – open,, *'2' – limited (for groups and events only).
+             *
+             */
+            photos?: Objects.GroupsGroupPhotos;
+            /**
+             * Video settings. Possible values: *'0' – disabled,, *'1' – open,, *'2' – limited (for groups and events only).
+             *
+             */
+            video?: Objects.GroupsGroupVideo;
+            /**
+             * Audio settings. Possible values: *'0' – disabled,, *'1' – open,, *'2' – limited (for groups and events only).
+             *
+             */
+            audio?: Objects.GroupsGroupAudio;
+            /**
+             * Links settings (for public pages only). Possible values: *'0' – disabled,, *'1' – enabled.
+             *
+             */
+            links?: boolean;
+            /**
+             * Events settings (for public pages only). Possible values: *'0' – disabled,, *'1' – enabled.
+             *
+             */
+            events?: boolean;
+            /**
+             * Places settings (for public pages only). Possible values: *'0' – disabled,, *'1' – enabled.
+             *
+             */
+            places?: boolean;
+            /**
+             * Contacts settings (for public pages only). Possible values: *'0' – disabled,, *'1' – enabled.
+             *
+             */
+            contacts?: boolean;
+            /**
+             * Documents settings. Possible values: *'0' – disabled,, *'1' – open,, *'2' – limited (for groups and events only).
+             *
+             */
+            docs?: Objects.GroupsGroupDocs;
+            /**
+             * Wiki pages settings. Possible values: *'0' – disabled,, *'1' – open,, *'2' – limited (for groups and events only).
+             *
+             */
+            wiki?: Objects.GroupsGroupWiki;
+            /**
+             * Community messages. Possible values: *'0' — disabled,, *'1' — enabled.
+             *
+             */
+            messages?: boolean;
+            articles?: boolean;
+            addresses?: boolean;
+            /**
+             * Community age limits. Possible values: *'1' — no limits,, *'2' — 16+,, *'3' — 18+.
+             *
+             */
+            age_limits?: Objects.GroupsGroupAgeLimits;
+            /**
+             * Market settings. Possible values: *'0' – disabled,, *'1' – enabled.
+             *
+             */
+            market?: boolean;
+            /**
+             * market comments settings. Possible values: *'0' – disabled,, *'1' – enabled.
+             *
+             */
+            market_comments?: boolean;
+            /**
+             * Market delivery countries.
+             *
+             */
+            market_country?: number[];
+            /**
+             * Market delivery cities (if only one country is specified).
+             *
+             */
+            market_city?: number[];
+            /**
+             * Market currency settings. Possbile values: , *'643' – Russian rubles,, *'980' – Ukrainian hryvnia,, *'398' – Kazakh tenge,, *'978' – Euro,, *'840' – US dollars
+             *
+             */
+            market_currency?: Objects.GroupsGroupMarketCurrency;
+            /**
+             * Seller contact for market. Set '0' for community messages.
+             *
+             */
+            market_contact?: number;
+            /**
+             * ID of a wiki page with market description.
+             *
+             */
+            market_wiki?: number;
+            /**
+             * Obscene expressions filter in comments. Possible values: , *'0' – disabled,, *'1' – enabled.
+             *
+             */
+            obscene_filter?: boolean;
+            /**
+             * Stopwords filter in comments. Possible values: , *'0' – disabled,, *'1' – enabled.
+             *
+             */
+            obscene_stopwords?: boolean;
+            /**
+             * Keywords for stopwords filter.
+             *
+             */
+            obscene_words?: string[];
+            main_section?: number;
+            secondary_section?: number;
+            /**
+             * Country of the community.
+             *
+             */
+            country?: number;
+            /**
+             * City of the community.
+             *
+             */
+            city?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorAccessGroups} - Access to the groups list is denied due to the user's privacy settings
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @throws {Errors.ApiErrorGroupTooManyAddresses} - Too many addresses in club
+         * @see https://vk.com/dev/groups.editAddress
+         */
+        editAddress<Params extends {
+            group_id: number;
+            address_id: number;
+            title?: string;
+            address?: string;
+            additional_address?: string;
+            country_id?: number;
+            city_id?: number;
+            metro_id?: number;
+            /**
+             *
+             * @maximum 90
+             * @minimum -90
+             */
+            latitude?: number;
+            /**
+             *
+             * @maximum 180
+             * @minimum -180
+             */
+            longitude?: number;
+            phone?: string;
+            work_info_status?: Objects.GroupsAddressWorkInfoStatus;
+            timetable?: string;
+            is_main_address?: boolean;
+        }>(params: Params): Responses.GroupsEditAddressResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @see https://vk.com/dev/groups.editCallbackServer
+         */
+        editCallbackServer<Params extends {
+            group_id: number;
+            server_id: number;
+            url: string;
+            title: string;
+            secret_key?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Allows to edit a link in the community.
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.editLink
+         */
+        editLink<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * Link ID.
+             *
+             */
+            link_id: number;
+            /**
+             * New description text for the link.
+             *
+             */
+            text?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Allows to add, remove or edit the community manager.
+         * @access user
+         * @throws {Errors.ApiErrorGroupChangeCreator} - Cannot edit creator role
+         * @throws {Errors.ApiErrorGroupNotInClub} - User should be in club
+         * @throws {Errors.ApiErrorGroupTooManyOfficers} - Too many officers in club
+         * @throws {Errors.ApiErrorGroupNeed2fa} - You need to enable 2FA for this action
+         * @throws {Errors.ApiErrorGroupHostNeed2fa} - User needs to enable 2FA for this action
+         * @see https://vk.com/dev/groups.editManager
+         */
+        editManager<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * User ID.
+             *
+             */
+            user_id: number;
+            /**
+             * Manager role. Possible values: *'moderator',, *'editor',, *'administrator'.
+             *
+             */
+            role?: Objects.GroupsGroupRole;
+            /**
+             * '1' — to show the manager in Contacts block of the community.
+             *
+             */
+            is_contact?: boolean;
+            /**
+             * Position to show in Contacts block.
+             *
+             */
+            contact_position?: string;
+            /**
+             * Contact phone.
+             *
+             */
+            contact_phone?: string;
+            /**
+             * Contact e-mail.
+             *
+             */
+            contact_email?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/groups.enableOnline
+         */
+        enableOnline<Params extends {
+            group_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns a list of the communities to which a user belongs.
+         * @access user
+         * @throws {Errors.ApiErrorAccessGroups} - Access to the groups list is denied due to the user's privacy settings
+         * @see https://vk.com/dev/groups.get
+         */
+        get<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * '1' — to return complete information about a user's communities, '0' — to return a list of community IDs without any additional fields (default),
+             *
+             */
+            extended?: boolean;
+            /**
+             * Types of communities to return: 'admin' — to return communities administered by the user , 'editor' — to return communities where the user is an administrator or editor, 'moder' — to return communities where the user is an administrator, editor, or moderator, 'groups' — to return only groups, 'publics' — to return only public pages, 'events' — to return only events
+             *
+             */
+            filter?: Objects.GroupsFilter[];
+            /**
+             * Profile fields to return.
+             *
+             */
+            fields?: Objects.GroupsFields[];
+            /**
+             * Offset needed to return a specific subset of communities.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of communities to return.
+             * @maximum 1000
+             * @maximum 1000
+             */
+            count?: number;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.GroupsGetExtendedResponse["response"] : Responses.GroupsGetResponse["response"];
+        /**
+         * Returns a list of community addresses.
+         * @access user
+         * @access service
+         * @throws {Errors.ApiErrorParamGroupId} - Invalid group id
+         * @throws {Errors.ApiErrorAccessGroups} - Access to the groups list is denied due to the user's privacy settings
+         * @see https://vk.com/dev/groups.getAddresses
+         */
+        getAddresses<Params extends {
+            /**
+             * ID or screen name of the community.
+             *
+             */
+            group_id: number;
+            address_ids?: number[];
+            /**
+             * Latitude of the user geo position.
+             * @maximum 90
+             * @minimum -90
+             */
+            latitude?: number;
+            /**
+             * Longitude of the user geo position.
+             * @maximum 180
+             * @minimum -180
+             */
+            longitude?: number;
+            /**
+             * Offset needed to return a specific subset of community addresses.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of community addresses to return.
+             * @default 10
+             * @default 10
+             */
+            count?: number;
+            /**
+             * Address fields
+             *
+             */
+            fields?: Objects.AddressesFields[];
+        }>(params: Params): Responses.GroupsGetAddressesResponse["response"];
+        /**
+         * Returns a list of users on a community blacklist.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @see https://vk.com/dev/groups.getBanned
+         */
+        getBanned<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * Offset needed to return a specific subset of users.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of users to return.
+             * @maximum 200
+             * @default 20
+             * @maximum 200
+             * @default 20
+             */
+            count?: number;
+            fields?: Objects.BaseUserGroupFields[];
+            owner_id?: number;
+        }>(params: Params): Responses.GroupsGetBannedResponse["response"];
+        /**
+         * Returns information about communities by their IDs.
+         * @access user
+         * @access group
+         * @access service
+         *
+         * @see https://vk.com/dev/groups.getById
+         */
+        getById<Params extends {
+            /**
+             * IDs or screen names of communities.
+             *
+             */
+            group_ids?: string[];
+            /**
+             * ID or screen name of the community.
+             *
+             */
+            group_id?: string;
+            /**
+             * Group fields to return.
+             *
+             */
+            fields?: Objects.GroupsFields[];
+        }>(params: Params): Responses.GroupsGetByIdResponse["response"];
+        /**
+         * Returns Callback API confirmation code for the community.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/groups.getCallbackConfirmationCode
+         */
+        getCallbackConfirmationCode<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+        }>(params: Params): Responses.GroupsGetCallbackConfirmationCodeResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/groups.getCallbackServers
+         */
+        getCallbackServers<Params extends {
+            group_id: number;
+            server_ids?: number[];
+        }>(params: Params): Responses.GroupsGetCallbackServersResponse["response"];
+        /**
+         * Returns {@link https://vk.com/dev/callback_api|Callback API} notifications settings.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @see https://vk.com/dev/groups.getCallbackSettings
+         */
+        getCallbackSettings<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * Server ID.
+             *
+             */
+            server_id?: number;
+        }>(params: Params): Responses.GroupsGetCallbackSettingsResponse["response"];
+        /**
+         * Returns communities list for a catalog category.
+         * @access user
+         * @throws {Errors.ApiErrorCommunitiesCatalogDisabled} - Catalog is not available for this user
+         * @throws {Errors.ApiErrorCommunitiesCategoriesDisabled} - Catalog categories are not available for this user
+         * @see https://vk.com/dev/groups.getCatalog
+         */
+        getCatalog<Params extends {
+            /**
+             * Category id received from {@link https://vk.com/dev/groups.getCatalogInfo|groups.getCatalogInfo}.
+             *
+             */
+            category_id?: number;
+            /**
+             * Subcategory id received from {@link https://vk.com/dev/groups.getCatalogInfo|groups.getCatalogInfo}.
+             * @maximum 99
+             * @maximum 99
+             */
+            subcategory_id?: number;
+        }>(params: Params): Responses.GroupsGetCatalogResponse["response"];
+        /**
+         * Returns categories list for communities catalog
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.getCatalogInfo
+         */
+        getCatalogInfo<Params extends {
+            /**
+             * 1 – to return communities count and three communities for preview. By default: 0.
+             *
+             */
+            extended?: boolean;
+            /**
+             * 1 – to return subcategories info. By default: 0.
+             *
+             */
+            subcategories?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.GroupsGetCatalogInfoExtendedResponse["response"] : Responses.GroupsGetCatalogInfoResponse["response"];
+        /**
+         * Returns invited users list of a community
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.getInvitedUsers
+         */
+        getInvitedUsers<Params extends {
+            /**
+             * Group ID to return invited users for.
+             *
+             */
+            group_id: number;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of results to return.
+             * @default 20
+             * @default 20
+             */
+            count?: number;
+            /**
+             * List of additional fields to be returned. Available values: 'sex, bdate, city, country, photo_50, photo_100, photo_200_orig, photo_200, photo_400_orig, photo_max, photo_max_orig, online, online_mobile, lists, domain, has_mobile, contacts, connections, site, education, universities, schools, can_post, can_see_all_posts, can_see_audio, can_write_private_message, status, last_seen, common_count, relation, relatives, counters'.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Case for declension of user name and surname. Possible values: *'nom' — nominative (default),, *'gen' — genitive,, *'dat' — dative,, *'acc' — accusative, , *'ins' — instrumental,, *'abl' — prepositional.
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             */
+            name_case?: "nom" | "gen" | "dat" | "acc" | "ins" | "abl";
+        }>(params: Params): Responses.GroupsGetInvitedUsersResponse["response"];
+        /**
+         * Returns a list of invitations to join communities and events.
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.getInvites
+         */
+        getInvites<Params extends {
+            /**
+             * Offset needed to return a specific subset of invitations.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of invitations to return.
+             * @default 20
+             * @default 20
+             */
+            count?: number;
+            /**
+             * '1' — to return additional {@link https://vk.com/dev/fields_groups|fields} for communities..
+             *
+             */
+            extended?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.GroupsGetInvitesExtendedResponse["response"] : Responses.GroupsGetInvitesResponse["response"];
+        /**
+         * Returns the data needed to query a Long Poll server for events
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/groups.getLongPollServer
+         */
+        getLongPollServer<Params extends {
+            /**
+             * Community ID
+             *
+             */
+            group_id: number;
+        }>(params: Params): Responses.GroupsGetLongPollServerResponse["response"];
+        /**
+         * Returns Long Poll notification settings
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/groups.getLongPollSettings
+         */
+        getLongPollSettings<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+        }>(params: Params): Responses.GroupsGetLongPollSettingsResponse["response"];
+        /**
+         * Returns a list of community members.
+         * @access user
+         * @access group
+         * @access service
+         * @throws {Errors.ApiErrorParamGroupId} - Invalid group id
+         * @see https://vk.com/dev/groups.getMembers
+         */
+        getMembers<Params extends {
+            /**
+             * ID or screen name of the community.
+             *
+             */
+            group_id?: string;
+            /**
+             * Sort order. Available values: 'id_asc', 'id_desc', 'time_asc', 'time_desc'. 'time_asc' and 'time_desc' are availavle only if the method is called by the group's 'moderator'.
+             * @enum {string} id_asc, id_desc, time_asc, time_desc
+             * @default id_asc
+             * @enum {string} id_asc, id_desc, time_asc, time_desc
+             * @default id_asc
+             */
+            sort?: "id_asc" | "id_desc" | "time_asc" | "time_desc";
+            /**
+             * Offset needed to return a specific subset of community members.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of community members to return.
+             * @default 1000
+             * @default 1000
+             */
+            count?: number;
+            /**
+             * List of additional fields to be returned. Available values: 'sex, bdate, city, country, photo_50, photo_100, photo_200_orig, photo_200, photo_400_orig, photo_max, photo_max_orig, online, online_mobile, lists, domain, has_mobile, contacts, connections, site, education, universities, schools, can_post, can_see_all_posts, can_see_audio, can_write_private_message, status, last_seen, common_count, relation, relatives, counters'.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * *'friends' – only friends in this community will be returned,, *'unsure' – only those who pressed 'I may attend' will be returned (if it's an event).
+             * @enum {string} friends, unsure
+             * @enum {string} friends, unsure
+             */
+            filter?: "friends" | "unsure";
+        }>(params: Params): Responses.GroupsGetMembersResponse["response"];
+        /**
+         * Returns a list of requests to the community.
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.getRequests
+         */
+        getRequests<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of results to return.
+             * @maximum 200
+             * @default 20
+             * @maximum 200
+             * @default 20
+             */
+            count?: number;
+            /**
+             * Profile fields to return.
+             *
+             */
+            fields?: Objects.UsersFields[];
+        }>(params: Params): Responses.GroupsGetRequestsResponse["response"];
+        /**
+         * Returns community settings.
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.getSettings
+         */
+        getSettings<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+        }>(params: Params): Responses.GroupsGetSettingsResponse["response"];
+        /**
+         * Method not described
+         * @access group
+         *
+         * @see https://vk.com/dev/groups.getTokenPermissions
+         */
+        getTokenPermissions<Params extends never>(params?: Params): Responses.GroupsGetTokenPermissionsResponse["response"];
+        /**
+         * Allows to invite friends to the community.
+         * @access user
+         * @throws {Errors.ApiErrorLimits} - Out of limits
+         * @see https://vk.com/dev/groups.invite
+         */
+        invite<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * User ID.
+             *
+             */
+            user_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns information specifying whether a user is a member of a community.
+         * @access user
+         * @access group
+         * @access service
+         *
+         * @see https://vk.com/dev/groups.isMember
+         */
+        isMember<Params extends {
+            /**
+             * ID or screen name of the community.
+             *
+             */
+            group_id: string;
+            /**
+             * User ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * User IDs.
+             *
+             */
+            user_ids?: number[];
+            /**
+             * '1' — to return an extended response with additional fields. By default: '0'.
+             *
+             */
+            extended?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.GroupsIsMemberExtendedResponse["response"] : Responses.GroupsIsMemberResponse["response"];
+        /**
+         * With this method you can join the group or public page, and also confirm your participation in an event.
+         * @access user
+         * @throws {Errors.ApiErrorLimits} - Out of limits
+         * @see https://vk.com/dev/groups.join
+         */
+        join<Params extends {
+            /**
+             * ID or screen name of the community.
+             *
+             */
+            group_id?: number;
+            /**
+             * Optional parameter which is taken into account when 'gid' belongs to the event: '1' — Perhaps I will attend, '0' — I will be there for sure (default), ,
+             *
+             */
+            not_sure?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * With this method you can leave a group, public page, or event.
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.leave
+         */
+        leave<Params extends {
+            /**
+             * ID or screen name of the community.
+             *
+             */
+            group_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Removes a user from the community.
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.removeUser
+         */
+        removeUser<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * User ID.
+             *
+             */
+            user_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Allows to reorder links in the community.
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.reorderLink
+         */
+        reorderLink<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * Link ID.
+             *
+             */
+            link_id: number;
+            /**
+             * ID of the link after which to place the link with 'link_id'.
+             *
+             */
+            after?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns a list of communities matching the search criteria.
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.search
+         */
+        search<Params extends {
+            /**
+             * Search query string.
+             *
+             */
+            q: string;
+            /**
+             * Community type. Possible values: 'group, page, event.'
+             * @enum {string} group, page, event
+             * @enum {string} group, page, event
+             */
+            type?: "group" | "page" | "event";
+            /**
+             * Country ID.
+             *
+             */
+            country_id?: number;
+            /**
+             * City ID. If this parameter is transmitted, country_id is ignored.
+             *
+             */
+            city_id?: number;
+            /**
+             * '1' — to return only upcoming events. Works with the 'type' = 'event' only.
+             *
+             */
+            future?: boolean;
+            /**
+             * '1' — to return communities with enabled market only.
+             *
+             */
+            market?: boolean;
+            /**
+             * Sort order. Possible values: *'0' — default sorting (similar the full version of the site),, *'1' — by growth speed,, *'2'— by the "day attendance/members number" ratio,, *'3' — by the "Likes number/members number" ratio,, *'4' — by the "comments number/members number" ratio,, *'5' — by the "boards entries number/members number" ratio.
+             *
+             */
+            sort?: number;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of communities to return. "Note that you can not receive more than first thousand of results, regardless of 'count' and 'offset' values."
+             * @maximum 1000
+             * @default 20
+             * @maximum 1000
+             * @default 20
+             */
+            count?: number;
+        }>(params: Params): Responses.GroupsSearchResponse["response"];
+        /**
+         * Allow to set notifications settings for group.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @see https://vk.com/dev/groups.setCallbackSettings
+         */
+        setCallbackSettings<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * Server ID.
+             *
+             */
+            server_id?: number;
+            api_version?: string;
+            /**
+             * A new incoming message has been received ('0' — disabled, '1' — enabled).
+             *
+             */
+            message_new?: boolean;
+            /**
+             * A new outcoming message has been received ('0' — disabled, '1' — enabled).
+             *
+             */
+            message_reply?: boolean;
+            /**
+             * Allowed messages notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            message_allow?: boolean;
+            message_edit?: boolean;
+            /**
+             * Denied messages notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            message_deny?: boolean;
+            message_typing_state?: boolean;
+            /**
+             * New photos notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            photo_new?: boolean;
+            /**
+             * New audios notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            audio_new?: boolean;
+            /**
+             * New videos notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            video_new?: boolean;
+            /**
+             * New wall replies notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_reply_new?: boolean;
+            /**
+             * Wall replies edited notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_reply_edit?: boolean;
+            /**
+             * A wall comment has been deleted ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_reply_delete?: boolean;
+            /**
+             * A wall comment has been restored ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_reply_restore?: boolean;
+            /**
+             * New wall posts notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_post_new?: boolean;
+            /**
+             * New wall posts notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_repost?: boolean;
+            /**
+             * New board posts notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            board_post_new?: boolean;
+            /**
+             * Board posts edited notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            board_post_edit?: boolean;
+            /**
+             * Board posts restored notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            board_post_restore?: boolean;
+            /**
+             * Board posts deleted notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            board_post_delete?: boolean;
+            /**
+             * New comment to photo notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            photo_comment_new?: boolean;
+            /**
+             * A photo comment has been edited ('0' — disabled, '1' — enabled).
+             *
+             */
+            photo_comment_edit?: boolean;
+            /**
+             * A photo comment has been deleted ('0' — disabled, '1' — enabled).
+             *
+             */
+            photo_comment_delete?: boolean;
+            /**
+             * A photo comment has been restored ('0' — disabled, '1' — enabled).
+             *
+             */
+            photo_comment_restore?: boolean;
+            /**
+             * New comment to video notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            video_comment_new?: boolean;
+            /**
+             * A video comment has been edited ('0' — disabled, '1' — enabled).
+             *
+             */
+            video_comment_edit?: boolean;
+            /**
+             * A video comment has been deleted ('0' — disabled, '1' — enabled).
+             *
+             */
+            video_comment_delete?: boolean;
+            /**
+             * A video comment has been restored ('0' — disabled, '1' — enabled).
+             *
+             */
+            video_comment_restore?: boolean;
+            /**
+             * New comment to market item notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            market_comment_new?: boolean;
+            /**
+             * A market comment has been edited ('0' — disabled, '1' — enabled).
+             *
+             */
+            market_comment_edit?: boolean;
+            /**
+             * A market comment has been deleted ('0' — disabled, '1' — enabled).
+             *
+             */
+            market_comment_delete?: boolean;
+            /**
+             * A market comment has been restored ('0' — disabled, '1' — enabled).
+             *
+             */
+            market_comment_restore?: boolean;
+            /**
+             * A vote in a public poll has been added ('0' — disabled, '1' — enabled).
+             *
+             */
+            poll_vote_new?: boolean;
+            /**
+             * Joined community notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            group_join?: boolean;
+            /**
+             * Left community notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            group_leave?: boolean;
+            group_change_settings?: boolean;
+            group_change_photo?: boolean;
+            group_officers_edit?: boolean;
+            /**
+             * User added to community blacklist
+             *
+             */
+            user_block?: boolean;
+            /**
+             * User removed from community blacklist
+             *
+             */
+            user_unblock?: boolean;
+            /**
+             * New form in lead forms
+             *
+             */
+            lead_forms_new?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Sets Long Poll notification settings
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/groups.setLongPollSettings
+         */
+        setLongPollSettings<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * Sets whether Long Poll is enabled ('0' — disabled, '1' — enabled).
+             *
+             */
+            enabled?: boolean;
+            api_version?: string;
+            /**
+             * A new incoming message has been received ('0' — disabled, '1' — enabled).
+             *
+             */
+            message_new?: boolean;
+            /**
+             * A new outcoming message has been received ('0' — disabled, '1' — enabled).
+             *
+             */
+            message_reply?: boolean;
+            /**
+             * Allowed messages notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            message_allow?: boolean;
+            /**
+             * Denied messages notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            message_deny?: boolean;
+            /**
+             * A message has been edited ('0' — disabled, '1' — enabled).
+             *
+             */
+            message_edit?: boolean;
+            message_typing_state?: boolean;
+            /**
+             * New photos notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            photo_new?: boolean;
+            /**
+             * New audios notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            audio_new?: boolean;
+            /**
+             * New videos notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            video_new?: boolean;
+            /**
+             * New wall replies notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_reply_new?: boolean;
+            /**
+             * Wall replies edited notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_reply_edit?: boolean;
+            /**
+             * A wall comment has been deleted ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_reply_delete?: boolean;
+            /**
+             * A wall comment has been restored ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_reply_restore?: boolean;
+            /**
+             * New wall posts notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_post_new?: boolean;
+            /**
+             * New wall posts notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            wall_repost?: boolean;
+            /**
+             * New board posts notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            board_post_new?: boolean;
+            /**
+             * Board posts edited notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            board_post_edit?: boolean;
+            /**
+             * Board posts restored notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            board_post_restore?: boolean;
+            /**
+             * Board posts deleted notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            board_post_delete?: boolean;
+            /**
+             * New comment to photo notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            photo_comment_new?: boolean;
+            /**
+             * A photo comment has been edited ('0' — disabled, '1' — enabled).
+             *
+             */
+            photo_comment_edit?: boolean;
+            /**
+             * A photo comment has been deleted ('0' — disabled, '1' — enabled).
+             *
+             */
+            photo_comment_delete?: boolean;
+            /**
+             * A photo comment has been restored ('0' — disabled, '1' — enabled).
+             *
+             */
+            photo_comment_restore?: boolean;
+            /**
+             * New comment to video notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            video_comment_new?: boolean;
+            /**
+             * A video comment has been edited ('0' — disabled, '1' — enabled).
+             *
+             */
+            video_comment_edit?: boolean;
+            /**
+             * A video comment has been deleted ('0' — disabled, '1' — enabled).
+             *
+             */
+            video_comment_delete?: boolean;
+            /**
+             * A video comment has been restored ('0' — disabled, '1' — enabled).
+             *
+             */
+            video_comment_restore?: boolean;
+            /**
+             * New comment to market item notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            market_comment_new?: boolean;
+            /**
+             * A market comment has been edited ('0' — disabled, '1' — enabled).
+             *
+             */
+            market_comment_edit?: boolean;
+            /**
+             * A market comment has been deleted ('0' — disabled, '1' — enabled).
+             *
+             */
+            market_comment_delete?: boolean;
+            /**
+             * A market comment has been restored ('0' — disabled, '1' — enabled).
+             *
+             */
+            market_comment_restore?: boolean;
+            /**
+             * A vote in a public poll has been added ('0' — disabled, '1' — enabled).
+             *
+             */
+            poll_vote_new?: boolean;
+            /**
+             * Joined community notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            group_join?: boolean;
+            /**
+             * Left community notifications ('0' — disabled, '1' — enabled).
+             *
+             */
+            group_leave?: boolean;
+            group_change_settings?: boolean;
+            group_change_photo?: boolean;
+            group_officers_edit?: boolean;
+            /**
+             * User added to community blacklist
+             *
+             */
+            user_block?: boolean;
+            /**
+             * User removed from community blacklist
+             *
+             */
+            user_unblock?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/groups.unban
+         */
+        unban<Params extends {
+            group_id: number;
+            owner_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Leads {
+        /**
+         * Checks if the user can start the lead.
+         * @access user
+         * @throws {Errors.ApiErrorActionFailed} - Unable to process action
+         * @see https://vk.com/dev/leads.checkUser
+         */
+        checkUser<Params extends {
+            /**
+             * Lead ID.
+             *
+             */
+            lead_id: number;
+            /**
+             * Value to be return in 'result' field when test mode is used.
+             *
+             */
+            test_result?: number;
+            test_mode?: boolean;
+            auto_start?: boolean;
+            /**
+             * User age.
+             *
+             */
+            age?: number;
+            /**
+             * User country code.
+             *
+             */
+            country?: string;
+        }>(params: Params): Responses.LeadsCheckUserResponse["response"];
+        /**
+         * Completes the lead started by user.
+         * @access user
+         * @access service
+         * @throws {Errors.ApiErrorLimits} - Out of limits
+         * @throws {Errors.ApiErrorVotes} - Not enough votes
+         * @see https://vk.com/dev/leads.complete
+         */
+        complete<Params extends {
+            /**
+             * Session obtained as GET parameter when session started.
+             *
+             */
+            vk_sid: string;
+            /**
+             * Secret key from the lead testing interface.
+             *
+             */
+            secret: string;
+            /**
+             * Comment text.
+             *
+             */
+            comment?: string;
+        }>(params: Params): Responses.LeadsCompleteResponse["response"];
+        /**
+         * Returns lead stats data.
+         * @access user
+         *
+         * @see https://vk.com/dev/leads.getStats
+         */
+        getStats<Params extends {
+            /**
+             * Lead ID.
+             *
+             */
+            lead_id: number;
+            /**
+             * Secret key obtained from the lead testing interface.
+             *
+             */
+            secret?: string;
+            /**
+             * Day to start stats from (YYYY_MM_DD, e.g.2011-09-17).
+             *
+             */
+            date_start?: string;
+            /**
+             * Day to finish stats (YYYY_MM_DD, e.g.2011-09-17).
+             *
+             */
+            date_end?: string;
+        }>(params: Params): Responses.LeadsGetStatsResponse["response"];
+        /**
+         * Returns a list of last user actions for the offer.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/leads.getUsers
+         */
+        getUsers<Params extends {
+            /**
+             * Offer ID.
+             *
+             */
+            offer_id: number;
+            /**
+             * Secret key obtained in the lead testing interface.
+             *
+             */
+            secret: string;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of results to return.
+             * @maximum 1000
+             * @default 100
+             * @maximum 1000
+             * @default 100
+             */
+            count?: number;
+            /**
+             * Action type. Possible values: *'0' — start,, *'1' — finish,, *'2' — blocking users,, *'3' — start in a test mode,, *'4' — finish in a test mode.
+             *
+             */
+            status?: number;
+            /**
+             * Sort order. Possible values: *'1' — chronological,, *'0' — reverse chronological.
+             *
+             */
+            reverse?: boolean;
+        }>(params: Params): Responses.LeadsGetUsersResponse["response"];
+        /**
+         * Counts the metric event.
+         * @access user
+         *
+         * @see https://vk.com/dev/leads.metricHit
+         */
+        metricHit<Params extends {
+            /**
+             * Metric data obtained in the lead interface.
+             *
+             */
+            data: string;
+        }>(params: Params): Responses.LeadsMetricHitResponse["response"];
+        /**
+         * Creates new session for the user passing the offer.
+         * @access user
+         * @access service
+         * @throws {Errors.ApiErrorLimits} - Out of limits
+         * @throws {Errors.ApiErrorActionFailed} - Unable to process action
+         * @see https://vk.com/dev/leads.start
+         */
+        start<Params extends {
+            /**
+             * Lead ID.
+             *
+             */
+            lead_id: number;
+            /**
+             * Secret key from the lead testing interface.
+             *
+             */
+            secret: string;
+            uid?: number;
+            aid?: number;
+            test_mode?: boolean;
+            force?: boolean;
+        }>(params: Params): Responses.LeadsStartResponse["response"];
+    }
+    interface Likes {
+        /**
+         * Adds the specified object to the 'Likes' list of the current user.
+         * @access user
+         *
+         * @see https://vk.com/dev/likes.add
+         */
+        add<Params extends {
+            /**
+             * Object type: 'post' — post on user or community wall, 'comment' — comment on a wall post, 'photo' — photo, 'audio' — audio, 'video' — video, 'note' — note, 'photo_comment' — comment on the photo, 'video_comment' — comment on the video, 'topic_comment' — comment in the discussion, 'sitepage' — page of the site where the {@link https://vk.com/dev/Like|Like widget} is installed
+             *
+             */
+            type: Objects.LikesType;
+            /**
+             * ID of the user or community that owns the object.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Object ID.
+             *
+             */
+            item_id: number;
+            /**
+             * Access key required for an object owned by a private entity.
+             *
+             */
+            access_key?: string;
+        }>(params: Params): Responses.LikesAddResponse["response"];
+        /**
+         * Deletes the specified object from the 'Likes' list of the current user.
+         * @access user
+         *
+         * @see https://vk.com/dev/likes.delete
+         */
+        delete<Params extends {
+            /**
+             * Object type: 'post' — post on user or community wall, 'comment' — comment on a wall post, 'photo' — photo, 'audio' — audio, 'video' — video, 'note' — note, 'photo_comment' — comment on the photo, 'video_comment' — comment on the video, 'topic_comment' — comment in the discussion, 'sitepage' — page of the site where the {@link https://vk.com/dev/Like|Like widget} is installed
+             *
+             */
+            type: Objects.LikesType;
+            /**
+             * ID of the user or community that owns the object.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Object ID.
+             *
+             */
+            item_id: number;
+            /**
+             * Access key required for an object owned by a private entity.
+             *
+             */
+            access_key?: string;
+        }>(params: Params): Responses.LikesDeleteResponse["response"];
+        /**
+         * Returns a list of IDs of users who added the specified object to their 'Likes' list.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/likes.getList
+         */
+        getList<Params extends {
+            /**
+             * , Object type: 'post' — post on user or community wall, 'comment' — comment on a wall post, 'photo' — photo, 'audio' — audio, 'video' — video, 'note' — note, 'photo_comment' — comment on the photo, 'video_comment' — comment on the video, 'topic_comment' — comment in the discussion, 'sitepage' — page of the site where the {@link https://vk.com/dev/Like|Like widget} is installed
+             *
+             */
+            type: Objects.LikesType;
+            /**
+             * ID of the user, community, or application that owns the object. If the 'type' parameter is set as 'sitepage', the application ID is passed as 'owner_id'. Use negative value for a community id. If the 'type' parameter is not set, the 'owner_id' is assumed to be either the current user or the same application ID as if the 'type' parameter was set to 'sitepage'.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Object ID. If 'type' is set as 'sitepage', 'item_id' can include the 'page_id' parameter value used during initialization of the {@link https://vk.com/dev/Like|Like widget}.
+             *
+             */
+            item_id?: number;
+            /**
+             * URL of the page where the {@link https://vk.com/dev/Like|Like widget} is installed. Used instead of the 'item_id' parameter.
+             *
+             */
+            page_url?: string;
+            /**
+             * Filters to apply: 'likes' — returns information about all users who liked the object (default), 'copies' — returns information only about users who told their friends about the object
+             * @enum {string} likes, copies
+             * @enum {string} likes, copies
+             */
+            filter?: "likes" | "copies";
+            /**
+             * Specifies which users are returned: '1' — to return only the current user's friends, '0' — to return all users (default)
+             *
+             */
+            friends_only?: number;
+            /**
+             * Specifies whether extended information will be returned. '1' — to return extended information about users and communities from the 'Likes' list, '0' — to return no additional information (default)
+             *
+             */
+            extended?: boolean;
+            /**
+             * Offset needed to select a specific subset of users.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of user IDs to return (maximum '1000'). Default is '100' if 'friends_only' is set to '0', otherwise, the default is '10' if 'friends_only' is set to '1'.
+             *
+             */
+            count?: number;
+            skip_own?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.LikesGetListExtendedResponse["response"] : Responses.LikesGetListResponse["response"];
+        /**
+         * Checks for the object in the 'Likes' list of the specified user.
+         * @access user
+         *
+         * @see https://vk.com/dev/likes.isLiked
+         */
+        isLiked<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * Object type: 'post' — post on user or community wall, 'comment' — comment on a wall post, 'photo' — photo, 'audio' — audio, 'video' — video, 'note' — note, 'photo_comment' — comment on the photo, 'video_comment' — comment on the video, 'topic_comment' — comment in the discussion
+             *
+             */
+            type: Objects.LikesType;
+            /**
+             * ID of the user or community that owns the object.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Object ID.
+             *
+             */
+            item_id: number;
+        }>(params: Params): Responses.LikesIsLikedResponse["response"];
+    }
+    interface Market {
+        /**
+         * Ads a new item to the market.
+         * @access user
+         * @throws {Errors.ApiErrorAccessMarket} - Access denied
+         * @throws {Errors.ApiErrorMarketTooManyItems} - Too many items
+         * @throws {Errors.ApiErrorMarketItemHasBadLinks} - Item has bad links in description
+         * @see https://vk.com/dev/market.add
+         */
+        add<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Item name.
+             *
+             */
+            name: string;
+            /**
+             * Item description.
+             *
+             */
+            description: string;
+            /**
+             * Item category ID.
+             *
+             */
+            category_id: number;
+            /**
+             * Item price.
+             * @minimum 0.01
+             */
+            price?: number;
+            /**
+             *
+             * @minimum 0.01
+             */
+            old_price?: number;
+            /**
+             * Item status ('1' — deleted, '0' — not deleted).
+             *
+             */
+            deleted?: boolean;
+            /**
+             * Cover photo ID.
+             *
+             */
+            main_photo_id: number;
+            /**
+             * IDs of additional photos.
+             *
+             */
+            photo_ids?: number[];
+            /**
+             * Url for button in market item.
+             *
+             */
+            url?: string;
+        }>(params: Params): Responses.MarketAddResponse["response"];
+        /**
+         * Creates new collection of items
+         * @access user
+         * @throws {Errors.ApiErrorMarketTooManyAlbums} - Too many albums
+         * @see https://vk.com/dev/market.addAlbum
+         */
+        addAlbum<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Collection title.
+             *
+             */
+            title: string;
+            /**
+             * Cover photo ID.
+             *
+             */
+            photo_id?: number;
+            /**
+             * Set as main ('1' – set, '0' – no).
+             *
+             */
+            main_album?: boolean;
+        }>(params: Params): Responses.MarketAddAlbumResponse["response"];
+        /**
+         * Adds an item to one or multiple collections.
+         * @access user
+         * @throws {Errors.ApiErrorMarketAlbumNotFound} - Album not found
+         * @throws {Errors.ApiErrorMarketItemNotFound} - Item not found
+         * @throws {Errors.ApiErrorMarketTooManyItemsInAlbum} - Too many items in album
+         * @throws {Errors.ApiErrorMarketItemAlreadyAdded} - Item already added to album
+         * @see https://vk.com/dev/market.addToAlbum
+         */
+        addToAlbum<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Item ID.
+             *
+             */
+            item_id: number;
+            /**
+             * Collections IDs to add item to.
+             *
+             */
+            album_ids: number[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Creates a new comment for an item.
+         * @access user
+         *
+         * @see https://vk.com/dev/market.createComment
+         */
+        createComment<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Item ID.
+             *
+             */
+            item_id: number;
+            /**
+             * Comment text (required if 'attachments' parameter is not specified)
+             *
+             */
+            message?: string;
+            /**
+             * Comma-separated list of objects attached to a comment. The field is submitted the following way: , "'<owner_id>_<media_id>,<owner_id>_<media_id>'", , '' - media attachment type: "'photo' - photo, 'video' - video, 'audio' - audio, 'doc' - document", , '<owner_id>' - media owner id, '<media_id>' - media attachment id, , For example: "photo100172_166443618,photo66748_265827614",
+             *
+             */
+            attachments?: string[];
+            /**
+             * '1' - comment will be published on behalf of a community, '0' - on behalf of a user (by default).
+             *
+             */
+            from_group?: boolean;
+            /**
+             * ID of a comment to reply with current comment to.
+             *
+             */
+            reply_to_comment?: number;
+            /**
+             * Sticker ID.
+             *
+             */
+            sticker_id?: number;
+            /**
+             * Random value to avoid resending one comment.
+             *
+             */
+            guid?: string;
+        }>(params: Params): Responses.MarketCreateCommentResponse["response"];
+        /**
+         * Deletes an item.
+         * @access user
+         * @throws {Errors.ApiErrorAccessMarket} - Access denied
+         * @see https://vk.com/dev/market.delete
+         */
+        delete<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Item ID.
+             *
+             */
+            item_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Deletes a collection of items.
+         * @access user
+         * @throws {Errors.ApiErrorMarketAlbumNotFound} - Album not found
+         * @see https://vk.com/dev/market.deleteAlbum
+         */
+        deleteAlbum<Params extends {
+            /**
+             * ID of an collection owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Collection ID.
+             *
+             */
+            album_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Deletes an item's comment
+         * @access user
+         *
+         * @see https://vk.com/dev/market.deleteComment
+         */
+        deleteComment<Params extends {
+            /**
+             * identifier of an item owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the {@link https://vk.com/apiclub|VK API} community "
+             *
+             */
+            owner_id: number;
+            /**
+             * comment id
+             *
+             */
+            comment_id: number;
+        }>(params: Params): Responses.MarketDeleteCommentResponse["response"];
+        /**
+         * Edits an item.
+         * @access user
+         * @throws {Errors.ApiErrorAccessMarket} - Access denied
+         * @throws {Errors.ApiErrorMarketItemNotFound} - Item not found
+         * @throws {Errors.ApiErrorMarketItemHasBadLinks} - Item has bad links in description
+         * @see https://vk.com/dev/market.edit
+         */
+        edit<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Item ID.
+             *
+             */
+            item_id: number;
+            /**
+             * Item name.
+             *
+             */
+            name: string;
+            /**
+             * Item description.
+             *
+             */
+            description: string;
+            /**
+             * Item category ID.
+             *
+             */
+            category_id: number;
+            /**
+             * Item price.
+             * @minimum 0.01
+             */
+            price: number;
+            /**
+             * Item status ('1' — deleted, '0' — not deleted).
+             *
+             */
+            deleted?: boolean;
+            /**
+             * Cover photo ID.
+             *
+             */
+            main_photo_id: number;
+            /**
+             * IDs of additional photos.
+             *
+             */
+            photo_ids?: number[];
+            /**
+             * Url for button in market item.
+             *
+             */
+            url?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits a collection of items
+         * @access user
+         * @throws {Errors.ApiErrorMarketAlbumNotFound} - Album not found
+         * @see https://vk.com/dev/market.editAlbum
+         */
+        editAlbum<Params extends {
+            /**
+             * ID of an collection owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Collection ID.
+             *
+             */
+            album_id: number;
+            /**
+             * Collection title.
+             *
+             */
+            title: string;
+            /**
+             * Cover photo id
+             *
+             */
+            photo_id?: number;
+            /**
+             * Set as main ('1' – set, '0' – no).
+             *
+             */
+            main_album?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Chages item comment's text
+         * @access user
+         *
+         * @see https://vk.com/dev/market.editComment
+         */
+        editComment<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+            /**
+             * New comment text (required if 'attachments' are not specified), , 2048 symbols maximum.
+             *
+             */
+            message?: string;
+            /**
+             * Comma-separated list of objects attached to a comment. The field is submitted the following way: , "'<owner_id>_<media_id>,<owner_id>_<media_id>'", , '' - media attachment type: "'photo' - photo, 'video' - video, 'audio' - audio, 'doc' - document", , '<owner_id>' - media owner id, '<media_id>' - media attachment id, , For example: "photo100172_166443618,photo66748_265827614",
+             *
+             */
+            attachments?: string[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns items list for a community.
+         * @access user
+         *
+         * @see https://vk.com/dev/market.get
+         */
+        get<Params extends {
+            /**
+             * ID of an item owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the {@link https://vk.com/apiclub|VK API} community "
+             *
+             */
+            owner_id: number;
+            album_id?: number;
+            /**
+             * Number of items to return.
+             * @maximum 200
+             * @default 100
+             * @maximum 200
+             * @default 100
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+            /**
+             * '1' – method will return additional fields: 'likes, can_comment, car_repost, photos'. These parameters are not returned by default.
+             *
+             */
+            extended?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.MarketGetExtendedResponse["response"] : Responses.MarketGetResponse["response"];
+        /**
+         * Returns items album's data
+         * @access user
+         *
+         * @see https://vk.com/dev/market.getAlbumById
+         */
+        getAlbumById<Params extends {
+            /**
+             * identifier of an album owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the {@link https://vk.com/apiclub|VK API} community "
+             *
+             */
+            owner_id: number;
+            /**
+             * collections identifiers to obtain data from
+             *
+             */
+            album_ids: number[];
+        }>(params: Params): Responses.MarketGetAlbumByIdResponse["response"];
+        /**
+         * Returns community's collections list.
+         * @access user
+         *
+         * @see https://vk.com/dev/market.getAlbums
+         */
+        getAlbums<Params extends {
+            /**
+             * ID of an items owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of items to return.
+             * @maximum 100
+             * @default 50
+             * @maximum 100
+             * @default 50
+             */
+            count?: number;
+        }>(params: Params): Responses.MarketGetAlbumsResponse["response"];
+        /**
+         * Returns information about market items by their ids.
+         * @access user
+         *
+         * @see https://vk.com/dev/market.getById
+         */
+        getById<Params extends {
+            /**
+             * Comma-separated ids list: {user id}_{item id}. If an item belongs to a community -{community id} is used. " 'Videos' value example: , '-4363_136089719,13245770_137352259'"
+             *
+             */
+            item_ids: string[];
+            /**
+             * '1' – to return additional fields: 'likes, can_comment, car_repost, photos'. By default: '0'.
+             *
+             */
+            extended?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.MarketGetByIdExtendedResponse["response"] : Responses.MarketGetByIdResponse["response"];
+        /**
+         * Returns a list of market categories.
+         * @access user
+         *
+         * @see https://vk.com/dev/market.getCategories
+         */
+        getCategories<Params extends {
+            /**
+             * Number of results to return.
+             * @maximum 1000
+             * @default 10
+             * @maximum 1000
+             * @default 10
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+        }>(params: Params): Responses.MarketGetCategoriesResponse["response"];
+        /**
+         * Returns comments list for an item.
+         * @access user
+         * @throws {Errors.ApiErrorMarketCommentsClosed} - Comments for this market are closed
+         * @see https://vk.com/dev/market.getComments
+         */
+        getComments<Params extends {
+            /**
+             * ID of an item owner community
+             *
+             */
+            owner_id: number;
+            /**
+             * Item ID.
+             *
+             */
+            item_id: number;
+            /**
+             * '1' — to return likes info.
+             *
+             */
+            need_likes?: boolean;
+            /**
+             * ID of a comment to start a list from (details below).
+             *
+             */
+            start_comment_id?: number;
+            offset?: number;
+            /**
+             * Number of results to return.
+             * @maximum 100
+             * @default 20
+             * @maximum 100
+             * @default 20
+             */
+            count?: number;
+            /**
+             * Sort order ('asc' — from old to new, 'desc' — from new to old)
+             * @enum {string} asc, desc
+             * @default asc
+             * @enum {string} asc, desc
+             * @default asc
+             */
+            sort?: "asc" | "desc";
+            /**
+             * '1' — comments will be returned as numbered objects, in addition lists of 'profiles' and 'groups' objects will be returned.
+             *
+             */
+            extended?: boolean;
+            /**
+             * List of additional profile fields to return. See the {@link https://vk.com/dev/fields|details}
+             *
+             */
+            fields?: Objects.UsersFields[];
+        }>(params: Params): Responses.MarketGetCommentsResponse["response"];
+        /**
+         * Removes an item from one or multiple collections.
+         * @access user
+         * @throws {Errors.ApiErrorMarketAlbumNotFound} - Album not found
+         * @throws {Errors.ApiErrorMarketItemNotFound} - Item not found
+         * @see https://vk.com/dev/market.removeFromAlbum
+         */
+        removeFromAlbum<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Item ID.
+             *
+             */
+            item_id: number;
+            /**
+             * Collections IDs to remove item from.
+             *
+             */
+            album_ids: number[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Reorders the collections list.
+         * @access user
+         * @throws {Errors.ApiErrorAccessMarket} - Access denied
+         * @throws {Errors.ApiErrorMarketAlbumNotFound} - Album not found
+         * @see https://vk.com/dev/market.reorderAlbums
+         */
+        reorderAlbums<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Collection ID.
+             *
+             */
+            album_id: number;
+            /**
+             * ID of a collection to place current collection before it.
+             *
+             */
+            before?: number;
+            /**
+             * ID of a collection to place current collection after it.
+             *
+             */
+            after?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Changes item place in a collection.
+         * @access user
+         * @throws {Errors.ApiErrorAccessMarket} - Access denied
+         * @throws {Errors.ApiErrorMarketAlbumNotFound} - Album not found
+         * @throws {Errors.ApiErrorMarketItemNotFound} - Item not found
+         * @see https://vk.com/dev/market.reorderItems
+         */
+        reorderItems<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * ID of a collection to reorder items in. Set 0 to reorder full items list.
+             *
+             */
+            album_id?: number;
+            /**
+             * Item ID.
+             *
+             */
+            item_id: number;
+            /**
+             * ID of an item to place current item before it.
+             *
+             */
+            before?: number;
+            /**
+             * ID of an item to place current item after it.
+             *
+             */
+            after?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Sends a complaint to the item.
+         * @access user
+         *
+         * @see https://vk.com/dev/market.report
+         */
+        report<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Item ID.
+             *
+             */
+            item_id: number;
+            /**
+             * Complaint reason. Possible values: *'0' — spam,, *'1' — child porn,, *'2' — extremism,, *'3' — violence,, *'4' — drugs propaganda,, *'5' — adult materials,, *'6' — insult.
+             *
+             */
+            reason?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Sends a complaint to the item's comment.
+         * @access user
+         *
+         * @see https://vk.com/dev/market.reportComment
+         */
+        reportComment<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+            /**
+             * Complaint reason. Possible values: *'0' — spam,, *'1' — child porn,, *'2' — extremism,, *'3' — violence,, *'4' — drugs propaganda,, *'5' — adult materials,, *'6' — insult.
+             *
+             */
+            reason: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Restores recently deleted item
+         * @access user
+         * @throws {Errors.ApiErrorAccessMarket} - Access denied
+         * @throws {Errors.ApiErrorMarketRestoreTooLate} - Too late for restore
+         * @see https://vk.com/dev/market.restore
+         */
+        restore<Params extends {
+            /**
+             * ID of an item owner community.
+             *
+             */
+            owner_id: number;
+            /**
+             * Deleted item ID.
+             *
+             */
+            item_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Restores a recently deleted comment
+         * @access user
+         *
+         * @see https://vk.com/dev/market.restoreComment
+         */
+        restoreComment<Params extends {
+            /**
+             * identifier of an item owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the {@link https://vk.com/apiclub|VK API} community "
+             *
+             */
+            owner_id: number;
+            /**
+             * deleted comment id
+             *
+             */
+            comment_id: number;
+        }>(params: Params): Responses.MarketRestoreCommentResponse["response"];
+        /**
+         * Searches market items in a community's catalog
+         * @access user
+         *
+         * @see https://vk.com/dev/market.search
+         */
+        search<Params extends {
+            /**
+             * ID of an items owner community.
+             *
+             */
+            owner_id: number;
+            album_id?: number;
+            /**
+             * Search query, for example "pink slippers".
+             *
+             */
+            q?: string;
+            /**
+             * Minimum item price value.
+             *
+             */
+            price_from?: number;
+            /**
+             * Maximum item price value.
+             *
+             */
+            price_to?: number;
+            /**
+             * Comma-separated tag IDs list.
+             *
+             */
+            tags?: number[];
+            sort?: number;
+            /**
+             * '0' — do not use reverse order, '1' — use reverse order
+             * @default 1
+             * @default 1
+             */
+            rev?: number;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of items to return.
+             * @maximum 200
+             * @default 20
+             * @maximum 200
+             * @default 20
+             */
+            count?: number;
+            /**
+             * '1' – to return additional fields: 'likes, can_comment, car_repost, photos'. By default: '0'.
+             * @default 0
+             * @default 0
+             */
+            extended?: boolean;
+            status?: number;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.MarketSearchExtendedResponse["response"] : Responses.MarketSearchResponse["response"];
+    }
+    interface Messages {
+        /**
+         * Adds a new user to a chat.
+         * @access user
+         * @throws {Errors.ApiErrorLimits} - Out of limits
+         * @throws {Errors.ApiErrorMessagesChatNotAdmin} - You are not admin of this chat
+         * @throws {Errors.ApiErrorMessagesMessageRequestAlreadySent} - Message request already sent
+         * @throws {Errors.ApiErrorMessagesContactNotFound} - Contact not found
+         * @throws {Errors.ApiErrorMessagesChatDisabled} - Chat was disabled
+         * @throws {Errors.ApiErrorMessagesMemberAccessToGroupDenied} - Can't add user to chat, because user has no access to group
+         * @throws {Errors.ApiErrorMessagesChatUnsupported} - Chat not supported
+         * @see https://vk.com/dev/messages.addChatUser
+         */
+        addChatUser<Params extends {
+            /**
+             * Chat ID.
+             * @maximum 100000000
+             * @maximum 100000000
+             */
+            chat_id: number;
+            /**
+             * ID of the user to be added to the chat.
+             *
+             */
+            user_id?: number;
+            /**
+             *
+             * @maximum 1000
+             * @maximum 1000
+             */
+            visible_messages_count?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Allows sending messages from community to the current user.
+         * @access user
+         *
+         * @see https://vk.com/dev/messages.allowMessagesFromGroup
+         */
+        allowMessagesFromGroup<Params extends {
+            /**
+             * Group ID.
+             *
+             */
+            group_id: number;
+            key?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Creates a chat with several participants.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesContactNotFound} - Contact not found
+         * @see https://vk.com/dev/messages.createChat
+         */
+        createChat<Params extends {
+            /**
+             * IDs of the users to be added to the chat.
+             *
+             */
+            user_ids?: number[];
+            /**
+             * Chat title.
+             *
+             */
+            title?: string;
+            group_id?: number;
+        }>(params: Params): Responses.MessagesCreateChatResponse["response"];
+        /**
+         * Deletes one or more messages.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesCantDeleteForAll} - Can't delete this message for everybody
+         * @see https://vk.com/dev/messages.delete
+         */
+        delete<Params extends {
+            /**
+             * Message IDs.
+             *
+             */
+            message_ids?: number[];
+            /**
+             * '1' — to mark message as spam.
+             *
+             */
+            spam?: boolean;
+            /**
+             * Group ID (for group messages with user access token)
+             *
+             */
+            group_id?: number;
+            /**
+             * '1' — delete message for for all.
+             *
+             */
+            delete_for_all?: boolean;
+        }>(params: Params): Responses.MessagesDeleteResponse["response"];
+        /**
+         * Deletes a chat's cover picture.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesChatNotAdmin} - You are not admin of this chat
+         * @throws {Errors.ApiErrorMessagesChatDisabled} - Chat was disabled
+         * @see https://vk.com/dev/messages.deleteChatPhoto
+         */
+        deleteChatPhoto<Params extends {
+            /**
+             * Chat ID.
+             * @maximum 100000000
+             * @maximum 100000000
+             */
+            chat_id: number;
+            group_id?: number;
+        }>(params: Params): Responses.MessagesDeleteChatPhotoResponse["response"];
+        /**
+         * Deletes all private messages in a conversation.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesContactNotFound} - Contact not found
+         * @see https://vk.com/dev/messages.deleteConversation
+         */
+        deleteConversation<Params extends {
+            /**
+             * User ID. To clear a chat history use 'chat_id'
+             *
+             */
+            user_id?: number;
+            /**
+             * Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'chat_id', e.g. '2000000001'. For community: '- community ID', e.g. '-12345'. "
+             *
+             */
+            peer_id?: number;
+            /**
+             * Group ID (for group messages with user access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.MessagesDeleteConversationResponse["response"];
+        /**
+         * Denies sending message from community to the current user.
+         * @access user
+         *
+         * @see https://vk.com/dev/messages.denyMessagesFromGroup
+         */
+        denyMessagesFromGroup<Params extends {
+            /**
+             * Group ID.
+             *
+             */
+            group_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits the message.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesDenySend} - Can't send messages for users without permission
+         * @throws {Errors.ApiErrorMessagesEditExpired} - Can't edit this message, because it's too old
+         * @throws {Errors.ApiErrorMessagesTooBig} - Can't sent this message, because it's too big
+         * @throws {Errors.ApiErrorMessagesEditKindDisallowed} - Can't edit this kind of message
+         * @throws {Errors.ApiErrorMessagesTooLongMessage} - Message is too long
+         * @throws {Errors.ApiErrorMessagesChatUserNoAccess} - You don't have access to this chat
+         * @throws {Errors.ApiErrorMessagesKeyboardInvalid} - Keyboard format is invalid
+         * @throws {Errors.ApiErrorMessagesTooManyPosts} - Too many posts in messages
+         * @throws {Errors.ApiErrorMessagesChatUnsupported} - Chat not supported
+         * @see https://vk.com/dev/messages.edit
+         */
+        edit<Params extends {
+            /**
+             * Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'chat_id', e.g. '2000000001'. For community: '- community ID', e.g. '-12345'. "
+             *
+             */
+            peer_id: number;
+            /**
+             * (Required if 'attachments' is not set.) Text of the message.
+             *
+             */
+            message?: string;
+            /**
+             * Geographical latitude of a check-in, in degrees (from -90 to 90).
+             */
+            lat?: number;
+            /**
+             * Geographical longitude of a check-in, in degrees (from -180 to 180).
+             */
+            long?: number;
+            /**
+             * (Required if 'message' is not set.) List of objects attached to the message, separated by commas, in the following format: "<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, 'wall' — wall post, '<owner_id>' — ID of the media attachment owner. '<media_id>' — media attachment ID. Example: "photo100172_166443618"
+             *
+             */
+            attachment?: string;
+            /**
+             * '1' — to keep forwarded, messages.
+             *
+             */
+            keep_forward_messages?: boolean;
+            /**
+             * '1' — to keep attached snippets.
+             *
+             */
+            keep_snippets?: boolean;
+            /**
+             * Group ID (for group messages with user access token)
+             *
+             */
+            group_id?: number;
+            dont_parse_links?: boolean;
+            message_id?: number;
+        }>(params: Params): Responses.MessagesEditResponse["response"];
+        /**
+         * Edits the title of a chat.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesChatNotAdmin} - You are not admin of this chat
+         * @throws {Errors.ApiErrorMessagesChatDisabled} - Chat was disabled
+         * @throws {Errors.ApiErrorMessagesChatUnsupported} - Chat not supported
+         * @see https://vk.com/dev/messages.editChat
+         */
+        editChat<Params extends {
+            /**
+             * Chat ID.
+             * @maximum 100000000
+             * @maximum 100000000
+             */
+            chat_id: number;
+            /**
+             * New title of the chat.
+             *
+             */
+            title: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns messages by their IDs within the conversation.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/messages.getByConversationMessageId
+         */
+        getByConversationMessageId<Params extends {
+            /**
+             * Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'chat_id', e.g. '2000000001'. For community: '- community ID', e.g. '-12345'. "
+             *
+             */
+            peer_id: number;
+            /**
+             * Conversation message IDs.
+             *
+             */
+            conversation_message_ids: number[];
+            /**
+             * Information whether the response should be extended
+             *
+             */
+            extended?: boolean;
+            /**
+             * Profile fields to return.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.MessagesGetByConversationMessageIdResponse["response"];
+        /**
+         * Returns messages by their IDs.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/messages.getById
+         */
+        getById<Params extends {
+            /**
+             * Message IDs.
+             *
+             */
+            message_ids: number[];
+            /**
+             * Number of characters after which to truncate a previewed message. To preview the full message, specify '0'. "NOTE: Messages are not truncated by default. Messages are truncated by words."
+             *
+             */
+            preview_length?: number;
+            /**
+             * Information whether the response should be extended
+             *
+             */
+            extended?: boolean;
+            /**
+             * Profile fields to return.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.MessagesGetByIdExtendedResponse["response"] : Responses.MessagesGetByIdResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorMessagesChatUserNoAccess} - You don't have access to this chat
+         * @see https://vk.com/dev/messages.getChatPreview
+         */
+        getChatPreview<Params extends {
+            peer_id?: number;
+            /**
+             * Invitation link.
+             *
+             */
+            link?: string;
+            /**
+             * Profile fields to return.
+             *
+             */
+            fields?: Objects.UsersFields[];
+        }>(params: Params): Responses.MessagesGetChatPreviewResponse["response"];
+        /**
+         * Returns a list of IDs of users participating in a chat.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesChatUserNoAccess} - You don't have access to this chat
+         * @see https://vk.com/dev/messages.getConversationMembers
+         */
+        getConversationMembers<Params extends {
+            /**
+             * Peer ID.
+             *
+             */
+            peer_id: number;
+            /**
+             * Profile fields to return.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.MessagesGetConversationMembersResponse["response"];
+        /**
+         * Returns a list of the current user's conversations.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesChatNotExist} - Chat does not exist
+         * @throws {Errors.ApiErrorMessagesContactNotFound} - Contact not found
+         * @throws {Errors.ApiErrorMessagesChatUserNoAccess} - You don't have access to this chat
+         * @see https://vk.com/dev/messages.getConversations
+         */
+        getConversations<Params extends {
+            /**
+             * Offset needed to return a specific subset of conversations.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of conversations to return.
+             * @maximum 200
+             * @default 20
+             * @maximum 200
+             * @default 20
+             */
+            count?: number;
+            /**
+             * Filter to apply: 'all' — all conversations, 'unread' — conversations with unread messages, 'important' — conversations, marked as important (only for community messages), 'unanswered' — conversations, marked as unanswered (only for community messages)
+             * @enum {string} all, important, unanswered, unread
+             * @default all
+             * @enum {string} all, important, unanswered, unread
+             * @default all
+             */
+            filter?: "all" | "important" | "unanswered" | "unread";
+            /**
+             * '1' — return extra information about users and communities
+             *
+             */
+            extended?: boolean;
+            /**
+             * ID of the message from what to return dialogs.
+             *
+             */
+            start_message_id?: number;
+            /**
+             * Profile and communities fields to return.
+             *
+             */
+            fields?: Objects.BaseUserGroupFields[];
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.MessagesGetConversationsResponse["response"];
+        /**
+         * Returns conversations by their IDs
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesChatNotExist} - Chat does not exist
+         * @throws {Errors.ApiErrorMessagesChatUserNoAccess} - You don't have access to this chat
+         * @throws {Errors.ApiErrorMessagesContactNotFound} - Contact not found
+         * @see https://vk.com/dev/messages.getConversationsById
+         */
+        getConversationsById<Params extends {
+            /**
+             * Destination IDs. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'chat_id', e.g. '2000000001'. For community: '- community ID', e.g. '-12345'. "
+             *
+             */
+            peer_ids: number[];
+            /**
+             * Return extended properties
+             *
+             */
+            extended?: boolean;
+            /**
+             * Profile and communities fields to return.
+             *
+             */
+            fields?: Objects.BaseUserGroupFields[];
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.MessagesGetConversationsByIdExtendedResponse["response"] : Responses.MessagesGetConversationsByIdResponse["response"];
+        /**
+         * Returns message history for the specified user or group chat.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesContactNotFound} - Contact not found
+         * @see https://vk.com/dev/messages.getHistory
+         */
+        getHistory<Params extends {
+            /**
+             * Offset needed to return a specific subset of messages.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of messages to return.
+             * @maximum 200
+             * @default 20
+             * @maximum 200
+             * @default 20
+             */
+            count?: number;
+            /**
+             * ID of the user whose message history you want to return.
+             *
+             */
+            user_id?: number;
+            peer_id?: number;
+            /**
+             * Starting message ID from which to return history.
+             *
+             */
+            start_message_id?: number;
+            /**
+             * Sort order: '1' — return messages in chronological order. '0' — return messages in reverse chronological order.
+             *
+             */
+            rev?: number;
+            /**
+             * Information whether the response should be extended
+             *
+             */
+            extended?: boolean;
+            /**
+             * Profile fields to return.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.MessagesGetHistoryResponse["response"];
+        /**
+         * Returns media files from the dialog or group chat.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/messages.getHistoryAttachments
+         */
+        getHistoryAttachments<Params extends {
+            /**
+             * Peer ID. ", For group chat: '2000000000 + chat ID' , , For community: '-community ID'"
+             *
+             */
+            peer_id: number;
+            /**
+             * Type of media files to return: *'photo',, *'video',, *'audio',, *'doc',, *'link'.,*'market'.,*'wall'.,*'share'
+             * @enum {string} audio, audio_message, doc, graffiti, link, market, photo, share, video, wall
+             * @default photo
+             * @enum {string} audio, audio_message, doc, graffiti, link, market, photo, share, video, wall
+             * @default photo
+             */
+            media_type?: "audio" | "audio_message" | "doc" | "graffiti" | "link" | "market" | "photo" | "share" | "video" | "wall";
+            /**
+             * Message ID to start return results from.
+             *
+             */
+            start_from?: string;
+            /**
+             * Number of objects to return.
+             * @maximum 200
+             * @default 30
+             * @maximum 200
+             * @default 30
+             */
+            count?: number;
+            /**
+             * '1' — to return photo sizes in a
+             *
+             */
+            photo_sizes?: boolean;
+            /**
+             * Additional profile {@link https://vk.com/dev/fields|fields} to return.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+            preserve_order?: boolean;
+            /**
+             *
+             * @maximum 45
+             * @default 45
+             * @maximum 45
+             * @default 45
+             */
+            max_forwards_level?: number;
+        }>(params: Params): Responses.MessagesGetHistoryAttachmentsResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesCantSeeInviteLink} - You can't see invite link for this chat
+         * @throws {Errors.ApiErrorMessagesCantChangeInviteLink} - You can't change invite link for this chat
+         * @see https://vk.com/dev/messages.getInviteLink
+         */
+        getInviteLink<Params extends {
+            /**
+             * Destination ID.
+             *
+             */
+            peer_id: number;
+            /**
+             * 1 — to generate new link (revoke previous), 0 — to return previous link.
+             *
+             */
+            reset?: boolean;
+            /**
+             * Group ID
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.MessagesGetInviteLinkResponse["response"];
+        /**
+         * Returns a user's current status and date of last activity.
+         * @access user
+         *
+         * @see https://vk.com/dev/messages.getLastActivity
+         */
+        getLastActivity<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id: number;
+        }>(params: Params): Responses.MessagesGetLastActivityResponse["response"];
+        /**
+         * Returns updates in user's private messages.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesTooOldPts} - Value of ts or pts is too old
+         * @throws {Errors.ApiErrorMessagesTooNewPts} - Value of ts or pts is too new
+         * @see https://vk.com/dev/messages.getLongPollHistory
+         */
+        getLongPollHistory<Params extends {
+            /**
+             * Last value of the 'ts' parameter returned from the Long Poll server or by using {@link https://vk.com/dev/messages.getLongPollHistory|messages.getLongPollHistory} method.
+             *
+             */
+            ts?: number;
+            /**
+             * Lsat value of 'pts' parameter returned from the Long Poll server or by using {@link https://vk.com/dev/messages.getLongPollHistory|messages.getLongPollHistory} method.
+             *
+             */
+            pts?: number;
+            /**
+             * Number of characters after which to truncate a previewed message. To preview the full message, specify '0'. "NOTE: Messages are not truncated by default. Messages are truncated by words."
+             *
+             */
+            preview_length?: number;
+            /**
+             * '1' — to return history with online users only.
+             *
+             */
+            onlines?: boolean;
+            /**
+             * Additional profile {@link https://vk.com/dev/fields|fields} to return.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Maximum number of events to return.
+             * @minimum 1000
+             * @default 1000
+             * @minimum 1000
+             * @default 1000
+             */
+            events_limit?: number;
+            /**
+             * Maximum number of messages to return.
+             * @minimum 200
+             * @default 200
+             * @minimum 200
+             * @default 200
+             */
+            msgs_limit?: number;
+            /**
+             * Maximum ID of the message among existing ones in the local copy. Both messages received with API methods (for example, , ), and data received from a Long Poll server (events with code 4) are taken into account.
+             *
+             */
+            max_msg_id?: number;
+            /**
+             * Group ID (for group messages with user access token)
+             *
+             */
+            group_id?: number;
+            lp_version?: number;
+            /**
+             *
+             * @maximum 2000
+             * @maximum 2000
+             */
+            last_n?: number;
+            credentials?: boolean;
+        }>(params: Params): Responses.MessagesGetLongPollHistoryResponse["response"];
+        /**
+         * Returns data required for connection to a Long Poll server.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/messages.getLongPollServer
+         */
+        getLongPollServer<Params extends {
+            /**
+             * '1' — to return the 'pts' field, needed for the {@link https://vk.com/dev/messages.getLongPollHistory|messages.getLongPollHistory} method.
+             *
+             */
+            need_pts?: boolean;
+            /**
+             * Group ID (for group messages with user access token)
+             *
+             */
+            group_id?: number;
+            /**
+             * Long poll version
+             *
+             */
+            lp_version?: number;
+        }>(params: Params): Responses.MessagesGetLongPollServerResponse["response"];
+        /**
+         * Returns information whether sending messages from the community to current user is allowed.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/messages.isMessagesFromGroupAllowed
+         */
+        isMessagesFromGroupAllowed<Params extends {
+            /**
+             * Group ID.
+             *
+             */
+            group_id: number;
+            /**
+             * User ID.
+             *
+             */
+            user_id: number;
+        }>(params: Params): Responses.MessagesIsMessagesFromGroupAllowedResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorMessagesChatUserNoAccess} - You don't have access to this chat
+         * @throws {Errors.ApiErrorLimits} - Out of limits
+         * @see https://vk.com/dev/messages.joinChatByInviteLink
+         */
+        joinChatByInviteLink<Params extends {
+            /**
+             * Invitation link.
+             *
+             */
+            link: string;
+        }>(params: Params): Responses.MessagesJoinChatByInviteLinkResponse["response"];
+        /**
+         * Marks and unmarks conversations as unanswered.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/messages.markAsAnsweredConversation
+         */
+        markAsAnsweredConversation<Params extends {
+            /**
+             * ID of conversation to mark as important.
+             *
+             */
+            peer_id: number;
+            /**
+             * '1' — to mark as answered, '0' — to remove the mark
+             * @default 1
+             * @default 1
+             */
+            answered?: boolean;
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Marks and unmarks messages as important (starred).
+         * @access user
+         *
+         * @see https://vk.com/dev/messages.markAsImportant
+         */
+        markAsImportant<Params extends {
+            /**
+             * IDs of messages to mark as important.
+             *
+             */
+            message_ids?: number[];
+            /**
+             * '1' — to add a star (mark as important), '0' — to remove the star
+             *
+             */
+            important?: number;
+        }>(params: Params): Responses.MessagesMarkAsImportantResponse["response"];
+        /**
+         * Marks and unmarks conversations as important.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/messages.markAsImportantConversation
+         */
+        markAsImportantConversation<Params extends {
+            /**
+             * ID of conversation to mark as important.
+             *
+             */
+            peer_id: number;
+            /**
+             * '1' — to add a star (mark as important), '0' — to remove the star
+             * @default 1
+             * @default 1
+             */
+            important?: boolean;
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Marks messages as read.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/messages.markAsRead
+         */
+        markAsRead<Params extends {
+            /**
+             * IDs of messages to mark as read.
+             *
+             */
+            message_ids?: number[];
+            /**
+             * Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'chat_id', e.g. '2000000001'. For community: '- community ID', e.g. '-12345'. "
+             *
+             */
+            peer_id?: number;
+            /**
+             * Message ID to start from.
+             *
+             */
+            start_message_id?: number;
+            /**
+             * Group ID (for group messages with user access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Pin a message.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesChatNotAdmin} - You are not admin of this chat
+         * @throws {Errors.ApiErrorMessagesCantPinOneTimeStory} - Cannot pin one-time story
+         * @see https://vk.com/dev/messages.pin
+         */
+        pin<Params extends {
+            /**
+             * Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'Chat ID', e.g. '2000000001'. For community: '- Community ID', e.g. '-12345'. "
+             *
+             */
+            peer_id: number;
+            message_id?: number;
+        }>(params: Params): Responses.MessagesPinResponse["response"];
+        /**
+         * Allows the current user to leave a chat or, if the current user started the chat, allows the user to remove another user from the chat.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesChatNotAdmin} - You are not admin of this chat
+         * @throws {Errors.ApiErrorMessagesChatUserNotInChat} - User not found in chat
+         * @throws {Errors.ApiErrorMessagesContactNotFound} - Contact not found
+         * @throws {Errors.ApiErrorMessagesChatDisabled} - Chat was disabled
+         * @throws {Errors.ApiErrorMessagesChatUnsupported} - Chat not supported
+         * @see https://vk.com/dev/messages.removeChatUser
+         */
+        removeChatUser<Params extends {
+            /**
+             * Chat ID.
+             * @maximum 100000000
+             * @maximum 100000000
+             */
+            chat_id: number;
+            /**
+             * ID of the user to be removed from the chat.
+             *
+             */
+            user_id?: number;
+            member_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Restores a deleted message.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/messages.restore
+         */
+        restore<Params extends {
+            /**
+             * ID of a previously-deleted message to restore.
+             *
+             */
+            message_id: number;
+            /**
+             * Group ID (for group messages with user access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns a list of the current user's private messages that match search criteria.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/messages.search
+         */
+        search<Params extends {
+            /**
+             * Search query string.
+             *
+             */
+            q?: string;
+            /**
+             * Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'chat_id', e.g. '2000000001'. For community: '- community ID', e.g. '-12345'. "
+             *
+             */
+            peer_id?: number;
+            /**
+             * Date to search message before in Unixtime.
+             *
+             */
+            date?: number;
+            /**
+             * Number of characters after which to truncate a previewed message. To preview the full message, specify '0'. "NOTE: Messages are not truncated by default. Messages are truncated by words."
+             *
+             */
+            preview_length?: number;
+            /**
+             * Offset needed to return a specific subset of messages.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of messages to return.
+             * @maximum 100
+             * @default 20
+             * @maximum 100
+             * @default 20
+             */
+            count?: number;
+            extended?: boolean;
+            fields?: string[];
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.MessagesSearchResponse["response"];
+        /**
+         * Returns a list of the current user's conversations that match search criteria.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/messages.searchConversations
+         */
+        searchConversations<Params extends {
+            /**
+             * Search query string.
+             *
+             */
+            q?: string;
+            /**
+             * Maximum number of results.
+             * @default 20
+             * @default 20
+             */
+            count?: number;
+            /**
+             * '1' — return extra information about users and communities
+             *
+             */
+            extended?: boolean;
+            /**
+             * Profile fields to return.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Group ID (for group messages with user access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.MessagesSearchConversationsResponse["response"];
+        /**
+         * Sends a message.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesUserBlocked} - Can't send messages for users from blacklist
+         * @throws {Errors.ApiErrorMessagesDenySend} - Can't send messages for users without permission
+         * @throws {Errors.ApiErrorMessagesPrivacy} - Can't send messages to this user due to their privacy settings
+         * @throws {Errors.ApiErrorMessagesTooLongMessage} - Message is too long
+         * @throws {Errors.ApiErrorMessagesTooLongForwards} - Too many forwarded messages
+         * @throws {Errors.ApiErrorMessagesCantFwd} - Can't forward these messages
+         * @throws {Errors.ApiErrorMessagesChatUserNoAccess} - You don't have access to this chat
+         * @throws {Errors.ApiErrorMessagesKeyboardInvalid} - Keyboard format is invalid
+         * @throws {Errors.ApiErrorMessagesChatBotFeature} - This is a chat bot feature, change this status in settings
+         * @throws {Errors.ApiErrorMessagesContactNotFound} - Contact not found
+         * @throws {Errors.ApiErrorMessagesTooManyPosts} - Too many posts in messages
+         * @throws {Errors.ApiErrorMessagesIntentCantUse} - Cannot use this intent
+         * @throws {Errors.ApiErrorMessagesIntentLimitOverflow} - Limits overflow for this intent
+         * @throws {Errors.ApiErrorMessagesChatUnsupported} - Chat not supported
+         * @throws {Errors.ApiErrorMessagesChatDisabled} - Chat was disabled
+         * @throws {Errors.ApiErrorMessagesChatNotAdmin} - You are not admin of this chat
+         * @see https://vk.com/dev/messages.send
+         */
+        send<Params extends {
+            /**
+             * User ID (by default — current user).
+             *
+             */
+            user_id?: number;
+            /**
+             * Unique identifier to avoid resending the message.
+             *
+             */
+            random_id?: number;
+            /**
+             * Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'chat_id', e.g. '2000000001'. For community: '- community ID', e.g. '-12345'. "
+             *
+             */
+            peer_id?: number;
+            /**
+             * User's short address (for example, 'illarionov').
+             *
+             */
+            domain?: string;
+            /**
+             * ID of conversation the message will relate to.
+             * @maximum 100000000
+             * @maximum 100000000
+             */
+            chat_id?: number;
+            /**
+             * IDs of message recipients (if new conversation shall be started).
+             *
+             */
+            user_ids?: number[];
+            /**
+             * (Required if 'attachments' is not set.) Text of the message.
+             *
+             */
+            message?: string;
+            /**
+             * Geographical latitude of a check-in, in degrees (from -90 to 90).
+             */
+            lat?: number;
+            /**
+             * Geographical longitude of a check-in, in degrees (from -180 to 180).
+             */
+            long?: number;
+            /**
+             * (Required if 'message' is not set.) List of objects attached to the message, separated by commas, in the following format: "<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, 'wall' — wall post, '<owner_id>' — ID of the media attachment owner. '<media_id>' — media attachment ID. Example: "photo100172_166443618"
+             *
+             */
+            attachment?: string;
+            reply_to?: number;
+            /**
+             * ID of forwarded messages, separated with a comma. Listed messages of the sender will be shown in the message body at the recipient's. Example: "123,431,544"
+             *
+             */
+            forward_messages?: number[];
+            /**
+             * Sticker id.
+             *
+             */
+            sticker_id?: number;
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+            keyboard?: Objects.MessagesKeyboard;
+            payload?: string;
+            dont_parse_links?: boolean;
+            disable_mentions?: boolean;
+            /**
+             *
+             * @enum {string} bot_ad_invite, bot_ad_promo, promo_newsletter
+             * @enum {string} bot_ad_invite, bot_ad_promo, promo_newsletter
+             */
+            intent?: "bot_ad_invite" | "bot_ad_promo" | "promo_newsletter";
+        }>(params: Params): Responses.MessagesSendResponse["response"];
+        /**
+         * Changes the status of a user as typing in a conversation.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesGroupPeerAccess} - Your community can't interact with this peer
+         * @throws {Errors.ApiErrorMessagesChatUserNoAccess} - You don't have access to this chat
+         * @throws {Errors.ApiErrorMessagesContactNotFound} - Contact not found
+         * @see https://vk.com/dev/messages.setActivity
+         */
+        setActivity<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * 'typing' — user has started to type.
+             *
+             */
+            type?: string;
+            /**
+             * Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'chat_id', e.g. '2000000001'. For community: '- community ID', e.g. '-12345'. "
+             *
+             */
+            peer_id?: number;
+            /**
+             * Group ID (for group messages with group access token)
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Sets a previously-uploaded picture as the cover picture of a chat.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorUpload} - Upload error
+         * @throws {Errors.ApiErrorPhotoChanged} - Original photo was changed
+         * @throws {Errors.ApiErrorMessagesChatNotAdmin} - You are not admin of this chat
+         * @see https://vk.com/dev/messages.setChatPhoto
+         */
+        setChatPhoto<Params extends {
+            /**
+             * Upload URL from the 'response' field returned by the {@link https://vk.com/dev/photos.getChatUploadServer|photos.getChatUploadServer} method upon successfully uploading an image.
+             *
+             */
+            file: string;
+        }>(params: Params): Responses.MessagesSetChatPhotoResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesChatNotAdmin} - You are not admin of this chat
+         * @see https://vk.com/dev/messages.unpin
+         */
+        unpin<Params extends {
+            peer_id: number;
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Newsfeed {
+        /**
+         * Prevents news from specified users and communities from appearing in the current user's newsfeed.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.addBan
+         */
+        addBan<Params extends {
+            user_ids?: number[];
+            group_ids?: number[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Allows news from previously banned users and communities to be shown in the current user's newsfeed.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.deleteBan
+         */
+        deleteBan<Params extends {
+            user_ids?: number[];
+            group_ids?: number[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.deleteList
+         */
+        deleteList<Params extends {
+            list_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns data required to show newsfeed for the current user.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.get
+         */
+        get<Params extends {
+            /**
+             * Filters to apply: 'post' — new wall posts, 'photo' — new photos, 'photo_tag' — new photo tags, 'wall_photo' — new wall photos, 'friend' — new friends, 'note' — new notes
+             *
+             */
+            filters?: Objects.NewsfeedFilters[];
+            /**
+             * '1' — to return news items from banned sources
+             *
+             */
+            return_banned?: boolean;
+            /**
+             * Earliest timestamp (in Unix time) of a news item to return. By default, 24 hours ago.
+             *
+             */
+            start_time?: number;
+            /**
+             * Latest timestamp (in Unix time) of a news item to return. By default, the current time.
+             *
+             */
+            end_time?: number;
+            /**
+             * Maximum number of photos to return. By default, '5'.
+             *
+             */
+            max_photos?: number;
+            /**
+             * Sources to obtain news from, separated by commas. User IDs can be specified in formats '' or 'u' , where '' is the user's friend ID. Community IDs can be specified in formats '-' or 'g' , where '' is the community ID. If the parameter is not set, all of the user's friends and communities are returned, except for banned sources, which can be obtained with the {@link https://vk.com/dev/newsfeed.getBanned|newsfeed.getBanned} method.
+             *
+             */
+            source_ids?: string;
+            /**
+             * identifier required to get the next page of results. Value for this parameter is returned in 'next_from' field in a reply.
+             *
+             */
+            start_from?: string;
+            /**
+             * Number of news items to return (default 50, maximum 100). For auto feed, you can use the 'new_offset' parameter returned by this method.
+             *
+             */
+            count?: number;
+            /**
+             * Additional fields of {@link https://vk.com/dev/fields|profiles} and {@link https://vk.com/dev/fields_groups|communities} to return.
+             *
+             */
+            fields?: Objects.BaseUserGroupFields[];
+            section?: string;
+        }>(params: Params): Responses.NewsfeedGetResponse["response"];
+        /**
+         * Returns a list of users and communities banned from the current user's newsfeed.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.getBanned
+         */
+        getBanned<Params extends {
+            /**
+             * '1' — return extra information about users and communities
+             *
+             */
+            extended?: boolean;
+            /**
+             * Profile fields to return.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Case for declension of user name and surname: 'nom' — nominative (default), 'gen' — genitive , 'dat' — dative, 'acc' — accusative , 'ins' — instrumental , 'abl' — prepositional
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             */
+            name_case?: "nom" | "gen" | "dat" | "acc" | "ins" | "abl";
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.NewsfeedGetBannedExtendedResponse["response"] : Responses.NewsfeedGetBannedResponse["response"];
+        /**
+         * Returns a list of comments in the current user's newsfeed.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.getComments
+         */
+        getComments<Params extends {
+            /**
+             * Number of comments to return. For auto feed, you can use the 'new_offset' parameter returned by this method.
+             * @maximum 100
+             * @default 30
+             * @maximum 100
+             * @default 30
+             */
+            count?: number;
+            /**
+             * Filters to apply: 'post' — new comments on wall posts, 'photo' — new comments on photos, 'video' — new comments on videos, 'topic' — new comments on discussions, 'note' — new comments on notes,
+             *
+             */
+            filters?: Objects.NewsfeedCommentsFilters[];
+            /**
+             * Object ID, comments on repost of which shall be returned, e.g. 'wall1_45486'. (If the parameter is set, the 'filters' parameter is optional.),
+             *
+             */
+            reposts?: string;
+            /**
+             * Earliest timestamp (in Unix time) of a comment to return. By default, 24 hours ago.
+             *
+             */
+            start_time?: number;
+            /**
+             * Latest timestamp (in Unix time) of a comment to return. By default, the current time.
+             *
+             */
+            end_time?: number;
+            /**
+             *
+             * @maximum 10
+             * @maximum 10
+             */
+            last_comments_count?: number;
+            /**
+             * Identificator needed to return the next page with results. Value for this parameter returns in 'next_from' field.
+             *
+             */
+            start_from?: string;
+            /**
+             * Additional fields of {@link https://vk.com/dev/fields|profiles} and {@link https://vk.com/dev/fields_groups|communities} to return.
+             *
+             */
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Responses.NewsfeedGetCommentsResponse["response"];
+        /**
+         * Returns a list of newsfeeds followed by the current user.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.getLists
+         */
+        getLists<Params extends {
+            /**
+             * numeric list identifiers.
+             *
+             */
+            list_ids?: number[];
+            /**
+             * Return additional list info
+             *
+             */
+            extended?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.NewsfeedGetListsExtendedResponse["response"] : Responses.NewsfeedGetListsResponse["response"];
+        /**
+         * Returns a list of posts on user walls in which the current user is mentioned.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.getMentions
+         */
+        getMentions<Params extends {
+            /**
+             * Owner ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Earliest timestamp (in Unix time) of a post to return. By default, 24 hours ago.
+             *
+             */
+            start_time?: number;
+            /**
+             * Latest timestamp (in Unix time) of a post to return. By default, the current time.
+             *
+             */
+            end_time?: number;
+            /**
+             * Offset needed to return a specific subset of posts.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of posts to return.
+             * @maximum 50
+             * @default 20
+             * @maximum 50
+             * @default 20
+             */
+            count?: number;
+        }>(params: Params): Responses.NewsfeedGetMentionsResponse["response"];
+        /**
+         * , Returns a list of newsfeeds recommended to the current user.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.getRecommended
+         */
+        getRecommended<Params extends {
+            /**
+             * Earliest timestamp (in Unix time) of a news item to return. By default, 24 hours ago.
+             *
+             */
+            start_time?: number;
+            /**
+             * Latest timestamp (in Unix time) of a news item to return. By default, the current time.
+             *
+             */
+            end_time?: number;
+            /**
+             * Maximum number of photos to return. By default, '5'.
+             *
+             */
+            max_photos?: number;
+            /**
+             * 'new_from' value obtained in previous call.
+             *
+             */
+            start_from?: string;
+            /**
+             * Number of news items to return.
+             *
+             */
+            count?: number;
+            /**
+             * Additional fields of {@link https://vk.com/dev/fields|profiles} and {@link https://vk.com/dev/fields_groups|communities} to return.
+             *
+             */
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Responses.NewsfeedGetRecommendedResponse["response"];
+        /**
+         * Returns communities and users that current user is suggested to follow.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.getSuggestedSources
+         */
+        getSuggestedSources<Params extends {
+            /**
+             * offset required to choose a particular subset of communities or users.
+             *
+             */
+            offset?: number;
+            /**
+             * amount of communities or users to return.
+             * @maximum 1000
+             * @default 20
+             * @maximum 1000
+             * @default 20
+             */
+            count?: number;
+            /**
+             * shuffle the returned list or not.
+             *
+             */
+            shuffle?: boolean;
+            /**
+             * list of extra fields to be returned. See available fields for {@link https://vk.com/dev/fields|users} and {@link https://vk.com/dev/fields_groups|communities}.
+             *
+             */
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Responses.NewsfeedGetSuggestedSourcesResponse["response"];
+        /**
+         * Hides an item from the newsfeed.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.ignoreItem
+         */
+        ignoreItem<Params extends {
+            /**
+             * Item type. Possible values: *'wall' – post on the wall,, *'tag' – tag on a photo,, *'profilephoto' – profile photo,, *'video' – video,, *'audio' – audio.
+             *
+             */
+            type: Objects.NewsfeedIgnoreItemType;
+            /**
+             * Item owner's identifier (user or community), "Note that community id must be negative. 'owner_id=1' – user , 'owner_id=-1' – community "
+             *
+             */
+            owner_id: number;
+            /**
+             * Item identifier
+             *
+             */
+            item_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Creates and edits user newsfeed lists
+         * @access user
+         * @throws {Errors.ApiErrorTooManyLists} - Too many feed lists
+         * @see https://vk.com/dev/newsfeed.saveList
+         */
+        saveList<Params extends {
+            /**
+             * numeric list identifier (if not sent, will be set automatically).
+             *
+             */
+            list_id?: number;
+            /**
+             * list name.
+             *
+             */
+            title: string;
+            /**
+             * users and communities identifiers to be added to the list. Community identifiers must be negative numbers.
+             *
+             */
+            source_ids?: number[];
+            /**
+             * reposts display on and off ('1' is for off).
+             *
+             */
+            no_reposts?: boolean;
+        }>(params: Params): Responses.NewsfeedSaveListResponse["response"];
+        /**
+         * Returns search results by statuses.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/newsfeed.search
+         */
+        search<Params extends {
+            /**
+             * Search query string (e.g., 'New Year').
+             *
+             */
+            q?: string;
+            /**
+             * '1' — to return additional information about the user or community that placed the post.
+             *
+             */
+            extended?: boolean;
+            /**
+             * Number of posts to return.
+             * @maximum 200
+             * @default 30
+             * @maximum 200
+             * @default 30
+             */
+            count?: number;
+            /**
+             * Geographical latitude point (in degrees, -90 to 90) within which to search.
+             */
+            latitude?: number;
+            /**
+             * Geographical longitude point (in degrees, -180 to 180) within which to search.
+             */
+            longitude?: number;
+            /**
+             * Earliest timestamp (in Unix time) of a news item to return. By default, 24 hours ago.
+             *
+             */
+            start_time?: number;
+            /**
+             * Latest timestamp (in Unix time) of a news item to return. By default, the current time.
+             *
+             */
+            end_time?: number;
+            start_from?: string;
+            /**
+             * Additional fields of {@link https://vk.com/dev/fields|profiles} and {@link https://vk.com/dev/fields_groups|communities} to return.
+             *
+             */
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.NewsfeedSearchExtendedResponse["response"] : Responses.NewsfeedSearchResponse["response"];
+        /**
+         * Returns a hidden item to the newsfeed.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.unignoreItem
+         */
+        unignoreItem<Params extends {
+            /**
+             * Item type. Possible values: *'wall' – post on the wall,, *'tag' – tag on a photo,, *'profilephoto' – profile photo,, *'video' – video,, *'audio' – audio.
+             *
+             */
+            type: Objects.NewsfeedIgnoreItemType;
+            /**
+             * Item owner's identifier (user or community), "Note that community id must be negative. 'owner_id=1' – user , 'owner_id=-1' – community "
+             *
+             */
+            owner_id: number;
+            /**
+             * Item identifier
+             *
+             */
+            item_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Unsubscribes the current user from specified newsfeeds.
+         * @access user
+         *
+         * @see https://vk.com/dev/newsfeed.unsubscribe
+         */
+        unsubscribe<Params extends {
+            /**
+             * Type of object from which to unsubscribe: 'note' — note, 'photo' — photo, 'post' — post on user wall or community wall, 'topic' — topic, 'video' — video
+             * @enum {string} note, photo, post, topic, video
+             * @enum {string} note, photo, post, topic, video
+             */
+            type: "note" | "photo" | "post" | "topic" | "video";
+            /**
+             * Object owner ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Object ID.
+             *
+             */
+            item_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Notes {
+        /**
+         * Creates a new note for the current user.
+         * @access user
+         *
+         * @see https://vk.com/dev/notes.add
+         */
+        add<Params extends {
+            /**
+             * Note title.
+             *
+             */
+            title: string;
+            /**
+             * Note text.
+             *
+             */
+            text: string;
+            privacy_view?: string[];
+            privacy_comment?: string[];
+        }>(params: Params): Responses.NotesAddResponse["response"];
+        /**
+         * Adds a new comment on a note.
+         * @access user
+         * @throws {Errors.ApiErrorAccessNote} - Access to note denied
+         * @throws {Errors.ApiErrorAccessNoteComment} - You can't comment this note
+         * @see https://vk.com/dev/notes.createComment
+         */
+        createComment<Params extends {
+            /**
+             * Note ID.
+             *
+             */
+            note_id: number;
+            /**
+             * Note owner ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * ID of the user to whom the reply is addressed (if the comment is a reply to another comment).
+             *
+             */
+            reply_to?: number;
+            /**
+             * Comment text.
+             *
+             */
+            message: string;
+            guid?: string;
+        }>(params: Params): Responses.NotesCreateCommentResponse["response"];
+        /**
+         * Deletes a note of the current user.
+         * @access user
+         * @throws {Errors.ApiErrorParamNoteId} - Note not found
+         * @see https://vk.com/dev/notes.delete
+         */
+        delete<Params extends {
+            /**
+             * Note ID.
+             *
+             */
+            note_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Deletes a comment on a note.
+         * @access user
+         * @throws {Errors.ApiErrorAccessNote} - Access to note denied
+         * @throws {Errors.ApiErrorAccessComment} - Access to comment denied
+         * @see https://vk.com/dev/notes.deleteComment
+         */
+        deleteComment<Params extends {
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+            /**
+             * Note owner ID.
+             *
+             */
+            owner_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits a note of the current user.
+         * @access user
+         * @throws {Errors.ApiErrorParamNoteId} - Note not found
+         * @see https://vk.com/dev/notes.edit
+         */
+        edit<Params extends {
+            /**
+             * Note ID.
+             *
+             */
+            note_id: number;
+            /**
+             * Note title.
+             *
+             */
+            title: string;
+            /**
+             * Note text.
+             *
+             */
+            text: string;
+            privacy_view?: string[];
+            privacy_comment?: string[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits a comment on a note.
+         * @access user
+         * @throws {Errors.ApiErrorAccessComment} - Access to comment denied
+         * @see https://vk.com/dev/notes.editComment
+         */
+        editComment<Params extends {
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+            /**
+             * Note owner ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * New comment text.
+             *
+             */
+            message: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns a list of notes created by a user.
+         * @access user
+         * @throws {Errors.ApiErrorParamNoteId} - Note not found
+         * @see https://vk.com/dev/notes.get
+         */
+        get<Params extends {
+            /**
+             * Note IDs.
+             *
+             */
+            note_ids?: number[];
+            /**
+             * Note owner ID.
+             *
+             */
+            user_id?: number;
+            offset?: number;
+            /**
+             * Number of notes to return.
+             * @maximum 100
+             * @default 20
+             * @maximum 100
+             * @default 20
+             */
+            count?: number;
+            sort?: number;
+        }>(params: Params): Responses.NotesGetResponse["response"];
+        /**
+         * Returns a note by its ID.
+         * @access user
+         * @throws {Errors.ApiErrorAccessNote} - Access to note denied
+         * @throws {Errors.ApiErrorParamNoteId} - Note not found
+         * @see https://vk.com/dev/notes.getById
+         */
+        getById<Params extends {
+            /**
+             * Note ID.
+             *
+             */
+            note_id: number;
+            /**
+             * Note owner ID.
+             *
+             */
+            owner_id?: number;
+            need_wiki?: boolean;
+        }>(params: Params): Responses.NotesGetByIdResponse["response"];
+        /**
+         * Returns a list of comments on a note.
+         * @access user
+         * @throws {Errors.ApiErrorAccessNote} - Access to note denied
+         * @see https://vk.com/dev/notes.getComments
+         */
+        getComments<Params extends {
+            /**
+             * Note ID.
+             *
+             */
+            note_id: number;
+            /**
+             * Note owner ID.
+             *
+             */
+            owner_id?: number;
+            sort?: number;
+            offset?: number;
+            /**
+             * Number of comments to return.
+             * @maximum 100
+             * @default 20
+             * @maximum 100
+             * @default 20
+             */
+            count?: number;
+        }>(params: Params): Responses.NotesGetCommentsResponse["response"];
+        /**
+         * Restores a deleted comment on a note.
+         * @access user
+         * @throws {Errors.ApiErrorAccessComment} - Access to comment denied
+         * @see https://vk.com/dev/notes.restoreComment
+         */
+        restoreComment<Params extends {
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+            /**
+             * Note owner ID.
+             *
+             */
+            owner_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Notifications {
+        /**
+         * Returns a list of notifications about other users' feedback to the current user's wall posts.
+         * @access user
+         *
+         * @see https://vk.com/dev/notifications.get
+         */
+        get<Params extends {
+            /**
+             * Number of notifications to return.
+             * @maximum 100
+             * @minimum 1
+             * @default 30
+             * @maximum 100
+             * @minimum 1
+             * @default 30
+             */
+            count?: number;
+            start_from?: string;
+            /**
+             * Type of notifications to return: 'wall' — wall posts, 'mentions' — mentions in wall posts, comments, or topics, 'comments' — comments to wall posts, photos, and videos, 'likes' — likes, 'reposted' — wall posts that are copied from the current user's wall, 'followers' — new followers, 'friends' — accepted friend requests
+             *
+             */
+            filters?: (/**
+             * @enum {string} wall, mentions, comments, likes, reposted, followers, friends
+             * @enum {string} wall, mentions, comments, likes, reposted, followers, friends */ "wall" | "mentions" | "comments" | "likes" | "reposted" | "followers" | "friends")[];
+            /**
+             * Earliest timestamp (in Unix time) of a notification to return. By default, 24 hours ago.
+             *
+             */
+            start_time?: number;
+            /**
+             * Latest timestamp (in Unix time) of a notification to return. By default, the current time.
+             *
+             */
+            end_time?: number;
+        }>(params: Params): Responses.NotificationsGetResponse["response"];
+        /**
+         * Resets the counter of new notifications about other users' feedback to the current user's wall posts.
+         * @access user
+         *
+         * @see https://vk.com/dev/notifications.markAsViewed
+         */
+        markAsViewed<Params extends never>(params?: Params): Responses.NotificationsMarkAsViewedResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access service
+         * @throws {Errors.ApiErrorGroupAppIsNotInstalledInCommunity} - Application is not installed in community
+         * @see https://vk.com/dev/notifications.sendMessage
+         */
+        sendMessage<Params extends {
+            user_ids: number[];
+            message: string;
+            fragment?: string;
+            group_id?: number;
+        }>(params: Params): Responses.NotificationsSendMessageResponse["response"];
+    }
+    interface Orders {
+        /**
+         * Method not described
+         * @access user
+         * @access service
+         * @throws {Errors.ApiErrorAppsSubscriptionNotFound} - Subscription not found
+         * @throws {Errors.ApiErrorAppsSubscriptionInvalidStatus} - Subscription is in invalid status
+         * @see https://vk.com/dev/orders.cancelSubscription
+         */
+        cancelSubscription<Params extends {
+            user_id: number;
+            subscription_id: number;
+            pending_cancel?: boolean;
+        }>(params: Params): Responses.OrdersCancelSubscriptionResponse["response"];
+        /**
+         * Changes order status.
+         * @access user
+         * @access service
+         * @throws {Errors.ApiErrorLimits} - Out of limits
+         * @throws {Errors.ApiErrorActionFailed} - Unable to process action
+         * @see https://vk.com/dev/orders.changeState
+         */
+        changeState<Params extends {
+            /**
+             * order ID.
+             *
+             */
+            order_id: number;
+            /**
+             * action to be done with the order. Available actions: *cancel — to cancel unconfirmed order. *charge — to confirm unconfirmed order. Applies only if processing of {@link https://vk.com/dev/payments_status|order_change_state} notification failed. *refund — to cancel confirmed order.
+             * @enum {string} cancel, charge, refund
+             * @enum {string} cancel, charge, refund
+             */
+            action: "cancel" | "charge" | "refund";
+            /**
+             * internal ID of the order in the application.
+             *
+             */
+            app_order_id?: number;
+            /**
+             * if this parameter is set to 1, this method returns a list of test mode orders. By default — 0.
+             *
+             */
+            test_mode?: boolean;
+        }>(params: Params): Responses.OrdersChangeStateResponse["response"];
+        /**
+         * Returns a list of orders.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/orders.get
+         */
+        get<Params extends {
+            offset?: number;
+            /**
+             * number of returned orders.
+             * @maximum 1000
+             * @default 100
+             * @maximum 1000
+             * @default 100
+             */
+            count?: number;
+            /**
+             * if this parameter is set to 1, this method returns a list of test mode orders. By default — 0.
+             *
+             */
+            test_mode?: boolean;
+        }>(params: Params): Responses.OrdersGetResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/orders.getAmount
+         */
+        getAmount<Params extends {
+            user_id: number;
+            votes: string[];
+        }>(params: Params): Responses.OrdersGetAmountResponse["response"];
+        /**
+         * Returns information about orders by their IDs.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/orders.getById
+         */
+        getById<Params extends {
+            /**
+             * order ID.
+             *
+             */
+            order_id?: number;
+            /**
+             * order IDs (when information about several orders is requested).
+             *
+             */
+            order_ids?: number[];
+            /**
+             * if this parameter is set to 1, this method returns a list of test mode orders. By default — 0.
+             *
+             */
+            test_mode?: boolean;
+        }>(params: Params): Responses.OrdersGetByIdResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access service
+         * @throws {Errors.ApiErrorAppsSubscriptionNotFound} - Subscription not found
+         * @see https://vk.com/dev/orders.getUserSubscriptionById
+         */
+        getUserSubscriptionById<Params extends {
+            user_id: number;
+            subscription_id: number;
+        }>(params: Params): Responses.OrdersGetUserSubscriptionByIdResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/orders.getUserSubscriptions
+         */
+        getUserSubscriptions<Params extends {
+            user_id: number;
+        }>(params: Params): Responses.OrdersGetUserSubscriptionsResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access service
+         * @throws {Errors.ApiErrorAppsSubscriptionNotFound} - Subscription not found
+         * @throws {Errors.ApiErrorAppsSubscriptionInvalidStatus} - Subscription is in invalid status
+         * @see https://vk.com/dev/orders.updateSubscription
+         */
+        updateSubscription<Params extends {
+            user_id: number;
+            subscription_id: number;
+            price: number;
+        }>(params: Params): Responses.OrdersUpdateSubscriptionResponse["response"];
+    }
+    interface Pages {
+        /**
+         * Allows to clear the cache of particular 'external' pages which may be attached to VK posts.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/pages.clearCache
+         */
+        clearCache<Params extends {
+            /**
+             * Address of the page where you need to refesh the cached version
+             *
+             */
+            url: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns information about a wiki page.
+         * @access user
+         *
+         * @see https://vk.com/dev/pages.get
+         */
+        get<Params extends {
+            /**
+             * Page owner ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Wiki page ID.
+             *
+             */
+            page_id?: number;
+            /**
+             * '1' — to return information about a global wiki page
+             *
+             */
+            global?: boolean;
+            /**
+             * '1' — resulting wiki page is a preview for the attached link
+             *
+             */
+            site_preview?: boolean;
+            /**
+             * Wiki page title.
+             *
+             */
+            title?: string;
+            need_source?: boolean;
+            /**
+             * '1' — to return the page as HTML,
+             *
+             */
+            need_html?: boolean;
+        }>(params: Params): Responses.PagesGetResponse["response"];
+        /**
+         * Returns a list of all previous versions of a wiki page.
+         * @access user
+         * @throws {Errors.ApiErrorAccessPage} - Access to page denied
+         * @throws {Errors.ApiErrorParamPageId} - Page not found
+         * @see https://vk.com/dev/pages.getHistory
+         */
+        getHistory<Params extends {
+            /**
+             * Wiki page ID.
+             *
+             */
+            page_id: number;
+            /**
+             * ID of the community that owns the wiki page.
+             *
+             */
+            group_id?: number;
+            user_id?: number;
+        }>(params: Params): Responses.PagesGetHistoryResponse["response"];
+        /**
+         * Returns a list of wiki pages in a group.
+         * @access user
+         * @throws {Errors.ApiErrorAccessPage} - Access to page denied
+         * @see https://vk.com/dev/pages.getTitles
+         */
+        getTitles<Params extends {
+            /**
+             * ID of the community that owns the wiki page.
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.PagesGetTitlesResponse["response"];
+        /**
+         * Returns the text of one of the previous versions of a wiki page.
+         * @access user
+         * @throws {Errors.ApiErrorAccessPage} - Access to page denied
+         * @see https://vk.com/dev/pages.getVersion
+         */
+        getVersion<Params extends {
+            version_id: number;
+            /**
+             * ID of the community that owns the wiki page.
+             *
+             */
+            group_id?: number;
+            user_id?: number;
+            /**
+             * '1' — to return the page as HTML
+             *
+             */
+            need_html?: boolean;
+        }>(params: Params): Responses.PagesGetVersionResponse["response"];
+        /**
+         * Returns HTML representation of the wiki markup.
+         * @access user
+         *
+         * @see https://vk.com/dev/pages.parseWiki
+         */
+        parseWiki<Params extends {
+            /**
+             * Text of the wiki page.
+             *
+             */
+            text: string;
+            /**
+             * ID of the group in the context of which this markup is interpreted.
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.PagesParseWikiResponse["response"];
+        /**
+         * Saves the text of a wiki page.
+         * @access user
+         * @throws {Errors.ApiErrorAccessPage} - Access to page denied
+         * @throws {Errors.ApiErrorParamPageId} - Page not found
+         * @throws {Errors.ApiErrorParamTitle} - Invalid title
+         * @see https://vk.com/dev/pages.save
+         */
+        save<Params extends {
+            /**
+             * Text of the wiki page in wiki-format.
+             *
+             */
+            text?: string;
+            /**
+             * Wiki page ID. The 'title' parameter can be passed instead of 'pid'.
+             *
+             */
+            page_id?: number;
+            /**
+             * ID of the community that owns the wiki page.
+             *
+             */
+            group_id?: number;
+            /**
+             * User ID
+             *
+             */
+            user_id?: number;
+            /**
+             * Wiki page title.
+             *
+             */
+            title?: string;
+        }>(params: Params): Responses.PagesSaveResponse["response"];
+        /**
+         * Saves modified read and edit access settings for a wiki page.
+         * @access user
+         * @throws {Errors.ApiErrorAccessPage} - Access to page denied
+         * @throws {Errors.ApiErrorParamPageId} - Page not found
+         * @see https://vk.com/dev/pages.saveAccess
+         */
+        saveAccess<Params extends {
+            /**
+             * Wiki page ID.
+             *
+             */
+            page_id: number;
+            /**
+             * ID of the community that owns the wiki page.
+             *
+             */
+            group_id?: number;
+            user_id?: number;
+            /**
+             * Who can view the wiki page: '1' — only community members, '2' — all users can view the page, '0' — only community managers
+             *
+             */
+            view?: number;
+            /**
+             * Who can edit the wiki page: '1' — only community members, '2' — all users can edit the page, '0' — only community managers
+             *
+             */
+            edit?: number;
+        }>(params: Params): Responses.PagesSaveAccessResponse["response"];
+    }
+    interface Photos {
+        /**
+         * Confirms a tag on a photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.confirmTag
+         */
+        confirmTag<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: string;
+            /**
+             * Tag ID.
+             *
+             */
+            tag_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Allows to copy a photo to the "Saved photos" album
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.copy
+         */
+        copy<Params extends {
+            /**
+             * photo's owner ID
+             *
+             */
+            owner_id: number;
+            /**
+             * photo ID
+             *
+             */
+            photo_id: number;
+            /**
+             * for private photos
+             *
+             */
+            access_key?: string;
+        }>(params: Params): Responses.PhotosCopyResponse["response"];
+        /**
+         * Creates an empty photo album.
+         * @access user
+         * @throws {Errors.ApiErrorAlbumsLimit} - Albums number limit is reached
+         * @see https://vk.com/dev/photos.createAlbum
+         */
+        createAlbum<Params extends {
+            /**
+             * Album title.
+             *
+             */
+            title: string;
+            /**
+             * ID of the community in which the album will be created.
+             *
+             */
+            group_id?: number;
+            /**
+             * Album description.
+             *
+             */
+            description?: string;
+            privacy_view?: string[];
+            privacy_comment?: string[];
+            upload_by_admins_only?: boolean;
+            comments_disabled?: boolean;
+        }>(params: Params): Responses.PhotosCreateAlbumResponse["response"];
+        /**
+         * Adds a new comment on the photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.createComment
+         */
+        createComment<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+            /**
+             * Comment text.
+             *
+             */
+            message?: string;
+            /**
+             * (Required if 'message' is not set.) List of objects attached to the post, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, '<owner_id>' — Media attachment owner ID. '<media_id>' — Media attachment ID. Example: "photo100172_166443618,photo66748_265827614"
+             *
+             */
+            attachments?: string[];
+            /**
+             * '1' — to post a comment from the community
+             *
+             */
+            from_group?: boolean;
+            reply_to_comment?: number;
+            sticker_id?: number;
+            access_key?: string;
+            guid?: string;
+        }>(params: Params): Responses.PhotosCreateCommentResponse["response"];
+        /**
+         * Deletes a photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.delete
+         */
+        delete<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Deletes a photo album belonging to the current user.
+         * @access user
+         * @throws {Errors.ApiErrorParamAlbumId} - Invalid album id
+         * @see https://vk.com/dev/photos.deleteAlbum
+         */
+        deleteAlbum<Params extends {
+            /**
+             * Album ID.
+             *
+             */
+            album_id: number;
+            /**
+             * ID of the community that owns the album.
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Deletes a comment on the photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.deleteComment
+         */
+        deleteComment<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+        }>(params: Params): Responses.PhotosDeleteCommentResponse["response"];
+        /**
+         * Edits the caption of a photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.edit
+         */
+        edit<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+            /**
+             * New caption for the photo. If this parameter is not set, it is considered to be equal to an empty string.
+             *
+             */
+            caption?: string;
+            latitude?: number;
+            longitude?: number;
+            place_str?: string;
+            foursquare_id?: string;
+            delete_place?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits information about a photo album.
+         * @access user
+         * @throws {Errors.ApiErrorParamAlbumId} - Invalid album id
+         * @see https://vk.com/dev/photos.editAlbum
+         */
+        editAlbum<Params extends {
+            /**
+             * ID of the photo album to be edited.
+             *
+             */
+            album_id: number;
+            /**
+             * New album title.
+             *
+             */
+            title?: string;
+            /**
+             * New album description.
+             *
+             */
+            description?: string;
+            /**
+             * ID of the user or community that owns the album.
+             *
+             */
+            owner_id?: number;
+            privacy_view?: string[];
+            privacy_comment?: string[];
+            upload_by_admins_only?: boolean;
+            comments_disabled?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits a comment on a photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.editComment
+         */
+        editComment<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+            /**
+             * New text of the comment.
+             *
+             */
+            message?: string;
+            /**
+             * (Required if 'message' is not set.) List of objects attached to the post, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, '<owner_id>' — Media attachment owner ID. '<media_id>' — Media attachment ID. Example: "photo100172_166443618,photo66748_265827614"
+             *
+             */
+            attachments?: string[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns a list of a user's or community's photos.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/photos.get
+         */
+        get<Params extends {
+            /**
+             * ID of the user or community that owns the photos. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo album ID. To return information about photos from service albums, use the following string values: 'profile, wall, saved'.
+             *
+             */
+            album_id?: string;
+            /**
+             * Photo IDs.
+             *
+             */
+            photo_ids?: string[];
+            /**
+             * Sort order: '1' — reverse chronological, '0' — chronological
+             *
+             */
+            rev?: boolean;
+            /**
+             * '1' — to return additional 'likes', 'comments', and 'tags' fields, '0' — (default)
+             *
+             */
+            extended?: boolean;
+            /**
+             * Type of feed obtained in 'feed' field of the method.
+             *
+             */
+            feed_type?: string;
+            /**
+             * unixtime, that can be obtained with {@link https://vk.com/dev/newsfeed.get|newsfeed.get} method in date field to get all photos uploaded by the user on a specific day, or photos the user has been tagged on. Also, 'uid' parameter of the user the event happened with shall be specified.
+             *
+             */
+            feed?: number;
+            /**
+             * '1' — to return photo sizes in a {@link https://vk.com/dev/photo_sizes|special format}
+             *
+             */
+            photo_sizes?: boolean;
+            offset?: number;
+            /**
+             *
+             * @maximum 1000
+             * @default 50
+             * @maximum 1000
+             * @default 50
+             */
+            count?: number;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.PhotosGetExtendedResponse["response"] : Responses.PhotosGetResponse["response"];
+        /**
+         * Returns a list of a user's or community's photo albums.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/photos.getAlbums
+         */
+        getAlbums<Params extends {
+            /**
+             * ID of the user or community that owns the albums.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Album IDs.
+             *
+             */
+            album_ids?: number[];
+            /**
+             * Offset needed to return a specific subset of albums.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of albums to return.
+             *
+             */
+            count?: number;
+            /**
+             * '1' — to return system albums with negative IDs
+             *
+             */
+            need_system?: boolean;
+            /**
+             * '1' — to return an additional 'thumb_src' field, '0' — (default)
+             *
+             */
+            need_covers?: boolean;
+            /**
+             * '1' — to return photo sizes in a
+             *
+             */
+            photo_sizes?: boolean;
+        }>(params: Params): Responses.PhotosGetAlbumsResponse["response"];
+        /**
+         * Returns the number of photo albums belonging to a user or community.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.getAlbumsCount
+         */
+        getAlbumsCount<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * Community ID.
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.PhotosGetAlbumsCountResponse["response"];
+        /**
+         * Returns a list of photos belonging to a user or community, in reverse chronological order.
+         * @access user
+         * @throws {Errors.ApiErrorBlocked} - Content blocked
+         * @see https://vk.com/dev/photos.getAll
+         */
+        getAll<Params extends {
+            /**
+             * ID of a user or community that owns the photos. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * '1' — to return detailed information about photos
+             *
+             */
+            extended?: boolean;
+            /**
+             * Offset needed to return a specific subset of photos. By default, '0'.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of photos to return.
+             * @maximum 200
+             * @default 20
+             * @maximum 200
+             * @default 20
+             */
+            count?: number;
+            /**
+             * '1' – to return image sizes in {@link https://vk.com/dev/photo_sizes|special format}.
+             *
+             */
+            photo_sizes?: boolean;
+            /**
+             * '1' – to return photos only from standard albums, '0' – to return all photos including those in service albums, e.g., 'My wall photos' (default)
+             *
+             */
+            no_service_albums?: boolean;
+            /**
+             * '1' – to show information about photos being hidden from the block above the wall.
+             *
+             */
+            need_hidden?: boolean;
+            /**
+             * '1' – not to return photos being hidden from the block above the wall. Works only with owner_id>0, no_service_albums is ignored.
+             *
+             */
+            skip_hidden?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.PhotosGetAllExtendedResponse["response"] : Responses.PhotosGetAllResponse["response"];
+        /**
+         * Returns a list of comments on a specific photo album or all albums of the user sorted in reverse chronological order.
+         * @access user
+         * @throws {Errors.ApiErrorParamAlbumId} - Invalid album id
+         * @see https://vk.com/dev/photos.getAllComments
+         */
+        getAllComments<Params extends {
+            /**
+             * ID of the user or community that owns the album(s).
+             *
+             */
+            owner_id?: number;
+            /**
+             * Album ID. If the parameter is not set, comments on all of the user's albums will be returned.
+             *
+             */
+            album_id?: number;
+            /**
+             * '1' — to return an additional 'likes' field, '0' — (default)
+             *
+             */
+            need_likes?: boolean;
+            /**
+             * Offset needed to return a specific subset of comments. By default, '0'.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of comments to return. By default, '20'. Maximum value, '100'.
+             *
+             */
+            count?: number;
+        }>(params: Params): Responses.PhotosGetAllCommentsResponse["response"];
+        /**
+         * Returns information about photos by their IDs.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/photos.getById
+         */
+        getById<Params extends {
+            /**
+             * IDs separated with a comma, that are IDs of users who posted photos and IDs of photos themselves with an underscore character between such IDs. To get information about a photo in the group album, you shall specify group ID instead of user ID. Example: "1_129207899,6492_135055734, , -20629724_271945303"
+             *
+             */
+            photos: string[];
+            /**
+             * '1' — to return additional fields, '0' — (default)
+             *
+             */
+            extended?: boolean;
+            /**
+             * '1' — to return photo sizes in a
+             *
+             */
+            photo_sizes?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.PhotosGetByIdExtendedResponse["response"] : Responses.PhotosGetByIdResponse["response"];
+        /**
+         * Returns an upload link for chat cover pictures.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.getChatUploadServer
+         */
+        getChatUploadServer<Params extends {
+            /**
+             * ID of the chat for which you want to upload a cover photo.
+             *
+             */
+            chat_id: number;
+            crop_x?: number;
+            crop_y?: number;
+            /**
+             * Width (in pixels) of the photo after cropping.
+             * @minimum 200
+             * @minimum 200
+             */
+            crop_width?: number;
+        }>(params: Params): Responses.BaseGetUploadServerResponse["response"];
+        /**
+         * Returns a list of comments on a photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.getComments
+         */
+        getComments<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+            /**
+             * '1' — to return an additional 'likes' field, '0' — (default)
+             *
+             */
+            need_likes?: boolean;
+            start_comment_id?: number;
+            /**
+             * Offset needed to return a specific subset of comments. By default, '0'.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of comments to return.
+             * @maximum 100
+             * @default 20
+             * @maximum 100
+             * @default 20
+             */
+            count?: number;
+            /**
+             * Sort order: 'asc' — old first, 'desc' — new first
+             * @enum {string} asc, desc
+             * @enum {string} asc, desc
+             */
+            sort?: "asc" | "desc";
+            access_key?: string;
+            extended?: boolean;
+            fields?: Objects.UsersFields[];
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.PhotosGetCommentsExtendedResponse["response"] : Responses.PhotosGetCommentsResponse["response"];
+        /**
+         * Returns the server address for market album photo upload.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.getMarketAlbumUploadServer
+         */
+        getMarketAlbumUploadServer<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+        }>(params: Params): Responses.BaseGetUploadServerResponse["response"];
+        /**
+         * Returns the server address for market photo upload.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.getMarketUploadServer
+         */
+        getMarketUploadServer<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * '1' if you want to upload the main item photo.
+             *
+             */
+            main_photo?: boolean;
+            /**
+             * X coordinate of the crop left upper corner.
+             *
+             */
+            crop_x?: number;
+            /**
+             * Y coordinate of the crop left upper corner.
+             *
+             */
+            crop_y?: number;
+            /**
+             * Width of the cropped photo in px.
+             * @minimum 400
+             * @minimum 400
+             */
+            crop_width?: number;
+        }>(params: Params): Responses.PhotosGetMarketUploadServerResponse["response"];
+        /**
+         * Returns the server address for photo upload in a private message for a user.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesDenySend} - Can't send messages for users without permission
+         * @see https://vk.com/dev/photos.getMessagesUploadServer
+         */
+        getMessagesUploadServer<Params extends {
+            /**
+             * Destination ID. "For user: 'User ID', e.g. '12345'. For chat: '2000000000' + 'Chat ID', e.g. '2000000001'. For community: '- Community ID', e.g. '-12345'. "
+             *
+             */
+            peer_id?: number;
+        }>(params: Params): Responses.PhotosGetMessagesUploadServerResponse["response"];
+        /**
+         * Returns a list of photos with tags that have not been viewed.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.getNewTags
+         */
+        getNewTags<Params extends {
+            /**
+             * Offset needed to return a specific subset of photos.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of photos to return.
+             * @maximum 100
+             * @default 20
+             * @maximum 100
+             * @default 20
+             */
+            count?: number;
+        }>(params: Params): Responses.PhotosGetNewTagsResponse["response"];
+        /**
+         * Returns the server address for owner cover upload.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/photos.getOwnerCoverPhotoUploadServer
+         */
+        getOwnerCoverPhotoUploadServer<Params extends {
+            /**
+             * ID of community that owns the album (if the photo will be uploaded to a community album).
+             *
+             */
+            group_id: number;
+            /**
+             * X coordinate of the left-upper corner
+             *
+             */
+            crop_x?: number;
+            /**
+             * Y coordinate of the left-upper corner
+             *
+             */
+            crop_y?: number;
+            /**
+             * X coordinate of the right-bottom corner
+             * @default 795
+             * @default 795
+             */
+            crop_x2?: number;
+            /**
+             * Y coordinate of the right-bottom corner
+             * @default 200
+             * @default 200
+             */
+            crop_y2?: number;
+        }>(params: Params): Responses.BaseGetUploadServerResponse["response"];
+        /**
+         * Returns an upload server address for a profile or community photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.getOwnerPhotoUploadServer
+         */
+        getOwnerPhotoUploadServer<Params extends {
+            /**
+             * identifier of a community or current user. "Note that community id must be negative. 'owner_id=1' – user, 'owner_id=-1' – community, "
+             *
+             */
+            owner_id?: number;
+        }>(params: Params): Responses.BaseGetUploadServerResponse["response"];
+        /**
+         * Returns a list of tags on a photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.getTags
+         */
+        getTags<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+            access_key?: string;
+        }>(params: Params): Responses.PhotosGetTagsResponse["response"];
+        /**
+         * Returns the server address for photo upload.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.getUploadServer
+         */
+        getUploadServer<Params extends {
+            /**
+             * ID of community that owns the album (if the photo will be uploaded to a community album).
+             *
+             */
+            group_id?: number;
+            album_id?: number;
+        }>(params: Params): Responses.PhotosGetUploadServerResponse["response"];
+        /**
+         * Returns a list of photos in which a user is tagged.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.getUserPhotos
+         */
+        getUserPhotos<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * Offset needed to return a specific subset of photos. By default, '0'.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of photos to return. Maximum value is 1000.
+             * @maximum 1000
+             * @default 20
+             * @maximum 1000
+             * @default 20
+             */
+            count?: number;
+            /**
+             * '1' — to return an additional 'likes' field, '0' — (default)
+             *
+             */
+            extended?: boolean;
+            /**
+             * Sort order: '1' — by date the tag was added in ascending order, '0' — by date the tag was added in descending order
+             *
+             */
+            sort?: string;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.PhotosGetUserPhotosExtendedResponse["response"] : Responses.PhotosGetUserPhotosResponse["response"];
+        /**
+         * Returns the server address for photo upload onto a user's wall.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.getWallUploadServer
+         */
+        getWallUploadServer<Params extends {
+            /**
+             * ID of community to whose wall the photo will be uploaded.
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.PhotosGetWallUploadServerResponse["response"];
+        /**
+         * Makes a photo into an album cover.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.makeCover
+         */
+        makeCover<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+            /**
+             * Album ID.
+             *
+             */
+            album_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Moves a photo from one album to another.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.move
+         */
+        move<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * ID of the album to which the photo will be moved.
+             *
+             */
+            target_album_id: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Adds a tag on the photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.putTag
+         */
+        putTag<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+            /**
+             * ID of the user to be tagged.
+             *
+             */
+            user_id: number;
+            /**
+             * Upper left-corner coordinate of the tagged area (as a percentage of the photo's width).
+             */
+            x?: number;
+            /**
+             * Upper left-corner coordinate of the tagged area (as a percentage of the photo's height).
+             */
+            y?: number;
+            /**
+             * Lower right-corner coordinate of the tagged area (as a percentage of the photo's width).
+             */
+            x2?: number;
+            /**
+             * Lower right-corner coordinate of the tagged area (as a percentage of the photo's height).
+             */
+            y2?: number;
+        }>(params: Params): Responses.PhotosPutTagResponse["response"];
+        /**
+         * Removes a tag from a photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.removeTag
+         */
+        removeTag<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+            /**
+             * Tag ID.
+             *
+             */
+            tag_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Reorders the album in the list of user albums.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.reorderAlbums
+         */
+        reorderAlbums<Params extends {
+            /**
+             * ID of the user or community that owns the album.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Album ID.
+             *
+             */
+            album_id: number;
+            /**
+             * ID of the album before which the album in question shall be placed.
+             *
+             */
+            before?: number;
+            /**
+             * ID of the album after which the album in question shall be placed.
+             *
+             */
+            after?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Reorders the photo in the list of photos of the user album.
+         * @access user
+         * @throws {Errors.ApiErrorParamPhotos} - Invalid photos
+         * @see https://vk.com/dev/photos.reorderPhotos
+         */
+        reorderPhotos<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+            /**
+             * ID of the photo before which the photo in question shall be placed.
+             *
+             */
+            before?: number;
+            /**
+             * ID of the photo after which the photo in question shall be placed.
+             *
+             */
+            after?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Reports (submits a complaint about) a photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.report
+         */
+        report<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+            /**
+             * Reason for the complaint: '0' – spam, '1' – child pornography, '2' – extremism, '3' – violence, '4' – drug propaganda, '5' – adult material, '6' – insult, abuse
+             *
+             */
+            reason?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Reports (submits a complaint about) a comment on a photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.reportComment
+         */
+        reportComment<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id: number;
+            /**
+             * ID of the comment being reported.
+             *
+             */
+            comment_id: number;
+            /**
+             * Reason for the complaint: '0' – spam, '1' – child pornography, '2' – extremism, '3' – violence, '4' – drug propaganda, '5' – adult material, '6' – insult, abuse
+             *
+             */
+            reason?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Restores a deleted photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.restore
+         */
+        restore<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Photo ID.
+             *
+             */
+            photo_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Restores a deleted comment on a photo.
+         * @access user
+         *
+         * @see https://vk.com/dev/photos.restoreComment
+         */
+        restoreComment<Params extends {
+            /**
+             * ID of the user or community that owns the photo.
+             *
+             */
+            owner_id?: number;
+            /**
+             * ID of the deleted comment.
+             *
+             */
+            comment_id: number;
+        }>(params: Params): Responses.PhotosRestoreCommentResponse["response"];
+        /**
+         * Saves photos after successful uploading.
+         * @access user
+         * @throws {Errors.ApiErrorParamAlbumId} - Invalid album id
+         * @throws {Errors.ApiErrorParamServer} - Invalid server
+         * @throws {Errors.ApiErrorParamHash} - Invalid hash
+         * @see https://vk.com/dev/photos.save
+         */
+        save<Params extends {
+            /**
+             * ID of the album to save photos to.
+             *
+             */
+            album_id?: number;
+            /**
+             * ID of the community to save photos to.
+             *
+             */
+            group_id?: number;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            server?: number;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            photos_list?: string;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            hash?: string;
+            /**
+             * Geographical latitude, in degrees (from '-90' to '90').
+             */
+            latitude?: number;
+            /**
+             * Geographical longitude, in degrees (from '-180' to '180').
+             */
+            longitude?: number;
+            /**
+             * Text describing the photo. 2048 digits max.
+             *
+             */
+            caption?: string;
+        }>(params: Params): Responses.PhotosSaveResponse["response"];
+        /**
+         * Saves market album photos after successful uploading.
+         * @access user
+         * @throws {Errors.ApiErrorParamHash} - Invalid hash
+         * @throws {Errors.ApiErrorParamPhoto} - Invalid photo
+         * @see https://vk.com/dev/photos.saveMarketAlbumPhoto
+         */
+        saveMarketAlbumPhoto<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id: number;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            photo: string;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            server: number;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            hash: string;
+        }>(params: Params): Responses.PhotosSaveMarketAlbumPhotoResponse["response"];
+        /**
+         * Saves market photos after successful uploading.
+         * @access user
+         * @throws {Errors.ApiErrorParamHash} - Invalid hash
+         * @throws {Errors.ApiErrorParamPhoto} - Invalid photo
+         * @see https://vk.com/dev/photos.saveMarketPhoto
+         */
+        saveMarketPhoto<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id?: number;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            photo: string;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            server: number;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            hash: string;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            crop_data?: string;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            crop_hash?: string;
+        }>(params: Params): Responses.PhotosSaveMarketPhotoResponse["response"];
+        /**
+         * Saves a photo after being successfully uploaded. URL obtained with {@link https://vk.com/dev/photos.getMessagesUploadServer|photos.getMessagesUploadServer} method.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorParamAlbumId} - Invalid album id
+         * @throws {Errors.ApiErrorParamServer} - Invalid server
+         * @throws {Errors.ApiErrorParamHash} - Invalid hash
+         * @see https://vk.com/dev/photos.saveMessagesPhoto
+         */
+        saveMessagesPhoto<Params extends {
+            /**
+             * Parameter returned when the photo is {@link https://vk.com/dev/upload_files|uploaded to the server}.
+             *
+             */
+            photo: string;
+            server?: number;
+            hash?: string;
+        }>(params: Params): Responses.PhotosSaveMessagesPhotoResponse["response"];
+        /**
+         * Saves cover photo after successful uploading.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorParamPhoto} - Invalid photo
+         * @see https://vk.com/dev/photos.saveOwnerCoverPhoto
+         */
+        saveOwnerCoverPhoto<Params extends {
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            hash: string;
+            /**
+             * Parameter returned when photos are {@link https://vk.com/dev/upload_files|uploaded to server}.
+             *
+             */
+            photo: string;
+        }>(params: Params): Responses.PhotosSaveOwnerCoverPhotoResponse["response"];
+        /**
+         * Saves a profile or community photo. Upload URL can be got with the {@link https://vk.com/dev/photos.getOwnerPhotoUploadServer|photos.getOwnerPhotoUploadServer} method.
+         * @access user
+         * @throws {Errors.ApiErrorParamPhoto} - Invalid photo
+         * @see https://vk.com/dev/photos.saveOwnerPhoto
+         */
+        saveOwnerPhoto<Params extends {
+            /**
+             * parameter returned after {@link https://vk.com/dev/upload_files|photo upload}.
+             *
+             */
+            server?: string;
+            /**
+             * parameter returned after {@link https://vk.com/dev/upload_files|photo upload}.
+             *
+             */
+            hash?: string;
+            /**
+             * parameter returned after {@link https://vk.com/dev/upload_files|photo upload}.
+             *
+             */
+            photo?: string;
+        }>(params: Params): Responses.PhotosSaveOwnerPhotoResponse["response"];
+        /**
+         * Saves a photo to a user's or community's wall after being uploaded.
+         * @access user
+         * @throws {Errors.ApiErrorParamAlbumId} - Invalid album id
+         * @throws {Errors.ApiErrorParamServer} - Invalid server
+         * @throws {Errors.ApiErrorParamHash} - Invalid hash
+         * @see https://vk.com/dev/photos.saveWallPhoto
+         */
+        saveWallPhoto<Params extends {
+            /**
+             * ID of the user on whose wall the photo will be saved.
+             *
+             */
+            user_id?: number;
+            /**
+             * ID of community on whose wall the photo will be saved.
+             *
+             */
+            group_id?: number;
+            /**
+             * Parameter returned when the the photo is {@link https://vk.com/dev/upload_files|uploaded to the server}.
+             *
+             */
+            photo: string;
+            server?: number;
+            hash?: string;
+            /**
+             * Geographical latitude, in degrees (from '-90' to '90').
+             */
+            latitude?: number;
+            /**
+             * Geographical longitude, in degrees (from '-180' to '180').
+             */
+            longitude?: number;
+            /**
+             * Text describing the photo. 2048 digits max.
+             *
+             */
+            caption?: string;
+        }>(params: Params): Responses.PhotosSaveWallPhotoResponse["response"];
+        /**
+         * Returns a list of photos.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/photos.search
+         */
+        search<Params extends {
+            /**
+             * Search query string.
+             *
+             */
+            q?: string;
+            /**
+             * Geographical latitude, in degrees (from '-90' to '90').
+             */
+            lat?: number;
+            /**
+             * Geographical longitude, in degrees (from '-180' to '180').
+             */
+            long?: number;
+            start_time?: number;
+            end_time?: number;
+            /**
+             * Sort order:
+             *
+             */
+            sort?: number;
+            /**
+             * Offset needed to return a specific subset of photos.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of photos to return.
+             * @maximum 1000
+             * @default 100
+             * @maximum 1000
+             * @default 100
+             */
+            count?: number;
+            /**
+             * Radius of search in meters (works very approximately). Available values: '10', '100', '800', '6000', '50000'.
+             * @default 5000
+             * @default 5000
+             */
+            radius?: number;
+        }>(params: Params): Responses.PhotosSearchResponse["response"];
+    }
+    interface Polls {
+        /**
+         * Adds the current user's vote to the selected answer in the poll.
+         * @access user
+         * @throws {Errors.ApiErrorPollsAccess} - Access to poll denied
+         * @throws {Errors.ApiErrorPollsAnswerId} - Invalid answer id
+         * @throws {Errors.ApiErrorPollsPollId} - Invalid poll id
+         * @see https://vk.com/dev/polls.addVote
+         */
+        addVote<Params extends {
+            /**
+             * ID of the user or community that owns the poll. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Poll ID.
+             *
+             */
+            poll_id: number;
+            answer_ids: number[];
+            is_board?: boolean;
+        }>(params: Params): Responses.PollsAddVoteResponse["response"];
+        /**
+         * Creates polls that can be attached to the users' or communities' posts.
+         * @access user
+         *
+         * @see https://vk.com/dev/polls.create
+         */
+        create<Params extends {
+            /**
+             * question text
+             *
+             */
+            question?: string;
+            /**
+             * '1' – anonymous poll, participants list is hidden,, '0' – public poll, participants list is available,, Default value is '0'.
+             *
+             */
+            is_anonymous?: boolean;
+            is_multiple?: boolean;
+            /**
+             *
+             * @minimum 1550700000
+             * @minimum 1550700000
+             */
+            end_date?: number;
+            /**
+             * If a poll will be added to a communty it is required to send a negative group identifier. Current user by default.
+             *
+             */
+            owner_id?: number;
+            /**
+             * available answers list, for example: " ["yes","no","maybe"]", There can be from 1 to 10 answers.
+             *
+             */
+            add_answers?: string;
+            photo_id?: number;
+            /**
+             *
+             * @enum {string} 1, 2, 3, 4, 6, 8, 9
+             * @enum {string} 1, 2, 3, 4, 6, 8, 9
+             */
+            background_id?: 1 | 2 | 3 | 4 | 6 | 8 | 9;
+        }>(params: Params): Responses.PollsCreateResponse["response"];
+        /**
+         * Deletes the current user's vote from the selected answer in the poll.
+         * @access user
+         * @throws {Errors.ApiErrorPollsAccess} - Access to poll denied
+         * @throws {Errors.ApiErrorPollsAnswerId} - Invalid answer id
+         * @throws {Errors.ApiErrorPollsPollId} - Invalid poll id
+         * @see https://vk.com/dev/polls.deleteVote
+         */
+        deleteVote<Params extends {
+            /**
+             * ID of the user or community that owns the poll. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Poll ID.
+             *
+             */
+            poll_id: number;
+            /**
+             * Answer ID.
+             *
+             */
+            answer_id: number;
+            is_board?: boolean;
+        }>(params: Params): Responses.PollsDeleteVoteResponse["response"];
+        /**
+         * Edits created polls
+         * @access user
+         *
+         * @see https://vk.com/dev/polls.edit
+         */
+        edit<Params extends {
+            /**
+             * poll owner id
+             *
+             */
+            owner_id?: number;
+            /**
+             * edited poll's id
+             *
+             */
+            poll_id: number;
+            /**
+             * new question text
+             *
+             */
+            question?: string;
+            /**
+             * answers list, for example: , "["yes","no","maybe"]"
+             *
+             */
+            add_answers?: string;
+            /**
+             * object containing answers that need to be edited,, key – answer id, value – new answer text. Example: {"382967099":"option1", "382967103":"option2"}"
+             *
+             */
+            edit_answers?: string;
+            /**
+             * list of answer ids to be deleted. For example: "[382967099, 382967103]"
+             *
+             */
+            delete_answers?: string;
+            end_date?: number;
+            photo_id?: number;
+            /**
+             *
+             * @enum {string} 0, 1, 2, 3, 4, 6, 8, 9
+             * @enum {string} 0, 1, 2, 3, 4, 6, 8, 9
+             */
+            background_id?: 0 | 1 | 2 | 3 | 4 | 6 | 8 | 9;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns detailed information about a poll by its ID.
+         * @access user
+         * @throws {Errors.ApiErrorPollsAccess} - Access to poll denied
+         * @see https://vk.com/dev/polls.getById
+         */
+        getById<Params extends {
+            /**
+             * ID of the user or community that owns the poll. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * '1' – poll is in a board, '0' – poll is on a wall. '0' by default.
+             *
+             */
+            is_board?: boolean;
+            /**
+             * Poll ID.
+             *
+             */
+            poll_id: number;
+            extended?: boolean;
+            /**
+             *
+             * @maximum 100
+             * @default 3
+             * @maximum 100
+             * @default 3
+             */
+            friends_count?: number;
+            fields?: string[];
+            /**
+             *
+             * @enum {string} abl, acc, dat, gen, ins, nom
+             * @default nom
+             * @enum {string} abl, acc, dat, gen, ins, nom
+             * @default nom
+             */
+            name_case?: "abl" | "acc" | "dat" | "gen" | "ins" | "nom";
+        }>(params: Params): Responses.PollsGetByIdResponse["response"];
+        /**
+         * Returns a list of IDs of users who selected specific answers in the poll.
+         * @access user
+         * @throws {Errors.ApiErrorPollsAccess} - Access to poll denied
+         * @throws {Errors.ApiErrorPollsAnswerId} - Invalid answer id
+         * @throws {Errors.ApiErrorPollsPollId} - Invalid poll id
+         * @throws {Errors.ApiErrorPollsAccessWithoutVote} - Access denied, please vote first
+         * @see https://vk.com/dev/polls.getVoters
+         */
+        getVoters<Params extends {
+            /**
+             * ID of the user or community that owns the poll. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Poll ID.
+             *
+             */
+            poll_id: number;
+            /**
+             * Answer IDs.
+             *
+             */
+            answer_ids: number[];
+            is_board?: boolean;
+            /**
+             * '1' — to return only current user's friends, '0' — to return all users (default),
+             *
+             */
+            friends_only?: boolean;
+            /**
+             * Offset needed to return a specific subset of voters. '0' — (default)
+             *
+             */
+            offset?: number;
+            /**
+             * Number of user IDs to return (if the 'friends_only' parameter is not set, maximum '1000', otherwise '10'). '100' — (default)
+             *
+             */
+            count?: number;
+            /**
+             * Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate (birthdate)', 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online', 'counters'.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Case for declension of user name and surname: , 'nom' — nominative (default) , 'gen' — genitive , 'dat' — dative , 'acc' — accusative , 'ins' — instrumental , 'abl' — prepositional
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             */
+            name_case?: "nom" | "gen" | "dat" | "acc" | "ins" | "abl";
+        }>(params: Params): Responses.PollsGetVotersResponse["response"];
+    }
+    interface PrettyCards {
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorPrettyCardsTooManyCards} - Too many cards
+         * @see https://vk.com/dev/prettyCards.create
+         */
+        create<Params extends {
+            owner_id: number;
+            photo: string;
+            title: string;
+            link: string;
+            price?: string;
+            price_old?: string;
+            button?: string;
+        }>(params: Params): Responses.PrettyCardsCreateResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorPrettyCardsCardNotFound} - Card not found
+         * @throws {Errors.ApiErrorPrettyCardsCardIsConnectedToPost} - Card is connected to post
+         * @see https://vk.com/dev/prettyCards.delete
+         */
+        delete<Params extends {
+            owner_id: number;
+            card_id: number;
+        }>(params: Params): Responses.PrettyCardsDeleteResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorPrettyCardsCardNotFound} - Card not found
+         * @see https://vk.com/dev/prettyCards.edit
+         */
+        edit<Params extends {
+            owner_id: number;
+            card_id: number;
+            photo?: string;
+            title?: string;
+            link?: string;
+            price?: string;
+            price_old?: string;
+            button?: string;
+        }>(params: Params): Responses.PrettyCardsEditResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/prettyCards.get
+         */
+        get<Params extends {
+            owner_id: number;
+            offset?: number;
+            /**
+             *
+             * @maximum 100
+             * @default 10
+             * @maximum 100
+             * @default 10
+             */
+            count?: number;
+        }>(params: Params): Responses.PrettyCardsGetResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/prettyCards.getById
+         */
+        getById<Params extends {
+            owner_id: number;
+            card_ids: number[];
+        }>(params: Params): Responses.PrettyCardsGetByIdResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/prettyCards.getUploadURL
+         */
+        getUploadURL<Params extends never>(params?: Params): Responses.PrettyCardsGetUploadURLResponse["response"];
+    }
+    interface Search {
+        /**
+         * Allows the programmer to do a quick search for any substring.
+         * @access user
+         *
+         * @see https://vk.com/dev/search.getHints
+         */
+        getHints<Params extends {
+            /**
+             * Search query string.
+             *
+             */
+            q?: string;
+            /**
+             * Offset for querying specific result subset
+             * @maximum 200
+             * @maximum 200
+             */
+            offset?: number;
+            /**
+             * Maximum number of results to return.
+             * @maximum 200
+             * @default 9
+             * @maximum 200
+             * @default 9
+             */
+            limit?: number;
+            filters?: string[];
+            fields?: string[];
+            /**
+             *
+             * @default 1
+             * @default 1
+             */
+            search_global?: boolean;
+        }>(params: Params): Responses.SearchGetHintsResponse["response"];
+    }
+    interface Secure {
+        /**
+         * Adds user activity information to an application
+         * @access service
+         * @throws {Errors.ApiErrorAppsAlreadyUnlocked} - This achievement is already unlocked
+         * @see https://vk.com/dev/secure.addAppEvent
+         */
+        addAppEvent<Params extends {
+            /**
+             * ID of a user to save the data
+             *
+             */
+            user_id: number;
+            /**
+             * there are 2 default activities: , * 1 – level. Works similar to ,, * 2 – points, saves points amount, Any other value is for saving completed missions
+             *
+             */
+            activity_id: number;
+            /**
+             * depends on activity_id: * 1 – number, current level number,, * 2 – number, current user's points amount, , Any other value is ignored
+             *
+             */
+            value?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Checks the user authentication in 'IFrame' and 'Flash' apps using the 'access_token' parameter.
+         * @access service
+         *
+         * @see https://vk.com/dev/secure.checkToken
+         */
+        checkToken<Params extends {
+            /**
+             * client 'access_token'
+             *
+             */
+            token?: string;
+            /**
+             * user 'ip address'. Note that user may access using the 'ipv6' address, in this case it is required to transmit the 'ipv6' address. If not transmitted, the address will not be checked.
+             *
+             */
+            ip?: string;
+        }>(params: Params): Responses.SecureCheckTokenResponse["response"];
+        /**
+         * Returns payment balance of the application in hundredth of a vote.
+         * @access service
+         *
+         * @see https://vk.com/dev/secure.getAppBalance
+         */
+        getAppBalance<Params extends never>(params?: Params): Responses.SecureGetAppBalanceResponse["response"];
+        /**
+         * Shows a list of SMS notifications sent by the application using {@link https://vk.com/dev/secure.sendSMSNotification|secure.sendSMSNotification} method.
+         * @access service
+         *
+         * @see https://vk.com/dev/secure.getSMSHistory
+         */
+        getSMSHistory<Params extends {
+            user_id?: number;
+            /**
+             * filter by start date. It is set as UNIX-time.
+             *
+             */
+            date_from?: number;
+            /**
+             * filter by end date. It is set as UNIX-time.
+             *
+             */
+            date_to?: number;
+            /**
+             * number of returned posts. By default — 1000.
+             * @maximum 1000
+             * @default 1000
+             * @maximum 1000
+             * @default 1000
+             */
+            limit?: number;
+        }>(params: Params): Responses.SecureGetSMSHistoryResponse["response"];
+        /**
+         * Shows history of votes transaction between users and the application.
+         * @access service
+         *
+         * @see https://vk.com/dev/secure.getTransactionsHistory
+         */
+        getTransactionsHistory<Params extends {
+            type?: number;
+            uid_from?: number;
+            uid_to?: number;
+            date_from?: number;
+            date_to?: number;
+            /**
+             *
+             * @maximum 1000
+             * @default 1000
+             * @maximum 1000
+             * @default 1000
+             */
+            limit?: number;
+        }>(params: Params): Responses.SecureGetTransactionsHistoryResponse["response"];
+        /**
+         * Returns one of the previously set game levels of one or more users in the application.
+         * @access service
+         *
+         * @see https://vk.com/dev/secure.getUserLevel
+         */
+        getUserLevel<Params extends {
+            user_ids: number[];
+        }>(params: Params): Responses.SecureGetUserLevelResponse["response"];
+        /**
+         * Opens the game achievement and gives the user a sticker
+         * @access service
+         *
+         * @see https://vk.com/dev/secure.giveEventSticker
+         */
+        giveEventSticker<Params extends {
+            user_ids: number[];
+            achievement_id: number;
+        }>(params: Params): Responses.SecureGiveEventStickerResponse["response"];
+        /**
+         * Sends notification to the user.
+         * @access service
+         *
+         * @see https://vk.com/dev/secure.sendNotification
+         */
+        sendNotification<Params extends {
+            user_ids?: number[];
+            user_id?: number;
+            /**
+             * notification text which should be sent in 'UTF-8' encoding ('254' characters maximum).
+             *
+             */
+            message: string;
+        }>(params: Params): Responses.SecureSendNotificationResponse["response"];
+        /**
+         * Sends 'SMS' notification to a user's mobile device.
+         * @access service
+         * @throws {Errors.ApiErrorInsufficientFunds} - Application has insufficient funds
+         * @throws {Errors.ApiErrorMobileNotActivated} - The mobile number of the user is unknown
+         * @see https://vk.com/dev/secure.sendSMSNotification
+         */
+        sendSMSNotification<Params extends {
+            /**
+             * ID of the user to whom SMS notification is sent. The user shall allow the application to send him/her notifications (, +1).
+             *
+             */
+            user_id: number;
+            /**
+             * 'SMS' text to be sent in 'UTF-8' encoding. Only Latin letters and numbers are allowed. Maximum size is '160' characters.
+             *
+             */
+            message: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Sets a counter which is shown to the user in bold in the left menu.
+         * @access service
+         * @throws {Errors.ApiErrorAccessMenu} - Access to the menu of the user denied
+         * @see https://vk.com/dev/secure.setCounter
+         */
+        setCounter<Params extends {
+            counters?: string[];
+            user_id?: number;
+            /**
+             * counter value.
+             *
+             */
+            counter?: number;
+            increment?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Stats {
+        /**
+         * Returns statistics of a community or an application.
+         * @access user
+         *
+         * @see https://vk.com/dev/stats.get
+         */
+        get<Params extends {
+            /**
+             * Community ID.
+             *
+             */
+            group_id?: number;
+            /**
+             * Application ID.
+             *
+             */
+            app_id?: number;
+            timestamp_from?: number;
+            timestamp_to?: number;
+            /**
+             *
+             * @default day
+             * @default day
+             */
+            interval?: string;
+            intervals_count?: number;
+            filters?: string[];
+            stats_groups?: string[];
+            /**
+             *
+             * @default true
+             * @default true
+             */
+            extended?: boolean;
+        }>(params: Params): Responses.StatsGetResponse["response"];
+        /**
+         * Returns stats for a wall post.
+         * @access user
+         * @throws {Errors.ApiErrorWallAccessPost} - Access to wall's post denied
+         * @see https://vk.com/dev/stats.getPostReach
+         */
+        getPostReach<Params extends {
+            /**
+             * post owner community id. Specify with "-" sign.
+             *
+             */
+            owner_id: string;
+            /**
+             * wall posts id
+             *
+             */
+            post_ids: number[];
+        }>(params: Params): Responses.StatsGetPostReachResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/stats.trackVisitor
+         */
+        trackVisitor<Params extends {
+            id: string;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Status {
+        /**
+         * Returns data required to show the status of a user or community.
+         * @access user
+         *
+         * @see https://vk.com/dev/status.get
+         */
+        get<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            user_id?: number;
+            group_id?: number;
+        }>(params: Params): Responses.StatusGetResponse["response"];
+        /**
+         * Sets a new status for the current user.
+         * @access user
+         * @throws {Errors.ApiErrorStatusNoAudio} - User disabled track name broadcast
+         * @see https://vk.com/dev/status.set
+         */
+        set<Params extends {
+            /**
+             * Text of the new status.
+             *
+             */
+            text?: string;
+            /**
+             * Identifier of a community to set a status in. If left blank the status is set to current user.
+             *
+             */
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Storage {
+        /**
+         * Returns a value of variable with the name set by key parameter.
+         * @access user
+         * @access group
+         * @access service
+         *
+         * @see https://vk.com/dev/storage.get
+         */
+        get<Params extends {
+            key?: string;
+            keys?: string[];
+            user_id?: number;
+        }>(params: Params): Responses.StorageGetV5110Response["response"];
+        /**
+         * Returns the names of all variables.
+         * @access user
+         * @access group
+         * @access service
+         *
+         * @see https://vk.com/dev/storage.getKeys
+         */
+        getKeys<Params extends {
+            /**
+             * user id, whose variables names are returned if they were requested with a server method.
+             *
+             */
+            user_id?: number;
+            offset?: number;
+            /**
+             * amount of variable names the info needs to be collected from.
+             * @maximum 1000
+             * @default 100
+             * @maximum 1000
+             * @default 100
+             */
+            count?: number;
+        }>(params: Params): Responses.StorageGetKeysResponse["response"];
+        /**
+         * Saves a value of variable with the name set by 'key' parameter.
+         * @access user
+         * @access group
+         * @access service
+         * @throws {Errors.ApiErrorLimits} - Out of limits
+         * @see https://vk.com/dev/storage.set
+         */
+        set<Params extends {
+            key: string;
+            value?: string;
+            user_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Stories {
+        /**
+         * Allows to hide stories from chosen sources from current user's feed.
+         * @access user
+         *
+         * @see https://vk.com/dev/stories.banOwner
+         */
+        banOwner<Params extends {
+            /**
+             * List of sources IDs
+             *
+             */
+            owners_ids: number[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Allows to delete story.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/stories.delete
+         */
+        delete<Params extends {
+            /**
+             * Story owner's ID. Current user id is used by default.
+             *
+             */
+            owner_id: number;
+            /**
+             * Story ID.
+             *
+             */
+            story_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns stories available for current user.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/stories.get
+         */
+        get<Params extends {
+            /**
+             * Owner ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * '1' — to return additional fields for users and communities. Default value is 0.
+             *
+             */
+            extended?: boolean;
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Responses.StoriesGetV5113Response["response"];
+        /**
+         * Returns list of sources hidden from current user's feed.
+         * @access user
+         *
+         * @see https://vk.com/dev/stories.getBanned
+         */
+        getBanned<Params extends {
+            /**
+             * '1' — to return additional fields for users and communities. Default value is 0.
+             *
+             */
+            extended?: boolean;
+            /**
+             * Additional fields to return
+             *
+             */
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.StoriesGetBannedExtendedResponse["response"] : Responses.StoriesGetBannedResponse["response"];
+        /**
+         * Returns story by its ID.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorStoryExpired} - Story has already expired
+         * @see https://vk.com/dev/stories.getById
+         */
+        getById<Params extends {
+            /**
+             * Stories IDs separated by commas. Use format {owner_id}+'_'+{story_id}, for example, 12345_54331.
+             *
+             */
+            stories: string[];
+            /**
+             * '1' — to return additional fields for users and communities. Default value is 0.
+             *
+             */
+            extended?: boolean;
+            /**
+             * Additional fields to return
+             *
+             */
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.StoriesGetByIdExtendedResponse["response"] : Responses.StoriesGetByIdResponse["response"];
+        /**
+         * Returns URL for uploading a story with photo.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesUserBlocked} - Can't send messages for users from blacklist
+         * @throws {Errors.ApiErrorStoryIncorrectReplyPrivacy} - Incorrect reply privacy
+         * @throws {Errors.ApiErrorBlocked} - Content blocked
+         * @see https://vk.com/dev/stories.getPhotoUploadServer
+         */
+        getPhotoUploadServer<Params extends {
+            /**
+             * 1 — to add the story to friend's feed.
+             *
+             */
+            add_to_news?: boolean;
+            /**
+             * List of users IDs who can see the story.
+             *
+             */
+            user_ids?: number[];
+            /**
+             * ID of the story to reply with the current.
+             *
+             */
+            reply_to_story?: string;
+            /**
+             * Link text (for community's stories only).
+             *
+             */
+            link_text?: Objects.StoriesUploadLinkText;
+            /**
+             * Link URL. Internal links on https://vk.com only.
+             *
+             */
+            link_url?: string;
+            /**
+             * ID of the community to upload the story (should be verified or with the "fire" icon).
+             *
+             */
+            group_id?: number;
+            clickable_stickers?: string;
+        }>(params: Params): Responses.StoriesGetPhotoUploadServerResponse["response"];
+        /**
+         * Returns replies to the story.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/stories.getReplies
+         */
+        getReplies<Params extends {
+            /**
+             * Story owner ID.
+             *
+             */
+            owner_id: number;
+            /**
+             * Story ID.
+             *
+             */
+            story_id: number;
+            /**
+             * Access key for the private object.
+             *
+             */
+            access_key?: string;
+            /**
+             * '1' — to return additional fields for users and communities. Default value is 0.
+             *
+             */
+            extended?: boolean;
+            /**
+             * Additional fields to return
+             *
+             */
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Responses.StoriesGetV5113Response["response"];
+        /**
+         * Returns stories available for current user.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/stories.getStats
+         */
+        getStats<Params extends {
+            /**
+             * Story owner ID.
+             *
+             */
+            owner_id: number;
+            /**
+             * Story ID.
+             *
+             */
+            story_id: number;
+        }>(params: Params): Responses.StoriesGetStatsResponse["response"];
+        /**
+         * Allows to receive URL for uploading story with video.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorMessagesUserBlocked} - Can't send messages for users from blacklist
+         * @throws {Errors.ApiErrorStoryIncorrectReplyPrivacy} - Incorrect reply privacy
+         * @throws {Errors.ApiErrorBlocked} - Content blocked
+         * @see https://vk.com/dev/stories.getVideoUploadServer
+         */
+        getVideoUploadServer<Params extends {
+            /**
+             * 1 — to add the story to friend's feed.
+             *
+             */
+            add_to_news?: boolean;
+            /**
+             * List of users IDs who can see the story.
+             *
+             */
+            user_ids?: number[];
+            /**
+             * ID of the story to reply with the current.
+             *
+             */
+            reply_to_story?: string;
+            /**
+             * Link text (for community's stories only).
+             *
+             */
+            link_text?: Objects.StoriesUploadLinkText;
+            /**
+             * Link URL. Internal links on https://vk.com only.
+             *
+             */
+            link_url?: string;
+            /**
+             * ID of the community to upload the story (should be verified or with the "fire" icon).
+             *
+             */
+            group_id?: number;
+            clickable_stickers?: string;
+        }>(params: Params): Responses.StoriesGetVideoUploadServerResponse["response"];
+        /**
+         * Returns a list of story viewers.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorStoryExpired} - Story has already expired
+         * @see https://vk.com/dev/stories.getViewers
+         */
+        getViewers<Params extends {
+            /**
+             * Story owner ID.
+             *
+             */
+            owner_id: number;
+            /**
+             * Story ID.
+             *
+             */
+            story_id: number;
+            /**
+             * Maximum number of results.
+             * @default 100
+             * @default 100
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of results.
+             *
+             */
+            offset?: number;
+            /**
+             * '1' — to return detailed information about photos
+             *
+             */
+            extended?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.StoriesGetViewersExtendedV5115Response["response"] : Responses.StoriesGetViewersExtendedV5115Response["response"];
+        /**
+         * Hides all replies in the last 24 hours from the user to current user's stories.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/stories.hideAllReplies
+         */
+        hideAllReplies<Params extends {
+            /**
+             * ID of the user whose replies should be hidden.
+             *
+             */
+            owner_id: number;
+            group_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Hides the reply to the current user's story.
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/stories.hideReply
+         */
+        hideReply<Params extends {
+            /**
+             * ID of the user whose replies should be hidden.
+             *
+             */
+            owner_id: number;
+            /**
+             * Story ID.
+             *
+             */
+            story_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         *
+         * @see https://vk.com/dev/stories.search
+         */
+        search<Params extends {
+            q?: string;
+            place_id?: number;
+            latitude?: number;
+            longitude?: number;
+            radius?: number;
+            mentioned_id?: number;
+            /**
+             *
+             * @maximum 1000
+             * @minimum 1
+             * @default 20
+             * @maximum 1000
+             * @minimum 1
+             * @default 20
+             */
+            count?: number;
+            extended?: boolean;
+            fields?: string[];
+        }>(params: Params): Responses.StoriesGetV5113Response["response"];
+        /**
+         * Allows to show stories from hidden sources in current user's feed.
+         * @access user
+         *
+         * @see https://vk.com/dev/stories.unbanOwner
+         */
+        unbanOwner<Params extends {
+            /**
+             * List of hidden sources to show stories from.
+             *
+             */
+            owners_ids: number[];
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Streaming {
+        /**
+         * Allows to receive data for the connection to Streaming API.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/streaming.getServerUrl
+         */
+        getServerUrl<Params extends never>(params?: Params): Responses.StreamingGetServerUrlResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/streaming.setSettings
+         */
+        setSettings<Params extends {
+            /**
+             *
+             * @enum {string} tier_1, tier_2, tier_3, tier_4, tier_5, tier_6, unlimited
+             * @enum {string} tier_1, tier_2, tier_3, tier_4, tier_5, tier_6, unlimited
+             */
+            monthly_tier?: "tier_1" | "tier_2" | "tier_3" | "tier_4" | "tier_5" | "tier_6" | "unlimited";
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Users {
+        /**
+         * Returns detailed information on users.
+         * @access user
+         * @access group
+         * @access service
+         *
+         * @see https://vk.com/dev/users.get
+         */
+        get<Params extends {
+            /**
+             * User IDs or screen names ('screen_name'). By default, current user ID.
+             *
+             */
+            user_ids?: string[];
+            /**
+             * Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'contacts', 'education', 'online', 'counters', 'relation', 'last_seen', 'activity', 'can_write_private_message', 'can_see_all_posts', 'can_post', 'universities', 'can_invite_to_chats'
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Case for declension of user name and surname: 'nom' — nominative (default), 'gen' — genitive , 'dat' — dative, 'acc' — accusative , 'ins' — instrumental , 'abl' — prepositional
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             */
+            name_case?: "nom" | "gen" | "dat" | "acc" | "ins" | "abl";
+        }>(params: Params): Responses.UsersGetResponse["response"];
+        /**
+         * Returns a list of IDs of followers of the user in question, sorted by date added, most recent first.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/users.getFollowers
+         */
+        getFollowers<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * Offset needed to return a specific subset of followers.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of followers to return.
+             * @maximum 1000
+             * @default 100
+             * @maximum 1000
+             * @default 100
+             */
+            count?: number;
+            /**
+             * Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online'.
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * Case for declension of user name and surname: 'nom' — nominative (default), 'gen' — genitive , 'dat' — dative, 'acc' — accusative , 'ins' — instrumental , 'abl' — prepositional
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             * @enum {string} nom, gen, dat, acc, ins, abl
+             */
+            name_case?: "nom" | "gen" | "dat" | "acc" | "ins" | "abl";
+        }>(params: Params): Responses.UsersGetFollowersResponse["response"];
+        /**
+         * Returns a list of IDs of users and communities followed by the user.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/users.getSubscriptions
+         */
+        getSubscriptions<Params extends {
+            /**
+             * User ID.
+             *
+             */
+            user_id?: number;
+            /**
+             * '1' — to return a combined list of users and communities, '0' — to return separate lists of users and communities (default)
+             *
+             */
+            extended?: boolean;
+            /**
+             * Offset needed to return a specific subset of subscriptions.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of users and communities to return.
+             * @maximum 200
+             * @default 20
+             * @maximum 200
+             * @default 20
+             */
+            count?: number;
+            fields?: Objects.UsersFields[];
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.UsersGetSubscriptionsExtendedResponse["response"] : Responses.UsersGetSubscriptionsResponse["response"];
+        /**
+         * Reports (submits a complain about) a user.
+         * @access user
+         *
+         * @see https://vk.com/dev/users.report
+         */
+        report<Params extends {
+            /**
+             * ID of the user about whom a complaint is being made.
+             *
+             */
+            user_id: number;
+            /**
+             * Type of complaint: 'porn' – pornography, 'spam' – spamming, 'insult' – abusive behavior, 'advertisement' – disruptive advertisements
+             * @enum {string} porn, spam, insult, advertisement
+             * @enum {string} porn, spam, insult, advertisement
+             */
+            type: "porn" | "spam" | "insult" | "advertisement";
+            /**
+             * Comment describing the complaint.
+             *
+             */
+            comment?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns a list of users matching the search criteria.
+         * @access user
+         *
+         * @see https://vk.com/dev/users.search
+         */
+        search<Params extends {
+            /**
+             * Search query string (e.g., 'Vasya Babich').
+             *
+             */
+            q?: string;
+            /**
+             * Sort order: '1' — by date registered, '0' — by rating
+             *
+             */
+            sort?: number;
+            /**
+             * Offset needed to return a specific subset of users.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of users to return.
+             * @maximum 1000
+             * @default 20
+             * @maximum 1000
+             * @default 20
+             */
+            count?: number;
+            /**
+             * Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online',
+             *
+             */
+            fields?: Objects.UsersFields[];
+            /**
+             * City ID.
+             *
+             */
+            city?: number;
+            /**
+             * Country ID.
+             *
+             */
+            country?: number;
+            /**
+             * City name in a string.
+             *
+             */
+            hometown?: string;
+            /**
+             * ID of the country where the user graduated.
+             *
+             */
+            university_country?: number;
+            /**
+             * ID of the institution of higher education.
+             *
+             */
+            university?: number;
+            /**
+             * Year of graduation from an institution of higher education.
+             *
+             */
+            university_year?: number;
+            /**
+             * Faculty ID.
+             *
+             */
+            university_faculty?: number;
+            /**
+             * Chair ID.
+             *
+             */
+            university_chair?: number;
+            /**
+             * '1' — female, '2' — male, '0' — any (default)
+             *
+             */
+            sex?: number;
+            /**
+             * Relationship status: '1' — Not married, '2' — In a relationship, '3' — Engaged, '4' — Married, '5' — It's complicated, '6' — Actively searching, '7' — In love
+             *
+             */
+            status?: number;
+            /**
+             * Minimum age.
+             *
+             */
+            age_from?: number;
+            /**
+             * Maximum age.
+             *
+             */
+            age_to?: number;
+            /**
+             * Day of birth.
+             *
+             */
+            birth_day?: number;
+            /**
+             * Month of birth.
+             *
+             */
+            birth_month?: number;
+            /**
+             * Year of birth.
+             * @maximum 2100
+             * @minimum 1900
+             * @maximum 2100
+             * @minimum 1900
+             */
+            birth_year?: number;
+            /**
+             * '1' — online only, '0' — all users
+             *
+             */
+            online?: boolean;
+            /**
+             * '1' — with photo only, '0' — all users
+             *
+             */
+            has_photo?: boolean;
+            /**
+             * ID of the country where users finished school.
+             *
+             */
+            school_country?: number;
+            /**
+             * ID of the city where users finished school.
+             *
+             */
+            school_city?: number;
+            school_class?: number;
+            /**
+             * ID of the school.
+             *
+             */
+            school?: number;
+            /**
+             * School graduation year.
+             *
+             */
+            school_year?: number;
+            /**
+             * Users' religious affiliation.
+             *
+             */
+            religion?: string;
+            /**
+             * Name of the company where users work.
+             *
+             */
+            company?: string;
+            /**
+             * Job position.
+             *
+             */
+            position?: string;
+            /**
+             * ID of a community to search in communities.
+             *
+             */
+            group_id?: number;
+            from_list?: string[];
+        }>(params: Params): Responses.UsersSearchResponse["response"];
+    }
+    interface Utils {
+        /**
+         * Checks whether a link is blocked in VK.
+         * @access user
+         * @access group
+         * @access service
+         *
+         * @see https://vk.com/dev/utils.checkLink
+         */
+        checkLink<Params extends {
+            /**
+             * Link to check (e.g., 'http://google.com').
+             *
+             */
+            url: string;
+        }>(params: Params): Responses.UtilsCheckLinkResponse["response"];
+        /**
+         * Deletes shortened link from user's list.
+         * @access user
+         *
+         * @see https://vk.com/dev/utils.deleteFromLastShortened
+         */
+        deleteFromLastShortened<Params extends {
+            /**
+             * Link key (characters after vk.cc/).
+             *
+             */
+            key: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns a list of user's shortened links.
+         * @access user
+         *
+         * @see https://vk.com/dev/utils.getLastShortenedLinks
+         */
+        getLastShortenedLinks<Params extends {
+            /**
+             * Number of links to return.
+             * @default 10
+             * @default 10
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of links.
+             *
+             */
+            offset?: number;
+        }>(params: Params): Responses.UtilsGetLastShortenedLinksResponse["response"];
+        /**
+         * Returns stats data for shortened link.
+         * @access user
+         * @access group
+         * @access service
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @see https://vk.com/dev/utils.getLinkStats
+         */
+        getLinkStats<Params extends {
+            /**
+             * Link key (characters after vk.cc/).
+             *
+             */
+            key: string;
+            /**
+             * Source of scope
+             * @enum {string} vk_cc, vk_link
+             * @default vk_cc
+             * @enum {string} vk_cc, vk_link
+             * @default vk_cc
+             */
+            source?: "vk_cc" | "vk_link";
+            /**
+             * Access key for private link stats.
+             *
+             */
+            access_key?: string;
+            /**
+             * Interval.
+             * @enum {string} day, forever, hour, month, week
+             * @default day
+             * @enum {string} day, forever, hour, month, week
+             * @default day
+             */
+            interval?: "day" | "forever" | "hour" | "month" | "week";
+            /**
+             * Number of intervals to return.
+             * @maximum 100
+             * @default 1
+             * @maximum 100
+             * @default 1
+             */
+            intervals_count?: number;
+            /**
+             * 1 — to return extended stats data (sex, age, geo). 0 — to return views number only.
+             *
+             */
+            extended?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.UtilsGetLinkStatsExtendedResponse["response"] : Responses.UtilsGetLinkStatsResponse["response"];
+        /**
+         * Returns the current time of the VK server.
+         * @access user
+         * @access group
+         * @access service
+         *
+         * @see https://vk.com/dev/utils.getServerTime
+         */
+        getServerTime<Params extends never>(params?: Params): Responses.UtilsGetServerTimeResponse["response"];
+        /**
+         * Allows to receive a link shortened via vk.cc.
+         * @access user
+         * @access group
+         * @access service
+         *
+         * @see https://vk.com/dev/utils.getShortLink
+         */
+        getShortLink<Params extends {
+            /**
+             * URL to be shortened.
+             *
+             */
+            url: string;
+            /**
+             * 1 — private stats, 0 — public stats.
+             *
+             */
+            private?: boolean;
+        }>(params: Params): Responses.UtilsGetShortLinkResponse["response"];
+        /**
+         * Detects a type of object (e.g., user, community, application) and its ID by screen name.
+         * @access user
+         * @access group
+         * @access service
+         *
+         * @see https://vk.com/dev/utils.resolveScreenName
+         */
+        resolveScreenName<Params extends {
+            /**
+             * Screen name of the user, community (e.g., 'apiclub,' 'andrew', or 'rules_of_war'), or application.
+             *
+             */
+            screen_name: string;
+        }>(params: Params): Responses.UtilsResolveScreenNameResponse["response"];
+    }
+    interface Video {
+        /**
+         * Adds a video to a user or community page.
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @throws {Errors.ApiErrorVideoAlreadyAdded} - This video is already added
+         * @see https://vk.com/dev/video.add
+         */
+        add<Params extends {
+            /**
+             * identifier of a user or community to add a video to. Use a negative value to designate a community ID.
+             *
+             */
+            target_id?: number;
+            /**
+             * Video ID.
+             *
+             */
+            video_id: number;
+            /**
+             * ID of the user or community that owns the video. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Creates an empty album for videos.
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @throws {Errors.ApiErrorAlbumsLimit} - Albums number limit is reached
+         * @see https://vk.com/dev/video.addAlbum
+         */
+        addAlbum<Params extends {
+            /**
+             * Community ID (if the album will be created in a community).
+             *
+             */
+            group_id?: number;
+            /**
+             * Album title.
+             *
+             */
+            title?: string;
+            /**
+             * new access permissions for the album. Possible values: , *'0' – all users,, *'1' – friends only,, *'2' – friends and friends of friends,, *'3' – "only me".
+             *
+             */
+            privacy?: (/**
+             * @enum {string} 0, 1, 2, 3
+             * @enum {string} 0, 1, 2, 3 */ "0" | "1" | "2" | "3")[];
+        }>(params: Params): Responses.VideoAddAlbumResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @throws {Errors.ApiErrorVideoAlreadyAdded} - This video is already added
+         * @see https://vk.com/dev/video.addToAlbum
+         */
+        addToAlbum<Params extends {
+            target_id?: number;
+            album_id?: number;
+            album_ids?: number[];
+            owner_id: number;
+            video_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Adds a new comment on a video.
+         * @access user
+         * @throws {Errors.ApiErrorVideoCommentsClosed} - Comments for this video are closed
+         * @see https://vk.com/dev/video.createComment
+         */
+        createComment<Params extends {
+            /**
+             * ID of the user or community that owns the video.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Video ID.
+             *
+             */
+            video_id: number;
+            /**
+             * New comment text.
+             *
+             */
+            message?: string;
+            /**
+             * List of objects attached to the comment, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, '<owner_id>' — ID of the media attachment owner. '<media_id>' — Media attachment ID. Example: "photo100172_166443618,photo66748_265827614"
+             *
+             */
+            attachments?: string[];
+            /**
+             * '1' — to post the comment from a community name (only if 'owner_id'<0)
+             *
+             */
+            from_group?: boolean;
+            reply_to_comment?: number;
+            sticker_id?: number;
+            guid?: string;
+        }>(params: Params): Responses.VideoCreateCommentResponse["response"];
+        /**
+         * Deletes a video from a user or community page.
+         * @access user
+         *
+         * @see https://vk.com/dev/video.delete
+         */
+        delete<Params extends {
+            /**
+             * Video ID.
+             *
+             */
+            video_id: number;
+            /**
+             * ID of the user or community that owns the video.
+             *
+             */
+            owner_id?: number;
+            target_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Deletes a video album.
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @see https://vk.com/dev/video.deleteAlbum
+         */
+        deleteAlbum<Params extends {
+            /**
+             * Community ID (if the album is owned by a community).
+             *
+             */
+            group_id?: number;
+            /**
+             * Album ID.
+             *
+             */
+            album_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Deletes a comment on a video.
+         * @access user
+         *
+         * @see https://vk.com/dev/video.deleteComment
+         */
+        deleteComment<Params extends {
+            /**
+             * ID of the user or community that owns the video.
+             *
+             */
+            owner_id?: number;
+            /**
+             * ID of the comment to be deleted.
+             *
+             */
+            comment_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits information about a video on a user or community page.
+         * @access user
+         *
+         * @see https://vk.com/dev/video.edit
+         */
+        edit<Params extends {
+            /**
+             * ID of the user or community that owns the video.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Video ID.
+             *
+             */
+            video_id: number;
+            /**
+             * New video title.
+             *
+             */
+            name?: string;
+            /**
+             * New video description.
+             *
+             */
+            desc?: string;
+            /**
+             * Privacy settings in a {@link https://vk.com/dev/privacy_setting|special format}. Privacy setting is available for videos uploaded to own profile by user.
+             *
+             */
+            privacy_view?: string[];
+            /**
+             * Privacy settings for comments in a {@link https://vk.com/dev/privacy_setting|special format}.
+             *
+             */
+            privacy_comment?: string[];
+            /**
+             * Disable comments for the group video.
+             *
+             */
+            no_comments?: boolean;
+            /**
+             * '1' — to repeat the playback of the video, '0' — to play the video once,
+             *
+             */
+            repeat?: boolean;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits the title of a video album.
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @see https://vk.com/dev/video.editAlbum
+         */
+        editAlbum<Params extends {
+            /**
+             * Community ID (if the album edited is owned by a community).
+             *
+             */
+            group_id?: number;
+            /**
+             * Album ID.
+             *
+             */
+            album_id: number;
+            /**
+             * New album title.
+             *
+             */
+            title: string;
+            /**
+             * new access permissions for the album. Possible values: , *'0' – all users,, *'1' – friends only,, *'2' – friends and friends of friends,, *'3' – "only me".
+             *
+             */
+            privacy?: (/**
+             * @enum {string} 0, 1, 2, 3
+             * @enum {string} 0, 1, 2, 3 */ "0" | "1" | "2" | "3")[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits the text of a comment on a video.
+         * @access user
+         *
+         * @see https://vk.com/dev/video.editComment
+         */
+        editComment<Params extends {
+            /**
+             * ID of the user or community that owns the video.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+            /**
+             * New comment text.
+             *
+             */
+            message?: string;
+            /**
+             * List of objects attached to the comment, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, '<owner_id>' — ID of the media attachment owner. '<media_id>' — Media attachment ID. Example: "photo100172_166443618,photo66748_265827614"
+             *
+             */
+            attachments?: string[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns detailed information about videos.
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @see https://vk.com/dev/video.get
+         */
+        get<Params extends {
+            /**
+             * ID of the user or community that owns the video(s).
+             *
+             */
+            owner_id?: number;
+            /**
+             * Video IDs, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", Use a negative value to designate a community ID. Example: "-4363_136089719,13245770_137352259"
+             *
+             */
+            videos?: string[];
+            /**
+             * ID of the album containing the video(s).
+             *
+             */
+            album_id?: number;
+            /**
+             * Number of videos to return.
+             * @maximum 200
+             * @default 100
+             * @maximum 200
+             * @default 100
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of videos.
+             *
+             */
+            offset?: number;
+            /**
+             * '1' — to return an extended response with additional fields
+             *
+             */
+            extended?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.VideoGetExtendedResponse["response"] : Responses.VideoGetResponse["response"];
+        /**
+         * Returns video album info
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @see https://vk.com/dev/video.getAlbumById
+         */
+        getAlbumById<Params extends {
+            /**
+             * identifier of a user or community to add a video to. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Album ID.
+             *
+             */
+            album_id: number;
+        }>(params: Params): Responses.VideoGetAlbumByIdResponse["response"];
+        /**
+         * Returns a list of video albums owned by a user or community.
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @see https://vk.com/dev/video.getAlbums
+         */
+        getAlbums<Params extends {
+            /**
+             * ID of the user or community that owns the video album(s).
+             *
+             */
+            owner_id?: number;
+            /**
+             * Offset needed to return a specific subset of video albums.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of video albums to return.
+             * @maximum 100
+             * @default 50
+             * @maximum 100
+             * @default 50
+             */
+            count?: number;
+            /**
+             * '1' — to return additional information about album privacy settings for the current user
+             *
+             */
+            extended?: boolean;
+            need_system?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.VideoGetAlbumsExtendedResponse["response"] : Responses.VideoGetAlbumsResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @see https://vk.com/dev/video.getAlbumsByVideo
+         */
+        getAlbumsByVideo<Params extends {
+            target_id?: number;
+            owner_id: number;
+            video_id: number;
+            extended?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.VideoGetAlbumsByVideoExtendedResponse["response"] : Responses.VideoGetAlbumsByVideoResponse["response"];
+        /**
+         * Returns a list of comments on a video.
+         * @access user
+         * @throws {Errors.ApiErrorVideoCommentsClosed} - Comments for this video are closed
+         * @see https://vk.com/dev/video.getComments
+         */
+        getComments<Params extends {
+            /**
+             * ID of the user or community that owns the video.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Video ID.
+             *
+             */
+            video_id: number;
+            /**
+             * '1' — to return an additional 'likes' field
+             *
+             */
+            need_likes?: boolean;
+            start_comment_id?: number;
+            /**
+             * Offset needed to return a specific subset of comments.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of comments to return.
+             * @maximum 100
+             * @default 20
+             * @maximum 100
+             * @default 20
+             */
+            count?: number;
+            /**
+             * Sort order: 'asc' — oldest comment first, 'desc' — newest comment first
+             * @enum {string} asc, desc
+             * @enum {string} asc, desc
+             */
+            sort?: "asc" | "desc";
+            extended?: boolean;
+            fields?: string[];
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.VideoGetCommentsExtendedResponse["response"] : Responses.VideoGetCommentsResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @see https://vk.com/dev/video.removeFromAlbum
+         */
+        removeFromAlbum<Params extends {
+            target_id?: number;
+            album_id?: number;
+            album_ids?: number[];
+            owner_id: number;
+            video_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Reorders the album in the list of user video albums.
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @throws {Errors.ApiErrorNotFound} - Not found
+         * @see https://vk.com/dev/video.reorderAlbums
+         */
+        reorderAlbums<Params extends {
+            /**
+             * ID of the user or community that owns the albums..
+             *
+             */
+            owner_id?: number;
+            /**
+             * Album ID.
+             *
+             */
+            album_id: number;
+            /**
+             * ID of the album before which the album in question shall be placed.
+             *
+             */
+            before?: number;
+            /**
+             * ID of the album after which the album in question shall be placed.
+             *
+             */
+            after?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Reorders the video in the video album.
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @see https://vk.com/dev/video.reorderVideos
+         */
+        reorderVideos<Params extends {
+            /**
+             * ID of the user or community that owns the album with videos.
+             *
+             */
+            target_id?: number;
+            /**
+             * ID of the video album.
+             *
+             */
+            album_id?: number;
+            /**
+             * ID of the user or community that owns the video.
+             *
+             */
+            owner_id: number;
+            /**
+             * ID of the video.
+             *
+             */
+            video_id: number;
+            /**
+             * ID of the user or community that owns the video before which the video in question shall be placed.
+             *
+             */
+            before_owner_id?: number;
+            /**
+             * ID of the video before which the video in question shall be placed.
+             *
+             */
+            before_video_id?: number;
+            /**
+             * ID of the user or community that owns the video after which the photo in question shall be placed.
+             *
+             */
+            after_owner_id?: number;
+            /**
+             * ID of the video after which the photo in question shall be placed.
+             *
+             */
+            after_video_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Reports (submits a complaint about) a video.
+         * @access user
+         *
+         * @see https://vk.com/dev/video.report
+         */
+        report<Params extends {
+            /**
+             * ID of the user or community that owns the video.
+             *
+             */
+            owner_id: number;
+            /**
+             * Video ID.
+             *
+             */
+            video_id: number;
+            /**
+             * Reason for the complaint: '0' – spam, '1' – child pornography, '2' – extremism, '3' – violence, '4' – drug propaganda, '5' – adult material, '6' – insult, abuse
+             *
+             */
+            reason?: number;
+            /**
+             * Comment describing the complaint.
+             *
+             */
+            comment?: string;
+            /**
+             * (If the video was found in search results.) Search query string.
+             *
+             */
+            search_query?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Reports (submits a complaint about) a comment on a video.
+         * @access user
+         *
+         * @see https://vk.com/dev/video.reportComment
+         */
+        reportComment<Params extends {
+            /**
+             * ID of the user or community that owns the video.
+             *
+             */
+            owner_id: number;
+            /**
+             * ID of the comment being reported.
+             *
+             */
+            comment_id: number;
+            /**
+             * Reason for the complaint: , 0 – spam , 1 – child pornography , 2 – extremism , 3 – violence , 4 – drug propaganda , 5 – adult material , 6 – insult, abuse
+             *
+             */
+            reason?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Restores a previously deleted video.
+         * @access user
+         *
+         * @see https://vk.com/dev/video.restore
+         */
+        restore<Params extends {
+            /**
+             * Video ID.
+             *
+             */
+            video_id: number;
+            /**
+             * ID of the user or community that owns the video.
+             *
+             */
+            owner_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Restores a previously deleted comment on a video.
+         * @access user
+         *
+         * @see https://vk.com/dev/video.restoreComment
+         */
+        restoreComment<Params extends {
+            /**
+             * ID of the user or community that owns the video.
+             *
+             */
+            owner_id?: number;
+            /**
+             * ID of the deleted comment.
+             *
+             */
+            comment_id: number;
+        }>(params: Params): Responses.VideoRestoreCommentResponse["response"];
+        /**
+         * Returns a server address (required for upload) and video data.
+         * @access user
+         * @throws {Errors.ApiErrorAccessVideo} - Access denied
+         * @throws {Errors.ApiErrorWallAddPost} - Access to adding post denied
+         * @throws {Errors.ApiErrorWallAdsPublished} - Advertisement post was recently added
+         * @see https://vk.com/dev/video.save
+         */
+        save<Params extends {
+            /**
+             * Name of the video.
+             *
+             */
+            name?: string;
+            /**
+             * Description of the video.
+             *
+             */
+            description?: string;
+            /**
+             * '1' — to designate the video as private (send it via a private message), the video will not appear on the user's video list and will not be available by ID for other users, '0' — not to designate the video as private
+             *
+             */
+            is_private?: boolean;
+            /**
+             * '1' — to post the saved video on a user's wall, '0' — not to post the saved video on a user's wall
+             *
+             */
+            wallpost?: boolean;
+            /**
+             * URL for embedding the video from an external website.
+             *
+             */
+            link?: string;
+            /**
+             * ID of the community in which the video will be saved. By default, the current user's page.
+             *
+             */
+            group_id?: number;
+            /**
+             * ID of the album to which the saved video will be added.
+             *
+             */
+            album_id?: number;
+            privacy_view?: string[];
+            privacy_comment?: string[];
+            no_comments?: boolean;
+            /**
+             * '1' — to repeat the playback of the video, '0' — to play the video once,
+             *
+             */
+            repeat?: boolean;
+            compression?: boolean;
+        }>(params: Params): Responses.VideoSaveResponse["response"];
+        /**
+         * Returns a list of videos under the set search criterion.
+         * @access user
+         *
+         * @see https://vk.com/dev/video.search
+         */
+        search<Params extends {
+            /**
+             * Search query string (e.g., 'The Beatles').
+             *
+             */
+            q: string;
+            /**
+             * Sort order: '1' — by duration, '2' — by relevance, '0' — by date added
+             *
+             */
+            sort?: number;
+            /**
+             * If not null, only searches for high-definition videos.
+             *
+             */
+            hd?: number;
+            /**
+             * '1' — to disable the Safe Search filter, '0' — to enable the Safe Search filter
+             *
+             */
+            adult?: boolean;
+            /**
+             * Filters to apply: 'youtube' — return YouTube videos only, 'vimeo' — return Vimeo videos only, 'short' — return short videos only, 'long' — return long videos only
+             *
+             */
+            filters?: (/**
+             * @enum {string} youtube, vimeo, short, long
+             * @enum {string} youtube, vimeo, short, long */ "youtube" | "vimeo" | "short" | "long")[];
+            search_own?: boolean;
+            /**
+             * Offset needed to return a specific subset of videos.
+             *
+             */
+            offset?: number;
+            longer?: number;
+            shorter?: number;
+            /**
+             * Number of videos to return.
+             * @maximum 200
+             * @default 20
+             * @maximum 200
+             * @default 20
+             */
+            count?: number;
+            extended?: boolean;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.VideoSearchExtendedResponse["response"] : Responses.VideoSearchResponse["response"];
+    }
+    interface Wall {
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/wall.closeComments
+         */
+        closeComments<Params extends {
+            owner_id: number;
+            post_id: number;
+        }>(params: Params): Responses.BaseBoolResponse["response"];
+        /**
+         * Adds a comment to a post on a user wall or community wall.
+         * @access user
+         * @access group
+         * @throws {Errors.ApiErrorWallAccessAddReply} - Access to status replies denied
+         * @throws {Errors.ApiErrorWallReplyOwnerFlood} - Too many replies
+         * @throws {Errors.ApiErrorWallLinksForbidden} - Hyperlinks are forbidden
+         * @throws {Errors.ApiErrorWallAccessReplies} - Access to post comments denied
+         * @see https://vk.com/dev/wall.createComment
+         */
+        createComment<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Post ID.
+             *
+             */
+            post_id: number;
+            /**
+             * Group ID.
+             *
+             */
+            from_group?: number;
+            /**
+             * (Required if 'attachments' is not set.) Text of the comment.
+             *
+             */
+            message?: string;
+            /**
+             * ID of comment to reply.
+             *
+             */
+            reply_to_comment?: number;
+            /**
+             * (Required if 'message' is not set.) List of media objects attached to the comment, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media ojbect: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, '<owner_id>' — ID of the media owner. '<media_id>' — Media ID. For example: "photo100172_166443618,photo66748_265827614"
+             *
+             */
+            attachments?: string[];
+            /**
+             * Sticker ID.
+             *
+             */
+            sticker_id?: number;
+            /**
+             * Unique identifier to avoid repeated comments.
+             *
+             */
+            guid?: string;
+        }>(params: Params): Responses.WallCreateCommentResponse["response"];
+        /**
+         * Deletes a post from a user wall or community wall.
+         * @access user
+         * @throws {Errors.ApiErrorWallAccessPost} - Access to wall's post denied
+         * @see https://vk.com/dev/wall.delete
+         */
+        delete<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * ID of the post to be deleted.
+             *
+             */
+            post_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Deletes a comment on a post on a user wall or community wall.
+         * @access user
+         * @throws {Errors.ApiErrorWallAccessComment} - Access to wall's comment denied
+         * @see https://vk.com/dev/wall.deleteComment
+         */
+        deleteComment<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits a post on a user wall or community wall.
+         * @access user
+         * @throws {Errors.ApiErrorWallAdsPostLimitReached} - Too many ads posts
+         * @see https://vk.com/dev/wall.edit
+         */
+        edit<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            post_id: number;
+            friends_only?: boolean;
+            /**
+             * (Required if 'attachments' is not set.) Text of the post.
+             *
+             */
+            message?: string;
+            /**
+             * (Required if 'message' is not set.) List of objects attached to the post, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, '<owner_id>' — ID of the media application owner. '<media_id>' — Media application ID. Example: "photo100172_166443618,photo66748_265827614", May contain a link to an external page to include in the post. Example: "photo66748_265827614,http://habrahabr.ru", "NOTE: If more than one link is being attached, an error is thrown."
+             *
+             */
+            attachments?: string[];
+            services?: string;
+            signed?: boolean;
+            publish_date?: number;
+            lat?: number;
+            long?: number;
+            place_id?: number;
+            mark_as_ads?: boolean;
+            close_comments?: boolean;
+            poster_bkg_id?: number;
+            poster_bkg_owner_id?: number;
+            poster_bkg_access_hash?: string;
+            copyright?: string;
+        }>(params: Params): Responses.WallEditResponse["response"];
+        /**
+         * Allows to edit hidden post.
+         * @access user
+         * @throws {Errors.ApiErrorWallAdsPostLimitReached} - Too many ads posts
+         * @see https://vk.com/dev/wall.editAdsStealth
+         */
+        editAdsStealth<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Post ID. Used for publishing of scheduled and suggested posts.
+             *
+             */
+            post_id: number;
+            /**
+             * (Required if 'attachments' is not set.) Text of the post.
+             *
+             */
+            message?: string;
+            /**
+             * (Required if 'message' is not set.) List of objects attached to the post, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, 'page' — wiki-page, 'note' — note, 'poll' — poll, 'album' — photo album, '<owner_id>' — ID of the media application owner. '<media_id>' — Media application ID. Example: "photo100172_166443618,photo66748_265827614", May contain a link to an external page to include in the post. Example: "photo66748_265827614,http://habrahabr.ru", "NOTE: If more than one link is being attached, an error will be thrown."
+             *
+             */
+            attachments?: string[];
+            /**
+             * Only for posts in communities with 'from_group' set to '1': '1' — post will be signed with the name of the posting user, '0' — post will not be signed (default)
+             *
+             */
+            signed?: boolean;
+            /**
+             * Geographical latitude of a check-in, in degrees (from -90 to 90).
+             */
+            lat?: number;
+            /**
+             * Geographical longitude of a check-in, in degrees (from -180 to 180).
+             */
+            long?: number;
+            /**
+             * ID of the location where the user was tagged.
+             *
+             */
+            place_id?: number;
+            /**
+             * Link button ID
+             *
+             */
+            link_button?: string;
+            /**
+             * Link title
+             *
+             */
+            link_title?: string;
+            /**
+             * Link image url
+             *
+             */
+            link_image?: string;
+            /**
+             * Link video ID in format "<owner_id>_<media_id>"
+             *
+             */
+            link_video?: string;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Edits a comment on a user wall or community wall.
+         * @access user
+         *
+         * @see https://vk.com/dev/wall.editComment
+         */
+        editComment<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+            /**
+             * New comment text.
+             *
+             */
+            message?: string;
+            /**
+             * List of objects attached to the comment, in the following format: , "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, '<owner_id>' — ID of the media attachment owner. '<media_id>' — Media attachment ID. For example: "photo100172_166443618,photo66748_265827614"
+             *
+             */
+            attachments?: string[];
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Returns a list of posts on a user wall or community wall.
+         * @access user
+         * @access service
+         * @throws {Errors.ApiErrorBlocked} - Content blocked
+         * @see https://vk.com/dev/wall.get
+         */
+        get<Params extends {
+            /**
+             * ID of the user or community that owns the wall. By default, current user ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * User or community short address.
+             *
+             */
+            domain?: string;
+            /**
+             * Offset needed to return a specific subset of posts.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of posts to return (maximum 100).
+             *
+             */
+            count?: number;
+            /**
+             * Filter to apply: 'owner' — posts by the wall owner, 'others' — posts by someone else, 'all' — posts by the wall owner and others (default), 'postponed' — timed posts (only available for calls with an 'access_token'), 'suggests' — suggested posts on a community wall
+             * @enum {string} owner, others, all, postponed, suggests
+             * @enum {string} owner, others, all, postponed, suggests
+             */
+            filter?: "owner" | "others" | "all" | "postponed" | "suggests";
+            /**
+             * '1' — to return 'wall', 'profiles', and 'groups' fields, '0' — to return no additional fields (default)
+             *
+             */
+            extended?: boolean;
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.WallGetExtendedResponse["response"] : Responses.WallGetResponse["response"];
+        /**
+         * Returns a list of posts from user or community walls by their IDs.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/wall.getById
+         */
+        getById<Params extends {
+            /**
+             * User or community IDs and post IDs, separated by underscores. Use a negative value to designate a community ID. Example: "93388_21539,93388_20904,2943_4276,-1_1"
+             *
+             */
+            posts: string[];
+            /**
+             * '1' — to return user and community objects needed to display posts, '0' — no additional fields are returned (default)
+             *
+             */
+            extended?: boolean;
+            /**
+             * Sets the number of parent elements to include in the array 'copy_history' that is returned if the post is a repost from another wall.
+             * @default 2
+             * @default 2
+             */
+            copy_history_depth?: number;
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.WallGetByIdExtendedResponse["response"] : Responses.WallGetByIdResponse["response"];
+        /**
+         * Returns a comment on a post on a user wall or community wall.
+         * @access user
+         * @throws {Errors.ApiErrorWallAccessReplies} - Access to post comments denied
+         * @see https://vk.com/dev/wall.getComment
+         */
+        getComment<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+            extended?: boolean;
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.WallGetCommentExtendedResponse["response"] : Responses.WallGetCommentResponse["response"];
+        /**
+         * Returns a list of comments on a post on a user wall or community wall.
+         * @access user
+         * @access service
+         * @throws {Errors.ApiErrorWallAccessReplies} - Access to post comments denied
+         * @see https://vk.com/dev/wall.getComments
+         */
+        getComments<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Post ID.
+             *
+             */
+            post_id?: number;
+            /**
+             * '1' — to return the 'likes' field, '0' — not to return the 'likes' field (default)
+             *
+             */
+            need_likes?: boolean;
+            start_comment_id?: number;
+            /**
+             * Offset needed to return a specific subset of comments.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of comments to return (maximum 100).
+             *
+             */
+            count?: number;
+            /**
+             * Sort order: 'asc' — chronological, 'desc' — reverse chronological
+             * @enum {string} asc, desc
+             * @enum {string} asc, desc
+             */
+            sort?: "asc" | "desc";
+            /**
+             * Number of characters at which to truncate comments when previewed. By default, '90'. Specify '0' if you do not want to truncate comments.
+             *
+             */
+            preview_length?: number;
+            extended?: boolean;
+            fields?: Objects.BaseUserGroupFields[];
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id?: number;
+            /**
+             * Count items in threads.
+             * @maximum 10
+             * @maximum 10
+             */
+            thread_items_count?: number;
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.WallGetCommentsExtendedResponse["response"] : Responses.WallGetCommentsResponse["response"];
+        /**
+         * Returns information about reposts of a post on user wall or community wall.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/wall.getReposts
+         */
+        getReposts<Params extends {
+            /**
+             * User ID or community ID. By default, current user ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Post ID.
+             *
+             */
+            post_id?: number;
+            /**
+             * Offset needed to return a specific subset of reposts.
+             *
+             */
+            offset?: number;
+            /**
+             * Number of reposts to return.
+             * @maximum 1000
+             * @default 20
+             * @maximum 1000
+             * @default 20
+             */
+            count?: number;
+        }>(params: Params): Responses.WallGetRepostsResponse["response"];
+        /**
+         * Method not described
+         * @access user
+         * @access group
+         *
+         * @see https://vk.com/dev/wall.openComments
+         */
+        openComments<Params extends {
+            owner_id: number;
+            post_id: number;
+        }>(params: Params): Responses.BaseBoolResponse["response"];
+        /**
+         * Pins the post on wall.
+         * @access user
+         *
+         * @see https://vk.com/dev/wall.pin
+         */
+        pin<Params extends {
+            /**
+             * ID of the user or community that owns the wall. By default, current user ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Post ID.
+             *
+             */
+            post_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Adds a new post on a user wall or community wall. Can also be used to publish suggested or scheduled posts.
+         * @access user
+         * @throws {Errors.ApiErrorWallAdsPublished} - Advertisement post was recently added
+         * @throws {Errors.ApiErrorWallAddPost} - Access to adding post denied
+         * @throws {Errors.ApiErrorWallTooManyRecipients} - Too many recipients
+         * @throws {Errors.ApiErrorWallLinksForbidden} - Hyperlinks are forbidden
+         * @throws {Errors.ApiErrorWallAdsPostLimitReached} - Too many ads posts
+         * @see https://vk.com/dev/wall.post
+         */
+        post<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * '1' — post will be available to friends only, '0' — post will be available to all users (default)
+             *
+             */
+            friends_only?: boolean;
+            /**
+             * For a community: '1' — post will be published by the community, '0' — post will be published by the user (default)
+             *
+             */
+            from_group?: boolean;
+            /**
+             * (Required if 'attachments' is not set.) Text of the post.
+             *
+             */
+            message?: string;
+            /**
+             * (Required if 'message' is not set.) List of objects attached to the post, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, 'page' — wiki-page, 'note' — note, 'poll' — poll, 'album' — photo album, '<owner_id>' — ID of the media application owner. '<media_id>' — Media application ID. Example: "photo100172_166443618,photo66748_265827614", May contain a link to an external page to include in the post. Example: "photo66748_265827614,http://habrahabr.ru", "NOTE: If more than one link is being attached, an error will be thrown."
+             *
+             */
+            attachments?: string[];
+            /**
+             * List of services or websites the update will be exported to, if the user has so requested. Sample values: 'twitter', 'facebook'.
+             *
+             */
+            services?: string;
+            /**
+             * Only for posts in communities with 'from_group' set to '1': '1' — post will be signed with the name of the posting user, '0' — post will not be signed (default)
+             *
+             */
+            signed?: boolean;
+            /**
+             * Publication date (in Unix time). If used, posting will be delayed until the set time.
+             *
+             */
+            publish_date?: number;
+            /**
+             * Geographical latitude of a check-in, in degrees (from -90 to 90).
+             */
+            lat?: number;
+            /**
+             * Geographical longitude of a check-in, in degrees (from -180 to 180).
+             */
+            long?: number;
+            /**
+             * ID of the location where the user was tagged.
+             *
+             */
+            place_id?: number;
+            /**
+             * Post ID. Used for publishing of scheduled and suggested posts.
+             *
+             */
+            post_id?: number;
+            guid?: string;
+            mark_as_ads?: boolean;
+            close_comments?: boolean;
+            mute_notifications?: boolean;
+            copyright?: string;
+        }>(params: Params): Responses.WallPostResponse["response"];
+        /**
+         * Allows to create hidden post which will not be shown on the community's wall and can be used for creating an ad with type "Community post".
+         * @access user
+         * @throws {Errors.ApiErrorWallAdsPublished} - Advertisement post was recently added
+         * @throws {Errors.ApiErrorWallAddPost} - Access to adding post denied
+         * @throws {Errors.ApiErrorWallTooManyRecipients} - Too many recipients
+         * @throws {Errors.ApiErrorWallLinksForbidden} - Hyperlinks are forbidden
+         * @see https://vk.com/dev/wall.postAdsStealth
+         */
+        postAdsStealth<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id: number;
+            /**
+             * (Required if 'attachments' is not set.) Text of the post.
+             *
+             */
+            message?: string;
+            /**
+             * (Required if 'message' is not set.) List of objects attached to the post, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", '' — Type of media attachment: 'photo' — photo, 'video' — video, 'audio' — audio, 'doc' — document, 'page' — wiki-page, 'note' — note, 'poll' — poll, 'album' — photo album, '<owner_id>' — ID of the media application owner. '<media_id>' — Media application ID. Example: "photo100172_166443618,photo66748_265827614", May contain a link to an external page to include in the post. Example: "photo66748_265827614,http://habrahabr.ru", "NOTE: If more than one link is being attached, an error will be thrown."
+             *
+             */
+            attachments?: string[];
+            /**
+             * Only for posts in communities with 'from_group' set to '1': '1' — post will be signed with the name of the posting user, '0' — post will not be signed (default)
+             *
+             */
+            signed?: boolean;
+            /**
+             * Geographical latitude of a check-in, in degrees (from -90 to 90).
+             */
+            lat?: number;
+            /**
+             * Geographical longitude of a check-in, in degrees (from -180 to 180).
+             */
+            long?: number;
+            /**
+             * ID of the location where the user was tagged.
+             *
+             */
+            place_id?: number;
+            /**
+             * Unique identifier to avoid duplication the same post.
+             *
+             */
+            guid?: string;
+            /**
+             * Link button ID
+             *
+             */
+            link_button?: string;
+            /**
+             * Link title
+             *
+             */
+            link_title?: string;
+            /**
+             * Link image url
+             *
+             */
+            link_image?: string;
+            /**
+             * Link video ID in format "<owner_id>_<media_id>"
+             *
+             */
+            link_video?: string;
+        }>(params: Params): Responses.WallPostAdsStealthResponse["response"];
+        /**
+         * Reports (submits a complaint about) a comment on a post on a user wall or community wall.
+         * @access user
+         *
+         * @see https://vk.com/dev/wall.reportComment
+         */
+        reportComment<Params extends {
+            /**
+             * ID of the user or community that owns the wall.
+             *
+             */
+            owner_id: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+            /**
+             * Reason for the complaint: '0' – spam, '1' – child pornography, '2' – extremism, '3' – violence, '4' – drug propaganda, '5' – adult material, '6' – insult, abuse
+             *
+             */
+            reason?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Reports (submits a complaint about) a post on a user wall or community wall.
+         * @access user
+         *
+         * @see https://vk.com/dev/wall.reportPost
+         */
+        reportPost<Params extends {
+            /**
+             * ID of the user or community that owns the wall.
+             *
+             */
+            owner_id: number;
+            /**
+             * Post ID.
+             *
+             */
+            post_id: number;
+            /**
+             * Reason for the complaint: '0' – spam, '1' – child pornography, '2' – extremism, '3' – violence, '4' – drug propaganda, '5' – adult material, '6' – insult, abuse
+             *
+             */
+            reason?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Reposts (copies) an object to a user wall or community wall.
+         * @access user
+         * @throws {Errors.ApiErrorWallAdsPublished} - Advertisement post was recently added
+         * @throws {Errors.ApiErrorWallAddPost} - Access to adding post denied
+         * @throws {Errors.ApiErrorWallAdsPostLimitReached} - Too many ads posts
+         * @see https://vk.com/dev/wall.repost
+         */
+        repost<Params extends {
+            /**
+             * ID of the object to be reposted on the wall. Example: "wall66748_3675"
+             *
+             */
+            object: string;
+            /**
+             * Comment to be added along with the reposted object.
+             *
+             */
+            message?: string;
+            /**
+             * Target community ID when reposting to a community.
+             *
+             */
+            group_id?: number;
+            mark_as_ads?: boolean;
+            mute_notifications?: boolean;
+        }>(params: Params): Responses.WallRepostResponse["response"];
+        /**
+         * Restores a post deleted from a user wall or community wall.
+         * @access user
+         * @throws {Errors.ApiErrorWallAccessPost} - Access to wall's post denied
+         * @throws {Errors.ApiErrorWallAddPost} - Access to adding post denied
+         * @see https://vk.com/dev/wall.restore
+         */
+        restore<Params extends {
+            /**
+             * User ID or community ID from whose wall the post was deleted. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * ID of the post to be restored.
+             *
+             */
+            post_id?: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Restores a comment deleted from a user wall or community wall.
+         * @access user
+         * @throws {Errors.ApiErrorWallAccessComment} - Access to wall's comment denied
+         * @see https://vk.com/dev/wall.restoreComment
+         */
+        restoreComment<Params extends {
+            /**
+             * User ID or community ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Comment ID.
+             *
+             */
+            comment_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+        /**
+         * Allows to search posts on user or community walls.
+         * @access user
+         * @access service
+         * @throws {Errors.ApiErrorWallAccessPost} - Access to wall's post denied
+         * @see https://vk.com/dev/wall.search
+         */
+        search<Params extends {
+            /**
+             * user or community id. "Remember that for a community 'owner_id' must be negative."
+             *
+             */
+            owner_id?: number;
+            /**
+             * user or community screen name.
+             *
+             */
+            domain?: string;
+            /**
+             * search query string.
+             *
+             */
+            query?: string;
+            /**
+             * '1' – returns only page owner's posts.
+             *
+             */
+            owners_only?: boolean;
+            /**
+             * count of posts to return.
+             * @maximum 100
+             * @default 20
+             * @maximum 100
+             * @default 20
+             */
+            count?: number;
+            /**
+             * Offset needed to return a specific subset of posts.
+             *
+             */
+            offset?: number;
+            /**
+             * show extended post info.
+             *
+             */
+            extended?: boolean;
+            fields?: Objects.BaseUserGroupFields[];
+        }>(params: Params): Params["extended"] extends true | 1 ? Responses.WallSearchExtendedResponse["response"] : Responses.WallSearchResponse["response"];
+        /**
+         * Unpins the post on wall.
+         * @access user
+         *
+         * @see https://vk.com/dev/wall.unpin
+         */
+        unpin<Params extends {
+            /**
+             * ID of the user or community that owns the wall. By default, current user ID. Use a negative value to designate a community ID.
+             *
+             */
+            owner_id?: number;
+            /**
+             * Post ID.
+             *
+             */
+            post_id: number;
+        }>(params: Params): Responses.OkResponse["response"];
+    }
+    interface Widgets {
+        /**
+         * Gets a list of comments for the page added through the {@link https://vk.com/dev/Comments|Comments widget}.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/widgets.getComments
+         */
+        getComments<Params extends {
+            widget_api_id?: number;
+            url?: string;
+            page_id?: string;
+            /**
+             *
+             * @default date
+             * @default date
+             */
+            order?: string;
+            fields?: Objects.UsersFields[];
+            offset?: number;
+            /**
+             *
+             * @maximum 200
+             * @minimum 10
+             * @default 10
+             * @maximum 200
+             * @minimum 10
+             * @default 10
+             */
+            count?: number;
+        }>(params: Params): Responses.WidgetsGetCommentsResponse["response"];
+        /**
+         * Gets a list of application/site pages where the {@link https://vk.com/dev/Comments|Comments widget} or {@link https://vk.com/dev/Like|Like widget} is installed.
+         * @access user
+         * @access service
+         *
+         * @see https://vk.com/dev/widgets.getPages
+         */
+        getPages<Params extends {
+            widget_api_id?: number;
+            /**
+             *
+             * @default friend_likes
+             * @default friend_likes
+             */
+            order?: string;
+            /**
+             *
+             * @default week
+             * @default week
+             */
+            period?: string;
+            offset?: number;
+            /**
+             *
+             * @maximum 200
+             * @minimum 10
+             * @default 10
+             * @maximum 200
+             * @minimum 10
+             * @default 10
+             */
+            count?: number;
+        }>(params: Params): Responses.WidgetsGetPagesResponse["response"];
+    }
+}
 export declare namespace Errors {
     class ApiErrorUnknown extends Error {
         code: number;
