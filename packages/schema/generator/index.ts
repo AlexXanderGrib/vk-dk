@@ -191,6 +191,37 @@ Promise.all([
         result += "\n";
       });
 
+      result += `export ${printer.printNode(
+        ts.EmitHint.Unspecified,
+        ts.createClassDeclaration(
+          undefined,
+          undefined,
+          "_domainsSpecifier",
+          undefined,
+          undefined,
+          [...syncMapping.keys()].map((c) => {
+            const name = c[0].toLowerCase() + c.substring(1);
+            const className = c[0].toUpperCase() + c.substring(1);
+
+            return ts.createProperty(
+              undefined,
+              undefined,
+              name,
+              ts.createToken(ts.SyntaxKind.ExclamationToken),
+              ts.createTypeReferenceNode(
+                ts.createQualifiedName(
+                  ts.createIdentifier("SyncMethods"),
+                  className
+                ),
+                undefined
+              ),
+              undefined
+            );
+          })
+        ),
+        source
+      )}`;
+
       result += "\n}\n";
 
       // Method ends. Now errors

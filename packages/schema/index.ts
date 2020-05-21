@@ -43841,6 +43841,44 @@ export namespace SyncMethods {
       params: Params
     ): Responses.WidgetsGetPagesResponse["response"];
   }
+  export class _domainsSpecifier {
+    account!: SyncMethods.Account;
+    ads!: SyncMethods.Ads;
+    appWidgets!: SyncMethods.AppWidgets;
+    apps!: SyncMethods.Apps;
+    auth!: SyncMethods.Auth;
+    board!: SyncMethods.Board;
+    database!: SyncMethods.Database;
+    docs!: SyncMethods.Docs;
+    fave!: SyncMethods.Fave;
+    friends!: SyncMethods.Friends;
+    gifts!: SyncMethods.Gifts;
+    groups!: SyncMethods.Groups;
+    leads!: SyncMethods.Leads;
+    likes!: SyncMethods.Likes;
+    market!: SyncMethods.Market;
+    messages!: SyncMethods.Messages;
+    newsfeed!: SyncMethods.Newsfeed;
+    notes!: SyncMethods.Notes;
+    notifications!: SyncMethods.Notifications;
+    orders!: SyncMethods.Orders;
+    pages!: SyncMethods.Pages;
+    photos!: SyncMethods.Photos;
+    polls!: SyncMethods.Polls;
+    prettyCards!: SyncMethods.PrettyCards;
+    search!: SyncMethods.Search;
+    secure!: SyncMethods.Secure;
+    stats!: SyncMethods.Stats;
+    status!: SyncMethods.Status;
+    storage!: SyncMethods.Storage;
+    stories!: SyncMethods.Stories;
+    streaming!: SyncMethods.Streaming;
+    users!: SyncMethods.Users;
+    utils!: SyncMethods.Utils;
+    video!: SyncMethods.Video;
+    wall!: SyncMethods.Wall;
+    widgets!: SyncMethods.Widgets;
+  }
 }
 
 export namespace Errors {

@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.Errors = exports.Methods = void 0;
+exports.Errors = exports.SyncMethods = exports.Methods = void 0;
 var Methods;
 (function (Methods) {
     var _domainsSpecifier = /** @class */ (function () {
@@ -61,6 +61,15 @@ var Methods;
         "widgets",
     ];
 })(Methods = exports.Methods || (exports.Methods = {}));
+var SyncMethods;
+(function (SyncMethods) {
+    var _domainsSpecifier = /** @class */ (function () {
+        function _domainsSpecifier() {
+        }
+        return _domainsSpecifier;
+    }());
+    SyncMethods._domainsSpecifier = _domainsSpecifier;
+})(SyncMethods = exports.SyncMethods || (exports.SyncMethods = {}));
 var Errors;
 (function (Errors) {
     var ApiErrorUnknown = /** @class */ (function (_super) {
