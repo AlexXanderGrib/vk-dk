@@ -432,8 +432,8 @@
         "affectsGlobalScope": false
       },
       "./index.ts": {
-        "version": "9faec3e68c285957eef35e120c4a1656276b4db5a40e3af09d6c93922e8dcb9b",
-        "signature": "e68f7bf82d6a684ec286c4e58c85cbe225d64be0a269769ce3ec95900549b2b6",
+        "version": "986fb7c0016e14c6e0367081cf80addd56d3d538e0faa8809a4712277dfd73a1",
+        "signature": "afdbdbb82de4e6612b4db3f6e662557f40532cb8c009ce6481739bf98dc31836",
         "affectsGlobalScope": false
       },
       "./node_modules/@babel/types/lib/index.d.ts": {
@@ -578,6 +578,7 @@
       "incremental": true,
       "target": 5,
       "composite": true,
+      "skipLibCheck": true,
       "project": "./tsconfig.build.json",
       "configFilePath": "./tsconfig.build.json"
     },
@@ -2529,59 +2530,7 @@
       "./node_modules/@types/stack-utils/index.d.ts",
       "./node_modules/@types/yargs-parser/index.d.ts",
       "./node_modules/@types/yargs/index.d.ts",
-      [
-        "./node_modules/@vk-dk/schema/index.d.ts",
-        [
-          {
-            "file": "./node_modules/@vk-dk/schema/index.d.ts",
-            "start": 1904,
-            "length": 14,
-            "messageText": "Namespace '\"/home/alexxgrib/Projects/vk-dk/packages/api/node_modules/@vk-dk/schema/index\".Objects' has no exported member 'AudioAdsConfig'.",
-            "category": 1,
-            "code": 2694
-          },
-          {
-            "file": "./node_modules/@vk-dk/schema/index.d.ts",
-            "start": 33685,
-            "length": 15,
-            "messageText": "Namespace '\"/home/alexxgrib/Projects/vk-dk/packages/api/node_modules/@vk-dk/schema/index\".Objects' has no exported member 'ArticlesArticle'.",
-            "category": 1,
-            "code": 2694
-          },
-          {
-            "file": "./node_modules/@vk-dk/schema/index.d.ts",
-            "start": 33859,
-            "length": 11,
-            "messageText": "Namespace '\"/home/alexxgrib/Projects/vk-dk/packages/api/node_modules/@vk-dk/schema/index\".Objects' has no exported member 'SnippetsAmp'.",
-            "category": 1,
-            "code": 2694
-          },
-          {
-            "file": "./node_modules/@vk-dk/schema/index.d.ts",
-            "start": 150132,
-            "length": 20,
-            "messageText": "Namespace '\"/home/alexxgrib/Projects/vk-dk/packages/api/node_modules/@vk-dk/schema/index\".Objects' has no exported member 'StoriesClickableArea'.",
-            "category": 1,
-            "code": 2694
-          },
-          {
-            "file": "./node_modules/@vk-dk/schema/index.d.ts",
-            "start": 189639,
-            "length": 17,
-            "messageText": "Namespace '\"/home/alexxgrib/Projects/vk-dk/packages/api/node_modules/@vk-dk/schema/index\".Objects' has no exported member 'ActionLinksAction'.",
-            "category": 1,
-            "code": 2694
-          },
-          {
-            "file": "./node_modules/@vk-dk/schema/index.d.ts",
-            "start": 258058,
-            "length": 19,
-            "messageText": "Namespace '\"/home/alexxgrib/Projects/vk-dk/packages/api/node_modules/@vk-dk/schema/index\".Objects' has no exported member 'StoriesStatCategory'.",
-            "category": 1,
-            "code": 2694
-          }
-        ]
-      ],
+      "./node_modules/@vk-dk/schema/index.d.ts",
       "./node_modules/form-data/index.d.ts",
       "./node_modules/typescript/lib/lib.dom.d.ts",
       "./node_modules/typescript/lib/lib.dom.iterable.d.ts",

@@ -9,7 +9,7 @@ const API = require("@vk-dk/api");
 
 // Так-же можно указать версию путём передачи второго аргумента
 // Но это не требуется, так-как по умолчанию используется последняя версия
-const api = API(process.env.TOKEN);
+const api = new API(process.env.TOKEN);
 
 api.users.get({user_ids: ["durov"]}) // Или просто ["1"], но всё-таки строку, так-как такова спецификация
   .then(console.log);

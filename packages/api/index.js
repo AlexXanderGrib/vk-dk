@@ -73,15 +73,15 @@ function createAPI(access_token, v) {
     })
         .reduce((a, b) => ({ ...a, ...b }));
 }
-const ds = new Schema.Methods._domainsSpecifier();
-/**
- * Function that creates representation on VK API
- * @param {string} token Access token for VKontakte API
- * @param {string|number} version VKontakte API version, @default 5.103
- *
- * @returns {API} Api representation
- */
-function API(token, version = 5.103) {
-    return createAPI(token, String(version));
+class API extends Schema.Methods._domainsSpecifier {
+    /**
+     * @param {string} token Access token for VKontakte API
+     * @param {string|number} version VKontakte API version, @default 5.103
+     */
+    constructor(token, v = 5.103) {
+        super();
+        const realAPI = createAPI(token, String(v));
+        Object.assign(this, realAPI);
+    }
 }
 exports.default = API;

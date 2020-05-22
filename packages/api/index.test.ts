@@ -1,7 +1,7 @@
 import API from ".";
 import env = require("./.env.json");
 
-const api = API(env.token);
+const api = new API(env.token);
 
 test("Simple API query", async () => {
   const [founder] = await api.users.get({ user_ids: ["durov"] });
