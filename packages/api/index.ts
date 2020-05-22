@@ -1,40 +1,34 @@
 import * as Schema from "@vk-dk/schema";
 import fetch from "node-fetch";
-// import { URLSearchParams } from "url";
-import { stringify, ParsedUrlQueryInput } from "querystring";
 
-async function call(method: string, params: ParsedUrlQueryInput): Promise<any> {
+function stringify<obj extends object>(obj: obj): string {
+  return Object.keys(obj)
+    .map((key) => {
+      const value = obj[key as keyof typeof obj];
+
+      const format = (val: string) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(val)}`;
+
+      if (Array.isArray(value)) {
+        return format(value.join(","));
+      }
+
+      if (typeof value === "object") {
+        return format(JSON.stringify(value));
+      }
+
+      return format(String(value));
+    })
+    .join("&");
+}
+
+async function call(method: string, params: object): Promise<any> {
   /**
    * Обёртка в буфер, это очень специально. Эту технику
    * придумали древние китайцы 100тыщ лет назад. Без неё
    * всё сломается.
    */
-  const body = Buffer.from(
-    stringify(
-      Object.keys(params)
-        .map((key) => {
-          const value = params[key as keyof typeof params];
-          // let result: string;
-
-          const r = (x: string) => ({ [key]: x });
-
-          if (Array.isArray(value)) {
-            return r(value.join(","));
-          }
-
-          if (typeof value === "object") {
-            return r(JSON.stringify(value));
-          }
-
-          // if (typeof value === "undefined") {
-          //   return {};
-          // }
-
-          return r(String(value));
-        })
-        .reduce((a, b) => ({ ...a, ...b }))
-    )
-  );
+  const body = Buffer.from(stringify(params));
 
   const raw = await fetch(`https://api.vk.com/method/${method}`, {
     body,
@@ -60,7 +54,7 @@ async function call(method: string, params: ParsedUrlQueryInput): Promise<any> {
         .join("\n");
     /**
      * Я что-то напортачил с кастомными ошибками, так-как
-     * их конструктор больше не принимает сообщение, а я хочу
+     * их конструктор больше не принимает сообщение. А я хочу
      * чтобы дебаг был простой, поэтому вырублю это на время.
      */
 
