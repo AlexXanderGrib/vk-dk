@@ -114,11 +114,53 @@ export default class API extends Schema.Methods._domainsSpecifier {
    *
    * "Pavel Durov" // In console
    */
-  constructor(token: string, v: string | number = 5.103) {
+  constructor(private token: string, private v: string | number = 5.103) {
     super();
 
     const realAPI = createAPI(token, String(v));
 
     Object.assign(this, realAPI);
   }
+
+  /**
+   *  This function executes the `code` on VK's server side and can contain up to **25 calls to API**
+   *
+   * @see https://vk.com/dev/execute
+   * @param code Code on VKScript language (like es3 but a little bit shit) to execute on VK's servers
+   */
+  execute<result extends any>(
+    ...code: [string] | [TemplateStringsArray, ...any[]]
+  ): Promise<result> {
+    const [actualCode, ...substitutions] = code;
+
+    const fullCode =
+      typeof actualCode === "object"
+        ? String.raw(actualCode, ...substitutions)
+        : String(actualCode);
+
+    return call("execute", {
+      code: fullCode,
+      access_token: this.token,
+      v: String(this.v)
+    });
+  }
+
+  /**
+   * This is an **experimental** function for wrap default `execute`.
+   *
+   * @param {Fn} func function to evaluate using `execute` vk method
+   */
+
+  // evaluate<Fn extends (API: Schema.SyncMethods._domainsSpecifier) => any>(
+  //   func: Fn,
+  //   contextVariables?: Record<string, any>
+  // ): ReturnType<Fn> {
+  //   const functionPredicates = [
+  //     /^(function\s*\(API\))\s*{/,
+  //     /^(\(API\)|API)\s*=>\s*{/
+  //   ];
+
+  //   const functionText = func.toString();
+
+  // }
 }

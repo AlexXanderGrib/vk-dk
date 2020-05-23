@@ -54,6 +54,25 @@ test("Undefined params skipping", async () => {
   expect(stringify({ message: undefined }).length).toBe(0);
 });
 
+test("`execute` method", async () => {
+  const ids = await userAPI.execute<number>(`
+    return API.users.get({
+      user_ids: [1, 2, 3]
+    })@.id;
+  `);
+  expect(ids).toEqual([1, 2, 3]);
+});
+
+test("`execute` method with template strings", async () => {
+  const random = Math.floor(Math.random() * 1000);
+
+  const x = await userAPI.execute<typeof random>`
+    return ${random};
+  `;
+
+  expect(x).toBe(random);
+});
+
 /**
  * TODO: more test here
  */

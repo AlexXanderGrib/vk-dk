@@ -92,8 +92,26 @@ class API extends Schema.Methods._domainsSpecifier {
      */
     constructor(token, v = 5.103) {
         super();
+        this.token = token;
+        this.v = v;
         const realAPI = createAPI(token, String(v));
         Object.assign(this, realAPI);
+    }
+    /**
+     *
+     *
+     * @param code Code to execute on VK's servers
+     */
+    execute(...code) {
+        const [actualCode, ...substitutions] = code;
+        const fullCode = typeof actualCode === "object"
+            ? String.raw(actualCode, ...substitutions)
+            : String(actualCode);
+        return call("execute", {
+            code: fullCode,
+            access_token: this.token,
+            v: String(this.v)
+        });
     }
 }
 exports.default = API;
