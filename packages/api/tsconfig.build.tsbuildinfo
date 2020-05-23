@@ -432,8 +432,8 @@
         "affectsGlobalScope": false
       },
       "./index.ts": {
-        "version": "384684100d51903069bab5b4b45d342f784ca314a6f23052d6e658d52735f0fb",
-        "signature": "45416f9aa1e5557855e53c3448efea37e886cc4926a7a68ba81b4e422dc65565",
+        "version": "074625457a0b189584f9008e467d636e2265693c2179c79b44980d6925ef1c61",
+        "signature": "3484d512c9ae47d122768ac2804a22a47467dbfdd8dee90c3dd54a04df0835d9",
         "affectsGlobalScope": false
       },
       "./node_modules/@babel/types/lib/index.d.ts": {

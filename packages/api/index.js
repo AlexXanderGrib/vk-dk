@@ -1,10 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.call = exports.stringify = void 0;
 const Schema = require("@vk-dk/schema");
 const node_fetch_1 = require("node-fetch");
 function stringify(obj) {
-    return Object.keys(obj)
-        .map((key) => {
+    const keys = Object.keys(obj);
+    const meaningfulKeys = keys.filter((key) => obj[key] !== undefined // skip if undefined
+    );
+    const pairs = meaningfulKeys.map((key) => {
         const value = obj[key];
         const format = (val) => `${encodeURIComponent(key)}=${encodeURIComponent(val)}`;
         if (Array.isArray(value)) {
@@ -14,9 +17,10 @@ function stringify(obj) {
             return format(JSON.stringify(value));
         }
         return format(String(value));
-    })
-        .join("&");
+    });
+    return pairs.join("&");
 }
+exports.stringify = stringify;
 async function call(method, params) {
     /**
      * Обёртка в буфер, это очень специально. Эту технику
@@ -57,6 +61,7 @@ async function call(method, params) {
     }
     throw new Error(`Returned JSON does not contains 'response' or 'error' fields and looks like: ${raw}`);
 }
+exports.call = call;
 function createAPI(access_token, v) {
     return Schema.Methods._exportedDomains
         .map((domain) => {
@@ -83,7 +88,7 @@ class API extends Schema.Methods._domainsSpecifier {
      *   .then(users => users[0])
      *   .then(founder => console.log(`${founder.first_name} ${founder.last_name}`))
      *
-     * // Pavel Durov
+     * "Pavel Durov" // In console
      */
     constructor(token, v = 5.103) {
         super();

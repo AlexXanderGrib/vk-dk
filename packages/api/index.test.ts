@@ -1,4 +1,4 @@
-import API from ".";
+import API, { stringify } from ".";
 import env = require("./.env.json");
 
 const userAPI = new API(env.token);
@@ -48,6 +48,10 @@ test("API query with an JSON object", async () => {
   });
 
   expect(typeof result).toBe("number");
+});
+
+test("Undefined params skipping", async () => {
+  expect(stringify({ message: undefined }).length).toBe(0);
 });
 
 /**

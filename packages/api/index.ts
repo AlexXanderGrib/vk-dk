@@ -1,28 +1,34 @@
 import * as Schema from "@vk-dk/schema";
 import fetch from "node-fetch";
 
-function stringify<obj extends object>(obj: obj): string {
-  return Object.keys(obj)
-    .map((key) => {
-      const value = obj[key as keyof typeof obj];
+export function stringify<obj extends object>(obj: obj): string {
+  const keys = Object.keys(obj);
 
-      const format = (val: string) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(val)}`;
+  const meaningfulKeys = keys.filter(
+    (key) => obj[key as keyof obj] !== undefined // skip if undefined
+  );
 
-      if (Array.isArray(value)) {
-        return format(value.join(","));
-      }
+  const pairs = meaningfulKeys.map((key) => {
+    const value = obj[key as keyof obj];
 
-      if (typeof value === "object") {
-        return format(JSON.stringify(value));
-      }
+    const format = (val: string) =>
+      `${encodeURIComponent(key)}=${encodeURIComponent(val)}`;
 
-      return format(String(value));
-    })
-    .join("&");
+    if (Array.isArray(value)) {
+      return format(value.join(","));
+    }
+
+    if (typeof value === "object") {
+      return format(JSON.stringify(value));
+    }
+
+    return format(String(value));
+  });
+
+  return pairs.join("&");
 }
 
-async function call(method: string, params: object): Promise<any> {
+export async function call(method: string, params: object): Promise<any> {
   /**
    * Обёртка в буфер, это очень специально. Эту технику
    * придумали древние китайцы 100тыщ лет назад. Без неё
@@ -106,7 +112,7 @@ export default class API extends Schema.Methods._domainsSpecifier {
    *   .then(users => users[0])
    *   .then(founder => console.log(`${founder.first_name} ${founder.last_name}`))
    *
-   * // Pavel Durov
+   * "Pavel Durov" // In console
    */
   constructor(token: string, v: string | number = 5.103) {
     super();
