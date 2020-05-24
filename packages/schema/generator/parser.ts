@@ -190,7 +190,7 @@ export default function parse(schema: AnySchema): ts.TypeNode {
         break;
 
       case "boolean":
-        result = Creator.boolean();
+        result = Creator.union([Creator.boolean(), Creator.reference("0"), Creator.reference("1")]);
         if (typedSchema.default) {
           ats.push(`@default ${typedSchema.default}`);
         }
