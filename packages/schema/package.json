@@ -1,6 +1,6 @@
 {
   "name": "@vk-dk/schema",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "DTS Files generated from VK Json Schema",
   "main": "index.js",
   "types": "./index.d.ts",
