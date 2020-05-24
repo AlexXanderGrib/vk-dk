@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 import * as ts from "typescript";
 import Creator, { correctCase } from "./creator";
-// import ts from "typescript";
 
 type Describable = {
   description?: string;
@@ -151,6 +150,9 @@ export default function parse(schema: AnySchema): ts.TypeNode {
     switch (typedSchema.type) {
       case "integer":
         result = Creator.number();
+
+        ats.push("@type {integer}");
+
         if (typedSchema.maximum) {
           ats.push(`@maximum ${typedSchema.maximum}`);
         }
@@ -180,13 +182,6 @@ export default function parse(schema: AnySchema): ts.TypeNode {
 
         if (typedSchema.format) {
           ats.push(`@format ${typedSchema.format}`);
-
-          if (typedSchema.format === "uri") {
-            result = Creator.union([
-              result,
-              ts.createTypeReferenceNode("URL", undefined)
-            ]);
-          }
         }
 
         if (typedSchema.default) {
@@ -209,10 +204,9 @@ export default function parse(schema: AnySchema): ts.TypeNode {
         if (typedSchema.properties) {
           result = Creator.objectLiteral(
             Object.keys(typedSchema.properties).map((key) => {
-              const value =
-                typedSchema.properties[
-                  key as keyof typeof typedSchema.properties
-                ];
+              const value = typedSchema.properties[
+                key as keyof typeof typedSchema.properties
+              ] as any;
 
               return {
                 name: key,
@@ -268,7 +262,7 @@ export function parseMethod(m: Method, async = true) {
     .join(jsdocJoiner);
   const hasParams = m.parameters && m.parameters.length;
 
-  const pType = hasParams
+  const paramsType = hasParams
     ? Creator.objectLiteral(
         m.parameters.map((p) => {
           const { name, required } = p;
@@ -295,7 +289,7 @@ export function parseMethod(m: Method, async = true) {
 
   const responseType = wrapIfAsync(
     ts.createIndexedAccessTypeNode(
-      parse(m.responses.response),
+      ts.createTypeReferenceNode("Required", [parse(m.responses.response)]),
       Creator.literal("response")
     )
   );
@@ -303,14 +297,16 @@ export function parseMethod(m: Method, async = true) {
   const extendedResponseType = m.responses.extendedResponse
     ? wrapIfAsync(
         ts.createIndexedAccessTypeNode(
-          parse(m.responses.extendedResponse),
+          ts.createTypeReferenceNode("Required", [
+            parse(m.responses.extendedResponse)
+          ]),
           Creator.literal("response")
         )
       )
     : responseType;
 
   const method = ts.createMethodSignature(
-    [ts.createTypeParameterDeclaration("Params", pType, undefined)],
+    [ts.createTypeParameterDeclaration("Params", paramsType, paramsType)],
     [params],
 
     m.responses.extendedResponse
