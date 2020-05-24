@@ -228,7 +228,7 @@ export namespace Objects {
      * URL of the preview image
      * @format uri
      */
-    img?: string | URL;
+    img?: string;
 
     /**
      * Instruction how to process the offer
@@ -369,7 +369,7 @@ export namespace Objects {
        * URL of square photo of the user with 200 pixels in width
        * @format uri
        */
-      photo_200?: string | URL;
+      photo_200?: string;
     };
 
   export type AccountUserSettingsInterest = {
@@ -603,13 +603,13 @@ export namespace Objects {
      * Image URL
      * @format uri
      */
-    image_src: string | URL;
+    image_src: string;
 
     /**
      * URL of the preview image in double size
      * @format uri
      */
-    image_src_2x?: string | URL;
+    image_src_2x?: string;
 
     /**
      * Domain of advertised object
@@ -620,7 +620,7 @@ export namespace Objects {
      * URL of advertised object
      * @format uri
      */
-    link_url: string | URL;
+    link_url: string;
 
     /**
      * link to preview an ad as it is shown on the website
@@ -959,7 +959,7 @@ export namespace Objects {
      * URL
      * @format uri
      */
-    redirect_url: string | URL;
+    redirect_url: string;
 
     /**
      * Link status
@@ -1522,25 +1522,25 @@ export namespace Objects {
      * Application author's URL
      * @format uri
      */
-    author_url?: string | URL;
+    author_url?: string;
 
     /**
      * URL of the app banner with 1120 px in width
      * @format uri
      */
-    banner_1120?: string | URL;
+    banner_1120?: string;
 
     /**
      * URL of the app banner with 560 px in width
      * @format uri
      */
-    banner_560?: string | URL;
+    banner_560?: string;
 
     /**
      * URL of the app icon with 16 px in width
      * @format uri
      */
-    icon_16?: string | URL;
+    icon_16?: string;
 
     /**
      * Is new flag
@@ -1658,31 +1658,31 @@ export namespace Objects {
      * URL of the app icon with 139 px in width
      * @format uri
      */
-    icon_139?: string | URL;
+    icon_139?: string;
 
     /**
      * URL of the app icon with 150 px in width
      * @format uri
      */
-    icon_150?: string | URL;
+    icon_150?: string;
 
     /**
      * URL of the app icon with 278 px in width
      * @format uri
      */
-    icon_278?: string | URL;
+    icon_278?: string;
 
     /**
      * URL of the app icon with 576 px in width
      * @format uri
      */
-    icon_576?: string | URL;
+    icon_576?: string;
 
     /**
      * URL of the app icon with 75 px in width
      * @format uri
      */
-    icon_75?: string | URL;
+    icon_75?: string;
   };
 
   /**
@@ -1761,7 +1761,7 @@ export namespace Objects {
      * URL of mp3 file
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
 
     /**
      * Duration in seconds
@@ -1902,7 +1902,7 @@ export namespace Objects {
      * Image url
      * @format uri
      */
-    url: string | URL;
+    url: string;
 
     /**
      * Image width
@@ -1978,7 +1978,7 @@ export namespace Objects {
      * URL of the page with article preview
      * @format uri
      */
-    preview_url?: string | URL;
+    preview_url?: string;
     product?: Objects.BaseLinkProduct;
     rating?: Objects.BaseLinkRating;
 
@@ -1991,7 +1991,7 @@ export namespace Objects {
      * Link URL
      * @format uri
      */
-    url: string | URL;
+    url: string;
     target_object?: Objects.LinkTargetObject;
 
     /**
@@ -2078,7 +2078,7 @@ export namespace Objects {
      * Action URL
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
     consume_reason?: string;
   };
 
@@ -2203,7 +2203,7 @@ export namespace Objects {
      * URL of the place's icon
      * @format uri
      */
-    icon?: string | URL;
+    icon?: string;
 
     /**
      * Place ID
@@ -2291,7 +2291,7 @@ export namespace Objects {
      * URL of sticker animation script
      * @format uri
      */
-    animation_url?: string | URL;
+    animation_url?: string;
 
     /**
      * Array of sticker animation script objects
@@ -2315,7 +2315,7 @@ export namespace Objects {
      * URL of animation script
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
   };
 
   export type BaseUploadServer = {
@@ -2323,7 +2323,7 @@ export namespace Objects {
      * Upload URL
      * @format uri
      */
-    upload_url: string | URL;
+    upload_url: string;
   };
 
   /**
@@ -3221,7 +3221,7 @@ export namespace Objects {
      * File URL
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
 
     /**
      * Document tags
@@ -3261,7 +3261,7 @@ export namespace Objects {
      * Video URL
      * @format uri
      */
-    src: string | URL;
+    src: string;
 
     /**
      * Video's width in pixels
@@ -3578,25 +3578,25 @@ export namespace Objects {
      * URL of the preview image with 512 px in width
      * @format uri
      */
-    thumb_512?: string | URL;
+    thumb_512?: string;
 
     /**
      * URL of the preview image with 256 px in width
      * @format uri
      */
-    thumb_256?: string | URL;
+    thumb_256?: string;
 
     /**
      * URL of the preview image with 48 px in width
      * @format uri
      */
-    thumb_48?: string | URL;
+    thumb_48?: string;
 
     /**
      * URL of the preview image with 96 px in width
      * @format uri
      */
-    thumb_96?: string | URL;
+    thumb_96?: string;
 
     /**
      * ID of the sticker pack, if the gift is representing one
@@ -4057,19 +4057,19 @@ export namespace Objects {
      * URL of square photo of the community with 100 pixels in width
      * @format uri
      */
-    photo_100?: string | URL;
+    photo_100?: string;
 
     /**
      * URL of square photo of the community with 200 pixels in width
      * @format uri
      */
-    photo_200?: string | URL;
+    photo_200?: string;
 
     /**
      * URL of square photo of the community with 50 pixels in width
      * @format uri
      */
-    photo_50?: string | URL;
+    photo_50?: string;
 
     /**
      * Domain of the community page
@@ -4442,7 +4442,7 @@ export namespace Objects {
      * Link URL
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
   };
 
   /**
@@ -4596,19 +4596,19 @@ export namespace Objects {
      * URL of square photo of the community with 100 pixels in width
      * @format uri
      */
-    photo_100?: string | URL;
+    photo_100?: string;
 
     /**
      * URL of square photo of the community with 200 pixels in width
      * @format uri
      */
-    photo_200?: string | URL;
+    photo_200?: string;
 
     /**
      * URL of square photo of the community with 50 pixels in width
      * @format uri
      */
-    photo_50?: string | URL;
+    photo_50?: string;
 
     /**
      * Domain of the community page
@@ -4666,19 +4666,19 @@ export namespace Objects {
      * URL of square image of the link with 100 pixels in width
      * @format uri
      */
-    photo_100?: string | URL;
+    photo_100?: string;
 
     /**
      * URL of square image of the link with 50 pixels in width
      * @format uri
      */
-    photo_50?: string | URL;
+    photo_50?: string;
 
     /**
      * Link URL
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
   };
 
   export type GroupsLongPollEvents = {
@@ -4965,7 +4965,7 @@ export namespace Objects {
      * URL user should open to start the lead
      * @format uri
      */
-    start_link?: string | URL;
+    start_link?: string;
   };
 
   /**
@@ -5264,7 +5264,7 @@ export namespace Objects {
      * URL of the preview image
      * @format uri
      */
-    thumb_photo: string | URL;
+    thumb_photo: string;
 
     /**
      * Item title
@@ -5275,7 +5275,7 @@ export namespace Objects {
      * URL to item
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
 
     /**
      *
@@ -5427,13 +5427,13 @@ export namespace Objects {
      * MP3 file URL
      * @format uri
      */
-    link_mp3: string | URL;
+    link_mp3: string;
 
     /**
      * OGG file URL
      * @format uri
      */
-    link_ogg: string | URL;
+    link_ogg: string;
 
     /**
      * Audio message owner ID
@@ -5472,19 +5472,19 @@ export namespace Objects {
      * URL of the preview image with 100 px in width
      * @format uri
      */
-    photo_100?: string | URL;
+    photo_100?: string;
 
     /**
      * URL of the preview image with 200 px in width
      * @format uri
      */
-    photo_200?: string | URL;
+    photo_200?: string;
 
     /**
      * URL of the preview image with 50 px in width
      * @format uri
      */
-    photo_50?: string | URL;
+    photo_50?: string;
     push_settings?: Objects.MessagesChatPushSettings;
 
     /**
@@ -5533,19 +5533,19 @@ export namespace Objects {
      * URL of the preview image with 100 px in width
      * @format uri
      */
-    photo_100?: string | URL;
+    photo_100?: string;
 
     /**
      * URL of the preview image with 200 px in width
      * @format uri
      */
-    photo_200?: string | URL;
+    photo_200?: string;
 
     /**
      * URL of the preview image with 50 px in width
      * @format uri
      */
-    photo_50?: string | URL;
+    photo_50?: string;
     push_settings?: Objects.MessagesChatPushSettings;
 
     /**
@@ -5795,7 +5795,7 @@ export namespace Objects {
      * Graffiti URL
      * @format uri
      */
-    url: string | URL;
+    url: string;
 
     /**
      * Graffiti width
@@ -6099,19 +6099,19 @@ export namespace Objects {
      * URL of the preview image with 100px in width
      * @format uri
      */
-    photo_100: string | URL;
+    photo_100: string;
 
     /**
      * URL of the preview image with 200px in width
      * @format uri
      */
-    photo_200: string | URL;
+    photo_200: string;
 
     /**
      * URL of the preview image with 50px in width
      * @format uri
      */
-    photo_50: string | URL;
+    photo_50: string;
   };
 
   /**
@@ -6742,7 +6742,7 @@ export namespace Objects {
      * URL of the page with note preview
      * @format uri
      */
-    view_url: string | URL;
+    view_url: string;
   };
 
   export type NotesNoteComment = {
@@ -7244,7 +7244,7 @@ export namespace Objects {
      * URL of the page preview
      * @format uri
      */
-    view_url: string | URL;
+    view_url: string;
 
     /**
      * Views number
@@ -7358,7 +7358,7 @@ export namespace Objects {
      * Photo URL.
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
 
     /**
      * Width of the photo in px.
@@ -7658,7 +7658,7 @@ export namespace Objects {
      * URL of the thumb image
      * @format uri
      */
-    thumb_src?: string | URL;
+    thumb_src?: string;
 
     /**
      * Photo album title
@@ -7821,37 +7821,37 @@ export namespace Objects {
      * URL of image with 1280 px width
      * @format uri
      */
-    photo_1280?: string | URL;
+    photo_1280?: string;
 
     /**
      * URL of image with 130 px width
      * @format uri
      */
-    photo_130?: string | URL;
+    photo_130?: string;
 
     /**
      * URL of image with 2560 px width
      * @format uri
      */
-    photo_2560?: string | URL;
+    photo_2560?: string;
 
     /**
      * URL of image with 604 px width
      * @format uri
      */
-    photo_604?: string | URL;
+    photo_604?: string;
 
     /**
      * URL of image with 75 px width
      * @format uri
      */
-    photo_75?: string | URL;
+    photo_75?: string;
 
     /**
      * URL of image with 807 px width
      * @format uri
      */
-    photo_807?: string | URL;
+    photo_807?: string;
 
     /**
      * Post ID
@@ -7899,7 +7899,7 @@ export namespace Objects {
      * URL of the image
      * @format uri
      */
-    url: string | URL;
+    url: string;
     type: Objects.PhotosPhotoSizesType;
 
     /**
@@ -7999,13 +7999,13 @@ export namespace Objects {
      * URL to upload photo
      * @format uri
      */
-    upload_url: string | URL;
+    upload_url: string;
 
     /**
      * Fallback URL if upload_url returned error
      * @format uri
      */
-    fallback_upload_url?: string | URL;
+    fallback_upload_url?: string;
 
     /**
      * User ID
@@ -8101,37 +8101,37 @@ export namespace Objects {
      * URL of image with 1280 px width
      * @format uri
      */
-    photo_1280?: string | URL;
+    photo_1280?: string;
 
     /**
      * URL of image with 130 px width
      * @format uri
      */
-    photo_130?: string | URL;
+    photo_130?: string;
 
     /**
      * URL of image with 2560 px width
      * @format uri
      */
-    photo_2560?: string | URL;
+    photo_2560?: string;
 
     /**
      * URL of image with 604 px width
      * @format uri
      */
-    photo_604?: string | URL;
+    photo_604?: string;
 
     /**
      * URL of image with 75 px width
      * @format uri
      */
-    photo_75?: string | URL;
+    photo_75?: string;
 
     /**
      * URL of image with 807 px width
      * @format uri
      */
-    photo_807?: string | URL;
+    photo_807?: string;
 
     /**
      * Post ID
@@ -8218,37 +8218,37 @@ export namespace Objects {
      * URL of image with 1280 px width
      * @format uri
      */
-    photo_1280?: string | URL;
+    photo_1280?: string;
 
     /**
      * URL of image with 130 px width
      * @format uri
      */
-    photo_130?: string | URL;
+    photo_130?: string;
 
     /**
      * URL of image with 2560 px width
      * @format uri
      */
-    photo_2560?: string | URL;
+    photo_2560?: string;
 
     /**
      * URL of image with 604 px width
      * @format uri
      */
-    photo_604?: string | URL;
+    photo_604?: string;
 
     /**
      * URL of image with 75 px width
      * @format uri
      */
-    photo_75?: string | URL;
+    photo_75?: string;
 
     /**
      * URL of image with 807 px width
      * @format uri
      */
-    photo_807?: string | URL;
+    photo_807?: string;
 
     /**
      * ID of the tag creator
@@ -9231,7 +9231,7 @@ export namespace Objects {
      * Link URL
      * @format uri
      */
-    url: string | URL;
+    url: string;
   };
 
   export type StoriesStoryStats = {
@@ -9797,13 +9797,13 @@ export namespace Objects {
      * URL of square photo of the user with 50 pixels in width
      * @format uri
      */
-    photo_50?: string | URL;
+    photo_50?: string;
 
     /**
      * URL of square photo of the user with 100 pixels in width
      * @format uri
      */
-    photo_100?: string | URL;
+    photo_100?: string;
 
     /**
      * Information whether the user is online
@@ -10046,31 +10046,31 @@ export namespace Objects {
      * URL of square photo of the user with 200 pixels in width
      * @format uri
      */
-    photo_200?: string | URL;
+    photo_200?: string;
 
     /**
      * URL of square photo of the user with maximum width
      * @format uri
      */
-    photo_max?: string | URL;
+    photo_max?: string;
 
     /**
      * URL of user's photo with 200 pixels in width
      * @format uri
      */
-    photo_200_orig?: string | URL;
+    photo_200_orig?: string;
 
     /**
      * URL of user's photo with 400 pixels in width
      * @format uri
      */
-    photo_400_orig?: string | URL;
+    photo_400_orig?: string;
 
     /**
      * URL of user's photo of maximum size
      * @format uri
      */
-    photo_max_orig?: string | URL;
+    photo_max_orig?: string;
 
     /**
      * ID of the user's main photo
@@ -10436,7 +10436,7 @@ export namespace Objects {
      * Short link URL
      * @format uri
      */
-    short_url?: string | URL;
+    short_url?: string;
 
     /**
      * Creation time in Unixtime
@@ -10448,7 +10448,7 @@ export namespace Objects {
      * Full URL
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
 
     /**
      * Total views number
@@ -10462,7 +10462,7 @@ export namespace Objects {
      * Link URL
      * @format uri
      */
-    link?: string | URL;
+    link?: string;
     status?: Objects.UtilsLinkCheckedStatus;
   };
 
@@ -10503,13 +10503,13 @@ export namespace Objects {
      * Short link URL
      * @format uri
      */
-    short_url?: string | URL;
+    short_url?: string;
 
     /**
      * Full URL
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
   };
 
   export type UtilsStats = {
@@ -10650,7 +10650,7 @@ export namespace Objects {
      * URL for the video uploading
      * @format uri
      */
-    upload_url?: string | URL;
+    upload_url?: string;
 
     /**
      * Video ID
@@ -10785,7 +10785,7 @@ export namespace Objects {
      * Video embed URL
      * @format uri
      */
-    player?: string | URL;
+    player?: string;
 
     /**
      * Returns if the video is processing
@@ -10930,43 +10930,43 @@ export namespace Objects {
      * URL of the external player
      * @format uri
      */
-    external?: string | URL;
+    external?: string;
 
     /**
      * URL of the mpeg4 file with 240p quality
      * @format uri
      */
-    mp4_240?: string | URL;
+    mp4_240?: string;
 
     /**
      * URL of the mpeg4 file with 360p quality
      * @format uri
      */
-    mp4_360?: string | URL;
+    mp4_360?: string;
 
     /**
      * URL of the mpeg4 file with 480p quality
      * @format uri
      */
-    mp4_480?: string | URL;
+    mp4_480?: string;
 
     /**
      * URL of the mpeg4 file with 720p quality
      * @format uri
      */
-    mp4_720?: string | URL;
+    mp4_720?: string;
 
     /**
      * URL of the mpeg4 file with 1080p quality
      * @format uri
      */
-    mp4_1080?: string | URL;
+    mp4_1080?: string;
 
     /**
      * URL of the flv file with 320p quality
      * @format uri
      */
-    flv_320?: string | URL;
+    flv_320?: string;
   };
 
   export type VideoVideoFull = Objects.VideoVideo & {
@@ -11003,13 +11003,13 @@ export namespace Objects {
      * URL of the preview image with 130 px in width
      * @format uri
      */
-    photo_130?: string | URL;
+    photo_130?: string;
 
     /**
      * URL of the preview image with 604 px in width
      * @format uri
      */
-    photo_604?: string | URL;
+    photo_604?: string;
   };
 
   export type WallAttachedNote = {
@@ -11054,7 +11054,7 @@ export namespace Objects {
      * URL of the page with note preview
      * @format uri
      */
-    view_url: string | URL;
+    view_url: string;
   };
 
   export type WallCommentAttachment = {
@@ -11123,13 +11123,13 @@ export namespace Objects {
      * URL of the preview image with 200 px in width
      * @format uri
      */
-    photo_200?: string | URL;
+    photo_200?: string;
 
     /**
      * URL of the preview image with 586 px in width
      * @format uri
      */
-    photo_586?: string | URL;
+    photo_586?: string;
   };
 
   export type WallPostCopyright = {
@@ -11159,7 +11159,7 @@ export namespace Objects {
      * URL to an external site used to publish the post
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
   };
 
   /**
@@ -11191,13 +11191,13 @@ export namespace Objects {
      * URL of the preview image with 130 px in width
      * @format uri
      */
-    photo_130?: string | URL;
+    photo_130?: string;
 
     /**
      * URL of the preview image with 604 px in width
      * @format uri
      */
-    photo_604?: string | URL;
+    photo_604?: string;
   };
 
   export type WallViews = {
@@ -11525,7 +11525,7 @@ export namespace Objects {
      * URL of the preview image (type=photo only)
      * @format uri
      */
-    thumb_src?: string | URL;
+    thumb_src?: string;
     type?: Objects.WidgetsCommentMediaType;
   };
 
@@ -11664,7 +11664,7 @@ export namespace Objects {
      * URL of the preview image
      * @format uri
      */
-    photo?: string | URL;
+    photo?: string;
 
     /**
      * Page title
@@ -11675,7 +11675,7 @@ export namespace Objects {
      * Page absolute URL
      * @format uri
      */
-    url?: string | URL;
+    url?: string;
   };
 }
 
@@ -12911,7 +12911,7 @@ export namespace Responses {
        * URL of the RSS feed
        * @format uri
        */
-      rss?: string | URL;
+      rss?: string;
 
       /**
        * Start date
@@ -15091,7 +15091,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Changes a user password after access is successfully restored with the {@link https://vk.com/dev/auth.restore|auth.restore} method.
@@ -15144,7 +15144,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AccountChangePasswordResponse["response"]>;
+    ): Promise<Required<Responses.AccountChangePasswordResponse>["response"]>;
 
     /**
      * Returns a list of active ads (offers) which executed by the user will bring him/her respective number of votes to his balance in the application.
@@ -15185,7 +15185,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AccountGetActiveOffersResponse["response"]>;
+    ): Promise<Required<Responses.AccountGetActiveOffersResponse>["response"]>;
 
     /**
      * Gets settings of the user in this application.
@@ -15210,7 +15210,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AccountGetAppPermissionsResponse["response"]>;
+    ): Promise<
+      Required<Responses.AccountGetAppPermissionsResponse>["response"]
+    >;
 
     /**
      * Returns a user's blacklist.
@@ -15251,7 +15253,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AccountGetBannedResponse["response"]>;
+    ): Promise<Required<Responses.AccountGetBannedResponse>["response"]>;
 
     /**
      * Returns non-null values of user counters.
@@ -15300,7 +15302,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AccountGetCountersResponse["response"]>;
+    ): Promise<Required<Responses.AccountGetCountersResponse>["response"]>;
 
     /**
      * Returns current account info.
@@ -15341,7 +15343,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AccountGetInfoResponse["response"]>;
+    ): Promise<Required<Responses.AccountGetInfoResponse>["response"]>;
 
     /**
      * Returns the current account info.
@@ -15352,7 +15354,7 @@ export namespace Methods {
      */
     getProfileInfo<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.AccountGetProfileInfoResponse["response"]>;
+    ): Promise<Required<Responses.AccountGetProfileInfoResponse>["response"]>;
 
     /**
      * Gets settings of push notifications.
@@ -15375,7 +15377,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AccountGetPushSettingsResponse["response"]>;
+    ): Promise<Required<Responses.AccountGetPushSettingsResponse>["response"]>;
 
     /**
      * Subscribes an iOS/Android/Windows Phone-based device to receive push notifications
@@ -15452,7 +15454,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits current profile info.
@@ -15619,7 +15621,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AccountSaveProfileInfoResponse["response"]>;
+    ): Promise<Required<Responses.AccountSaveProfileInfoResponse>["response"]>;
 
     /**
      * Allows to edit the current account info.
@@ -15652,7 +15654,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Sets an application screen name (up to 17 characters), that is shown to the user in the left menu.
@@ -15687,7 +15689,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Marks a current user as offline.
@@ -15698,7 +15700,7 @@ export namespace Methods {
      */
     setOffline<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Marks the current user as online for 15 minutes.
@@ -15721,7 +15723,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Change push settings.
@@ -15774,7 +15776,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Mutes push notifications for the set period of time.
@@ -15833,7 +15835,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -15858,7 +15860,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Unsubscribes a device from push notifications.
@@ -15883,7 +15885,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Ads {
     /**
@@ -15919,7 +15921,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsAddOfficeUsersResponse["response"]>;
+    ): Promise<Required<Responses.AdsAddOfficeUsersResponse>["response"]>;
 
     /**
      * Allows to check the ad link.
@@ -15978,7 +15980,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsCheckLinkResponse["response"]>;
+    ): Promise<Required<Responses.AdsCheckLinkResponse>["response"]>;
 
     /**
      * Creates ads.
@@ -16014,7 +16016,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsCreateAdsResponse["response"]>;
+    ): Promise<Required<Responses.AdsCreateAdsResponse>["response"]>;
 
     /**
      * Creates advertising campaigns.
@@ -16050,7 +16052,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsCreateCampaignsResponse["response"]>;
+    ): Promise<Required<Responses.AdsCreateCampaignsResponse>["response"]>;
 
     /**
      * Creates clients of an advertising agency.
@@ -16086,7 +16088,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsCreateClientsResponse["response"]>;
+    ): Promise<Required<Responses.AdsCreateClientsResponse>["response"]>;
 
     /**
      * Creates a group to re-target ads for users who visited advertiser's site (viewed information about the product, registered, etc.).
@@ -16163,7 +16165,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsCreateTargetGroupResponse["response"]>;
+    ): Promise<Required<Responses.AdsCreateTargetGroupResponse>["response"]>;
 
     /**
      * Archives ads.
@@ -16200,7 +16202,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsDeleteAdsResponse["response"]>;
+    ): Promise<Required<Responses.AdsDeleteAdsResponse>["response"]>;
 
     /**
      * Archives advertising campaigns.
@@ -16237,7 +16239,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsDeleteCampaignsResponse["response"]>;
+    ): Promise<Required<Responses.AdsDeleteCampaignsResponse>["response"]>;
 
     /**
      * Archives clients of an advertising agency.
@@ -16274,7 +16276,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsDeleteClientsResponse["response"]>;
+    ): Promise<Required<Responses.AdsDeleteClientsResponse>["response"]>;
 
     /**
      * Deletes a retarget group.
@@ -16323,7 +16325,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns a list of advertising accounts.
@@ -16334,7 +16336,7 @@ export namespace Methods {
      */
     getAccounts<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.AdsGetAccountsResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetAccountsResponse>["response"]>;
 
     /**
      * Returns number of ads.
@@ -16425,7 +16427,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetAdsResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetAdsResponse>["response"]>;
 
     /**
      * Returns descriptions of ad layouts.
@@ -16516,7 +16518,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetAdsLayoutResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetAdsLayoutResponse>["response"]>;
 
     /**
      * Returns ad targeting parameters.
@@ -16607,7 +16609,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetAdsTargetingResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetAdsTargetingResponse>["response"]>;
 
     /**
      * Returns current budget of the advertising account.
@@ -16632,7 +16634,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetBudgetResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetBudgetResponse>["response"]>;
 
     /**
      * Returns a list of campaigns in an advertising account.
@@ -16695,7 +16697,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetCampaignsResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetCampaignsResponse>["response"]>;
 
     /**
      * Returns a list of possible ad categories.
@@ -16718,7 +16720,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetCategoriesResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetCategoriesResponse>["response"]>;
 
     /**
      * Returns a list of advertising agency's clients.
@@ -16743,7 +16745,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetClientsResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetClientsResponse>["response"]>;
 
     /**
      * Returns demographics for ads or campaigns.
@@ -16822,7 +16824,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetDemographicsResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetDemographicsResponse>["response"]>;
 
     /**
      * Returns information about current state of a counter — number of remaining runs of methods and time to the next counter nulling in seconds.
@@ -16847,7 +16849,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetFloodStatsResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetFloodStatsResponse>["response"]>;
 
     /**
      * Returns a list of managers and supervisors of advertising account.
@@ -16872,7 +16874,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetOfficeUsersResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetOfficeUsersResponse>["response"]>;
 
     /**
      * Returns detailed statistics of promoted posts reach from campaigns and ads.
@@ -16919,7 +16921,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetPostsReachResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetPostsReachResponse>["response"]>;
 
     /**
      * Returns a reason of ad rejection for pre-moderation.
@@ -16956,7 +16958,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetRejectionReasonResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetRejectionReasonResponse>["response"]>;
 
     /**
      * Returns statistics of performance indicators for ads, campaigns, clients or the whole account.
@@ -17049,7 +17051,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetStatisticsResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetStatisticsResponse>["response"]>;
 
     /**
      * Returns a set of auto-suggestions for various targeting parameters.
@@ -17152,7 +17154,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetSuggestionsResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetSuggestionsResponse>["response"]>;
 
     /**
      * Returns a list of target groups.
@@ -17199,7 +17201,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetTargetGroupsResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetTargetGroupsResponse>["response"]>;
 
     /**
      * Returns the size of targeting audience, and also recommended values for CPC and CPM.
@@ -17304,7 +17306,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetTargetingStatsResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetTargetingStatsResponse>["response"]>;
 
     /**
      * Returns URL to upload an ad photo to.
@@ -17341,7 +17343,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsGetUploadURLResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetUploadURLResponse>["response"]>;
 
     /**
      * Returns URL to upload an ad video to.
@@ -17352,7 +17354,7 @@ export namespace Methods {
      */
     getVideoUploadURL<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.AdsGetVideoUploadURLResponse["response"]>;
+    ): Promise<Required<Responses.AdsGetVideoUploadURLResponse>["response"]>;
 
     /**
      * Imports a list of advertiser's contacts to count VK registered users against the target group.
@@ -17411,7 +17413,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsImportTargetContactsResponse["response"]>;
+    ): Promise<Required<Responses.AdsImportTargetContactsResponse>["response"]>;
 
     /**
      * Removes managers and/or supervisors from advertising account.
@@ -17446,7 +17448,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsRemoveOfficeUsersResponse["response"]>;
+    ): Promise<Required<Responses.AdsRemoveOfficeUsersResponse>["response"]>;
 
     /**
      * Edits ads.
@@ -17481,7 +17483,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsUpdateAdsResponse["response"]>;
+    ): Promise<Required<Responses.AdsUpdateAdsResponse>["response"]>;
 
     /**
      * Edits advertising campaigns.
@@ -17517,7 +17519,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsUpdateCampaignsResponse["response"]>;
+    ): Promise<Required<Responses.AdsUpdateCampaignsResponse>["response"]>;
 
     /**
      * Edits clients of an advertising agency.
@@ -17552,7 +17554,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AdsUpdateClientsResponse["response"]>;
+    ): Promise<Required<Responses.AdsUpdateClientsResponse>["response"]>;
 
     /**
      * Edits a retarget group.
@@ -17651,7 +17653,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface AppWidgets {
     /**
@@ -17704,7 +17706,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Apps {
     /**
@@ -17716,7 +17718,7 @@ export namespace Methods {
      */
     deleteAppRequests<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns applications data.
@@ -17792,7 +17794,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AppsGetResponse["response"]>;
+    ): Promise<Required<Responses.AppsGetResponse>["response"]>;
 
     /**
      * Returns a list of applications (apps) available to users in the App Catalog.
@@ -17906,7 +17908,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AppsGetCatalogResponse["response"]>;
+    ): Promise<Required<Responses.AppsGetCatalogResponse>["response"]>;
 
     /**
      * Creates friends list for requests and invites in current app.
@@ -17975,7 +17977,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AppsGetFriendsListResponse["response"]>;
+    ): Promise<Required<Responses.AppsGetFriendsListResponse>["response"]>;
 
     /**
      * Returns players rating in the game.
@@ -18023,8 +18025,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.AppsGetLeaderboardExtendedResponse["response"]>
-      : Promise<Responses.AppsGetLeaderboardResponse["response"]>;
+      ? Promise<
+          Required<Responses.AppsGetLeaderboardExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.AppsGetLeaderboardResponse>["response"]>;
 
     /**
      * Returns scopes for auth
@@ -18051,7 +18055,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AppsGetScopesResponse["response"]>;
+    ): Promise<Required<Responses.AppsGetScopesResponse>["response"]>;
 
     /**
      * Returns user score in app
@@ -18076,7 +18080,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AppsGetScoreResponse["response"]>;
+    ): Promise<Required<Responses.AppsGetScoreResponse>["response"]>;
 
     /**
      * Method not described
@@ -18113,7 +18117,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BaseBoolResponse["response"]>;
+    ): Promise<Required<Responses.BaseBoolResponse>["response"]>;
 
     /**
      * Method not described
@@ -18150,7 +18154,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BaseBoolResponse["response"]>;
+    ): Promise<Required<Responses.BaseBoolResponse>["response"]>;
 
     /**
      * Sends a request to another user in an app that uses VK authorization.
@@ -18213,7 +18217,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AppsSendRequestResponse["response"]>;
+    ): Promise<Required<Responses.AppsSendRequestResponse>["response"]>;
   }
   export interface Auth {
     /**
@@ -18256,7 +18260,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Allows to restore account access using a code received via SMS. " This method is only available for apps with {@link https://vk.com/dev/auth_direct|Direct authorization} access. "
@@ -18290,7 +18294,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.AuthRestoreResponse["response"]>;
+    ): Promise<Required<Responses.AuthRestoreResponse>["response"]>;
   }
   export interface Board {
     /**
@@ -18356,7 +18360,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BoardAddTopicResponse["response"]>;
+    ): Promise<Required<Responses.BoardAddTopicResponse>["response"]>;
 
     /**
      * Closes a topic on a community's discussion board so that comments cannot be posted.
@@ -18393,7 +18397,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Adds a comment on a topic on a community's discussion board.
@@ -18482,7 +18486,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BoardCreateCommentResponse["response"]>;
+    ): Promise<Required<Responses.BoardCreateCommentResponse>["response"]>;
 
     /**
      * Deletes a comment on a topic on a community's discussion board.
@@ -18532,7 +18536,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Deletes a topic from a community's discussion board.
@@ -18569,7 +18573,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits a comment on a topic on a community's discussion board.
@@ -18638,7 +18642,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits the title of a topic on a community's discussion board.
@@ -18685,7 +18689,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Pins a topic (fixes its place) to the top of a community's discussion board.
@@ -18722,7 +18726,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns a list of comments on a topic on a community's discussion board.
@@ -18833,8 +18837,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.BoardGetCommentsExtendedResponse["response"]>
-      : Promise<Responses.BoardGetCommentsResponse["response"]>;
+      ? Promise<
+          Required<Responses.BoardGetCommentsExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.BoardGetCommentsResponse>["response"]>;
 
     /**
      * Returns a list of topics on a community's discussion board.
@@ -18951,8 +18957,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.BoardGetTopicsExtendedResponse["response"]>
-      : Promise<Responses.BoardGetTopicsResponse["response"]>;
+      ? Promise<Required<Responses.BoardGetTopicsExtendedResponse>["response"]>
+      : Promise<Required<Responses.BoardGetTopicsResponse>["response"]>;
 
     /**
      * Re-opens a previously closed topic on a community's discussion board.
@@ -18989,7 +18995,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Restores a comment deleted from a topic on a community's discussion board.
@@ -19039,7 +19045,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Unpins a pinned topic from the top of a community's discussion board.
@@ -19076,7 +19082,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Database {
     /**
@@ -19131,7 +19137,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetChairsResponse["response"]>;
+    ): Promise<Required<Responses.DatabaseGetChairsResponse>["response"]>;
 
     /**
      * Returns a list of cities.
@@ -19216,7 +19222,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetCitiesResponse["response"]>;
+    ): Promise<Required<Responses.DatabaseGetCitiesResponse>["response"]>;
 
     /**
      * Returns information about cities by their IDs.
@@ -19244,7 +19250,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetCitiesByIdResponse["response"]>;
+    ): Promise<Required<Responses.DatabaseGetCitiesByIdResponse>["response"]>;
 
     /**
      * Returns a list of countries.
@@ -19305,7 +19311,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetCountriesResponse["response"]>;
+    ): Promise<Required<Responses.DatabaseGetCountriesResponse>["response"]>;
 
     /**
      * Returns information about countries by their IDs.
@@ -19333,7 +19339,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetCountriesByIdResponse["response"]>;
+    ): Promise<
+      Required<Responses.DatabaseGetCountriesByIdResponse>["response"]
+    >;
 
     /**
      * Returns a list of faculties (i.e., university departments).
@@ -19387,7 +19395,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetFacultiesResponse["response"]>;
+    ): Promise<Required<Responses.DatabaseGetFacultiesResponse>["response"]>;
 
     /**
      * Get metro stations by city
@@ -19443,7 +19451,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetMetroStationsResponse["response"]>;
+    ): Promise<
+      Required<Responses.DatabaseGetMetroStationsResponse>["response"]
+    >;
 
     /**
      * Get metro station by his id
@@ -19465,7 +19475,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetMetroStationsByIdResponse["response"]>;
+    ): Promise<
+      Required<Responses.DatabaseGetMetroStationsByIdResponse>["response"]
+    >;
 
     /**
      * Returns a list of regions.
@@ -19529,7 +19541,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetRegionsResponse["response"]>;
+    ): Promise<Required<Responses.DatabaseGetRegionsResponse>["response"]>;
 
     /**
      * Returns a list of school classes specified for the country.
@@ -19555,7 +19567,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetSchoolClassesResponse["response"]>;
+    ): Promise<
+      Required<Responses.DatabaseGetSchoolClassesResponse>["response"]
+    >;
 
     /**
      * Returns a list of schools.
@@ -19619,7 +19633,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetSchoolsResponse["response"]>;
+    ): Promise<Required<Responses.DatabaseGetSchoolsResponse>["response"]>;
 
     /**
      * Returns a list of higher education institutions.
@@ -19695,7 +19709,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DatabaseGetUniversitiesResponse["response"]>;
+    ): Promise<Required<Responses.DatabaseGetUniversitiesResponse>["response"]>;
   }
   export interface Docs {
     /**
@@ -19743,7 +19757,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DocsAddResponse["response"]>;
+    ): Promise<Required<Responses.DocsAddResponse>["response"]>;
 
     /**
      * Deletes a user or community document.
@@ -19781,7 +19795,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits a document.
@@ -19840,7 +19854,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns detailed information about user or community documents.
@@ -19903,7 +19917,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DocsGetResponse["response"]>;
+    ): Promise<Required<Responses.DocsGetResponse>["response"]>;
 
     /**
      * Returns information about documents by their IDs.
@@ -19928,7 +19942,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DocsGetByIdResponse["response"]>;
+    ): Promise<Required<Responses.DocsGetByIdResponse>["response"]>;
 
     /**
      * Returns the server address for document upload.
@@ -19968,7 +19982,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BaseGetUploadServerResponse["response"]>;
+    ): Promise<Required<Responses.BaseGetUploadServerResponse>["response"]>;
 
     /**
      * Returns documents types available for current user.
@@ -19993,7 +20007,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DocsGetTypesResponse["response"]>;
+    ): Promise<Required<Responses.DocsGetTypesResponse>["response"]>;
 
     /**
      * Returns the server address for document upload.
@@ -20018,7 +20032,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DocsGetUploadServer["response"]>;
+    ): Promise<Required<Responses.DocsGetUploadServer>["response"]>;
 
     /**
      * Returns the server address for document upload onto a user's or community's wall.
@@ -20044,7 +20058,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BaseGetUploadServerResponse["response"]>;
+    ): Promise<Required<Responses.BaseGetUploadServerResponse>["response"]>;
 
     /**
      * Saves a document after {@link https://vk.com/dev/upload_files_2|uploading it to a server}.
@@ -20090,7 +20104,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DocsSaveResponse["response"]>;
+    ): Promise<Required<Responses.DocsSaveResponse>["response"]>;
 
     /**
      * Returns a list of documents matching the search criteria.
@@ -20144,7 +20158,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.DocsSearchResponse["response"]>;
+    ): Promise<Required<Responses.DocsSearchResponse>["response"]>;
   }
   export interface Fave {
     /**
@@ -20162,7 +20176,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Adds a link to user faves.
@@ -20185,7 +20199,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20222,7 +20236,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20261,7 +20275,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20300,7 +20314,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20331,7 +20345,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FaveAddTagResponse["response"]>;
+    ): Promise<Required<Responses.FaveAddTagResponse>["response"]>;
 
     /**
      * Method not described
@@ -20370,7 +20384,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20397,7 +20411,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20495,8 +20509,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.FaveGetExtendedResponse["response"]>
-      : Promise<Responses.FaveGetResponse["response"]>;
+      ? Promise<Required<Responses.FaveGetExtendedResponse>["response"]>
+      : Promise<Required<Responses.FaveGetResponse>["response"]>;
 
     /**
      * Method not described
@@ -20567,7 +20581,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FaveGetPagesResponse["response"]>;
+    ): Promise<Required<Responses.FaveGetPagesResponse>["response"]>;
 
     /**
      * Method not described
@@ -20578,7 +20592,7 @@ export namespace Methods {
      */
     getTags<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.FaveGetTagsResponse["response"]>;
+    ): Promise<Required<Responses.FaveGetTagsResponse>["response"]>;
 
     /**
      * Method not described
@@ -20589,7 +20603,7 @@ export namespace Methods {
      */
     markSeen<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.BaseBoolResponse["response"]>;
+    ): Promise<Required<Responses.BaseBoolResponse>["response"]>;
 
     /**
      * Method not described
@@ -20626,7 +20640,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BaseBoolResponse["response"]>;
+    ): Promise<Required<Responses.BaseBoolResponse>["response"]>;
 
     /**
      * Removes link from the user's faves.
@@ -20659,7 +20673,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20696,7 +20710,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20733,7 +20747,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20770,7 +20784,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20795,7 +20809,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20816,7 +20830,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20859,7 +20873,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20934,7 +20948,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -20971,7 +20985,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Friends {
     /**
@@ -21020,7 +21034,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsAddResponse["response"]>;
+    ): Promise<Required<Responses.FriendsAddResponse>["response"]>;
 
     /**
      * Creates a new friend list for the current user.
@@ -21057,7 +21071,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsAddListResponse["response"]>;
+    ): Promise<Required<Responses.FriendsAddListResponse>["response"]>;
 
     /**
      * Checks the current user's friendship status with other specified users.
@@ -21094,7 +21108,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsAreFriendsResponse["response"]>;
+    ): Promise<Required<Responses.FriendsAreFriendsResponse>["response"]>;
 
     /**
      * Declines a friend request or deletes a user from the current user's friend list.
@@ -21119,7 +21133,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsDeleteResponse["response"]>;
+    ): Promise<Required<Responses.FriendsDeleteResponse>["response"]>;
 
     /**
      * Marks all incoming friend requests as viewed.
@@ -21130,7 +21144,7 @@ export namespace Methods {
      */
     deleteAllRequests<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Deletes a friend list of the current user.
@@ -21157,7 +21171,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits the friend lists of the selected user.
@@ -21196,7 +21210,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits a friend list of the current user.
@@ -21273,7 +21287,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns a list of user IDs or detailed information about a user's friends.
@@ -21373,7 +21387,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsGetResponse["response"]>;
+    ): Promise<Required<Responses.FriendsGetResponse>["response"]>;
 
     /**
      * Returns a list of IDs of the current user's friends who installed the application.
@@ -21384,7 +21398,7 @@ export namespace Methods {
      */
     getAppUsers<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.FriendsGetAppUsersResponse["response"]>;
+    ): Promise<Required<Responses.FriendsGetAppUsersResponse>["response"]>;
 
     /**
      * Returns a list of the current user's friends whose phone numbers, validated or specified in a profile, are in a given list.
@@ -21417,7 +21431,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsGetByPhonesResponse["response"]>;
+    ): Promise<Required<Responses.FriendsGetByPhonesResponse>["response"]>;
 
     /**
      * Returns a list of the user's friend lists.
@@ -21452,7 +21466,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsGetListsResponse["response"]>;
+    ): Promise<Required<Responses.FriendsGetListsResponse>["response"]>;
 
     /**
      * Returns a list of user IDs of the mutual friends of two users.
@@ -21537,7 +21551,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsGetMutualResponse["response"]>;
+    ): Promise<Required<Responses.FriendsGetMutualResponse>["response"]>;
 
     /**
      * Returns a list of user IDs of a user's friends who are online.
@@ -21618,7 +21632,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsGetOnlineResponse["response"]>;
+    ): Promise<Required<Responses.FriendsGetOnlineResponse>["response"]>;
 
     /**
      * Returns a list of user IDs of the current user's recently added friends.
@@ -21647,7 +21661,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsGetRecentResponse["response"]>;
+    ): Promise<Required<Responses.FriendsGetRecentResponse>["response"]>;
 
     /**
      * Returns information about the current user's incoming and outgoing friend requests.
@@ -21747,8 +21761,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.FriendsGetRequestsExtendedResponse["response"]>
-      : Promise<Responses.FriendsGetRequestsResponse["response"]>;
+      ? Promise<
+          Required<Responses.FriendsGetRequestsExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.FriendsGetRequestsResponse>["response"]>;
 
     /**
      * Returns a list of profiles of users whom the current user may know.
@@ -21833,7 +21849,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsGetSuggestionsResponse["response"]>;
+    ): Promise<Required<Responses.FriendsGetSuggestionsResponse>["response"]>;
 
     /**
      * Returns a list of friends matching the search criteria.
@@ -21920,7 +21936,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.FriendsSearchResponse["response"]>;
+    ): Promise<Required<Responses.FriendsSearchResponse>["response"]>;
   }
   export interface Gifts {
     /**
@@ -21970,7 +21986,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GiftsGetResponse["response"]>;
+    ): Promise<Required<Responses.GiftsGetResponse>["response"]>;
   }
   export interface Groups {
     /**
@@ -22085,7 +22101,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsAddAddressResponse["response"]>;
+    ): Promise<Required<Responses.GroupsAddAddressResponse>["response"]>;
 
     /**
      * Method not described
@@ -22117,7 +22133,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsAddCallbackServerResponse["response"]>;
+    ): Promise<Required<Responses.GroupsAddCallbackServerResponse>["response"]>;
 
     /**
      * Allows to add a link to the community.
@@ -22162,7 +22178,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsAddLinkResponse["response"]>;
+    ): Promise<Required<Responses.GroupsAddLinkResponse>["response"]>;
 
     /**
      * Allows to approve join request to the community.
@@ -22199,7 +22215,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -22264,7 +22280,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Creates a new community.
@@ -22335,7 +22351,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsCreateResponse["response"]>;
+    ): Promise<Required<Responses.GroupsCreateResponse>["response"]>;
 
     /**
      * Method not described
@@ -22373,7 +22389,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Allows to delete a link from the community.
@@ -22410,7 +22426,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -22436,7 +22452,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits a community.
@@ -22915,7 +22931,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -23037,7 +23053,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsEditAddressResponse["response"]>;
+    ): Promise<Required<Responses.GroupsEditAddressResponse>["response"]>;
 
     /**
      * Method not described
@@ -23081,7 +23097,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Allows to edit a link in the community.
@@ -23128,7 +23144,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Allows to add, remove or edit the community manager.
@@ -23219,7 +23235,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -23245,7 +23261,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns a list of the communities to which a user belongs.
@@ -23327,8 +23343,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.GroupsGetExtendedResponse["response"]>
-      : Promise<Responses.GroupsGetResponse["response"]>;
+      ? Promise<Required<Responses.GroupsGetExtendedResponse>["response"]>
+      : Promise<Required<Responses.GroupsGetResponse>["response"]>;
 
     /**
      * Returns a list of community addresses.
@@ -23429,7 +23445,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetAddressesResponse["response"]>;
+    ): Promise<Required<Responses.GroupsGetAddressesResponse>["response"]>;
 
     /**
      * Returns a list of users on a community blacklist.
@@ -23497,7 +23513,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetBannedResponse["response"]>;
+    ): Promise<Required<Responses.GroupsGetBannedResponse>["response"]>;
 
     /**
      * Returns information about communities by their IDs.
@@ -23542,7 +23558,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetByIdResponse["response"]>;
+    ): Promise<Required<Responses.GroupsGetByIdResponse>["response"]>;
 
     /**
      * Returns Callback API confirmation code for the community.
@@ -23568,7 +23584,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetCallbackConfirmationCodeResponse["response"]>;
+    ): Promise<
+      Required<Responses.GroupsGetCallbackConfirmationCodeResponse>["response"]
+    >;
 
     /**
      * Method not described
@@ -23600,7 +23618,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetCallbackServersResponse["response"]>;
+    ): Promise<
+      Required<Responses.GroupsGetCallbackServersResponse>["response"]
+    >;
 
     /**
      * Returns {@link https://vk.com/dev/callback_api|Callback API} notifications settings.
@@ -23638,7 +23658,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetCallbackSettingsResponse["response"]>;
+    ): Promise<
+      Required<Responses.GroupsGetCallbackSettingsResponse>["response"]
+    >;
 
     /**
      * Returns communities list for a catalog category.
@@ -23678,7 +23700,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetCatalogResponse["response"]>;
+    ): Promise<Required<Responses.GroupsGetCatalogResponse>["response"]>;
 
     /**
      * Returns categories list for communities catalog
@@ -23712,8 +23734,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.GroupsGetCatalogInfoExtendedResponse["response"]>
-      : Promise<Responses.GroupsGetCatalogInfoResponse["response"]>;
+      ? Promise<
+          Required<Responses.GroupsGetCatalogInfoExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.GroupsGetCatalogInfoResponse>["response"]>;
 
     /**
      * Returns invited users list of a community
@@ -23786,7 +23810,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetInvitedUsersResponse["response"]>;
+    ): Promise<Required<Responses.GroupsGetInvitedUsersResponse>["response"]>;
 
     /**
      * Returns a list of invitations to join communities and events.
@@ -23836,8 +23860,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.GroupsGetInvitesExtendedResponse["response"]>
-      : Promise<Responses.GroupsGetInvitesResponse["response"]>;
+      ? Promise<
+          Required<Responses.GroupsGetInvitesExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.GroupsGetInvitesResponse>["response"]>;
 
     /**
      * Returns the data needed to query a Long Poll server for events
@@ -23863,7 +23889,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetLongPollServerResponse["response"]>;
+    ): Promise<Required<Responses.GroupsGetLongPollServerResponse>["response"]>;
 
     /**
      * Returns Long Poll notification settings
@@ -23889,7 +23915,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetLongPollSettingsResponse["response"]>;
+    ): Promise<
+      Required<Responses.GroupsGetLongPollSettingsResponse>["response"]
+    >;
 
     /**
      * Returns a list of community members.
@@ -23976,7 +24004,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetMembersResponse["response"]>;
+    ): Promise<Required<Responses.GroupsGetMembersResponse>["response"]>;
 
     /**
      * Returns a list of requests to the community.
@@ -24039,7 +24067,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetRequestsResponse["response"]>;
+    ): Promise<Required<Responses.GroupsGetRequestsResponse>["response"]>;
 
     /**
      * Returns community settings.
@@ -24064,7 +24092,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsGetSettingsResponse["response"]>;
+    ): Promise<Required<Responses.GroupsGetSettingsResponse>["response"]>;
 
     /**
      * Method not described
@@ -24075,7 +24103,9 @@ export namespace Methods {
      */
     getTokenPermissions<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.GroupsGetTokenPermissionsResponse["response"]>;
+    ): Promise<
+      Required<Responses.GroupsGetTokenPermissionsResponse>["response"]
+    >;
 
     /**
      * Allows to invite friends to the community.
@@ -24112,7 +24142,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns information specifying whether a user is a member of a community.
@@ -24174,8 +24204,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.GroupsIsMemberExtendedResponse["response"]>
-      : Promise<Responses.GroupsIsMemberResponse["response"]>;
+      ? Promise<Required<Responses.GroupsIsMemberExtendedResponse>["response"]>
+      : Promise<Required<Responses.GroupsIsMemberResponse>["response"]>;
 
     /**
      * With this method you can join the group or public page, and also confirm your participation in an event.
@@ -24210,7 +24240,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * With this method you can leave a group, public page, or event.
@@ -24235,7 +24265,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Removes a user from the community.
@@ -24272,7 +24302,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Allows to reorder links in the community.
@@ -24321,7 +24351,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns a list of communities matching the search criteria.
@@ -24440,7 +24470,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.GroupsSearchResponse["response"]>;
+    ): Promise<Required<Responses.GroupsSearchResponse>["response"]>;
 
     /**
      * Allow to set notifications settings for group.
@@ -24840,7 +24870,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Sets Long Poll notification settings
@@ -25236,7 +25266,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -25273,7 +25303,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Leads {
     /**
@@ -25337,7 +25367,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.LeadsCheckUserResponse["response"]>;
+    ): Promise<Required<Responses.LeadsCheckUserResponse>["response"]>;
 
     /**
      * Completes the lead started by user.
@@ -25382,7 +25412,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.LeadsCompleteResponse["response"]>;
+    ): Promise<Required<Responses.LeadsCompleteResponse>["response"]>;
 
     /**
      * Returns lead stats data.
@@ -25437,7 +25467,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.LeadsGetStatsResponse["response"]>;
+    ): Promise<Required<Responses.LeadsGetStatsResponse>["response"]>;
 
     /**
      * Returns a list of last user actions for the offer.
@@ -25523,7 +25553,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.LeadsGetUsersResponse["response"]>;
+    ): Promise<Required<Responses.LeadsGetUsersResponse>["response"]>;
 
     /**
      * Counts the metric event.
@@ -25546,7 +25576,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.LeadsMetricHitResponse["response"]>;
+    ): Promise<Required<Responses.LeadsMetricHitResponse>["response"]>;
 
     /**
      * Creates new session for the user passing the offer.
@@ -25611,7 +25641,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.LeadsStartResponse["response"]>;
+    ): Promise<Required<Responses.LeadsStartResponse>["response"]>;
   }
   export interface Likes {
     /**
@@ -25669,7 +25699,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.LikesAddResponse["response"]>;
+    ): Promise<Required<Responses.LikesAddResponse>["response"]>;
 
     /**
      * Deletes the specified object from the 'Likes' list of the current user.
@@ -25726,7 +25756,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.LikesDeleteResponse["response"]>;
+    ): Promise<Required<Responses.LikesDeleteResponse>["response"]>;
 
     /**
      * Returns a list of IDs of users who added the specified object to their 'Likes' list.
@@ -25845,8 +25875,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.LikesGetListExtendedResponse["response"]>
-      : Promise<Responses.LikesGetListResponse["response"]>;
+      ? Promise<Required<Responses.LikesGetListExtendedResponse>["response"]>
+      : Promise<Required<Responses.LikesGetListResponse>["response"]>;
 
     /**
      * Checks for the object in the 'Likes' list of the specified user.
@@ -25905,7 +25935,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.LikesIsLikedResponse["response"]>;
+    ): Promise<Required<Responses.LikesIsLikedResponse>["response"]>;
   }
   export interface Market {
     /**
@@ -26039,7 +26069,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MarketAddResponse["response"]>;
+    ): Promise<Required<Responses.MarketAddResponse>["response"]>;
 
     /**
      * Creates new collection of items
@@ -26096,7 +26126,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MarketAddAlbumResponse["response"]>;
+    ): Promise<Required<Responses.MarketAddAlbumResponse>["response"]>;
 
     /**
      * Adds an item to one or multiple collections.
@@ -26150,7 +26180,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Creates a new comment for an item.
@@ -26251,7 +26281,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MarketCreateCommentResponse["response"]>;
+    ): Promise<Required<Responses.MarketCreateCommentResponse>["response"]>;
 
     /**
      * Deletes an item.
@@ -26288,7 +26318,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Deletes a collection of items.
@@ -26325,7 +26355,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Deletes an item's comment
@@ -26362,7 +26392,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MarketDeleteCommentResponse["response"]>;
+    ): Promise<Required<Responses.MarketDeleteCommentResponse>["response"]>;
 
     /**
      * Edits an item.
@@ -26493,7 +26523,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits a collection of items
@@ -26562,7 +26592,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Chages item comment's text
@@ -26619,7 +26649,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns items list for a community.
@@ -26695,8 +26725,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.MarketGetExtendedResponse["response"]>
-      : Promise<Responses.MarketGetResponse["response"]>;
+      ? Promise<Required<Responses.MarketGetExtendedResponse>["response"]>
+      : Promise<Required<Responses.MarketGetResponse>["response"]>;
 
     /**
      * Returns items album's data
@@ -26735,7 +26765,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MarketGetAlbumByIdResponse["response"]>;
+    ): Promise<Required<Responses.MarketGetAlbumByIdResponse>["response"]>;
 
     /**
      * Returns community's collections list.
@@ -26788,7 +26818,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MarketGetAlbumsResponse["response"]>;
+    ): Promise<Required<Responses.MarketGetAlbumsResponse>["response"]>;
 
     /**
      * Returns information about market items by their ids.
@@ -26822,8 +26852,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.MarketGetByIdExtendedResponse["response"]>
-      : Promise<Responses.MarketGetByIdResponse["response"]>;
+      ? Promise<Required<Responses.MarketGetByIdExtendedResponse>["response"]>
+      : Promise<Required<Responses.MarketGetByIdResponse>["response"]>;
 
     /**
      * Returns a list of market categories.
@@ -26864,7 +26894,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MarketGetCategoriesResponse["response"]>;
+    ): Promise<Required<Responses.MarketGetCategoriesResponse>["response"]>;
 
     /**
      * Returns comments list for an item.
@@ -26985,7 +27015,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MarketGetCommentsResponse["response"]>;
+    ): Promise<Required<Responses.MarketGetCommentsResponse>["response"]>;
 
     /**
      * Removes an item from one or multiple collections.
@@ -27037,7 +27067,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Reorders the collections list.
@@ -27099,7 +27129,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Changes item place in a collection.
@@ -27174,7 +27204,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Sends a complaint to the item.
@@ -27223,7 +27253,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Sends a complaint to the item's comment.
@@ -27272,7 +27302,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Restores recently deleted item
@@ -27310,7 +27340,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Restores a recently deleted comment
@@ -27347,7 +27377,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MarketRestoreCommentResponse["response"]>;
+    ): Promise<Required<Responses.MarketRestoreCommentResponse>["response"]>;
 
     /**
      * Searches market items in a community's catalog
@@ -27511,8 +27541,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.MarketSearchExtendedResponse["response"]>
-      : Promise<Responses.MarketSearchResponse["response"]>;
+      ? Promise<Required<Responses.MarketSearchExtendedResponse>["response"]>
+      : Promise<Required<Responses.MarketSearchResponse>["response"]>;
   }
   export interface Messages {
     /**
@@ -27572,7 +27602,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Allows sending messages from community to the current user.
@@ -27599,7 +27629,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Creates a chat with several participants.
@@ -27649,7 +27679,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesCreateChatResponse["response"]>;
+    ): Promise<Required<Responses.MessagesCreateChatResponse>["response"]>;
 
     /**
      * Deletes one or more messages.
@@ -27709,7 +27739,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesDeleteResponse["response"]>;
+    ): Promise<Required<Responses.MessagesDeleteResponse>["response"]>;
 
     /**
      * Deletes a chat's cover picture.
@@ -27750,7 +27780,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesDeleteChatPhotoResponse["response"]>;
+    ): Promise<Required<Responses.MessagesDeleteChatPhotoResponse>["response"]>;
 
     /**
      * Deletes all private messages in a conversation.
@@ -27800,7 +27830,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesDeleteConversationResponse["response"]>;
+    ): Promise<
+      Required<Responses.MessagesDeleteConversationResponse>["response"]
+    >;
 
     /**
      * Denies sending message from community to the current user.
@@ -27825,7 +27857,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits the message.
@@ -27949,7 +27981,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesEditResponse["response"]>;
+    ): Promise<Required<Responses.MessagesEditResponse>["response"]>;
 
     /**
      * Edits the title of a chat.
@@ -27989,7 +28021,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns messages by their IDs within the conversation.
@@ -28062,7 +28094,7 @@ export namespace Methods {
     >(
       params: Params
     ): Promise<
-      Responses.MessagesGetByConversationMessageIdResponse["response"]
+      Required<Responses.MessagesGetByConversationMessageIdResponse>["response"]
     >;
 
     /**
@@ -28136,8 +28168,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.MessagesGetByIdExtendedResponse["response"]>
-      : Promise<Responses.MessagesGetByIdResponse["response"]>;
+      ? Promise<Required<Responses.MessagesGetByIdExtendedResponse>["response"]>
+      : Promise<Required<Responses.MessagesGetByIdResponse>["response"]>;
 
     /**
      * Method not described
@@ -28182,7 +28214,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesGetChatPreviewResponse["response"]>;
+    ): Promise<Required<Responses.MessagesGetChatPreviewResponse>["response"]>;
 
     /**
      * Returns a list of IDs of users participating in a chat.
@@ -28230,7 +28262,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesGetConversationMembersResponse["response"]>;
+    ): Promise<
+      Required<Responses.MessagesGetConversationMembersResponse>["response"]
+    >;
 
     /**
      * Returns a list of the current user's conversations.
@@ -28332,7 +28366,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesGetConversationsResponse["response"]>;
+    ): Promise<
+      Required<Responses.MessagesGetConversationsResponse>["response"]
+    >;
 
     /**
      * Returns conversations by their IDs
@@ -28396,9 +28432,13 @@ export namespace Methods {
       params: Params
     ): Params["extended"] extends true | 1
       ? Promise<
-          Responses.MessagesGetConversationsByIdExtendedResponse["response"]
+          Required<
+            Responses.MessagesGetConversationsByIdExtendedResponse
+          >["response"]
         >
-      : Promise<Responses.MessagesGetConversationsByIdResponse["response"]>;
+      : Promise<
+          Required<Responses.MessagesGetConversationsByIdResponse>["response"]
+        >;
 
     /**
      * Returns message history for the specified user or group chat.
@@ -28520,7 +28560,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesGetHistoryResponse["response"]>;
+    ): Promise<Required<Responses.MessagesGetHistoryResponse>["response"]>;
 
     /**
      * Returns media files from the dialog or group chat.
@@ -28656,7 +28696,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesGetHistoryAttachmentsResponse["response"]>;
+    ): Promise<
+      Required<Responses.MessagesGetHistoryAttachmentsResponse>["response"]
+    >;
 
     /**
      * Method not described
@@ -28705,7 +28747,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesGetInviteLinkResponse["response"]>;
+    ): Promise<Required<Responses.MessagesGetInviteLinkResponse>["response"]>;
 
     /**
      * Returns a user's current status and date of last activity.
@@ -28730,7 +28772,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesGetLastActivityResponse["response"]>;
+    ): Promise<Required<Responses.MessagesGetLastActivityResponse>["response"]>;
 
     /**
      * Returns updates in user's private messages.
@@ -28885,7 +28927,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesGetLongPollHistoryResponse["response"]>;
+    ): Promise<
+      Required<Responses.MessagesGetLongPollHistoryResponse>["response"]
+    >;
 
     /**
      * Returns data required for connection to a Long Poll server.
@@ -28933,7 +28977,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesGetLongPollServerResponse["response"]>;
+    ): Promise<
+      Required<Responses.MessagesGetLongPollServerResponse>["response"]
+    >;
 
     /**
      * Returns information whether sending messages from the community to current user is allowed.
@@ -28972,7 +29018,7 @@ export namespace Methods {
     >(
       params: Params
     ): Promise<
-      Responses.MessagesIsMessagesFromGroupAllowedResponse["response"]
+      Required<Responses.MessagesIsMessagesFromGroupAllowedResponse>["response"]
     >;
 
     /**
@@ -28997,7 +29043,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesJoinChatByInviteLinkResponse["response"]>;
+    ): Promise<
+      Required<Responses.MessagesJoinChatByInviteLinkResponse>["response"]
+    >;
 
     /**
      * Marks and unmarks conversations as unanswered.
@@ -29047,7 +29095,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Marks and unmarks messages as important (starred).
@@ -29086,7 +29134,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesMarkAsImportantResponse["response"]>;
+    ): Promise<Required<Responses.MessagesMarkAsImportantResponse>["response"]>;
 
     /**
      * Marks and unmarks conversations as important.
@@ -29136,7 +29184,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Marks messages as read.
@@ -29200,7 +29248,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Pin a message.
@@ -29239,7 +29287,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesPinResponse["response"]>;
+    ): Promise<Required<Responses.MessagesPinResponse>["response"]>;
 
     /**
      * Allows the current user to leave a chat or, if the current user started the chat, allows the user to remove another user from the chat.
@@ -29295,7 +29343,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Restores a deleted message.
@@ -29333,7 +29381,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns a list of the current user's private messages that match search criteria.
@@ -29437,7 +29485,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesSearchResponse["response"]>;
+    ): Promise<Required<Responses.MessagesSearchResponse>["response"]>;
 
     /**
      * Returns a list of the current user's conversations that match search criteria.
@@ -29507,7 +29555,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesSearchConversationsResponse["response"]>;
+    ): Promise<
+      Required<Responses.MessagesSearchConversationsResponse>["response"]
+    >;
 
     /**
      * Sends a message.
@@ -29724,7 +29774,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesSendResponse["response"]>;
+    ): Promise<Required<Responses.MessagesSendResponse>["response"]>;
 
     /**
      * Changes the status of a user as typing in a conversation.
@@ -29786,7 +29836,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Sets a previously-uploaded picture as the cover picture of a chat.
@@ -29812,7 +29862,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.MessagesSetChatPhotoResponse["response"]>;
+    ): Promise<Required<Responses.MessagesSetChatPhotoResponse>["response"]>;
 
     /**
      * Method not described
@@ -29850,7 +29900,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Newsfeed {
     /**
@@ -29878,7 +29928,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Allows news from previously banned users and communities to be shown in the current user's newsfeed.
@@ -29905,7 +29955,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -29930,7 +29980,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns data required to show newsfeed for the current user.
@@ -30043,7 +30093,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NewsfeedGetResponse["response"]>;
+    ): Promise<Required<Responses.NewsfeedGetResponse>["response"]>;
 
     /**
      * Returns a list of users and communities banned from the current user's newsfeed.
@@ -30089,8 +30139,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.NewsfeedGetBannedExtendedResponse["response"]>
-      : Promise<Responses.NewsfeedGetBannedResponse["response"]>;
+      ? Promise<
+          Required<Responses.NewsfeedGetBannedExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.NewsfeedGetBannedResponse>["response"]>;
 
     /**
      * Returns a list of comments in the current user's newsfeed.
@@ -30197,7 +30249,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NewsfeedGetCommentsResponse["response"]>;
+    ): Promise<Required<Responses.NewsfeedGetCommentsResponse>["response"]>;
 
     /**
      * Returns a list of newsfeeds followed by the current user.
@@ -30235,8 +30287,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.NewsfeedGetListsExtendedResponse["response"]>
-      : Promise<Responses.NewsfeedGetListsResponse["response"]>;
+      ? Promise<
+          Required<Responses.NewsfeedGetListsExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.NewsfeedGetListsResponse>["response"]>;
 
     /**
      * Returns a list of posts on user walls in which the current user is mentioned.
@@ -30313,7 +30367,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NewsfeedGetMentionsResponse["response"]>;
+    ): Promise<Required<Responses.NewsfeedGetMentionsResponse>["response"]>;
 
     /**
      * , Returns a list of newsfeeds recommended to the current user.
@@ -30394,7 +30448,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NewsfeedGetRecommendedResponse["response"]>;
+    ): Promise<Required<Responses.NewsfeedGetRecommendedResponse>["response"]>;
 
     /**
      * Returns communities and users that current user is suggested to follow.
@@ -30455,7 +30509,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NewsfeedGetSuggestedSourcesResponse["response"]>;
+    ): Promise<
+      Required<Responses.NewsfeedGetSuggestedSourcesResponse>["response"]
+    >;
 
     /**
      * Hides an item from the newsfeed.
@@ -30502,7 +30558,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Creates and edits user newsfeed lists
@@ -30561,7 +30617,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NewsfeedSaveListResponse["response"]>;
+    ): Promise<Required<Responses.NewsfeedSaveListResponse>["response"]>;
 
     /**
      * Returns search results by statuses.
@@ -30672,8 +30728,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.NewsfeedSearchExtendedResponse["response"]>
-      : Promise<Responses.NewsfeedSearchResponse["response"]>;
+      ? Promise<Required<Responses.NewsfeedSearchExtendedResponse>["response"]>
+      : Promise<Required<Responses.NewsfeedSearchResponse>["response"]>;
 
     /**
      * Returns a hidden item to the newsfeed.
@@ -30720,7 +30776,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Unsubscribes the current user from specified newsfeeds.
@@ -30769,7 +30825,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Notes {
     /**
@@ -30807,7 +30863,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NotesAddResponse["response"]>;
+    ): Promise<Required<Responses.NotesAddResponse>["response"]>;
 
     /**
      * Adds a new comment on a note.
@@ -30869,7 +30925,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NotesCreateCommentResponse["response"]>;
+    ): Promise<Required<Responses.NotesCreateCommentResponse>["response"]>;
 
     /**
      * Deletes a note of the current user.
@@ -30894,7 +30950,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Deletes a comment on a note.
@@ -30932,7 +30988,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits a note of the current user.
@@ -30981,7 +31037,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits a comment on a note.
@@ -31028,7 +31084,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns a list of notes created by a user.
@@ -31107,7 +31163,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NotesGetResponse["response"]>;
+    ): Promise<Required<Responses.NotesGetResponse>["response"]>;
 
     /**
      * Returns a note by its ID.
@@ -31147,7 +31203,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NotesGetByIdResponse["response"]>;
+    ): Promise<Required<Responses.NotesGetByIdResponse>["response"]>;
 
     /**
      * Returns a list of comments on a note.
@@ -31224,7 +31280,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NotesGetCommentsResponse["response"]>;
+    ): Promise<Required<Responses.NotesGetCommentsResponse>["response"]>;
 
     /**
      * Restores a deleted comment on a note.
@@ -31261,7 +31317,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Notifications {
     /**
@@ -31349,7 +31405,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NotificationsGetResponse["response"]>;
+    ): Promise<Required<Responses.NotificationsGetResponse>["response"]>;
 
     /**
      * Resets the counter of new notifications about other users' feedback to the current user's wall posts.
@@ -31360,7 +31416,9 @@ export namespace Methods {
      */
     markAsViewed<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.NotificationsMarkAsViewedResponse["response"]>;
+    ): Promise<
+      Required<Responses.NotificationsMarkAsViewedResponse>["response"]
+    >;
 
     /**
      * Method not described
@@ -31398,7 +31456,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.NotificationsSendMessageResponse["response"]>;
+    ): Promise<
+      Required<Responses.NotificationsSendMessageResponse>["response"]
+    >;
   }
   export interface Orders {
     /**
@@ -31440,7 +31500,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OrdersCancelSubscriptionResponse["response"]>;
+    ): Promise<
+      Required<Responses.OrdersCancelSubscriptionResponse>["response"]
+    >;
 
     /**
      * Changes order status.
@@ -31501,7 +31563,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OrdersChangeStateResponse["response"]>;
+    ): Promise<Required<Responses.OrdersChangeStateResponse>["response"]>;
 
     /**
      * Returns a list of orders.
@@ -31553,7 +31615,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OrdersGetResponse["response"]>;
+    ): Promise<Required<Responses.OrdersGetResponse>["response"]>;
 
     /**
      * Method not described
@@ -31580,7 +31642,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OrdersGetAmountResponse["response"]>;
+    ): Promise<Required<Responses.OrdersGetAmountResponse>["response"]>;
 
     /**
      * Returns information about orders by their IDs.
@@ -31630,7 +31692,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OrdersGetByIdResponse["response"]>;
+    ): Promise<Required<Responses.OrdersGetByIdResponse>["response"]>;
 
     /**
      * Method not described
@@ -31668,7 +31730,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OrdersGetUserSubscriptionByIdResponse["response"]>;
+    ): Promise<
+      Required<Responses.OrdersGetUserSubscriptionByIdResponse>["response"]
+    >;
 
     /**
      * Method not described
@@ -31694,7 +31758,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OrdersGetUserSubscriptionsResponse["response"]>;
+    ): Promise<
+      Required<Responses.OrdersGetUserSubscriptionsResponse>["response"]
+    >;
 
     /**
      * Method not described
@@ -31745,7 +31811,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OrdersUpdateSubscriptionResponse["response"]>;
+    ): Promise<
+      Required<Responses.OrdersUpdateSubscriptionResponse>["response"]
+    >;
   }
   export interface Pages {
     /**
@@ -31770,7 +31838,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns information about a wiki page.
@@ -31849,7 +31917,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PagesGetResponse["response"]>;
+    ): Promise<Required<Responses.PagesGetResponse>["response"]>;
 
     /**
      * Returns a list of all previous versions of a wiki page.
@@ -31899,7 +31967,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PagesGetHistoryResponse["response"]>;
+    ): Promise<Required<Responses.PagesGetHistoryResponse>["response"]>;
 
     /**
      * Returns a list of wiki pages in a group.
@@ -31924,7 +31992,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PagesGetTitlesResponse["response"]>;
+    ): Promise<Required<Responses.PagesGetTitlesResponse>["response"]>;
 
     /**
      * Returns the text of one of the previous versions of a wiki page.
@@ -31983,7 +32051,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PagesGetVersionResponse["response"]>;
+    ): Promise<Required<Responses.PagesGetVersionResponse>["response"]>;
 
     /**
      * Returns HTML representation of the wiki markup.
@@ -32018,7 +32086,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PagesParseWikiResponse["response"]>;
+    ): Promise<Required<Responses.PagesParseWikiResponse>["response"]>;
 
     /**
      * Saves the text of a wiki page.
@@ -32089,7 +32157,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PagesSaveResponse["response"]>;
+    ): Promise<Required<Responses.PagesSaveResponse>["response"]>;
 
     /**
      * Saves modified read and edit access settings for a wiki page.
@@ -32163,7 +32231,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PagesSaveAccessResponse["response"]>;
+    ): Promise<Required<Responses.PagesSaveAccessResponse>["response"]>;
   }
   export interface Photos {
     /**
@@ -32211,7 +32279,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Allows to copy a photo to the "Saved photos" album
@@ -32258,7 +32326,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosCopyResponse["response"]>;
+    ): Promise<Required<Responses.PhotosCopyResponse>["response"]>;
 
     /**
      * Creates an empty photo album.
@@ -32311,7 +32379,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosCreateAlbumResponse["response"]>;
+    ): Promise<Required<Responses.PhotosCreateAlbumResponse>["response"]>;
 
     /**
      * Adds a new comment on the photo.
@@ -32406,7 +32474,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosCreateCommentResponse["response"]>;
+    ): Promise<Required<Responses.PhotosCreateCommentResponse>["response"]>;
 
     /**
      * Deletes a photo.
@@ -32443,7 +32511,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Deletes a photo album belonging to the current user.
@@ -32480,7 +32548,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Deletes a comment on the photo.
@@ -32517,7 +32585,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosDeleteCommentResponse["response"]>;
+    ): Promise<Required<Responses.PhotosDeleteCommentResponse>["response"]>;
 
     /**
      * Edits the caption of a photo.
@@ -32594,7 +32662,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits information about a photo album.
@@ -32659,7 +32727,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits a comment on a photo.
@@ -32716,7 +32784,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns a list of a user's or community's photos.
@@ -32843,8 +32911,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.PhotosGetExtendedResponse["response"]>
-      : Promise<Responses.PhotosGetResponse["response"]>;
+      ? Promise<Required<Responses.PhotosGetExtendedResponse>["response"]>
+      : Promise<Required<Responses.PhotosGetResponse>["response"]>;
 
     /**
      * Returns a list of a user's or community's photo albums.
@@ -32938,7 +33006,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosGetAlbumsResponse["response"]>;
+    ): Promise<Required<Responses.PhotosGetAlbumsResponse>["response"]>;
 
     /**
      * Returns the number of photo albums belonging to a user or community.
@@ -32975,7 +33043,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosGetAlbumsCountResponse["response"]>;
+    ): Promise<Required<Responses.PhotosGetAlbumsCountResponse>["response"]>;
 
     /**
      * Returns a list of photos belonging to a user or community, in reverse chronological order.
@@ -33079,8 +33147,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.PhotosGetAllExtendedResponse["response"]>
-      : Promise<Responses.PhotosGetAllResponse["response"]>;
+      ? Promise<Required<Responses.PhotosGetAllExtendedResponse>["response"]>
+      : Promise<Required<Responses.PhotosGetAllResponse>["response"]>;
 
     /**
      * Returns a list of comments on a specific photo album or all albums of the user sorted in reverse chronological order.
@@ -33151,7 +33219,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosGetAllCommentsResponse["response"]>;
+    ): Promise<Required<Responses.PhotosGetAllCommentsResponse>["response"]>;
 
     /**
      * Returns information about photos by their IDs.
@@ -33196,8 +33264,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.PhotosGetByIdExtendedResponse["response"]>
-      : Promise<Responses.PhotosGetByIdResponse["response"]>;
+      ? Promise<Required<Responses.PhotosGetByIdExtendedResponse>["response"]>
+      : Promise<Required<Responses.PhotosGetByIdResponse>["response"]>;
 
     /**
      * Returns an upload link for chat cover pictures.
@@ -33260,7 +33328,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BaseGetUploadServerResponse["response"]>;
+    ): Promise<Required<Responses.BaseGetUploadServerResponse>["response"]>;
 
     /**
      * Returns a list of comments on a photo.
@@ -33366,8 +33434,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.PhotosGetCommentsExtendedResponse["response"]>
-      : Promise<Responses.PhotosGetCommentsResponse["response"]>;
+      ? Promise<
+          Required<Responses.PhotosGetCommentsExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.PhotosGetCommentsResponse>["response"]>;
 
     /**
      * Returns the server address for market album photo upload.
@@ -33392,7 +33462,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BaseGetUploadServerResponse["response"]>;
+    ): Promise<Required<Responses.BaseGetUploadServerResponse>["response"]>;
 
     /**
      * Returns the server address for market photo upload.
@@ -33465,7 +33535,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosGetMarketUploadServerResponse["response"]>;
+    ): Promise<
+      Required<Responses.PhotosGetMarketUploadServerResponse>["response"]
+    >;
 
     /**
      * Returns the server address for photo upload in a private message for a user.
@@ -33491,7 +33563,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosGetMessagesUploadServerResponse["response"]>;
+    ): Promise<
+      Required<Responses.PhotosGetMessagesUploadServerResponse>["response"]
+    >;
 
     /**
      * Returns a list of photos with tags that have not been viewed.
@@ -33532,7 +33606,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosGetNewTagsResponse["response"]>;
+    ): Promise<Required<Responses.PhotosGetNewTagsResponse>["response"]>;
 
     /**
      * Returns the server address for owner cover upload.
@@ -33610,7 +33684,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BaseGetUploadServerResponse["response"]>;
+    ): Promise<Required<Responses.BaseGetUploadServerResponse>["response"]>;
 
     /**
      * Returns an upload server address for a profile or community photo.
@@ -33635,7 +33709,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BaseGetUploadServerResponse["response"]>;
+    ): Promise<Required<Responses.BaseGetUploadServerResponse>["response"]>;
 
     /**
      * Returns a list of tags on a photo.
@@ -33674,7 +33748,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosGetTagsResponse["response"]>;
+    ): Promise<Required<Responses.PhotosGetTagsResponse>["response"]>;
 
     /**
      * Returns the server address for photo upload.
@@ -33711,7 +33785,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosGetUploadServerResponse["response"]>;
+    ): Promise<Required<Responses.PhotosGetUploadServerResponse>["response"]>;
 
     /**
      * Returns a list of photos in which a user is tagged.
@@ -33785,8 +33859,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.PhotosGetUserPhotosExtendedResponse["response"]>
-      : Promise<Responses.PhotosGetUserPhotosResponse["response"]>;
+      ? Promise<
+          Required<Responses.PhotosGetUserPhotosExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.PhotosGetUserPhotosResponse>["response"]>;
 
     /**
      * Returns the server address for photo upload onto a user's wall.
@@ -33811,7 +33887,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosGetWallUploadServerResponse["response"]>;
+    ): Promise<
+      Required<Responses.PhotosGetWallUploadServerResponse>["response"]
+    >;
 
     /**
      * Makes a photo into an album cover.
@@ -33860,7 +33938,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Moves a photo from one album to another.
@@ -33909,7 +33987,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Adds a tag on the photo.
@@ -34006,7 +34084,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosPutTagResponse["response"]>;
+    ): Promise<Required<Responses.PhotosPutTagResponse>["response"]>;
 
     /**
      * Removes a tag from a photo.
@@ -34055,7 +34133,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Reorders the album in the list of user albums.
@@ -34116,7 +34194,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Reorders the photo in the list of photos of the user album.
@@ -34177,7 +34255,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Reports (submits a complaint about) a photo.
@@ -34226,7 +34304,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Reports (submits a complaint about) a comment on a photo.
@@ -34275,7 +34353,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Restores a deleted photo.
@@ -34312,7 +34390,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Restores a deleted comment on a photo.
@@ -34349,7 +34427,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosRestoreCommentResponse["response"]>;
+    ): Promise<Required<Responses.PhotosRestoreCommentResponse>["response"]>;
 
     /**
      * Saves photos after successful uploading.
@@ -34454,7 +34532,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosSaveResponse["response"]>;
+    ): Promise<Required<Responses.PhotosSaveResponse>["response"]>;
 
     /**
      * Saves market album photos after successful uploading.
@@ -34512,7 +34590,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosSaveMarketAlbumPhotoResponse["response"]>;
+    ): Promise<
+      Required<Responses.PhotosSaveMarketAlbumPhotoResponse>["response"]
+    >;
 
     /**
      * Saves market photos after successful uploading.
@@ -34590,7 +34670,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosSaveMarketPhotoResponse["response"]>;
+    ): Promise<Required<Responses.PhotosSaveMarketPhotoResponse>["response"]>;
 
     /**
      * Saves a photo after being successfully uploaded. URL obtained with {@link https://vk.com/dev/photos.getMessagesUploadServer|photos.getMessagesUploadServer} method.
@@ -34630,7 +34710,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosSaveMessagesPhotoResponse["response"]>;
+    ): Promise<Required<Responses.PhotosSaveMessagesPhotoResponse>["response"]>;
 
     /**
      * Saves cover photo after successful uploading.
@@ -34664,7 +34744,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosSaveOwnerCoverPhotoResponse["response"]>;
+    ): Promise<
+      Required<Responses.PhotosSaveOwnerCoverPhotoResponse>["response"]
+    >;
 
     /**
      * Saves a profile or community photo. Upload URL can be got with the {@link https://vk.com/dev/photos.getOwnerPhotoUploadServer|photos.getOwnerPhotoUploadServer} method.
@@ -34707,7 +34789,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosSaveOwnerPhotoResponse["response"]>;
+    ): Promise<Required<Responses.PhotosSaveOwnerPhotoResponse>["response"]>;
 
     /**
      * Saves a photo to a user's or community's wall after being uploaded.
@@ -34804,7 +34886,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosSaveWallPhotoResponse["response"]>;
+    ): Promise<Required<Responses.PhotosSaveWallPhotoResponse>["response"]>;
 
     /**
      * Returns a list of photos.
@@ -34930,7 +35012,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PhotosSearchResponse["response"]>;
+    ): Promise<Required<Responses.PhotosSearchResponse>["response"]>;
   }
   export interface Polls {
     /**
@@ -34978,7 +35060,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PollsAddVoteResponse["response"]>;
+    ): Promise<Required<Responses.PollsAddVoteResponse>["response"]>;
 
     /**
      * Creates polls that can be attached to the users' or communities' posts.
@@ -35073,7 +35155,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PollsCreateResponse["response"]>;
+    ): Promise<Required<Responses.PollsCreateResponse>["response"]>;
 
     /**
      * Deletes the current user's vote from the selected answer in the poll.
@@ -35126,7 +35208,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PollsDeleteVoteResponse["response"]>;
+    ): Promise<Required<Responses.PollsDeleteVoteResponse>["response"]>;
 
     /**
      * Edits created polls
@@ -35239,7 +35321,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns detailed information about a poll by its ID.
@@ -35320,7 +35402,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PollsGetByIdResponse["response"]>;
+    ): Promise<Required<Responses.PollsGetByIdResponse>["response"]>;
 
     /**
      * Returns a list of IDs of users who selected specific answers in the poll.
@@ -35432,7 +35514,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PollsGetVotersResponse["response"]>;
+    ): Promise<Required<Responses.PollsGetVotersResponse>["response"]>;
   }
   export interface PrettyCards {
     /**
@@ -35470,7 +35552,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PrettyCardsCreateResponse["response"]>;
+    ): Promise<Required<Responses.PrettyCardsCreateResponse>["response"]>;
 
     /**
      * Method not described
@@ -35508,7 +35590,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PrettyCardsDeleteResponse["response"]>;
+    ): Promise<Required<Responses.PrettyCardsDeleteResponse>["response"]>;
 
     /**
      * Method not described
@@ -35557,7 +35639,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PrettyCardsEditResponse["response"]>;
+    ): Promise<Required<Responses.PrettyCardsEditResponse>["response"]>;
 
     /**
      * Method not described
@@ -35610,7 +35692,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PrettyCardsGetResponse["response"]>;
+    ): Promise<Required<Responses.PrettyCardsGetResponse>["response"]>;
 
     /**
      * Method not described
@@ -35641,7 +35723,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.PrettyCardsGetByIdResponse["response"]>;
+    ): Promise<Required<Responses.PrettyCardsGetByIdResponse>["response"]>;
 
     /**
      * Method not described
@@ -35652,7 +35734,7 @@ export namespace Methods {
      */
     getUploadURL<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.PrettyCardsGetUploadURLResponse["response"]>;
+    ): Promise<Required<Responses.PrettyCardsGetUploadURLResponse>["response"]>;
   }
   export interface Search {
     /**
@@ -35722,7 +35804,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.SearchGetHintsResponse["response"]>;
+    ): Promise<Required<Responses.SearchGetHintsResponse>["response"]>;
   }
   export interface Secure {
     /**
@@ -35772,7 +35854,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Checks the user authentication in 'IFrame' and 'Flash' apps using the 'access_token' parameter.
@@ -35805,7 +35887,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.SecureCheckTokenResponse["response"]>;
+    ): Promise<Required<Responses.SecureCheckTokenResponse>["response"]>;
 
     /**
      * Returns payment balance of the application in hundredth of a vote.
@@ -35816,7 +35898,7 @@ export namespace Methods {
      */
     getAppBalance<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.SecureGetAppBalanceResponse["response"]>;
+    ): Promise<Required<Responses.SecureGetAppBalanceResponse>["response"]>;
 
     /**
      * Shows a list of SMS notifications sent by the application using {@link https://vk.com/dev/secure.sendSMSNotification|secure.sendSMSNotification} method.
@@ -35881,7 +35963,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.SecureGetSMSHistoryResponse["response"]>;
+    ): Promise<Required<Responses.SecureGetSMSHistoryResponse>["response"]>;
 
     /**
      * Shows history of votes transaction between users and the application.
@@ -35970,7 +36052,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.SecureGetTransactionsHistoryResponse["response"]>;
+    ): Promise<
+      Required<Responses.SecureGetTransactionsHistoryResponse>["response"]
+    >;
 
     /**
      * Returns one of the previously set game levels of one or more users in the application.
@@ -35991,7 +36075,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.SecureGetUserLevelResponse["response"]>;
+    ): Promise<Required<Responses.SecureGetUserLevelResponse>["response"]>;
 
     /**
      * Opens the game achievement and gives the user a sticker
@@ -36024,7 +36108,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.SecureGiveEventStickerResponse["response"]>;
+    ): Promise<Required<Responses.SecureGiveEventStickerResponse>["response"]>;
 
     /**
      * Sends notification to the user.
@@ -36067,7 +36151,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.SecureSendNotificationResponse["response"]>;
+    ): Promise<Required<Responses.SecureSendNotificationResponse>["response"]>;
 
     /**
      * Sends 'SMS' notification to a user's mobile device.
@@ -36103,7 +36187,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Sets a counter which is shown to the user in bold in the left menu.
@@ -36146,7 +36230,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Stats {
     /**
@@ -36248,7 +36332,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.StatsGetResponse["response"]>;
+    ): Promise<Required<Responses.StatsGetResponse>["response"]>;
 
     /**
      * Returns stats for a wall post.
@@ -36285,7 +36369,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.StatsGetPostReachResponse["response"]>;
+    ): Promise<Required<Responses.StatsGetPostReachResponse>["response"]>;
 
     /**
      * Method not described
@@ -36302,7 +36386,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Status {
     /**
@@ -36340,7 +36424,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.StatusGetResponse["response"]>;
+    ): Promise<Required<Responses.StatusGetResponse>["response"]>;
 
     /**
      * Sets a new status for the current user.
@@ -36375,7 +36459,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Storage {
     /**
@@ -36409,7 +36493,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.StorageGetV5110Response["response"]>;
+    ): Promise<Required<Responses.StorageGetV5110Response>["response"]>;
 
     /**
      * Returns the names of all variables.
@@ -36464,7 +36548,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.StorageGetKeysResponse["response"]>;
+    ): Promise<Required<Responses.StorageGetKeysResponse>["response"]>;
 
     /**
      * Saves a value of variable with the name set by 'key' parameter.
@@ -36497,7 +36581,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Stories {
     /**
@@ -36525,7 +36609,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Allows to delete story.
@@ -36563,7 +36647,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns stories available for current user.
@@ -36601,7 +36685,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.StoriesGetV5113Response["response"]>;
+    ): Promise<Required<Responses.StoriesGetV5113Response>["response"]>;
 
     /**
      * Returns list of sources hidden from current user's feed.
@@ -36635,8 +36719,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.StoriesGetBannedExtendedResponse["response"]>
-      : Promise<Responses.StoriesGetBannedResponse["response"]>;
+      ? Promise<
+          Required<Responses.StoriesGetBannedExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.StoriesGetBannedResponse>["response"]>;
 
     /**
      * Returns story by its ID.
@@ -36681,8 +36767,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.StoriesGetByIdExtendedResponse["response"]>
-      : Promise<Responses.StoriesGetByIdResponse["response"]>;
+      ? Promise<Required<Responses.StoriesGetByIdExtendedResponse>["response"]>
+      : Promise<Required<Responses.StoriesGetByIdResponse>["response"]>;
 
     /**
      * Returns URL for uploading a story with photo.
@@ -36766,7 +36852,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.StoriesGetPhotoUploadServerResponse["response"]>;
+    ): Promise<
+      Required<Responses.StoriesGetPhotoUploadServerResponse>["response"]
+    >;
 
     /**
      * Returns replies to the story.
@@ -36834,7 +36922,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.StoriesGetV5113Response["response"]>;
+    ): Promise<Required<Responses.StoriesGetV5113Response>["response"]>;
 
     /**
      * Returns stories available for current user.
@@ -36872,7 +36960,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.StoriesGetStatsResponse["response"]>;
+    ): Promise<Required<Responses.StoriesGetStatsResponse>["response"]>;
 
     /**
      * Allows to receive URL for uploading story with video.
@@ -36956,7 +37044,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.StoriesGetVideoUploadServerResponse["response"]>;
+    ): Promise<
+      Required<Responses.StoriesGetVideoUploadServerResponse>["response"]
+    >;
 
     /**
      * Returns a list of story viewers.
@@ -37031,8 +37121,12 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.StoriesGetViewersExtendedV5115Response["response"]>
-      : Promise<Responses.StoriesGetViewersExtendedV5115Response["response"]>;
+      ? Promise<
+          Required<Responses.StoriesGetViewersExtendedV5115Response>["response"]
+        >
+      : Promise<
+          Required<Responses.StoriesGetViewersExtendedV5115Response>["response"]
+        >;
 
     /**
      * Hides all replies in the last 24 hours from the user to current user's stories.
@@ -37070,7 +37164,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Hides the reply to the current user's story.
@@ -37108,7 +37202,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Method not described
@@ -37207,7 +37301,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.StoriesGetV5113Response["response"]>;
+    ): Promise<Required<Responses.StoriesGetV5113Response>["response"]>;
 
     /**
      * Allows to show stories from hidden sources in current user's feed.
@@ -37234,7 +37328,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Streaming {
     /**
@@ -37247,7 +37341,7 @@ export namespace Methods {
      */
     getServerUrl<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.StreamingGetServerUrlResponse["response"]>;
+    ): Promise<Required<Responses.StreamingGetServerUrlResponse>["response"]>;
 
     /**
      * Method not described
@@ -37287,7 +37381,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Users {
     /**
@@ -37335,7 +37429,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.UsersGetResponse["response"]>;
+    ): Promise<Required<Responses.UsersGetResponse>["response"]>;
 
     /**
      * Returns a list of IDs of followers of the user in question, sorted by date added, most recent first.
@@ -37411,7 +37505,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.UsersGetFollowersResponse["response"]>;
+    ): Promise<Required<Responses.UsersGetFollowersResponse>["response"]>;
 
     /**
      * Returns a list of IDs of users and communities followed by the user.
@@ -37478,8 +37572,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.UsersGetSubscriptionsExtendedResponse["response"]>
-      : Promise<Responses.UsersGetSubscriptionsResponse["response"]>;
+      ? Promise<
+          Required<Responses.UsersGetSubscriptionsExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.UsersGetSubscriptionsResponse>["response"]>;
 
     /**
      * Reports (submits a complain about) a user.
@@ -37526,7 +37622,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns a list of users matching the search criteria.
@@ -37905,7 +38001,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.UsersSearchResponse["response"]>;
+    ): Promise<Required<Responses.UsersSearchResponse>["response"]>;
   }
   export interface Utils {
     /**
@@ -37931,7 +38027,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.UtilsCheckLinkResponse["response"]>;
+    ): Promise<Required<Responses.UtilsCheckLinkResponse>["response"]>;
 
     /**
      * Deletes shortened link from user's list.
@@ -37954,7 +38050,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns a list of user's shortened links.
@@ -37993,7 +38089,9 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.UtilsGetLastShortenedLinksResponse["response"]>;
+    ): Promise<
+      Required<Responses.UtilsGetLastShortenedLinksResponse>["response"]
+    >;
 
     /**
      * Returns stats data for shortened link.
@@ -38083,8 +38181,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.UtilsGetLinkStatsExtendedResponse["response"]>
-      : Promise<Responses.UtilsGetLinkStatsResponse["response"]>;
+      ? Promise<
+          Required<Responses.UtilsGetLinkStatsExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.UtilsGetLinkStatsResponse>["response"]>;
 
     /**
      * Returns the current time of the VK server.
@@ -38097,7 +38197,7 @@ export namespace Methods {
      */
     getServerTime<Params extends never = never>(
       params?: Params
-    ): Promise<Responses.UtilsGetServerTimeResponse["response"]>;
+    ): Promise<Required<Responses.UtilsGetServerTimeResponse>["response"]>;
 
     /**
      * Allows to receive a link shortened via vk.cc.
@@ -38132,7 +38232,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.UtilsGetShortLinkResponse["response"]>;
+    ): Promise<Required<Responses.UtilsGetShortLinkResponse>["response"]>;
 
     /**
      * Detects a type of object (e.g., user, community, application) and its ID by screen name.
@@ -38157,7 +38257,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.UtilsResolveScreenNameResponse["response"]>;
+    ): Promise<Required<Responses.UtilsResolveScreenNameResponse>["response"]>;
   }
   export interface Video {
     /**
@@ -38208,7 +38308,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Creates an empty album for videos.
@@ -38268,7 +38368,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.VideoAddAlbumResponse["response"]>;
+    ): Promise<Required<Responses.VideoAddAlbumResponse>["response"]>;
 
     /**
      * Method not described
@@ -38336,7 +38436,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Adds a new comment on a video.
@@ -38429,7 +38529,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.VideoCreateCommentResponse["response"]>;
+    ): Promise<Required<Responses.VideoCreateCommentResponse>["response"]>;
 
     /**
      * Deletes a video from a user or community page.
@@ -38478,7 +38578,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Deletes a video album.
@@ -38515,7 +38615,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Deletes a comment on a video.
@@ -38552,7 +38652,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits information about a video on a user or community page.
@@ -38649,7 +38749,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits the title of a video album.
@@ -38720,7 +38820,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits the text of a comment on a video.
@@ -38777,7 +38877,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns detailed information about videos.
@@ -38863,8 +38963,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.VideoGetExtendedResponse["response"]>
-      : Promise<Responses.VideoGetResponse["response"]>;
+      ? Promise<Required<Responses.VideoGetExtendedResponse>["response"]>
+      : Promise<Required<Responses.VideoGetResponse>["response"]>;
 
     /**
      * Returns video album info
@@ -38901,7 +39001,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.VideoGetAlbumByIdResponse["response"]>;
+    ): Promise<Required<Responses.VideoGetAlbumByIdResponse>["response"]>;
 
     /**
      * Returns a list of video albums owned by a user or community.
@@ -38967,8 +39067,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.VideoGetAlbumsExtendedResponse["response"]>
-      : Promise<Responses.VideoGetAlbumsResponse["response"]>;
+      ? Promise<Required<Responses.VideoGetAlbumsExtendedResponse>["response"]>
+      : Promise<Required<Responses.VideoGetAlbumsResponse>["response"]>;
 
     /**
      * Method not described
@@ -39020,8 +39120,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.VideoGetAlbumsByVideoExtendedResponse["response"]>
-      : Promise<Responses.VideoGetAlbumsByVideoResponse["response"]>;
+      ? Promise<
+          Required<Responses.VideoGetAlbumsByVideoExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.VideoGetAlbumsByVideoResponse>["response"]>;
 
     /**
      * Returns a list of comments on a video.
@@ -39125,8 +39227,10 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.VideoGetCommentsExtendedResponse["response"]>
-      : Promise<Responses.VideoGetCommentsResponse["response"]>;
+      ? Promise<
+          Required<Responses.VideoGetCommentsExtendedResponse>["response"]
+        >
+      : Promise<Required<Responses.VideoGetCommentsResponse>["response"]>;
 
     /**
      * Method not described
@@ -39193,7 +39297,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Reorders the album in the list of user video albums.
@@ -39255,7 +39359,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Reorders the video in the video album.
@@ -39364,7 +39468,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Reports (submits a complaint about) a video.
@@ -39433,7 +39537,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Reports (submits a complaint about) a comment on a video.
@@ -39482,7 +39586,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Restores a previously deleted video.
@@ -39519,7 +39623,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Restores a previously deleted comment on a video.
@@ -39556,7 +39660,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.VideoRestoreCommentResponse["response"]>;
+    ): Promise<Required<Responses.VideoRestoreCommentResponse>["response"]>;
 
     /**
      * Returns a server address (required for upload) and video data.
@@ -39663,7 +39767,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.VideoSaveResponse["response"]>;
+    ): Promise<Required<Responses.VideoSaveResponse>["response"]>;
 
     /**
      * Returns a list of videos under the set search criterion.
@@ -39801,8 +39905,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.VideoSearchExtendedResponse["response"]>
-      : Promise<Responses.VideoSearchResponse["response"]>;
+      ? Promise<Required<Responses.VideoSearchExtendedResponse>["response"]>
+      : Promise<Required<Responses.VideoSearchResponse>["response"]>;
   }
   export interface Wall {
     /**
@@ -39841,7 +39945,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BaseBoolResponse["response"]>;
+    ): Promise<Required<Responses.BaseBoolResponse>["response"]>;
 
     /**
      * Adds a comment to a post on a user wall or community wall.
@@ -39948,7 +40052,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.WallCreateCommentResponse["response"]>;
+    ): Promise<Required<Responses.WallCreateCommentResponse>["response"]>;
 
     /**
      * Deletes a post from a user wall or community wall.
@@ -39985,7 +40089,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Deletes a comment on a post on a user wall or community wall.
@@ -40022,7 +40126,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits a post on a user wall or community wall.
@@ -40165,7 +40269,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.WallEditResponse["response"]>;
+    ): Promise<Required<Responses.WallEditResponse>["response"]>;
 
     /**
      * Allows to edit hidden post.
@@ -40308,7 +40412,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Edits a comment on a user wall or community wall.
@@ -40365,7 +40469,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Returns a list of posts on a user wall or community wall.
@@ -40450,8 +40554,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.WallGetExtendedResponse["response"]>
-      : Promise<Responses.WallGetResponse["response"]>;
+      ? Promise<Required<Responses.WallGetExtendedResponse>["response"]>
+      : Promise<Required<Responses.WallGetResponse>["response"]>;
 
     /**
      * Returns a list of posts from user or community walls by their IDs.
@@ -40502,8 +40606,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.WallGetByIdExtendedResponse["response"]>
-      : Promise<Responses.WallGetByIdResponse["response"]>;
+      ? Promise<Required<Responses.WallGetByIdExtendedResponse>["response"]>
+      : Promise<Required<Responses.WallGetByIdResponse>["response"]>;
 
     /**
      * Returns a comment on a post on a user wall or community wall.
@@ -40545,8 +40649,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.WallGetCommentExtendedResponse["response"]>
-      : Promise<Responses.WallGetCommentResponse["response"]>;
+      ? Promise<Required<Responses.WallGetCommentExtendedResponse>["response"]>
+      : Promise<Required<Responses.WallGetCommentResponse>["response"]>;
 
     /**
      * Returns a list of comments on a post on a user wall or community wall.
@@ -40685,8 +40789,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.WallGetCommentsExtendedResponse["response"]>
-      : Promise<Responses.WallGetCommentsResponse["response"]>;
+      ? Promise<Required<Responses.WallGetCommentsExtendedResponse>["response"]>
+      : Promise<Required<Responses.WallGetCommentsResponse>["response"]>;
 
     /**
      * Returns information about reposts of a post on user wall or community wall.
@@ -40752,7 +40856,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.WallGetRepostsResponse["response"]>;
+    ): Promise<Required<Responses.WallGetRepostsResponse>["response"]>;
 
     /**
      * Method not described
@@ -40790,7 +40894,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.BaseBoolResponse["response"]>;
+    ): Promise<Required<Responses.BaseBoolResponse>["response"]>;
 
     /**
      * Pins the post on wall.
@@ -40827,7 +40931,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Adds a new post on a user wall or community wall. Can also be used to publish suggested or scheduled posts.
@@ -40986,7 +41090,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.WallPostResponse["response"]>;
+    ): Promise<Required<Responses.WallPostResponse>["response"]>;
 
     /**
      * Allows to create hidden post which will not be shown on the community's wall and can be used for creating an ad with type "Community post".
@@ -41130,7 +41234,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.WallPostAdsStealthResponse["response"]>;
+    ): Promise<Required<Responses.WallPostAdsStealthResponse>["response"]>;
 
     /**
      * Reports (submits a complaint about) a comment on a post on a user wall or community wall.
@@ -41179,7 +41283,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Reports (submits a complaint about) a post on a user wall or community wall.
@@ -41228,7 +41332,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Reposts (copies) an object to a user wall or community wall.
@@ -41279,7 +41383,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.WallRepostResponse["response"]>;
+    ): Promise<Required<Responses.WallRepostResponse>["response"]>;
 
     /**
      * Restores a post deleted from a user wall or community wall.
@@ -41317,7 +41421,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Restores a comment deleted from a user wall or community wall.
@@ -41354,7 +41458,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
 
     /**
      * Allows to search posts on user or community walls.
@@ -41451,8 +41555,8 @@ export namespace Methods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Promise<Responses.WallSearchExtendedResponse["response"]>
-      : Promise<Responses.WallSearchResponse["response"]>;
+      ? Promise<Required<Responses.WallSearchExtendedResponse>["response"]>
+      : Promise<Required<Responses.WallSearchResponse>["response"]>;
 
     /**
      * Unpins the post on wall.
@@ -41489,7 +41593,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.OkResponse["response"]>;
+    ): Promise<Required<Responses.OkResponse>["response"]>;
   }
   export interface Widgets {
     /**
@@ -41564,7 +41668,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.WidgetsGetCommentsResponse["response"]>;
+    ): Promise<Required<Responses.WidgetsGetCommentsResponse>["response"]>;
 
     /**
      * Gets a list of application/site pages where the {@link https://vk.com/dev/Comments|Comments widget} or {@link https://vk.com/dev/Like|Like widget} is installed.
@@ -41644,7 +41748,7 @@ export namespace Methods {
       }
     >(
       params: Params
-    ): Promise<Responses.WidgetsGetPagesResponse["response"]>;
+    ): Promise<Required<Responses.WidgetsGetPagesResponse>["response"]>;
   }
   export class _domainsSpecifier {
     account!: Methods.Account;
@@ -41749,7 +41853,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Changes a user password after access is successfully restored with the {@link https://vk.com/dev/auth.restore|auth.restore} method.
@@ -41809,7 +41913,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AccountChangePasswordResponse["response"];
+    ): Required<Responses.AccountChangePasswordResponse>["response"];
 
     /**
      * Returns a list of active ads (offers) which executed by the user will bring him/her respective number of votes to his balance in the application.
@@ -41857,7 +41961,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AccountGetActiveOffersResponse["response"];
+    ): Required<Responses.AccountGetActiveOffersResponse>["response"];
 
     /**
      * Gets settings of the user in this application.
@@ -41883,7 +41987,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AccountGetAppPermissionsResponse["response"];
+    ): Required<Responses.AccountGetAppPermissionsResponse>["response"];
 
     /**
      * Returns a user's blacklist.
@@ -41931,7 +42035,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AccountGetBannedResponse["response"];
+    ): Required<Responses.AccountGetBannedResponse>["response"];
 
     /**
      * Returns non-null values of user counters.
@@ -41983,7 +42087,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AccountGetCountersResponse["response"];
+    ): Required<Responses.AccountGetCountersResponse>["response"];
 
     /**
      * Returns current account info.
@@ -42027,7 +42131,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AccountGetInfoResponse["response"];
+    ): Required<Responses.AccountGetInfoResponse>["response"];
 
     /**
      * Returns the current account info.
@@ -42037,7 +42141,7 @@ export namespace SyncMethods {
      */
     getProfileInfo<Params extends never = never>(
       params?: Params
-    ): Responses.AccountGetProfileInfoResponse["response"];
+    ): Required<Responses.AccountGetProfileInfoResponse>["response"];
 
     /**
      * Gets settings of push notifications.
@@ -42061,7 +42165,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AccountGetPushSettingsResponse["response"];
+    ): Required<Responses.AccountGetPushSettingsResponse>["response"];
 
     /**
      * Subscribes an iOS/Android/Windows Phone-based device to receive push notifications
@@ -42149,7 +42253,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits current profile info.
@@ -42343,7 +42447,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AccountSaveProfileInfoResponse["response"];
+    ): Required<Responses.AccountSaveProfileInfoResponse>["response"];
 
     /**
      * Allows to edit the current account info.
@@ -42379,7 +42483,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Sets an application screen name (up to 17 characters), that is shown to the user in the left menu.
@@ -42417,7 +42521,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Marks a current user as offline.
@@ -42427,7 +42531,7 @@ export namespace SyncMethods {
      */
     setOffline<Params extends never = never>(
       params?: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Marks the current user as online for 15 minutes.
@@ -42451,7 +42555,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Change push settings.
@@ -42511,7 +42615,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Mutes push notifications for the set period of time.
@@ -42577,7 +42681,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -42603,7 +42707,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Unsubscribes a device from push notifications.
@@ -42629,7 +42733,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Ads {
     /**
@@ -42668,7 +42772,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsAddOfficeUsersResponse["response"];
+    ): Required<Responses.AdsAddOfficeUsersResponse>["response"];
 
     /**
      * Allows to check the ad link.
@@ -42734,7 +42838,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsCheckLinkResponse["response"];
+    ): Required<Responses.AdsCheckLinkResponse>["response"];
 
     /**
      * Creates ads.
@@ -42773,7 +42877,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsCreateAdsResponse["response"];
+    ): Required<Responses.AdsCreateAdsResponse>["response"];
 
     /**
      * Creates advertising campaigns.
@@ -42812,7 +42916,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsCreateCampaignsResponse["response"];
+    ): Required<Responses.AdsCreateCampaignsResponse>["response"];
 
     /**
      * Creates clients of an advertising agency.
@@ -42851,7 +42955,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsCreateClientsResponse["response"];
+    ): Required<Responses.AdsCreateClientsResponse>["response"];
 
     /**
      * Creates a group to re-target ads for users who visited advertiser's site (viewed information about the product, registered, etc.).
@@ -42941,7 +43045,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsCreateTargetGroupResponse["response"];
+    ): Required<Responses.AdsCreateTargetGroupResponse>["response"];
 
     /**
      * Archives ads.
@@ -42981,7 +43085,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsDeleteAdsResponse["response"];
+    ): Required<Responses.AdsDeleteAdsResponse>["response"];
 
     /**
      * Archives advertising campaigns.
@@ -43021,7 +43125,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsDeleteCampaignsResponse["response"];
+    ): Required<Responses.AdsDeleteCampaignsResponse>["response"];
 
     /**
      * Archives clients of an advertising agency.
@@ -43061,7 +43165,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsDeleteClientsResponse["response"];
+    ): Required<Responses.AdsDeleteClientsResponse>["response"];
 
     /**
      * Deletes a retarget group.
@@ -43115,7 +43219,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns a list of advertising accounts.
@@ -43125,7 +43229,7 @@ export namespace SyncMethods {
      */
     getAccounts<Params extends never = never>(
       params?: Params
-    ): Responses.AdsGetAccountsResponse["response"];
+    ): Required<Responses.AdsGetAccountsResponse>["response"];
 
     /**
      * Returns number of ads.
@@ -43229,7 +43333,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetAdsResponse["response"];
+    ): Required<Responses.AdsGetAdsResponse>["response"];
 
     /**
      * Returns descriptions of ad layouts.
@@ -43333,7 +43437,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetAdsLayoutResponse["response"];
+    ): Required<Responses.AdsGetAdsLayoutResponse>["response"];
 
     /**
      * Returns ad targeting parameters.
@@ -43437,7 +43541,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetAdsTargetingResponse["response"];
+    ): Required<Responses.AdsGetAdsTargetingResponse>["response"];
 
     /**
      * Returns current budget of the advertising account.
@@ -43463,7 +43567,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetBudgetResponse["response"];
+    ): Required<Responses.AdsGetBudgetResponse>["response"];
 
     /**
      * Returns a list of campaigns in an advertising account.
@@ -43535,7 +43639,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetCampaignsResponse["response"];
+    ): Required<Responses.AdsGetCampaignsResponse>["response"];
 
     /**
      * Returns a list of possible ad categories.
@@ -43559,7 +43663,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetCategoriesResponse["response"];
+    ): Required<Responses.AdsGetCategoriesResponse>["response"];
 
     /**
      * Returns a list of advertising agency's clients.
@@ -43585,7 +43689,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetClientsResponse["response"];
+    ): Required<Responses.AdsGetClientsResponse>["response"];
 
     /**
      * Returns demographics for ads or campaigns.
@@ -43675,7 +43779,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetDemographicsResponse["response"];
+    ): Required<Responses.AdsGetDemographicsResponse>["response"];
 
     /**
      * Returns information about current state of a counter — number of remaining runs of methods and time to the next counter nulling in seconds.
@@ -43701,7 +43805,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetFloodStatsResponse["response"];
+    ): Required<Responses.AdsGetFloodStatsResponse>["response"];
 
     /**
      * Returns a list of managers and supervisors of advertising account.
@@ -43727,7 +43831,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetOfficeUsersResponse["response"];
+    ): Required<Responses.AdsGetOfficeUsersResponse>["response"];
 
     /**
      * Returns detailed statistics of promoted posts reach from campaigns and ads.
@@ -43779,7 +43883,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetPostsReachResponse["response"];
+    ): Required<Responses.AdsGetPostsReachResponse>["response"];
 
     /**
      * Returns a reason of ad rejection for pre-moderation.
@@ -43819,7 +43923,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetRejectionReasonResponse["response"];
+    ): Required<Responses.AdsGetRejectionReasonResponse>["response"];
 
     /**
      * Returns statistics of performance indicators for ads, campaigns, clients or the whole account.
@@ -43927,7 +44031,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetStatisticsResponse["response"];
+    ): Required<Responses.AdsGetStatisticsResponse>["response"];
 
     /**
      * Returns a set of auto-suggestions for various targeting parameters.
@@ -44041,7 +44145,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetSuggestionsResponse["response"];
+    ): Required<Responses.AdsGetSuggestionsResponse>["response"];
 
     /**
      * Returns a list of target groups.
@@ -44093,7 +44197,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetTargetGroupsResponse["response"];
+    ): Required<Responses.AdsGetTargetGroupsResponse>["response"];
 
     /**
      * Returns the size of targeting audience, and also recommended values for CPC and CPM.
@@ -44213,7 +44317,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetTargetingStatsResponse["response"];
+    ): Required<Responses.AdsGetTargetingStatsResponse>["response"];
 
     /**
      * Returns URL to upload an ad photo to.
@@ -44253,7 +44357,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsGetUploadURLResponse["response"];
+    ): Required<Responses.AdsGetUploadURLResponse>["response"];
 
     /**
      * Returns URL to upload an ad video to.
@@ -44263,7 +44367,7 @@ export namespace SyncMethods {
      */
     getVideoUploadURL<Params extends never = never>(
       params?: Params
-    ): Responses.AdsGetVideoUploadURLResponse["response"];
+    ): Required<Responses.AdsGetVideoUploadURLResponse>["response"];
 
     /**
      * Imports a list of advertiser's contacts to count VK registered users against the target group.
@@ -44329,7 +44433,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsImportTargetContactsResponse["response"];
+    ): Required<Responses.AdsImportTargetContactsResponse>["response"];
 
     /**
      * Removes managers and/or supervisors from advertising account.
@@ -44367,7 +44471,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsRemoveOfficeUsersResponse["response"];
+    ): Required<Responses.AdsRemoveOfficeUsersResponse>["response"];
 
     /**
      * Edits ads.
@@ -44405,7 +44509,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsUpdateAdsResponse["response"];
+    ): Required<Responses.AdsUpdateAdsResponse>["response"];
 
     /**
      * Edits advertising campaigns.
@@ -44444,7 +44548,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsUpdateCampaignsResponse["response"];
+    ): Required<Responses.AdsUpdateCampaignsResponse>["response"];
 
     /**
      * Edits clients of an advertising agency.
@@ -44482,7 +44586,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AdsUpdateClientsResponse["response"];
+    ): Required<Responses.AdsUpdateClientsResponse>["response"];
 
     /**
      * Edits a retarget group.
@@ -44598,7 +44702,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface AppWidgets {
     /**
@@ -44652,7 +44756,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Apps {
     /**
@@ -44663,7 +44767,7 @@ export namespace SyncMethods {
      */
     deleteAppRequests<Params extends never = never>(
       params?: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns applications data.
@@ -44750,7 +44854,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AppsGetResponse["response"];
+    ): Required<Responses.AppsGetResponse>["response"];
 
     /**
      * Returns a list of applications (apps) available to users in the App Catalog.
@@ -44879,7 +44983,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AppsGetCatalogResponse["response"];
+    ): Required<Responses.AppsGetCatalogResponse>["response"];
 
     /**
      * Creates friends list for requests and invites in current app.
@@ -44961,7 +45065,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AppsGetFriendsListResponse["response"];
+    ): Required<Responses.AppsGetFriendsListResponse>["response"];
 
     /**
      * Returns players rating in the game.
@@ -45014,8 +45118,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.AppsGetLeaderboardExtendedResponse["response"]
-      : Responses.AppsGetLeaderboardResponse["response"];
+      ? Required<Responses.AppsGetLeaderboardExtendedResponse>["response"]
+      : Required<Responses.AppsGetLeaderboardResponse>["response"];
 
     /**
      * Returns scopes for auth
@@ -45045,7 +45149,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AppsGetScopesResponse["response"];
+    ): Required<Responses.AppsGetScopesResponse>["response"];
 
     /**
      * Returns user score in app
@@ -45071,7 +45175,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AppsGetScoreResponse["response"];
+    ): Required<Responses.AppsGetScoreResponse>["response"];
 
     /**
      * Method not described
@@ -45111,7 +45215,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BaseBoolResponse["response"];
+    ): Required<Responses.BaseBoolResponse>["response"];
 
     /**
      * Method not described
@@ -45151,7 +45255,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BaseBoolResponse["response"];
+    ): Required<Responses.BaseBoolResponse>["response"];
 
     /**
      * Sends a request to another user in an app that uses VK authorization.
@@ -45223,7 +45327,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AppsSendRequestResponse["response"];
+    ): Required<Responses.AppsSendRequestResponse>["response"];
   }
   export interface Auth {
     /**
@@ -45269,7 +45373,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Allows to restore account access using a code received via SMS. " This method is only available for apps with {@link https://vk.com/dev/auth_direct|Direct authorization} access. "
@@ -45306,7 +45410,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.AuthRestoreResponse["response"];
+    ): Required<Responses.AuthRestoreResponse>["response"];
   }
   export interface Board {
     /**
@@ -45381,7 +45485,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BoardAddTopicResponse["response"];
+    ): Required<Responses.BoardAddTopicResponse>["response"];
 
     /**
      * Closes a topic on a community's discussion board so that comments cannot be posted.
@@ -45421,7 +45525,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Adds a comment on a topic on a community's discussion board.
@@ -45523,7 +45627,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BoardCreateCommentResponse["response"];
+    ): Required<Responses.BoardCreateCommentResponse>["response"];
 
     /**
      * Deletes a comment on a topic on a community's discussion board.
@@ -45578,7 +45682,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Deletes a topic from a community's discussion board.
@@ -45618,7 +45722,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits a comment on a topic on a community's discussion board.
@@ -45696,7 +45800,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits the title of a topic on a community's discussion board.
@@ -45748,7 +45852,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Pins a topic (fixes its place) to the top of a community's discussion board.
@@ -45788,7 +45892,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns a list of comments on a topic on a community's discussion board.
@@ -45918,8 +46022,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.BoardGetCommentsExtendedResponse["response"]
-      : Responses.BoardGetCommentsResponse["response"];
+      ? Required<Responses.BoardGetCommentsExtendedResponse>["response"]
+      : Required<Responses.BoardGetCommentsResponse>["response"];
 
     /**
      * Returns a list of topics on a community's discussion board.
@@ -46059,8 +46163,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.BoardGetTopicsExtendedResponse["response"]
-      : Responses.BoardGetTopicsResponse["response"];
+      ? Required<Responses.BoardGetTopicsExtendedResponse>["response"]
+      : Required<Responses.BoardGetTopicsResponse>["response"];
 
     /**
      * Re-opens a previously closed topic on a community's discussion board.
@@ -46100,7 +46204,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Restores a comment deleted from a topic on a community's discussion board.
@@ -46155,7 +46259,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Unpins a pinned topic from the top of a community's discussion board.
@@ -46195,7 +46299,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Database {
     /**
@@ -46259,7 +46363,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetChairsResponse["response"];
+    ): Required<Responses.DatabaseGetChairsResponse>["response"];
 
     /**
      * Returns a list of cities.
@@ -46359,7 +46463,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetCitiesResponse["response"];
+    ): Required<Responses.DatabaseGetCitiesResponse>["response"];
 
     /**
      * Returns information about cities by their IDs.
@@ -46390,7 +46494,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetCitiesByIdResponse["response"];
+    ): Required<Responses.DatabaseGetCitiesByIdResponse>["response"];
 
     /**
      * Returns a list of countries.
@@ -46462,7 +46566,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetCountriesResponse["response"];
+    ): Required<Responses.DatabaseGetCountriesResponse>["response"];
 
     /**
      * Returns information about countries by their IDs.
@@ -46493,7 +46597,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetCountriesByIdResponse["response"];
+    ): Required<Responses.DatabaseGetCountriesByIdResponse>["response"];
 
     /**
      * Returns a list of faculties (i.e., university departments).
@@ -46556,7 +46660,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetFacultiesResponse["response"];
+    ): Required<Responses.DatabaseGetFacultiesResponse>["response"];
 
     /**
      * Get metro stations by city
@@ -46621,7 +46725,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetMetroStationsResponse["response"];
+    ): Required<Responses.DatabaseGetMetroStationsResponse>["response"];
 
     /**
      * Get metro station by his id
@@ -46644,7 +46748,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetMetroStationsByIdResponse["response"];
+    ): Required<Responses.DatabaseGetMetroStationsByIdResponse>["response"];
 
     /**
      * Returns a list of regions.
@@ -46719,7 +46823,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetRegionsResponse["response"];
+    ): Required<Responses.DatabaseGetRegionsResponse>["response"];
 
     /**
      * Returns a list of school classes specified for the country.
@@ -46746,7 +46850,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetSchoolClassesResponse["response"];
+    ): Required<Responses.DatabaseGetSchoolClassesResponse>["response"];
 
     /**
      * Returns a list of schools.
@@ -46821,7 +46925,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetSchoolsResponse["response"];
+    ): Required<Responses.DatabaseGetSchoolsResponse>["response"];
 
     /**
      * Returns a list of higher education institutions.
@@ -46910,7 +47014,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DatabaseGetUniversitiesResponse["response"];
+    ): Required<Responses.DatabaseGetUniversitiesResponse>["response"];
   }
   export interface Docs {
     /**
@@ -46963,7 +47067,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DocsAddResponse["response"];
+    ): Required<Responses.DocsAddResponse>["response"];
 
     /**
      * Deletes a user or community document.
@@ -47004,7 +47108,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits a document.
@@ -47070,7 +47174,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns detailed information about user or community documents.
@@ -47140,7 +47244,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DocsGetResponse["response"];
+    ): Required<Responses.DocsGetResponse>["response"];
 
     /**
      * Returns information about documents by their IDs.
@@ -47166,7 +47270,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DocsGetByIdResponse["response"];
+    ): Required<Responses.DocsGetByIdResponse>["response"];
 
     /**
      * Returns the server address for document upload.
@@ -47211,7 +47315,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BaseGetUploadServerResponse["response"];
+    ): Required<Responses.BaseGetUploadServerResponse>["response"];
 
     /**
      * Returns documents types available for current user.
@@ -47237,7 +47341,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DocsGetTypesResponse["response"];
+    ): Required<Responses.DocsGetTypesResponse>["response"];
 
     /**
      * Returns the server address for document upload.
@@ -47263,7 +47367,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DocsGetUploadServer["response"];
+    ): Required<Responses.DocsGetUploadServer>["response"];
 
     /**
      * Returns the server address for document upload onto a user's or community's wall.
@@ -47290,7 +47394,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BaseGetUploadServerResponse["response"];
+    ): Required<Responses.BaseGetUploadServerResponse>["response"];
 
     /**
      * Saves a document after {@link https://vk.com/dev/upload_files_2|uploading it to a server}.
@@ -47341,7 +47445,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DocsSaveResponse["response"];
+    ): Required<Responses.DocsSaveResponse>["response"];
 
     /**
      * Returns a list of documents matching the search criteria.
@@ -47402,7 +47506,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.DocsSearchResponse["response"];
+    ): Required<Responses.DocsSearchResponse>["response"];
   }
   export interface Fave {
     /**
@@ -47419,7 +47523,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Adds a link to user faves.
@@ -47443,7 +47547,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -47483,7 +47587,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -47525,7 +47629,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -47567,7 +47671,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -47601,7 +47705,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FaveAddTagResponse["response"];
+    ): Required<Responses.FaveAddTagResponse>["response"];
 
     /**
      * Method not described
@@ -47643,7 +47747,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -47671,7 +47775,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -47784,8 +47888,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.FaveGetExtendedResponse["response"]
-      : Responses.FaveGetResponse["response"];
+      ? Required<Responses.FaveGetExtendedResponse>["response"]
+      : Required<Responses.FaveGetResponse>["response"];
 
     /**
      * Method not described
@@ -47871,7 +47975,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FaveGetPagesResponse["response"];
+    ): Required<Responses.FaveGetPagesResponse>["response"];
 
     /**
      * Method not described
@@ -47881,7 +47985,7 @@ export namespace SyncMethods {
      */
     getTags<Params extends never = never>(
       params?: Params
-    ): Responses.FaveGetTagsResponse["response"];
+    ): Required<Responses.FaveGetTagsResponse>["response"];
 
     /**
      * Method not described
@@ -47891,7 +47995,7 @@ export namespace SyncMethods {
      */
     markSeen<Params extends never = never>(
       params?: Params
-    ): Responses.BaseBoolResponse["response"];
+    ): Required<Responses.BaseBoolResponse>["response"];
 
     /**
      * Method not described
@@ -47931,7 +48035,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BaseBoolResponse["response"];
+    ): Required<Responses.BaseBoolResponse>["response"];
 
     /**
      * Removes link from the user's faves.
@@ -47967,7 +48071,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -48007,7 +48111,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -48047,7 +48151,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -48087,7 +48191,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -48113,7 +48217,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -48135,7 +48239,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -48183,7 +48287,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -48265,7 +48369,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -48305,7 +48409,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Friends {
     /**
@@ -48359,7 +48463,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsAddResponse["response"];
+    ): Required<Responses.FriendsAddResponse>["response"];
 
     /**
      * Creates a new friend list for the current user.
@@ -48401,7 +48505,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsAddListResponse["response"];
+    ): Required<Responses.FriendsAddListResponse>["response"];
 
     /**
      * Checks the current user's friendship status with other specified users.
@@ -48443,7 +48547,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsAreFriendsResponse["response"];
+    ): Required<Responses.FriendsAreFriendsResponse>["response"];
 
     /**
      * Declines a friend request or deletes a user from the current user's friend list.
@@ -48469,7 +48573,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsDeleteResponse["response"];
+    ): Required<Responses.FriendsDeleteResponse>["response"];
 
     /**
      * Marks all incoming friend requests as viewed.
@@ -48479,7 +48583,7 @@ export namespace SyncMethods {
      */
     deleteAllRequests<Params extends never = never>(
       params?: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Deletes a friend list of the current user.
@@ -48509,7 +48613,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits the friend lists of the selected user.
@@ -48553,7 +48657,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits a friend list of the current user.
@@ -48645,7 +48749,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns a list of user IDs or detailed information about a user's friends.
@@ -48760,7 +48864,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsGetResponse["response"];
+    ): Required<Responses.FriendsGetResponse>["response"];
 
     /**
      * Returns a list of IDs of the current user's friends who installed the application.
@@ -48770,7 +48874,7 @@ export namespace SyncMethods {
      */
     getAppUsers<Params extends never = never>(
       params?: Params
-    ): Responses.FriendsGetAppUsersResponse["response"];
+    ): Required<Responses.FriendsGetAppUsersResponse>["response"];
 
     /**
      * Returns a list of the current user's friends whose phone numbers, validated or specified in a profile, are in a given list.
@@ -48806,7 +48910,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsGetByPhonesResponse["response"];
+    ): Required<Responses.FriendsGetByPhonesResponse>["response"];
 
     /**
      * Returns a list of the user's friend lists.
@@ -48844,7 +48948,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsGetListsResponse["response"];
+    ): Required<Responses.FriendsGetListsResponse>["response"];
 
     /**
      * Returns a list of user IDs of the mutual friends of two users.
@@ -48942,7 +49046,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsGetMutualResponse["response"];
+    ): Required<Responses.FriendsGetMutualResponse>["response"];
 
     /**
      * Returns a list of user IDs of a user's friends who are online.
@@ -49034,7 +49138,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsGetOnlineResponse["response"];
+    ): Required<Responses.FriendsGetOnlineResponse>["response"];
 
     /**
      * Returns a list of user IDs of the current user's recently added friends.
@@ -49068,7 +49172,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsGetRecentResponse["response"];
+    ): Required<Responses.FriendsGetRecentResponse>["response"];
 
     /**
      * Returns information about the current user's incoming and outgoing friend requests.
@@ -49185,8 +49289,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.FriendsGetRequestsExtendedResponse["response"]
-      : Responses.FriendsGetRequestsResponse["response"];
+      ? Required<Responses.FriendsGetRequestsExtendedResponse>["response"]
+      : Required<Responses.FriendsGetRequestsResponse>["response"];
 
     /**
      * Returns a list of profiles of users whom the current user may know.
@@ -49286,7 +49390,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsGetSuggestionsResponse["response"];
+    ): Required<Responses.FriendsGetSuggestionsResponse>["response"];
 
     /**
      * Returns a list of friends matching the search criteria.
@@ -49390,7 +49494,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.FriendsSearchResponse["response"];
+    ): Required<Responses.FriendsSearchResponse>["response"];
   }
   export interface Gifts {
     /**
@@ -49445,7 +49549,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GiftsGetResponse["response"];
+    ): Required<Responses.GiftsGetResponse>["response"];
   }
   export interface Groups {
     /**
@@ -49571,7 +49675,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsAddAddressResponse["response"];
+    ): Required<Responses.GroupsAddAddressResponse>["response"];
 
     /**
      * Method not described
@@ -49604,7 +49708,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsAddCallbackServerResponse["response"];
+    ): Required<Responses.GroupsAddCallbackServerResponse>["response"];
 
     /**
      * Allows to add a link to the community.
@@ -49654,7 +49758,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsAddLinkResponse["response"];
+    ): Required<Responses.GroupsAddLinkResponse>["response"];
 
     /**
      * Allows to approve join request to the community.
@@ -49694,7 +49798,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -49766,7 +49870,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Creates a new community.
@@ -49848,7 +49952,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsCreateResponse["response"];
+    ): Required<Responses.GroupsCreateResponse>["response"];
 
     /**
      * Method not described
@@ -49889,7 +49993,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Allows to delete a link from the community.
@@ -49929,7 +50033,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -49956,7 +50060,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits a community.
@@ -50524,7 +50628,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -50655,7 +50759,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsEditAddressResponse["response"];
+    ): Required<Responses.GroupsEditAddressResponse>["response"];
 
     /**
      * Method not described
@@ -50702,7 +50806,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Allows to edit a link in the community.
@@ -50754,7 +50858,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Allows to add, remove or edit the community manager.
@@ -50858,7 +50962,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -50885,7 +50989,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns a list of the communities to which a user belongs.
@@ -50980,8 +51084,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.GroupsGetExtendedResponse["response"]
-      : Responses.GroupsGetResponse["response"];
+      ? Required<Responses.GroupsGetExtendedResponse>["response"]
+      : Required<Responses.GroupsGetResponse>["response"];
 
     /**
      * Returns a list of community addresses.
@@ -51093,7 +51197,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetAddressesResponse["response"];
+    ): Required<Responses.GroupsGetAddressesResponse>["response"];
 
     /**
      * Returns a list of users on a community blacklist.
@@ -51172,7 +51276,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetBannedResponse["response"];
+    ): Required<Responses.GroupsGetBannedResponse>["response"];
 
     /**
      * Returns information about communities by their IDs.
@@ -51222,7 +51326,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetByIdResponse["response"];
+    ): Required<Responses.GroupsGetByIdResponse>["response"];
 
     /**
      * Returns Callback API confirmation code for the community.
@@ -51249,7 +51353,9 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetCallbackConfirmationCodeResponse["response"];
+    ): Required<
+      Responses.GroupsGetCallbackConfirmationCodeResponse
+    >["response"];
 
     /**
      * Method not described
@@ -51284,7 +51390,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetCallbackServersResponse["response"];
+    ): Required<Responses.GroupsGetCallbackServersResponse>["response"];
 
     /**
      * Returns {@link https://vk.com/dev/callback_api|Callback API} notifications settings.
@@ -51325,7 +51431,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetCallbackSettingsResponse["response"];
+    ): Required<Responses.GroupsGetCallbackSettingsResponse>["response"];
 
     /**
      * Returns communities list for a catalog category.
@@ -51370,7 +51476,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetCatalogResponse["response"];
+    ): Required<Responses.GroupsGetCatalogResponse>["response"];
 
     /**
      * Returns categories list for communities catalog
@@ -51407,8 +51513,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.GroupsGetCatalogInfoExtendedResponse["response"]
-      : Responses.GroupsGetCatalogInfoResponse["response"];
+      ? Required<Responses.GroupsGetCatalogInfoExtendedResponse>["response"]
+      : Required<Responses.GroupsGetCatalogInfoResponse>["response"];
 
     /**
      * Returns invited users list of a community
@@ -51492,7 +51598,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetInvitedUsersResponse["response"];
+    ): Required<Responses.GroupsGetInvitedUsersResponse>["response"];
 
     /**
      * Returns a list of invitations to join communities and events.
@@ -51549,8 +51655,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.GroupsGetInvitesExtendedResponse["response"]
-      : Responses.GroupsGetInvitesResponse["response"];
+      ? Required<Responses.GroupsGetInvitesExtendedResponse>["response"]
+      : Required<Responses.GroupsGetInvitesResponse>["response"];
 
     /**
      * Returns the data needed to query a Long Poll server for events
@@ -51577,7 +51683,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetLongPollServerResponse["response"];
+    ): Required<Responses.GroupsGetLongPollServerResponse>["response"];
 
     /**
      * Returns Long Poll notification settings
@@ -51604,7 +51710,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetLongPollSettingsResponse["response"];
+    ): Required<Responses.GroupsGetLongPollSettingsResponse>["response"];
 
     /**
      * Returns a list of community members.
@@ -51706,7 +51812,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetMembersResponse["response"];
+    ): Required<Responses.GroupsGetMembersResponse>["response"];
 
     /**
      * Returns a list of requests to the community.
@@ -51780,7 +51886,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetRequestsResponse["response"];
+    ): Required<Responses.GroupsGetRequestsResponse>["response"];
 
     /**
      * Returns community settings.
@@ -51806,7 +51912,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsGetSettingsResponse["response"];
+    ): Required<Responses.GroupsGetSettingsResponse>["response"];
 
     /**
      * Method not described
@@ -51816,7 +51922,7 @@ export namespace SyncMethods {
      */
     getTokenPermissions<Params extends never = never>(
       params?: Params
-    ): Responses.GroupsGetTokenPermissionsResponse["response"];
+    ): Required<Responses.GroupsGetTokenPermissionsResponse>["response"];
 
     /**
      * Allows to invite friends to the community.
@@ -51856,7 +51962,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns information specifying whether a user is a member of a community.
@@ -51927,8 +52033,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.GroupsIsMemberExtendedResponse["response"]
-      : Responses.GroupsIsMemberResponse["response"];
+      ? Required<Responses.GroupsIsMemberExtendedResponse>["response"]
+      : Required<Responses.GroupsIsMemberResponse>["response"];
 
     /**
      * With this method you can join the group or public page, and also confirm your participation in an event.
@@ -51966,7 +52072,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * With this method you can leave a group, public page, or event.
@@ -51992,7 +52098,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Removes a user from the community.
@@ -52032,7 +52138,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Allows to reorder links in the community.
@@ -52086,7 +52192,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns a list of communities matching the search criteria.
@@ -52226,7 +52332,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.GroupsSearchResponse["response"];
+    ): Required<Responses.GroupsSearchResponse>["response"];
 
     /**
      * Allow to set notifications settings for group.
@@ -52699,7 +52805,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Sets Long Poll notification settings
@@ -53168,7 +53274,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -53208,7 +53314,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Leads {
     /**
@@ -53279,7 +53385,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.LeadsCheckUserResponse["response"];
+    ): Required<Responses.LeadsCheckUserResponse>["response"];
 
     /**
      * Completes the lead started by user.
@@ -53329,7 +53435,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.LeadsCompleteResponse["response"];
+    ): Required<Responses.LeadsCompleteResponse>["response"];
 
     /**
      * Returns lead stats data.
@@ -53391,7 +53497,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.LeadsGetStatsResponse["response"];
+    ): Required<Responses.LeadsGetStatsResponse>["response"];
 
     /**
      * Returns a list of last user actions for the offer.
@@ -53492,7 +53598,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.LeadsGetUsersResponse["response"];
+    ): Required<Responses.LeadsGetUsersResponse>["response"];
 
     /**
      * Counts the metric event.
@@ -53516,7 +53622,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.LeadsMetricHitResponse["response"];
+    ): Required<Responses.LeadsMetricHitResponse>["response"];
 
     /**
      * Creates new session for the user passing the offer.
@@ -53588,7 +53694,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.LeadsStartResponse["response"];
+    ): Required<Responses.LeadsStartResponse>["response"];
   }
   export interface Likes {
     /**
@@ -53653,7 +53759,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.LikesAddResponse["response"];
+    ): Required<Responses.LikesAddResponse>["response"];
 
     /**
      * Deletes the specified object from the 'Likes' list of the current user.
@@ -53717,7 +53823,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.LikesDeleteResponse["response"];
+    ): Required<Responses.LikesDeleteResponse>["response"];
 
     /**
      * Returns a list of IDs of users who added the specified object to their 'Likes' list.
@@ -53853,8 +53959,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.LikesGetListExtendedResponse["response"]
-      : Responses.LikesGetListResponse["response"];
+      ? Required<Responses.LikesGetListExtendedResponse>["response"]
+      : Required<Responses.LikesGetListResponse>["response"];
 
     /**
      * Checks for the object in the 'Likes' list of the specified user.
@@ -53920,7 +54026,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.LikesIsLikedResponse["response"];
+    ): Required<Responses.LikesIsLikedResponse>["response"];
   }
   export interface Market {
     /**
@@ -54071,7 +54177,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MarketAddResponse["response"];
+    ): Required<Responses.MarketAddResponse>["response"];
 
     /**
      * Creates new collection of items
@@ -54135,7 +54241,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MarketAddAlbumResponse["response"];
+    ): Required<Responses.MarketAddAlbumResponse>["response"];
 
     /**
      * Adds an item to one or multiple collections.
@@ -54196,7 +54302,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Creates a new comment for an item.
@@ -54312,7 +54418,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MarketCreateCommentResponse["response"];
+    ): Required<Responses.MarketCreateCommentResponse>["response"];
 
     /**
      * Deletes an item.
@@ -54352,7 +54458,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Deletes a collection of items.
@@ -54392,7 +54498,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Deletes an item's comment
@@ -54432,7 +54538,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MarketDeleteCommentResponse["response"];
+    ): Required<Responses.MarketDeleteCommentResponse>["response"];
 
     /**
      * Edits an item.
@@ -54582,7 +54688,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits a collection of items
@@ -54660,7 +54766,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Chages item comment's text
@@ -54724,7 +54830,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns items list for a community.
@@ -54813,8 +54919,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.MarketGetExtendedResponse["response"]
-      : Responses.MarketGetResponse["response"];
+      ? Required<Responses.MarketGetExtendedResponse>["response"]
+      : Required<Responses.MarketGetResponse>["response"];
 
     /**
      * Returns items album's data
@@ -54858,7 +54964,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MarketGetAlbumByIdResponse["response"];
+    ): Required<Responses.MarketGetAlbumByIdResponse>["response"];
 
     /**
      * Returns community's collections list.
@@ -54920,7 +55026,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MarketGetAlbumsResponse["response"];
+    ): Required<Responses.MarketGetAlbumsResponse>["response"];
 
     /**
      * Returns information about market items by their ids.
@@ -54957,8 +55063,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.MarketGetByIdExtendedResponse["response"]
-      : Responses.MarketGetByIdResponse["response"];
+      ? Required<Responses.MarketGetByIdExtendedResponse>["response"]
+      : Required<Responses.MarketGetByIdResponse>["response"];
 
     /**
      * Returns a list of market categories.
@@ -55006,7 +55112,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MarketGetCategoriesResponse["response"];
+    ): Required<Responses.MarketGetCategoriesResponse>["response"];
 
     /**
      * Returns comments list for an item.
@@ -55150,7 +55256,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MarketGetCommentsResponse["response"];
+    ): Required<Responses.MarketGetCommentsResponse>["response"];
 
     /**
      * Removes an item from one or multiple collections.
@@ -55209,7 +55315,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Reorders the collections list.
@@ -55278,7 +55384,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Changes item place in a collection.
@@ -55362,7 +55468,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Sends a complaint to the item.
@@ -55416,7 +55522,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Sends a complaint to the item's comment.
@@ -55470,7 +55576,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Restores recently deleted item
@@ -55511,7 +55617,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Restores a recently deleted comment
@@ -55551,7 +55657,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MarketRestoreCommentResponse["response"];
+    ): Required<Responses.MarketRestoreCommentResponse>["response"];
 
     /**
      * Searches market items in a community's catalog
@@ -55746,8 +55852,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.MarketSearchExtendedResponse["response"]
-      : Responses.MarketSearchResponse["response"];
+      ? Required<Responses.MarketSearchExtendedResponse>["response"]
+      : Required<Responses.MarketSearchResponse>["response"];
   }
   export interface Messages {
     /**
@@ -55816,7 +55922,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Allows sending messages from community to the current user.
@@ -55844,7 +55950,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Creates a chat with several participants.
@@ -55901,7 +56007,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesCreateChatResponse["response"];
+    ): Required<Responses.MessagesCreateChatResponse>["response"];
 
     /**
      * Deletes one or more messages.
@@ -55970,7 +56076,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesDeleteResponse["response"];
+    ): Required<Responses.MessagesDeleteResponse>["response"];
 
     /**
      * Deletes a chat's cover picture.
@@ -56016,7 +56122,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesDeleteChatPhotoResponse["response"];
+    ): Required<Responses.MessagesDeleteChatPhotoResponse>["response"];
 
     /**
      * Deletes all private messages in a conversation.
@@ -56071,7 +56177,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesDeleteConversationResponse["response"];
+    ): Required<Responses.MessagesDeleteConversationResponse>["response"];
 
     /**
      * Denies sending message from community to the current user.
@@ -56097,7 +56203,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits the message.
@@ -56234,7 +56340,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesEditResponse["response"];
+    ): Required<Responses.MessagesEditResponse>["response"];
 
     /**
      * Edits the title of a chat.
@@ -56279,7 +56385,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns messages by their IDs within the conversation.
@@ -56362,7 +56468,9 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesGetByConversationMessageIdResponse["response"];
+    ): Required<
+      Responses.MessagesGetByConversationMessageIdResponse
+    >["response"];
 
     /**
      * Returns messages by their IDs.
@@ -56446,8 +56554,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.MessagesGetByIdExtendedResponse["response"]
-      : Responses.MessagesGetByIdResponse["response"];
+      ? Required<Responses.MessagesGetByIdExtendedResponse>["response"]
+      : Required<Responses.MessagesGetByIdResponse>["response"];
 
     /**
      * Method not described
@@ -56497,7 +56605,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesGetChatPreviewResponse["response"];
+    ): Required<Responses.MessagesGetChatPreviewResponse>["response"];
 
     /**
      * Returns a list of IDs of users participating in a chat.
@@ -56550,7 +56658,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesGetConversationMembersResponse["response"];
+    ): Required<Responses.MessagesGetConversationMembersResponse>["response"];
 
     /**
      * Returns a list of the current user's conversations.
@@ -56671,7 +56779,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesGetConversationsResponse["response"];
+    ): Required<Responses.MessagesGetConversationsResponse>["response"];
 
     /**
      * Returns conversations by their IDs
@@ -56743,8 +56851,10 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.MessagesGetConversationsByIdExtendedResponse["response"]
-      : Responses.MessagesGetConversationsByIdResponse["response"];
+      ? Required<
+          Responses.MessagesGetConversationsByIdExtendedResponse
+        >["response"]
+      : Required<Responses.MessagesGetConversationsByIdResponse>["response"];
 
     /**
      * Returns message history for the specified user or group chat.
@@ -56887,7 +56997,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesGetHistoryResponse["response"];
+    ): Required<Responses.MessagesGetHistoryResponse>["response"];
 
     /**
      * Returns media files from the dialog or group chat.
@@ -57048,7 +57158,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesGetHistoryAttachmentsResponse["response"];
+    ): Required<Responses.MessagesGetHistoryAttachmentsResponse>["response"];
 
     /**
      * Method not described
@@ -57102,7 +57212,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesGetInviteLinkResponse["response"];
+    ): Required<Responses.MessagesGetInviteLinkResponse>["response"];
 
     /**
      * Returns a user's current status and date of last activity.
@@ -57128,7 +57238,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesGetLastActivityResponse["response"];
+    ): Required<Responses.MessagesGetLastActivityResponse>["response"];
 
     /**
      * Returns updates in user's private messages.
@@ -57314,7 +57424,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesGetLongPollHistoryResponse["response"];
+    ): Required<Responses.MessagesGetLongPollHistoryResponse>["response"];
 
     /**
      * Returns data required for connection to a Long Poll server.
@@ -57367,7 +57477,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesGetLongPollServerResponse["response"];
+    ): Required<Responses.MessagesGetLongPollServerResponse>["response"];
 
     /**
      * Returns information whether sending messages from the community to current user is allowed.
@@ -57408,7 +57518,9 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesIsMessagesFromGroupAllowedResponse["response"];
+    ): Required<
+      Responses.MessagesIsMessagesFromGroupAllowedResponse
+    >["response"];
 
     /**
      * Method not described
@@ -57433,7 +57545,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesJoinChatByInviteLinkResponse["response"];
+    ): Required<Responses.MessagesJoinChatByInviteLinkResponse>["response"];
 
     /**
      * Marks and unmarks conversations as unanswered.
@@ -57488,7 +57600,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Marks and unmarks messages as important (starred).
@@ -57532,7 +57644,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesMarkAsImportantResponse["response"];
+    ): Required<Responses.MessagesMarkAsImportantResponse>["response"];
 
     /**
      * Marks and unmarks conversations as important.
@@ -57587,7 +57699,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Marks messages as read.
@@ -57660,7 +57772,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Pin a message.
@@ -57702,7 +57814,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesPinResponse["response"];
+    ): Required<Responses.MessagesPinResponse>["response"];
 
     /**
      * Allows the current user to leave a chat or, if the current user started the chat, allows the user to remove another user from the chat.
@@ -57765,7 +57877,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Restores a deleted message.
@@ -57806,7 +57918,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns a list of the current user's private messages that match search criteria.
@@ -57927,7 +58039,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesSearchResponse["response"];
+    ): Required<Responses.MessagesSearchResponse>["response"];
 
     /**
      * Returns a list of the current user's conversations that match search criteria.
@@ -58008,7 +58120,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesSearchConversationsResponse["response"];
+    ): Required<Responses.MessagesSearchConversationsResponse>["response"];
 
     /**
      * Sends a message.
@@ -58256,7 +58368,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesSendResponse["response"];
+    ): Required<Responses.MessagesSendResponse>["response"];
 
     /**
      * Changes the status of a user as typing in a conversation.
@@ -58325,7 +58437,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Sets a previously-uploaded picture as the cover picture of a chat.
@@ -58352,7 +58464,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.MessagesSetChatPhotoResponse["response"];
+    ): Required<Responses.MessagesSetChatPhotoResponse>["response"];
 
     /**
      * Method not described
@@ -58393,7 +58505,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Newsfeed {
     /**
@@ -58424,7 +58536,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Allows news from previously banned users and communities to be shown in the current user's newsfeed.
@@ -58454,7 +58566,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -58480,7 +58592,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns data required to show newsfeed for the current user.
@@ -58610,7 +58722,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NewsfeedGetResponse["response"];
+    ): Required<Responses.NewsfeedGetResponse>["response"];
 
     /**
      * Returns a list of users and communities banned from the current user's newsfeed.
@@ -58661,8 +58773,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.NewsfeedGetBannedExtendedResponse["response"]
-      : Responses.NewsfeedGetBannedResponse["response"];
+      ? Required<Responses.NewsfeedGetBannedExtendedResponse>["response"]
+      : Required<Responses.NewsfeedGetBannedResponse>["response"];
 
     /**
      * Returns a list of comments in the current user's newsfeed.
@@ -58790,7 +58902,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NewsfeedGetCommentsResponse["response"];
+    ): Required<Responses.NewsfeedGetCommentsResponse>["response"];
 
     /**
      * Returns a list of newsfeeds followed by the current user.
@@ -58833,8 +58945,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.NewsfeedGetListsExtendedResponse["response"]
-      : Responses.NewsfeedGetListsResponse["response"];
+      ? Required<Responses.NewsfeedGetListsExtendedResponse>["response"]
+      : Required<Responses.NewsfeedGetListsResponse>["response"];
 
     /**
      * Returns a list of posts on user walls in which the current user is mentioned.
@@ -58924,7 +59036,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NewsfeedGetMentionsResponse["response"];
+    ): Required<Responses.NewsfeedGetMentionsResponse>["response"];
 
     /**
      * , Returns a list of newsfeeds recommended to the current user.
@@ -59016,7 +59128,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NewsfeedGetRecommendedResponse["response"];
+    ): Required<Responses.NewsfeedGetRecommendedResponse>["response"];
 
     /**
      * Returns communities and users that current user is suggested to follow.
@@ -59088,7 +59200,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NewsfeedGetSuggestedSourcesResponse["response"];
+    ): Required<Responses.NewsfeedGetSuggestedSourcesResponse>["response"];
 
     /**
      * Hides an item from the newsfeed.
@@ -59140,7 +59252,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Creates and edits user newsfeed lists
@@ -59208,7 +59320,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NewsfeedSaveListResponse["response"];
+    ): Required<Responses.NewsfeedSaveListResponse>["response"];
 
     /**
      * Returns search results by statuses.
@@ -59334,8 +59446,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.NewsfeedSearchExtendedResponse["response"]
-      : Responses.NewsfeedSearchResponse["response"];
+      ? Required<Responses.NewsfeedSearchExtendedResponse>["response"]
+      : Required<Responses.NewsfeedSearchResponse>["response"];
 
     /**
      * Returns a hidden item to the newsfeed.
@@ -59387,7 +59499,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Unsubscribes the current user from specified newsfeeds.
@@ -59441,7 +59553,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Notes {
     /**
@@ -59482,7 +59594,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NotesAddResponse["response"];
+    ): Required<Responses.NotesAddResponse>["response"];
 
     /**
      * Adds a new comment on a note.
@@ -59551,7 +59663,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NotesCreateCommentResponse["response"];
+    ): Required<Responses.NotesCreateCommentResponse>["response"];
 
     /**
      * Deletes a note of the current user.
@@ -59577,7 +59689,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Deletes a comment on a note.
@@ -59618,7 +59730,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits a note of the current user.
@@ -59672,7 +59784,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits a comment on a note.
@@ -59724,7 +59836,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns a list of notes created by a user.
@@ -59818,7 +59930,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NotesGetResponse["response"];
+    ): Required<Responses.NotesGetResponse>["response"];
 
     /**
      * Returns a note by its ID.
@@ -59861,7 +59973,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NotesGetByIdResponse["response"];
+    ): Required<Responses.NotesGetByIdResponse>["response"];
 
     /**
      * Returns a list of comments on a note.
@@ -59951,7 +60063,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NotesGetCommentsResponse["response"];
+    ): Required<Responses.NotesGetCommentsResponse>["response"];
 
     /**
      * Restores a deleted comment on a note.
@@ -59991,7 +60103,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Notifications {
     /**
@@ -60094,7 +60206,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NotificationsGetResponse["response"];
+    ): Required<Responses.NotificationsGetResponse>["response"];
 
     /**
      * Resets the counter of new notifications about other users' feedback to the current user's wall posts.
@@ -60104,7 +60216,7 @@ export namespace SyncMethods {
      */
     markAsViewed<Params extends never = never>(
       params?: Params
-    ): Responses.NotificationsMarkAsViewedResponse["response"];
+    ): Required<Responses.NotificationsMarkAsViewedResponse>["response"];
 
     /**
      * Method not described
@@ -60145,7 +60257,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.NotificationsSendMessageResponse["response"];
+    ): Required<Responses.NotificationsSendMessageResponse>["response"];
   }
   export interface Orders {
     /**
@@ -60190,7 +60302,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OrdersCancelSubscriptionResponse["response"];
+    ): Required<Responses.OrdersCancelSubscriptionResponse>["response"];
 
     /**
      * Changes order status.
@@ -60258,7 +60370,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OrdersChangeStateResponse["response"];
+    ): Required<Responses.OrdersChangeStateResponse>["response"];
 
     /**
      * Returns a list of orders.
@@ -60319,7 +60431,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OrdersGetResponse["response"];
+    ): Required<Responses.OrdersGetResponse>["response"];
 
     /**
      * Method not described
@@ -60347,7 +60459,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OrdersGetAmountResponse["response"];
+    ): Required<Responses.OrdersGetAmountResponse>["response"];
 
     /**
      * Returns information about orders by their IDs.
@@ -60404,7 +60516,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OrdersGetByIdResponse["response"];
+    ): Required<Responses.OrdersGetByIdResponse>["response"];
 
     /**
      * Method not described
@@ -60445,7 +60557,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OrdersGetUserSubscriptionByIdResponse["response"];
+    ): Required<Responses.OrdersGetUserSubscriptionByIdResponse>["response"];
 
     /**
      * Method not described
@@ -60472,7 +60584,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OrdersGetUserSubscriptionsResponse["response"];
+    ): Required<Responses.OrdersGetUserSubscriptionsResponse>["response"];
 
     /**
      * Method not described
@@ -60528,7 +60640,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OrdersUpdateSubscriptionResponse["response"];
+    ): Required<Responses.OrdersUpdateSubscriptionResponse>["response"];
   }
   export interface Pages {
     /**
@@ -60554,7 +60666,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns information about a wiki page.
@@ -60644,7 +60756,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PagesGetResponse["response"];
+    ): Required<Responses.PagesGetResponse>["response"];
 
     /**
      * Returns a list of all previous versions of a wiki page.
@@ -60699,7 +60811,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PagesGetHistoryResponse["response"];
+    ): Required<Responses.PagesGetHistoryResponse>["response"];
 
     /**
      * Returns a list of wiki pages in a group.
@@ -60725,7 +60837,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PagesGetTitlesResponse["response"];
+    ): Required<Responses.PagesGetTitlesResponse>["response"];
 
     /**
      * Returns the text of one of the previous versions of a wiki page.
@@ -60791,7 +60903,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PagesGetVersionResponse["response"];
+    ): Required<Responses.PagesGetVersionResponse>["response"];
 
     /**
      * Returns HTML representation of the wiki markup.
@@ -60829,7 +60941,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PagesParseWikiResponse["response"];
+    ): Required<Responses.PagesParseWikiResponse>["response"];
 
     /**
      * Saves the text of a wiki page.
@@ -60909,7 +61021,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PagesSaveResponse["response"];
+    ): Required<Responses.PagesSaveResponse>["response"];
 
     /**
      * Saves modified read and edit access settings for a wiki page.
@@ -60992,7 +61104,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PagesSaveAccessResponse["response"];
+    ): Required<Responses.PagesSaveAccessResponse>["response"];
   }
   export interface Photos {
     /**
@@ -61045,7 +61157,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Allows to copy a photo to the "Saved photos" album
@@ -61097,7 +61209,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosCopyResponse["response"];
+    ): Required<Responses.PhotosCopyResponse>["response"];
 
     /**
      * Creates an empty photo album.
@@ -61155,7 +61267,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosCreateAlbumResponse["response"];
+    ): Required<Responses.PhotosCreateAlbumResponse>["response"];
 
     /**
      * Adds a new comment on the photo.
@@ -61263,7 +61375,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosCreateCommentResponse["response"];
+    ): Required<Responses.PhotosCreateCommentResponse>["response"];
 
     /**
      * Deletes a photo.
@@ -61303,7 +61415,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Deletes a photo album belonging to the current user.
@@ -61343,7 +61455,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Deletes a comment on the photo.
@@ -61383,7 +61495,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosDeleteCommentResponse["response"];
+    ): Required<Responses.PhotosDeleteCommentResponse>["response"];
 
     /**
      * Edits the caption of a photo.
@@ -61465,7 +61577,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits information about a photo album.
@@ -61537,7 +61649,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits a comment on a photo.
@@ -61601,7 +61713,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns a list of a user's or community's photos.
@@ -61751,8 +61863,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.PhotosGetExtendedResponse["response"]
-      : Responses.PhotosGetResponse["response"];
+      ? Required<Responses.PhotosGetExtendedResponse>["response"]
+      : Required<Responses.PhotosGetResponse>["response"];
 
     /**
      * Returns a list of a user's or community's photo albums.
@@ -61861,7 +61973,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosGetAlbumsResponse["response"];
+    ): Required<Responses.PhotosGetAlbumsResponse>["response"];
 
     /**
      * Returns the number of photo albums belonging to a user or community.
@@ -61901,7 +62013,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosGetAlbumsCountResponse["response"];
+    ): Required<Responses.PhotosGetAlbumsCountResponse>["response"];
 
     /**
      * Returns a list of photos belonging to a user or community, in reverse chronological order.
@@ -62024,8 +62136,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.PhotosGetAllExtendedResponse["response"]
-      : Responses.PhotosGetAllResponse["response"];
+      ? Required<Responses.PhotosGetAllExtendedResponse>["response"]
+      : Required<Responses.PhotosGetAllResponse>["response"];
 
     /**
      * Returns a list of comments on a specific photo album or all albums of the user sorted in reverse chronological order.
@@ -62105,7 +62217,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosGetAllCommentsResponse["response"];
+    ): Required<Responses.PhotosGetAllCommentsResponse>["response"];
 
     /**
      * Returns information about photos by their IDs.
@@ -62155,8 +62267,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.PhotosGetByIdExtendedResponse["response"]
-      : Responses.PhotosGetByIdResponse["response"];
+      ? Required<Responses.PhotosGetByIdExtendedResponse>["response"]
+      : Required<Responses.PhotosGetByIdResponse>["response"];
 
     /**
      * Returns an upload link for chat cover pictures.
@@ -62228,7 +62340,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BaseGetUploadServerResponse["response"];
+    ): Required<Responses.BaseGetUploadServerResponse>["response"];
 
     /**
      * Returns a list of comments on a photo.
@@ -62351,8 +62463,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.PhotosGetCommentsExtendedResponse["response"]
-      : Responses.PhotosGetCommentsResponse["response"];
+      ? Required<Responses.PhotosGetCommentsExtendedResponse>["response"]
+      : Required<Responses.PhotosGetCommentsResponse>["response"];
 
     /**
      * Returns the server address for market album photo upload.
@@ -62378,7 +62490,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BaseGetUploadServerResponse["response"];
+    ): Required<Responses.BaseGetUploadServerResponse>["response"];
 
     /**
      * Returns the server address for market photo upload.
@@ -62462,7 +62574,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosGetMarketUploadServerResponse["response"];
+    ): Required<Responses.PhotosGetMarketUploadServerResponse>["response"];
 
     /**
      * Returns the server address for photo upload in a private message for a user.
@@ -62489,7 +62601,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosGetMessagesUploadServerResponse["response"];
+    ): Required<Responses.PhotosGetMessagesUploadServerResponse>["response"];
 
     /**
      * Returns a list of photos with tags that have not been viewed.
@@ -62537,7 +62649,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosGetNewTagsResponse["response"];
+    ): Required<Responses.PhotosGetNewTagsResponse>["response"];
 
     /**
      * Returns the server address for owner cover upload.
@@ -62628,7 +62740,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BaseGetUploadServerResponse["response"];
+    ): Required<Responses.BaseGetUploadServerResponse>["response"];
 
     /**
      * Returns an upload server address for a profile or community photo.
@@ -62654,7 +62766,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BaseGetUploadServerResponse["response"];
+    ): Required<Responses.BaseGetUploadServerResponse>["response"];
 
     /**
      * Returns a list of tags on a photo.
@@ -62696,7 +62808,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosGetTagsResponse["response"];
+    ): Required<Responses.PhotosGetTagsResponse>["response"];
 
     /**
      * Returns the server address for photo upload.
@@ -62736,7 +62848,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosGetUploadServerResponse["response"];
+    ): Required<Responses.PhotosGetUploadServerResponse>["response"];
 
     /**
      * Returns a list of photos in which a user is tagged.
@@ -62823,8 +62935,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.PhotosGetUserPhotosExtendedResponse["response"]
-      : Responses.PhotosGetUserPhotosResponse["response"];
+      ? Required<Responses.PhotosGetUserPhotosExtendedResponse>["response"]
+      : Required<Responses.PhotosGetUserPhotosResponse>["response"];
 
     /**
      * Returns the server address for photo upload onto a user's wall.
@@ -62850,7 +62962,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosGetWallUploadServerResponse["response"];
+    ): Required<Responses.PhotosGetWallUploadServerResponse>["response"];
 
     /**
      * Makes a photo into an album cover.
@@ -62904,7 +63016,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Moves a photo from one album to another.
@@ -62958,7 +63070,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Adds a tag on the photo.
@@ -63060,7 +63172,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosPutTagResponse["response"];
+    ): Required<Responses.PhotosPutTagResponse>["response"];
 
     /**
      * Removes a tag from a photo.
@@ -63114,7 +63226,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Reorders the album in the list of user albums.
@@ -63182,7 +63294,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Reorders the photo in the list of photos of the user album.
@@ -63250,7 +63362,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Reports (submits a complaint about) a photo.
@@ -63304,7 +63416,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Reports (submits a complaint about) a comment on a photo.
@@ -63358,7 +63470,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Restores a deleted photo.
@@ -63398,7 +63510,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Restores a deleted comment on a photo.
@@ -63438,7 +63550,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosRestoreCommentResponse["response"];
+    ): Required<Responses.PhotosRestoreCommentResponse>["response"];
 
     /**
      * Saves photos after successful uploading.
@@ -63554,7 +63666,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosSaveResponse["response"];
+    ): Required<Responses.PhotosSaveResponse>["response"];
 
     /**
      * Saves market album photos after successful uploading.
@@ -63619,7 +63731,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosSaveMarketAlbumPhotoResponse["response"];
+    ): Required<Responses.PhotosSaveMarketAlbumPhotoResponse>["response"];
 
     /**
      * Saves market photos after successful uploading.
@@ -63708,7 +63820,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosSaveMarketPhotoResponse["response"];
+    ): Required<Responses.PhotosSaveMarketPhotoResponse>["response"];
 
     /**
      * Saves a photo after being successfully uploaded. URL obtained with {@link https://vk.com/dev/photos.getMessagesUploadServer|photos.getMessagesUploadServer} method.
@@ -63751,7 +63863,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosSaveMessagesPhotoResponse["response"];
+    ): Required<Responses.PhotosSaveMessagesPhotoResponse>["response"];
 
     /**
      * Saves cover photo after successful uploading.
@@ -63788,7 +63900,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosSaveOwnerCoverPhotoResponse["response"];
+    ): Required<Responses.PhotosSaveOwnerCoverPhotoResponse>["response"];
 
     /**
      * Saves a profile or community photo. Upload URL can be got with the {@link https://vk.com/dev/photos.getOwnerPhotoUploadServer|photos.getOwnerPhotoUploadServer} method.
@@ -63836,7 +63948,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosSaveOwnerPhotoResponse["response"];
+    ): Required<Responses.PhotosSaveOwnerPhotoResponse>["response"];
 
     /**
      * Saves a photo to a user's or community's wall after being uploaded.
@@ -63942,7 +64054,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosSaveWallPhotoResponse["response"];
+    ): Required<Responses.PhotosSaveWallPhotoResponse>["response"];
 
     /**
      * Returns a list of photos.
@@ -64087,7 +64199,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PhotosSearchResponse["response"];
+    ): Required<Responses.PhotosSearchResponse>["response"];
   }
   export interface Polls {
     /**
@@ -64140,7 +64252,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PollsAddVoteResponse["response"];
+    ): Required<Responses.PollsAddVoteResponse>["response"];
 
     /**
      * Creates polls that can be attached to the users' or communities' posts.
@@ -64250,7 +64362,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PollsCreateResponse["response"];
+    ): Required<Responses.PollsCreateResponse>["response"];
 
     /**
      * Deletes the current user's vote from the selected answer in the poll.
@@ -64308,7 +64420,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PollsDeleteVoteResponse["response"];
+    ): Required<Responses.PollsDeleteVoteResponse>["response"];
 
     /**
      * Edits created polls
@@ -64438,7 +64550,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns detailed information about a poll by its ID.
@@ -64534,7 +64646,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PollsGetByIdResponse["response"];
+    ): Required<Responses.PollsGetByIdResponse>["response"];
 
     /**
      * Returns a list of IDs of users who selected specific answers in the poll.
@@ -64663,7 +64775,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PollsGetVotersResponse["response"];
+    ): Required<Responses.PollsGetVotersResponse>["response"];
   }
   export interface PrettyCards {
     /**
@@ -64702,7 +64814,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PrettyCardsCreateResponse["response"];
+    ): Required<Responses.PrettyCardsCreateResponse>["response"];
 
     /**
      * Method not described
@@ -64743,7 +64855,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PrettyCardsDeleteResponse["response"];
+    ): Required<Responses.PrettyCardsDeleteResponse>["response"];
 
     /**
      * Method not described
@@ -64795,7 +64907,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PrettyCardsEditResponse["response"];
+    ): Required<Responses.PrettyCardsEditResponse>["response"];
 
     /**
      * Method not described
@@ -64857,7 +64969,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PrettyCardsGetResponse["response"];
+    ): Required<Responses.PrettyCardsGetResponse>["response"];
 
     /**
      * Method not described
@@ -64891,7 +65003,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.PrettyCardsGetByIdResponse["response"];
+    ): Required<Responses.PrettyCardsGetByIdResponse>["response"];
 
     /**
      * Method not described
@@ -64901,7 +65013,7 @@ export namespace SyncMethods {
      */
     getUploadURL<Params extends never = never>(
       params?: Params
-    ): Responses.PrettyCardsGetUploadURLResponse["response"];
+    ): Required<Responses.PrettyCardsGetUploadURLResponse>["response"];
   }
   export interface Search {
     /**
@@ -64984,7 +65096,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.SearchGetHintsResponse["response"];
+    ): Required<Responses.SearchGetHintsResponse>["response"];
   }
   export interface Secure {
     /**
@@ -65039,7 +65151,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Checks the user authentication in 'IFrame' and 'Flash' apps using the 'access_token' parameter.
@@ -65075,7 +65187,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.SecureCheckTokenResponse["response"];
+    ): Required<Responses.SecureCheckTokenResponse>["response"];
 
     /**
      * Returns payment balance of the application in hundredth of a vote.
@@ -65085,7 +65197,7 @@ export namespace SyncMethods {
      */
     getAppBalance<Params extends never = never>(
       params?: Params
-    ): Responses.SecureGetAppBalanceResponse["response"];
+    ): Required<Responses.SecureGetAppBalanceResponse>["response"];
 
     /**
      * Shows a list of SMS notifications sent by the application using {@link https://vk.com/dev/secure.sendSMSNotification|secure.sendSMSNotification} method.
@@ -65161,7 +65273,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.SecureGetSMSHistoryResponse["response"];
+    ): Required<Responses.SecureGetSMSHistoryResponse>["response"];
 
     /**
      * Shows history of votes transaction between users and the application.
@@ -65265,7 +65377,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.SecureGetTransactionsHistoryResponse["response"];
+    ): Required<Responses.SecureGetTransactionsHistoryResponse>["response"];
 
     /**
      * Returns one of the previously set game levels of one or more users in the application.
@@ -65287,7 +65399,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.SecureGetUserLevelResponse["response"];
+    ): Required<Responses.SecureGetUserLevelResponse>["response"];
 
     /**
      * Opens the game achievement and gives the user a sticker
@@ -65323,7 +65435,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.SecureGiveEventStickerResponse["response"];
+    ): Required<Responses.SecureGiveEventStickerResponse>["response"];
 
     /**
      * Sends notification to the user.
@@ -65371,7 +65483,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.SecureSendNotificationResponse["response"];
+    ): Required<Responses.SecureSendNotificationResponse>["response"];
 
     /**
      * Sends 'SMS' notification to a user's mobile device.
@@ -65410,7 +65522,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Sets a counter which is shown to the user in bold in the left menu.
@@ -65456,7 +65568,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Stats {
     /**
@@ -65571,7 +65683,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.StatsGetResponse["response"];
+    ): Required<Responses.StatsGetResponse>["response"];
 
     /**
      * Returns stats for a wall post.
@@ -65613,7 +65725,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.StatsGetPostReachResponse["response"];
+    ): Required<Responses.StatsGetPostReachResponse>["response"];
 
     /**
      * Method not described
@@ -65629,7 +65741,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Status {
     /**
@@ -65670,7 +65782,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.StatusGetResponse["response"];
+    ): Required<Responses.StatusGetResponse>["response"];
 
     /**
      * Sets a new status for the current user.
@@ -65708,7 +65820,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Storage {
     /**
@@ -65743,7 +65855,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.StorageGetV5110Response["response"];
+    ): Required<Responses.StorageGetV5110Response>["response"];
 
     /**
      * Returns the names of all variables.
@@ -65807,7 +65919,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.StorageGetKeysResponse["response"];
+    ): Required<Responses.StorageGetKeysResponse>["response"];
 
     /**
      * Saves a value of variable with the name set by 'key' parameter.
@@ -65841,7 +65953,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Stories {
     /**
@@ -65872,7 +65984,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Allows to delete story.
@@ -65913,7 +66025,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns stories available for current user.
@@ -65954,7 +66066,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.StoriesGetV5113Response["response"];
+    ): Required<Responses.StoriesGetV5113Response>["response"];
 
     /**
      * Returns list of sources hidden from current user's feed.
@@ -65991,8 +66103,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.StoriesGetBannedExtendedResponse["response"]
-      : Responses.StoriesGetBannedResponse["response"];
+      ? Required<Responses.StoriesGetBannedExtendedResponse>["response"]
+      : Required<Responses.StoriesGetBannedResponse>["response"];
 
     /**
      * Returns story by its ID.
@@ -66042,8 +66154,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.StoriesGetByIdExtendedResponse["response"]
-      : Responses.StoriesGetByIdResponse["response"];
+      ? Required<Responses.StoriesGetByIdExtendedResponse>["response"]
+      : Required<Responses.StoriesGetByIdResponse>["response"];
 
     /**
      * Returns URL for uploading a story with photo.
@@ -66140,7 +66252,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.StoriesGetPhotoUploadServerResponse["response"];
+    ): Required<Responses.StoriesGetPhotoUploadServerResponse>["response"];
 
     /**
      * Returns replies to the story.
@@ -66217,7 +66329,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.StoriesGetV5113Response["response"];
+    ): Required<Responses.StoriesGetV5113Response>["response"];
 
     /**
      * Returns stories available for current user.
@@ -66258,7 +66370,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.StoriesGetStatsResponse["response"];
+    ): Required<Responses.StoriesGetStatsResponse>["response"];
 
     /**
      * Allows to receive URL for uploading story with video.
@@ -66355,7 +66467,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.StoriesGetVideoUploadServerResponse["response"];
+    ): Required<Responses.StoriesGetVideoUploadServerResponse>["response"];
 
     /**
      * Returns a list of story viewers.
@@ -66441,8 +66553,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.StoriesGetViewersExtendedV5115Response["response"]
-      : Responses.StoriesGetViewersExtendedV5115Response["response"];
+      ? Required<Responses.StoriesGetViewersExtendedV5115Response>["response"]
+      : Required<Responses.StoriesGetViewersExtendedV5115Response>["response"];
 
     /**
      * Hides all replies in the last 24 hours from the user to current user's stories.
@@ -66483,7 +66595,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Hides the reply to the current user's story.
@@ -66524,7 +66636,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Method not described
@@ -66636,7 +66748,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.StoriesGetV5113Response["response"];
+    ): Required<Responses.StoriesGetV5113Response>["response"];
 
     /**
      * Allows to show stories from hidden sources in current user's feed.
@@ -66666,7 +66778,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Streaming {
     /**
@@ -66678,7 +66790,7 @@ export namespace SyncMethods {
      */
     getServerUrl<Params extends never = never>(
       params?: Params
-    ): Responses.StreamingGetServerUrlResponse["response"];
+    ): Required<Responses.StreamingGetServerUrlResponse>["response"];
 
     /**
      * Method not described
@@ -66719,7 +66831,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Users {
     /**
@@ -66772,7 +66884,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.UsersGetResponse["response"];
+    ): Required<Responses.UsersGetResponse>["response"];
 
     /**
      * Returns a list of IDs of followers of the user in question, sorted by date added, most recent first.
@@ -66861,7 +66973,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.UsersGetFollowersResponse["response"];
+    ): Required<Responses.UsersGetFollowersResponse>["response"];
 
     /**
      * Returns a list of IDs of users and communities followed by the user.
@@ -66939,8 +67051,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.UsersGetSubscriptionsExtendedResponse["response"]
-      : Responses.UsersGetSubscriptionsResponse["response"];
+      ? Required<Responses.UsersGetSubscriptionsExtendedResponse>["response"]
+      : Required<Responses.UsersGetSubscriptionsResponse>["response"];
 
     /**
      * Reports (submits a complain about) a user.
@@ -66992,7 +67104,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns a list of users matching the search criteria.
@@ -67440,7 +67552,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.UsersSearchResponse["response"];
+    ): Required<Responses.UsersSearchResponse>["response"];
   }
   export interface Utils {
     /**
@@ -67467,7 +67579,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.UtilsCheckLinkResponse["response"];
+    ): Required<Responses.UtilsCheckLinkResponse>["response"];
 
     /**
      * Deletes shortened link from user's list.
@@ -67491,7 +67603,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns a list of user's shortened links.
@@ -67535,7 +67647,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.UtilsGetLastShortenedLinksResponse["response"];
+    ): Required<Responses.UtilsGetLastShortenedLinksResponse>["response"];
 
     /**
      * Returns stats data for shortened link.
@@ -67644,8 +67756,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.UtilsGetLinkStatsExtendedResponse["response"]
-      : Responses.UtilsGetLinkStatsResponse["response"];
+      ? Required<Responses.UtilsGetLinkStatsExtendedResponse>["response"]
+      : Required<Responses.UtilsGetLinkStatsResponse>["response"];
 
     /**
      * Returns the current time of the VK server.
@@ -67657,7 +67769,7 @@ export namespace SyncMethods {
      */
     getServerTime<Params extends never = never>(
       params?: Params
-    ): Responses.UtilsGetServerTimeResponse["response"];
+    ): Required<Responses.UtilsGetServerTimeResponse>["response"];
 
     /**
      * Allows to receive a link shortened via vk.cc.
@@ -67695,7 +67807,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.UtilsGetShortLinkResponse["response"];
+    ): Required<Responses.UtilsGetShortLinkResponse>["response"];
 
     /**
      * Detects a type of object (e.g., user, community, application) and its ID by screen name.
@@ -67721,7 +67833,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.UtilsResolveScreenNameResponse["response"];
+    ): Required<Responses.UtilsResolveScreenNameResponse>["response"];
   }
   export interface Video {
     /**
@@ -67777,7 +67889,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Creates an empty album for videos.
@@ -67844,7 +67956,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.VideoAddAlbumResponse["response"];
+    ): Required<Responses.VideoAddAlbumResponse>["response"];
 
     /**
      * Method not described
@@ -67921,7 +68033,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Adds a new comment on a video.
@@ -68027,7 +68139,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.VideoCreateCommentResponse["response"];
+    ): Required<Responses.VideoCreateCommentResponse>["response"];
 
     /**
      * Deletes a video from a user or community page.
@@ -68081,7 +68193,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Deletes a video album.
@@ -68121,7 +68233,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Deletes a comment on a video.
@@ -68161,7 +68273,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits information about a video on a user or community page.
@@ -68273,7 +68385,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits the title of a video album.
@@ -68353,7 +68465,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits the text of a comment on a video.
@@ -68417,7 +68529,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns detailed information about videos.
@@ -68518,8 +68630,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.VideoGetExtendedResponse["response"]
-      : Responses.VideoGetResponse["response"];
+      ? Required<Responses.VideoGetExtendedResponse>["response"]
+      : Required<Responses.VideoGetResponse>["response"];
 
     /**
      * Returns video album info
@@ -68559,7 +68671,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.VideoGetAlbumByIdResponse["response"];
+    ): Required<Responses.VideoGetAlbumByIdResponse>["response"];
 
     /**
      * Returns a list of video albums owned by a user or community.
@@ -68636,8 +68748,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.VideoGetAlbumsExtendedResponse["response"]
-      : Responses.VideoGetAlbumsResponse["response"];
+      ? Required<Responses.VideoGetAlbumsExtendedResponse>["response"]
+      : Required<Responses.VideoGetAlbumsResponse>["response"];
 
     /**
      * Method not described
@@ -68694,8 +68806,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.VideoGetAlbumsByVideoExtendedResponse["response"]
-      : Responses.VideoGetAlbumsByVideoResponse["response"];
+      ? Required<Responses.VideoGetAlbumsByVideoExtendedResponse>["response"]
+      : Required<Responses.VideoGetAlbumsByVideoResponse>["response"];
 
     /**
      * Returns a list of comments on a video.
@@ -68816,8 +68928,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.VideoGetCommentsExtendedResponse["response"]
-      : Responses.VideoGetCommentsResponse["response"];
+      ? Required<Responses.VideoGetCommentsExtendedResponse>["response"]
+      : Required<Responses.VideoGetCommentsResponse>["response"];
 
     /**
      * Method not described
@@ -68893,7 +69005,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Reorders the album in the list of user video albums.
@@ -68962,7 +69074,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Reorders the video in the video album.
@@ -69086,7 +69198,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Reports (submits a complaint about) a video.
@@ -69164,7 +69276,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Reports (submits a complaint about) a comment on a video.
@@ -69218,7 +69330,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Restores a previously deleted video.
@@ -69258,7 +69370,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Restores a previously deleted comment on a video.
@@ -69298,7 +69410,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.VideoRestoreCommentResponse["response"];
+    ): Required<Responses.VideoRestoreCommentResponse>["response"];
 
     /**
      * Returns a server address (required for upload) and video data.
@@ -69420,7 +69532,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.VideoSaveResponse["response"];
+    ): Required<Responses.VideoSaveResponse>["response"];
 
     /**
      * Returns a list of videos under the set search criterion.
@@ -69581,8 +69693,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.VideoSearchExtendedResponse["response"]
-      : Responses.VideoSearchResponse["response"];
+      ? Required<Responses.VideoSearchExtendedResponse>["response"]
+      : Required<Responses.VideoSearchResponse>["response"];
   }
   export interface Wall {
     /**
@@ -69624,7 +69736,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BaseBoolResponse["response"];
+    ): Required<Responses.BaseBoolResponse>["response"];
 
     /**
      * Adds a comment to a post on a user wall or community wall.
@@ -69746,7 +69858,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.WallCreateCommentResponse["response"];
+    ): Required<Responses.WallCreateCommentResponse>["response"];
 
     /**
      * Deletes a post from a user wall or community wall.
@@ -69786,7 +69898,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Deletes a comment on a post on a user wall or community wall.
@@ -69826,7 +69938,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits a post on a user wall or community wall.
@@ -69984,7 +70096,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.WallEditResponse["response"];
+    ): Required<Responses.WallEditResponse>["response"];
 
     /**
      * Allows to edit hidden post.
@@ -70146,7 +70258,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Edits a comment on a user wall or community wall.
@@ -70210,7 +70322,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Returns a list of posts on a user wall or community wall.
@@ -70306,8 +70418,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.WallGetExtendedResponse["response"]
-      : Responses.WallGetResponse["response"];
+      ? Required<Responses.WallGetExtendedResponse>["response"]
+      : Required<Responses.WallGetResponse>["response"];
 
     /**
      * Returns a list of posts from user or community walls by their IDs.
@@ -70365,8 +70477,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.WallGetByIdExtendedResponse["response"]
-      : Responses.WallGetByIdResponse["response"];
+      ? Required<Responses.WallGetByIdExtendedResponse>["response"]
+      : Required<Responses.WallGetByIdResponse>["response"];
 
     /**
      * Returns a comment on a post on a user wall or community wall.
@@ -70411,8 +70523,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.WallGetCommentExtendedResponse["response"]
-      : Responses.WallGetCommentResponse["response"];
+      ? Required<Responses.WallGetCommentExtendedResponse>["response"]
+      : Required<Responses.WallGetCommentResponse>["response"];
 
     /**
      * Returns a list of comments on a post on a user wall or community wall.
@@ -70572,8 +70684,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.WallGetCommentsExtendedResponse["response"]
-      : Responses.WallGetCommentsResponse["response"];
+      ? Required<Responses.WallGetCommentsExtendedResponse>["response"]
+      : Required<Responses.WallGetCommentsResponse>["response"];
 
     /**
      * Returns information about reposts of a post on user wall or community wall.
@@ -70650,7 +70762,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.WallGetRepostsResponse["response"];
+    ): Required<Responses.WallGetRepostsResponse>["response"];
 
     /**
      * Method not described
@@ -70691,7 +70803,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.BaseBoolResponse["response"];
+    ): Required<Responses.BaseBoolResponse>["response"];
 
     /**
      * Pins the post on wall.
@@ -70731,7 +70843,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Adds a new post on a user wall or community wall. Can also be used to publish suggested or scheduled posts.
@@ -70909,7 +71021,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.WallPostResponse["response"];
+    ): Required<Responses.WallPostResponse>["response"];
 
     /**
      * Allows to create hidden post which will not be shown on the community's wall and can be used for creating an ad with type "Community post".
@@ -71072,7 +71184,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.WallPostAdsStealthResponse["response"];
+    ): Required<Responses.WallPostAdsStealthResponse>["response"];
 
     /**
      * Reports (submits a complaint about) a comment on a post on a user wall or community wall.
@@ -71126,7 +71238,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Reports (submits a complaint about) a post on a user wall or community wall.
@@ -71180,7 +71292,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Reposts (copies) an object to a user wall or community wall.
@@ -71236,7 +71348,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.WallRepostResponse["response"];
+    ): Required<Responses.WallRepostResponse>["response"];
 
     /**
      * Restores a post deleted from a user wall or community wall.
@@ -71277,7 +71389,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Restores a comment deleted from a user wall or community wall.
@@ -71317,7 +71429,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
 
     /**
      * Allows to search posts on user or community walls.
@@ -71431,8 +71543,8 @@ export namespace SyncMethods {
     >(
       params: Params
     ): Params["extended"] extends true | 1
-      ? Responses.WallSearchExtendedResponse["response"]
-      : Responses.WallSearchResponse["response"];
+      ? Required<Responses.WallSearchExtendedResponse>["response"]
+      : Required<Responses.WallSearchResponse>["response"];
 
     /**
      * Unpins the post on wall.
@@ -71472,7 +71584,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.OkResponse["response"];
+    ): Required<Responses.OkResponse>["response"];
   }
   export interface Widgets {
     /**
@@ -71560,7 +71672,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.WidgetsGetCommentsResponse["response"];
+    ): Required<Responses.WidgetsGetCommentsResponse>["response"];
 
     /**
      * Gets a list of application/site pages where the {@link https://vk.com/dev/Comments|Comments widget} or {@link https://vk.com/dev/Like|Like widget} is installed.
@@ -71655,7 +71767,7 @@ export namespace SyncMethods {
       }
     >(
       params: Params
-    ): Responses.WidgetsGetPagesResponse["response"];
+    ): Required<Responses.WidgetsGetPagesResponse>["response"];
   }
   export class _domainsSpecifier {
     account!: SyncMethods.Account;

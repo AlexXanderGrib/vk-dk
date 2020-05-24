@@ -306,7 +306,7 @@ export function parseMethod(m: Method, async = true) {
     : responseType;
 
   const method = ts.createMethodSignature(
-    [ts.createTypeParameterDeclaration("Params", paramsType, paramsType)],
+    [ts.createTypeParameterDeclaration("Params", paramsType, undefined)],
     [params],
 
     m.responses.extendedResponse
