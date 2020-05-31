@@ -102,7 +102,7 @@ function createAPI(access_token: string, v: string) {
 export default class API extends Schema.Methods._domainsSpecifier {
   /**
    * @param {string} token Access token for VKontakte API
-   * @param {string|number} version VKontakte API version, @default 5.103
+   * @param {(string|number)} [version=5.107] VKontakte API version
    *
    * @example
    *
@@ -114,12 +114,20 @@ export default class API extends Schema.Methods._domainsSpecifier {
    *
    * "Pavel Durov" // In console
    */
-  constructor(private token: string, private v: string | number = 5.103) {
+  constructor(private token: string, private v: string | number = 5.107) {
     super();
 
     const realAPI = createAPI(token, String(v));
 
     Object.assign(this, realAPI);
+  }
+
+  /**
+   * Access token that passed to constructor
+   * @readonly Dynamically changed token can produce shit code.
+   */
+  get accessToken() {
+    return this.token;
   }
 
   /**
