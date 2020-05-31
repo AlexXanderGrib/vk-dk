@@ -82,9 +82,11 @@ export async function call(method: string, params: object): Promise<any> {
 }
 
 function createAPI(access_token: string, v: string) {
-  return Schema.Methods._exportedDomains
-    .map((domain) => {
-      return {
+  const domains = Schema.Methods._exportedDomains;
+
+  return (
+    domains
+      .map((domain) => ({
         [domain]: new Proxy(
           {},
           {
@@ -94,9 +96,10 @@ function createAPI(access_token: string, v: string) {
             }
           }
         )
-      };
-    })
-    .reduce((a, b) => ({ ...a, ...b }));
+      }))
+      // Merging objects
+      .reduce((a, b) => ({ ...a, ...b }))
+  );
 }
 
 export default class API extends Schema.Methods._domainsSpecifier {
@@ -114,10 +117,10 @@ export default class API extends Schema.Methods._domainsSpecifier {
    *
    * "Pavel Durov" // In console
    */
-  constructor(private token: string, private v: string | number = 5.107) {
+  constructor(private token: string, private version: string | number = 5.107) {
     super();
 
-    const realAPI = createAPI(token, String(v));
+    const realAPI = createAPI(token, String(version));
 
     Object.assign(this, realAPI);
   }
@@ -139,17 +142,17 @@ export default class API extends Schema.Methods._domainsSpecifier {
   execute<result extends any>(
     ...code: [string] | [TemplateStringsArray, ...any[]]
   ): Promise<result> {
-    const [actualCode, ...substitutions] = code;
+    const [codeString, ...substitutions] = code;
 
     const fullCode =
-      typeof actualCode === "object"
-        ? String.raw(actualCode, ...substitutions)
-        : String(actualCode);
+      typeof codeString === "object"
+        ? String.raw(codeString, ...substitutions)
+        : String(codeString);
 
     return call("execute", {
       code: fullCode,
       access_token: this.token,
-      v: String(this.v)
+      v: String(this.version)
     });
   }
 
