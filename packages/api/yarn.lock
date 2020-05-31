@@ -584,7 +584,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@vk-dk/schema@^1.1.0":
+"@vk-dk/schema@^1.2.2":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@vk-dk/schema/-/schema-1.2.2.tgz#07662dbd3e9996529121fc44a846e20c97e6b7f2"
   integrity sha512-14JoLsik9dpr06EOKd8dESxRhpEFB0kx3nPcSQeUDnbKgwTuoXjp3oYnkf/aNt/qzK08HycxjUr2AACgReKizw==
