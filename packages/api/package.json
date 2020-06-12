@@ -1,6 +1,6 @@
 {
   "name": "@vk-dk/api",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "description": "VK API Implementation",
   "main": "index.js",
   "types": "index.d.ts",
@@ -13,7 +13,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "tsc --project tsconfig.build.json"
+    "prepublish": "tsc --project tsconfig.build.json",
+    "postpublish": "rm index.js index.d.ts"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",

@@ -127,10 +127,13 @@ export default class API extends Schema.Methods._domainsSpecifier {
 
   /**
    * Access token that passed to constructor
-   * @readonly Dynamically changed token can produce shit code.
    */
   get accessToken() {
     return this.token;
+  }
+
+  set accessToken(value) {
+    this.token = String(value);
   }
 
   /**
